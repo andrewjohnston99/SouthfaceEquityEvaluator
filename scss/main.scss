@@ -1,0 +1,11 @@
+@include 'scss/variables'
+
+/******************************
+*  Body
+******************************/
+
+html, body {
+    font-family: $font-primary;
+    font-size: $font-md;
+    font-color: #000;
+}
