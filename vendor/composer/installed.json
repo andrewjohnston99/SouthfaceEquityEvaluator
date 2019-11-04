@@ -3298,17 +3298,17 @@
     },
     {
         "name": "symfony/console",
-        "version": "v4.3.5",
-        "version_normalized": "4.3.5.0",
+        "version": "v4.3.6",
+        "version_normalized": "4.3.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/console.git",
-            "reference": "929ddf360d401b958f611d44e726094ab46a7369"
+            "reference": "136c4bd62ea871d00843d1bc0316de4c4a84bb78"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/console/zipball/929ddf360d401b958f611d44e726094ab46a7369",
-            "reference": "929ddf360d401b958f611d44e726094ab46a7369",
+            "url": "https://api.github.com/repos/symfony/console/zipball/136c4bd62ea871d00843d1bc0316de4c4a84bb78",
+            "reference": "136c4bd62ea871d00843d1bc0316de4c4a84bb78",
             "shasum": ""
         },
         "require": {
@@ -3340,7 +3340,7 @@
             "symfony/lock": "",
             "symfony/process": ""
         },
-        "time": "2019-10-07T12:36:49+00:00",
+        "time": "2019-10-30T12:58:49+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3620,23 +3620,23 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v4.3.5",
-        "version_normalized": "4.3.5.0",
+        "version": "v4.3.6",
+        "version_normalized": "4.3.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
-            "reference": "5e575faa95548d0586f6bedaeabec259714e44d1"
+            "reference": "72a068f77e317ae77c0a0495236ad292cfb5ce6f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/finder/zipball/5e575faa95548d0586f6bedaeabec259714e44d1",
-            "reference": "5e575faa95548d0586f6bedaeabec259714e44d1",
+            "url": "https://api.github.com/repos/symfony/finder/zipball/72a068f77e317ae77c0a0495236ad292cfb5ce6f",
+            "reference": "72a068f77e317ae77c0a0495236ad292cfb5ce6f",
             "shasum": ""
         },
         "require": {
             "php": "^7.1.3"
         },
-        "time": "2019-09-16T11:29:48+00:00",
+        "time": "2019-10-30T12:53:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4572,17 +4572,17 @@
     },
     {
         "name": "symfony/var-dumper",
-        "version": "v4.3.5",
-        "version_normalized": "4.3.5.0",
+        "version": "v4.3.6",
+        "version_normalized": "4.3.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/var-dumper.git",
-            "reference": "bde8957fc415fdc6964f33916a3755737744ff05"
+            "reference": "ea4940845535c85ff5c505e13b3205b0076d07bf"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/bde8957fc415fdc6964f33916a3755737744ff05",
-            "reference": "bde8957fc415fdc6964f33916a3755737744ff05",
+            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/ea4940845535c85ff5c505e13b3205b0076d07bf",
+            "reference": "ea4940845535c85ff5c505e13b3205b0076d07bf",
             "shasum": ""
         },
         "require": {
@@ -4605,7 +4605,7 @@
             "ext-intl": "To show region name in time zone dump",
             "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
         },
-        "time": "2019-10-04T19:48:13+00:00",
+        "time": "2019-10-13T12:02:04+00:00",
         "bin": [
             "Resources/bin/var-dump-server"
         ],
