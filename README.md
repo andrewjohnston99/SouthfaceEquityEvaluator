@@ -16,6 +16,11 @@ Alternatively, you can map a hostname to the VM by modifying the HOST file in yo
 192.168.10.10  equityevaluator.local
 ```
 
+To login to vagrant, enter:
+```
+vagrant ssh
+```
+
 To shutdown the VM, enter:
 ```
 vagrant halt
