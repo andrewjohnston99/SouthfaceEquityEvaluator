@@ -9,6 +9,9 @@ folders:
     -
         map: 'C:\SouthfaceEquityEvaluator'
         to: /home/vagrant/code
+    -
+        map: /home/vagrant/code/database/mysql/
+        to: /homestead-vg/master/mysql
 sites:
     -
         map: homestead.test
