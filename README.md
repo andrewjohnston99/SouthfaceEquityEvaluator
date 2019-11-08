@@ -30,9 +30,12 @@ vagrant halt
 
 The VM for the Southface Equity Evaluator is based on Laravel Homestead. File paths and other assignments are made in the Homestead YAML file. By default the project is setup to run on Windows when the root is placed inside the C:\ directory, ex. "C:\SouthfaceEquityEvaluator"
 
-To change the default location of the project, open the Homestead YAML file in a text editor and modify the following line (line 10) to point to your project root directory:
+To change the default location of the project, open the Homestead YAML file in a text editor and modify the following lines (line 10 & 13) to point to your project root directory on line 10 and the project database component on line 13 (line 10 plus \database\master):
 ```
         map: 'C:\SouthfaceEquityEvaluator'
+```
+```
+        map: 'C:\SouthfaceEquityEvaluator\database\master'
 ```
 <b>The YAML file is very sensitive to changes. Do not use tab characters or change any other lines. Doing so may break the project.</b>
 
