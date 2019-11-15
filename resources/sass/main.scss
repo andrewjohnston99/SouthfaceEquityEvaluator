@@ -1,0 +1,25 @@
+@import 'variables';
+
+/******************************
+*  Body
+******************************/
+
+html,
+body {
+    font-family: $font-primary;
+    font-size: $font-md;
+    color: #000;
+}
+
+h1 {
+    font-size: $font-xl;
+
+    &.accent {
+        font-family: $font-secondary;
+        color: $primary;
+    }
+}
+
+// h2 {
+//     font-size: ;
+// }
