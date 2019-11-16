@@ -17,6 +17,7 @@ body h1 {
 html h1.accent,
 body h1.accent {
   font-family: "Roboto", sans-serif;
+  font-weight: 700;
   color: #0A9D53;
 }
 
@@ -103,6 +104,57 @@ nav.navbar .login-btn:active {
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
+}
+
+/******************************
+*  Landing
+******************************/
+
+.landing {
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin-top: 8%;
+}
+
+.landing .gs-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #52B788;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  width: 180px;
+  height: 64px;
+}
+
+.landing .gs-btn:hover,
+.landing .gs-btn:focus,
+.landing .gs-btn:active {
+  outline: none;
+  border: none;
+}
+
+.landing .gs-btn:hover {
+  background-color: #52B788;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.landing .gs-btn:active,
+.landing .gs-btn:focuse {
+  background-color: #286147;
+}
+
+.landing .gs-btn:hover,
+.landing .gs-btn:active {
+  background-color: #0A9D53;
 }
 
 /******************************

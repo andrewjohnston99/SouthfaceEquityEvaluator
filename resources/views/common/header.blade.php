@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg d-flex justify content center">
     <div class="flex-column">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ url('landing') }}">
             <img src="{{ URL::asset('images/southface-logo-sm.png') }}" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">

@@ -11,6 +11,7 @@ body {
 
         &.accent {
             font-family: $font-secondary;
+            font-weight: $font-bold;
             color: $primary;
         }
     }
@@ -71,6 +72,27 @@ nav.navbar {
         }
     }
 }
+
+/******************************
+*  Landing
+******************************/
+.landing {
+    height: 100%;
+    flex-direction: column;
+    margin-top: 8%;
+
+    .gs-btn {
+        @include btn($primary-soft, 25px, $bg: true);
+        @include box-shadow(0, 1px, 6px, rgba(0, 0, 0, 0.25));
+        width: 180px;
+        height: 64px;
+
+        &:hover, &:active {
+            background-color: $primary;
+        }
+    }
+}
+
 /******************************
 *  Login
 ******************************/
