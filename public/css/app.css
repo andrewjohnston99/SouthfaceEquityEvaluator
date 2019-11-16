@@ -1,25 +1,39 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap);@charset "UTF-8";
 
-/******************************
-*  Body
-******************************/
-
 html,
 body {
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   color: #fff;
-  margin-top: 60px;
+  margin-top: 45px;
 }
 
-h1 {
+html h1,
+body h1 {
   font-size: 48px;
+  font-weight: 400;
 }
 
-h1.accent {
+html h1.accent,
+body h1.accent {
   font-family: "Roboto", sans-serif;
   color: #0A9D53;
 }
+
+html h2,
+body h2 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+html button,
+body button {
+  cursor: pointer;
+}
+
+/******************************
+*  Header
+******************************/
 
 nav.navbar {
   padding-left: 4rem;
@@ -45,15 +59,31 @@ nav.navbar .navbar-nav .nav-item .nav-link {
 
 nav.navbar .navbar-nav .nav-item .nav-link:hover {
   color: #09934e;
+  text-decoration: underline;
+  -webkit-transition: -webkit-text-decoration 0.2s ease;
+  transition: -webkit-text-decoration 0.2s ease;
+  transition: text-decoration 0.2s ease;
+  transition: text-decoration 0.2s ease, -webkit-text-decoration 0.2s ease;
 }
 
 nav.navbar .login-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
   background-color: #fff;
   border: 2px solid #0A9D53;
-  box-sizing: border-box;
   border-radius: 10px;
   width: 140px;
   height: 45px;
+}
+
+nav.navbar .login-btn:hover,
+nav.navbar .login-btn:focus,
+nav.navbar .login-btn:active {
+  outline: none;
+  border: none;
 }
 
 nav.navbar .login-btn:hover {
@@ -62,7 +92,8 @@ nav.navbar .login-btn:hover {
   transition: all 0.3s ease;
 }
 
-nav.navbar .login-btn:active {
+nav.navbar .login-btn:active,
+nav.navbar .login-btn:focuse {
   background-color: #022514;
 }
 
@@ -70,8 +101,112 @@ nav.navbar .login-btn:hover,
 nav.navbar .login-btn:active {
   color: #fff;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
-  -webkit-transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
+/******************************
+*  Login
+******************************/
+
+.login {
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin-top: 8%;
+}
+
+.login .row {
+  width: 100%;
+}
+
+.login .login-header {
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+.login form a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.login form a:hover {
+  color: #088546;
+}
+
+.login form input.form-control {
+  background-color: #fff;
+  border: 2px solid #9E9E9E;
+  font-size: 24px;
+  width: 400px;
+}
+
+.login form input.form-control::-webkit-input-placeholder {
+  color: #9E9E9E;
+}
+
+.login form input.form-control::-moz-placeholder {
+  color: #9E9E9E;
+}
+
+.login form input.form-control:-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.login form input.form-control::-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.login form input.form-control::placeholder {
+  color: #9E9E9E;
+}
+
+.login form input.form-control#password {
+  margin-bottom: 55px;
+}
+
+.login form .submit-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #52B788;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  width: 400px;
+  height: 48px;
+  font-size: 30px;
+  margin-top: 45px;
+}
+
+.login form .submit-btn:hover,
+.login form .submit-btn:focus,
+.login form .submit-btn:active {
+  outline: none;
+  border: none;
+}
+
+.login form .submit-btn:hover {
+  background-color: #52B788;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.login form .submit-btn:active,
+.login form .submit-btn:focuse {
+  background-color: #286147;
+}
+
+.login form .submit-btn:hover,
+.login form .submit-btn:active {
+  background-color: #0A9D53;
 }
 
 /*!

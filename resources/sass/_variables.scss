@@ -19,6 +19,7 @@ $font-md: 30px;
 $font-lg: 36px;
 $font-xl: 48px;
 $font-reg: 400;
+$font-mid: 500;
 $font-bold: 700;
 
 // Box shadows
@@ -27,7 +28,7 @@ $font-bold: 700;
     -moz-box-shadow: $top $left $blur $color;
     box-shadow: $top $left $blur $color;
 
-    transition: box-shadow .3s;
+    transition: box-shadow .2s;
 }
 
 $btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
@@ -41,6 +42,12 @@ $btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
 }
 
 @mixin btn($color, $radius, $bg: false) {
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
     @if $bg {
         background: $color;
         color: #fff;
@@ -49,16 +56,19 @@ $btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
         border: 2px solid $color;
     }
 
-    box-sizing: border-box;
-
     @include border-radius($radius);
+
+    &:hover, &:focus, &:active {
+        outline: none;
+        border: none;
+    }
 
     &:hover {
         background-color: $color;
         transition: all 0.3s ease;
     }
 
-    &:active {
+    &:active, &:focuse {
         background-color: darken($color, 25%);
     }
 }

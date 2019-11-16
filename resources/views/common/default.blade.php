@@ -17,8 +17,6 @@
     @yield('content')
 
 
-
-
     {{-- Include per-page js --}}
     @yield('js')
 </body>

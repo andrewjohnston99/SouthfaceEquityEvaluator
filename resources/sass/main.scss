@@ -1,23 +1,35 @@
-/******************************
-*  Body
-******************************/
 html,
 body {
     font-family: $font-primary;
     font-size: $font-sm;
     color: #fff;
-    margin-top: 60px;
-}
+    margin-top: 45px;
 
-h1 {
-    font-size: $font-xl;
+    h1 {
+        font-size: $font-xl;
+        font-weight: $font-reg;
 
-    &.accent {
-        font-family: $font-secondary;
-        color: $primary;
+        &.accent {
+            font-family: $font-secondary;
+            color: $primary;
+        }
+    }
+
+    h2 {
+        font-size: $font-lg;
+        font-weight: $font-reg;
+    }
+
+    button {
+        cursor: pointer;
     }
 }
 
+
+
+/******************************
+*  Header
+******************************/
 nav.navbar {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -42,6 +54,8 @@ nav.navbar {
 
             &:hover {
                 color: darken($primary, 2);
+                text-decoration: underline;
+                transition: text-decoration 0.2s ease;
             }
         }
     }
@@ -53,7 +67,65 @@ nav.navbar {
 
         &:hover, &:active {
             color: #fff;
-            @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25))
+            @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
+        }
+    }
+}
+/******************************
+*  Login
+******************************/
+.login {
+    height: 100%;
+    flex-direction: column;
+    margin-top: 8%;
+
+    .row {
+        width: 100%
+    }
+
+    .login-header {
+        font-size: $font-md;
+        margin-bottom: 60px;
+    }
+
+    form {
+        a {
+            color: #000;
+            text-decoration: underline;
+            font-size: $font-xs;
+            font-weight: $font-mid;
+
+            &:hover {
+                color: darken($primary, 5);
+            }
+        }
+
+        input.form-control {
+            background-color: #fff;
+            border: 2px solid $light-grey;
+            font-size: $font-sm;
+            width: 400px;
+
+            &::placeholder {
+                color: $light-grey;
+            }
+
+            &#password {
+                margin-bottom: 55px;
+            }
+        }
+
+        .submit-btn {
+            @include btn($primary-soft, 25px, $bg: true);
+            @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
+            width: 400px;
+            height: 48px;
+            font-size: $font-md;
+            margin-top: 45px;
+
+            &:hover, &:active {
+                background-color: $primary;
+            }
         }
     }
 }
