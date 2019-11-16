@@ -1,14 +1,12 @@
-@import 'variables';
-
 /******************************
 *  Body
 ******************************/
-
 html,
 body {
     font-family: $font-primary;
-    font-size: $font-md;
-    color: #000;
+    font-size: $font-sm;
+    color: #fff;
+    margin-top: 60px;
 }
 
 h1 {
@@ -20,6 +18,42 @@ h1 {
     }
 }
 
-// h2 {
-//     font-size: ;
-// }
+nav.navbar {
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+    .flex-column a.navbar-brand {
+        padding-top: 0;
+        padding-bottom: .5rem;
+        margin-right: 0;
+    }
+
+    .navbar-nav .nav-item {
+        &:not(:last-child) {
+            margin-right: 120px;
+        }
+
+        .nav-link {
+            font-family: $font-primary;
+            font-size: $font-sm;
+            color: #000;
+            padding: 0;
+
+
+            &:hover {
+                color: darken($primary, 2);
+            }
+        }
+    }
+
+    .login-btn {
+        @include btn($primary, 10px, $bg: false);
+        width: 140px;
+        height: 45px;
+
+        &:hover, &:active {
+            color: #fff;
+            @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25))
+        }
+    }
+}

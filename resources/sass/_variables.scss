@@ -13,6 +13,7 @@ $font-primary: 'Poppins',
 sans-serif;
 $font-secondary: 'Roboto',
 sans-serif;
+$font-xs: 20px;
 $font-sm: 24px;
 $font-md: 30px;
 $font-lg: 36px;
@@ -21,10 +22,12 @@ $font-reg: 400;
 $font-bold: 700;
 
 // Box shadows
-@mixin box-shadow($shadow) {
-    -webkit-box-shadow: $shadow;
-    -moz-box-shadow: $shadow;
-    box-shadow: $shadow;
+@mixin box-shadow($top, $left, $blur, $color) {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+
+    transition: box-shadow .3s;
 }
 
 $btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
@@ -37,17 +40,25 @@ $btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
     border-radius: $radius;
 }
 
-@mixin btn($bg) {
-    background: $bg;
-    @include border-radius(25px);
-    @include box-shadow($btn-shadow);
+@mixin btn($color, $radius, $bg: false) {
+    @if $bg {
+        background: $color;
+        color: #fff;
+    } @else {
+        background-color: #fff;
+        border: 2px solid $color;
+    }
+
+    box-sizing: border-box;
+
+    @include border-radius($radius);
 
     &:hover {
-        background: darken($bg, 8%);
+        background-color: $color;
         transition: all 0.3s ease;
     }
 
     &:active {
-        background: darken($bg, 25%);
+        background-color: darken($color, 25%);
     }
 }
