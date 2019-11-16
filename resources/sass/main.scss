@@ -26,10 +26,8 @@ body {
     }
 }
 
-
-
 /******************************
-*  Header
+*  HEADER
 ******************************/
 nav.navbar {
     padding-left: 4rem;
@@ -66,7 +64,8 @@ nav.navbar {
         width: 140px;
         height: 45px;
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             color: #fff;
             @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
         }
@@ -74,7 +73,7 @@ nav.navbar {
 }
 
 /******************************
-*  Landing
+*  LANDING
 ******************************/
 .landing {
     height: 100%;
@@ -82,19 +81,21 @@ nav.navbar {
     margin-top: 8%;
 
     .gs-btn {
-        @include btn($primary-soft, 25px, $bg: true);
+        @include btn($primary, 25px, $bg: true);
         @include box-shadow(0, 1px, 6px, rgba(0, 0, 0, 0.25));
         width: 180px;
         height: 64px;
 
-        &:hover, &:active {
-            background-color: $primary;
+        &:hover,
+        &:active {
+            background-color: darken($primary, 5);
+            @include box-shadow(0, 8px, 50px, rgba(0, 0, 0, .25));
         }
     }
 }
 
 /******************************
-*  Login
+*  LOGIN
 ******************************/
 .login {
     height: 100%;
@@ -138,16 +139,110 @@ nav.navbar {
         }
 
         .submit-btn {
-            @include btn($primary-soft, 25px, $bg: true);
+            @include btn($primary, 25px, $bg: true);
             @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
             width: 400px;
             height: 48px;
             font-size: $font-md;
             margin-top: 45px;
 
-            &:hover, &:active {
-                background-color: $primary;
+            &:hover,
+            &:active {
+                background-color: darken($primary, 5);
+                @include box-shadow(0, 10px, 70px, rgba(0, 0, 0, .25));
             }
+        }
+    }
+}
+
+/******************************
+*  DASHBOARD
+******************************/
+.dashboard {
+    height: 100%;
+    flex-direction: column;
+    // background-color: $background;
+    margin: 0 75px 60px 75px;
+
+    .row {
+        width: 100%;
+        margin: 0;
+
+        &.hero {
+            margin-top: 6%;
+        }
+
+        &.projects {
+            margin-top: 8%;
+        }
+    }
+
+    .col {
+        flex-grow: unset;
+        padding: 0;
+    }
+
+    h1.equity {
+        font-weight: $font-bold;
+    }
+
+    .settings-btn {
+        @include btn(#fff, 25px, $bg: true);
+        @include box-shadow(0, 4px, 15px, rgba(0, 0, 0, 0.15));
+        width: 200px;
+        height: 52px;
+        line-height: 30px;
+        color: #000;
+
+        span {
+            padding-right: 20px;
+        }
+
+        &:hover,
+        &:active {
+            background-color: $primary;
+            color: #fff;
+            @include box-shadow(0, 8px, 30px, rgba(0, 0, 0, 0.20));
+
+            svg path {
+                fill: #fff;
+            }
+        }
+    }
+
+    .add-btn {
+        @include btn($primary, 25px, $bg: true);
+        @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, 0.25));
+        width: 367px;
+        height: 75px;
+        line-height: 30px;
+        font-size: 44px;
+
+        span {
+            padding-left: 20px;
+        }
+
+        &:hover,
+        &:active {
+            background-color: darken($primary, 5);
+            @include box-shadow(0, 10px, 70px, rgba(0, 0, 0, 0.25));
+        }
+    }
+
+    .project-card {
+        @include border-radius(25px);
+        @include box-shadow(0, 4px, 50px, rgba(0, 0, 0, 0.15));
+        background-color: #fff;
+        width: auto;
+        max-width: 100%;
+        padding: 48px;
+
+        // &:not(:last-child) {
+        //     margin-right: 118px;
+        // }
+
+        .project-title {
+            margin-bottom: 10px;
         }
     }
 }

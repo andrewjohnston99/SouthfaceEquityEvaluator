@@ -33,7 +33,7 @@ body button {
 }
 
 /******************************
-*  Header
+*  HEADER
 ******************************/
 
 nav.navbar {
@@ -94,7 +94,7 @@ nav.navbar .login-btn:hover {
 }
 
 nav.navbar .login-btn:active,
-nav.navbar .login-btn:focuse {
+nav.navbar .login-btn:focus {
   background-color: #022514;
 }
 
@@ -107,7 +107,7 @@ nav.navbar .login-btn:active {
 }
 
 /******************************
-*  Landing
+*  LANDING
 ******************************/
 
 .landing {
@@ -124,7 +124,7 @@ nav.navbar .login-btn:active {
   outline: none;
   border: none;
   cursor: pointer;
-  background: #52B788;
+  background: #0A9D53;
   color: #fff;
   border-radius: 25px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
@@ -142,23 +142,26 @@ nav.navbar .login-btn:active {
 }
 
 .landing .gs-btn:hover {
-  background-color: #52B788;
+  background-color: #0A9D53;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .landing .gs-btn:active,
-.landing .gs-btn:focuse {
-  background-color: #286147;
+.landing .gs-btn:focus {
+  background-color: #022514;
 }
 
 .landing .gs-btn:hover,
 .landing .gs-btn:active {
-  background-color: #0A9D53;
+  background-color: #088546;
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
 }
 
 /******************************
-*  Login
+*  LOGIN
 ******************************/
 
 .login {
@@ -226,7 +229,7 @@ nav.navbar .login-btn:active {
   outline: none;
   border: none;
   cursor: pointer;
-  background: #52B788;
+  background: #0A9D53;
   color: #fff;
   border-radius: 25px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
@@ -246,19 +249,174 @@ nav.navbar .login-btn:active {
 }
 
 .login form .submit-btn:hover {
-  background-color: #52B788;
+  background-color: #0A9D53;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .login form .submit-btn:active,
-.login form .submit-btn:focuse {
-  background-color: #286147;
+.login form .submit-btn:focus {
+  background-color: #022514;
 }
 
 .login form .submit-btn:hover,
 .login form .submit-btn:active {
+  background-color: #088546;
+  box-shadow: 0 10px 70px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
+/******************************
+*  DASHBOARD
+******************************/
+
+.dashboard {
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin: 0 75px 60px 75px;
+}
+
+.dashboard .row {
+  width: 100%;
+  margin: 0;
+}
+
+.dashboard .row.hero {
+  margin-top: 6%;
+}
+
+.dashboard .row.projects {
+  margin-top: 8%;
+}
+
+.dashboard .col {
+  -webkit-box-flex: unset;
+          flex-grow: unset;
+  padding: 0;
+}
+
+.dashboard h1.equity {
+  font-weight: 700;
+}
+
+.dashboard .settings-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  width: 200px;
+  height: 52px;
+  line-height: 30px;
+  color: #000;
+}
+
+.dashboard .settings-btn:hover,
+.dashboard .settings-btn:focus,
+.dashboard .settings-btn:active {
+  outline: none;
+  border: none;
+}
+
+.dashboard .settings-btn:hover {
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.dashboard .settings-btn:active,
+.dashboard .settings-btn:focus {
+  background-color: #bfbfbf;
+}
+
+.dashboard .settings-btn span {
+  padding-right: 20px;
+}
+
+.dashboard .settings-btn:hover,
+.dashboard .settings-btn:active {
   background-color: #0A9D53;
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
+.dashboard .settings-btn:hover svg path,
+.dashboard .settings-btn:active svg path {
+  fill: #fff;
+}
+
+.dashboard .add-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #0A9D53;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  width: 367px;
+  height: 75px;
+  line-height: 30px;
+  font-size: 44px;
+}
+
+.dashboard .add-btn:hover,
+.dashboard .add-btn:focus,
+.dashboard .add-btn:active {
+  outline: none;
+  border: none;
+}
+
+.dashboard .add-btn:hover {
+  background-color: #0A9D53;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.dashboard .add-btn:active,
+.dashboard .add-btn:focus {
+  background-color: #022514;
+}
+
+.dashboard .add-btn span {
+  padding-left: 20px;
+}
+
+.dashboard .add-btn:hover,
+.dashboard .add-btn:active {
+  background-color: #088546;
+  box-shadow: 0 10px 70px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
+.dashboard .project-card {
+  border-radius: 25px;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.15);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  background-color: #fff;
+  width: auto;
+  max-width: 100%;
+  padding: 48px;
+}
+
+.dashboard .project-card .project-title {
+  margin-bottom: 10px;
 }
 
 /*!
