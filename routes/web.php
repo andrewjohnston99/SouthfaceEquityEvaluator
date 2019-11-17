@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('landing');
+    return view('home');
 });
 
 Auth::routes();
@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('landing', 'landing');
+Route::view('settings', 'settings');
