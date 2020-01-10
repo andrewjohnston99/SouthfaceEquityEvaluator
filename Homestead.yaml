@@ -7,10 +7,11 @@ keys:
     - ~/.ssh/id_rsa
 folders:
     -
-        map: 'C:\SouthfaceEquityEvaluator'
+        map: '/Users/kaylee/desktop/SouthfaceEquityEvaluator'
         to: /home/vagrant/code
     -
-        map: 'C:\SouthfaceEquityEvaluator\database\master'
+        map: '/Users/kaylee/desktop/SouthfaceEquityEvaluator/database/master'
+
         to: /homestead-vg/master
 sites:
     -
