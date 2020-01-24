@@ -1,0 +1,31 @@
+ip: 192.168.10.10
+memory: 1024
+cpus: 1
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: 'C:\SouthfaceEquityEvaluator'
+        to: /home/vagrant/code
+    -
+        map: 'C:\SouthfaceEquityEvaluator\database\master'
+
+        to: /homestead-vg/master
+sites:
+    -
+        map: homestead.test
+        to: /home/vagrant/code/public
+databases:
+    - homestead
+features:
+    -
+        mariadb: false
+    -
+        ohmyzsh: false
+    -
+        webdriver: false
+name: southfaceequityevaluator
+hostname: southfaceequityevaluator
+#test
