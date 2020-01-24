@@ -20,5 +20,11 @@
             </li>
         </ul>
     </div>
-    <button id="loginBtn" class="login-btn" type="button" onclick="window.location='{{ route('login') }}'">Login</button>
+
+    @if (Route::current()->getName() == 'login')
+        <button id="registerBtn" class="register-btn" type="button" onclick="window.location='{{ route('register') }}'">Register</button>    
+    @else
+        <button id="loginBtn" class="login-btn" type="button" onclick="window.location='{{ route('login') }}'">Login</button>
+    @endif
+    
 </nav>

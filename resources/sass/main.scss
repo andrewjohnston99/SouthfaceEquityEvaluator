@@ -59,7 +59,7 @@ nav.navbar {
         }
     }
 
-    .login-btn {
+    .login-btn, .register-btn {
         @include btn($primary, 10px, $bg: false);
         width: 140px;
         height: 45px;
@@ -80,16 +80,76 @@ nav.navbar {
     flex-direction: column;
     margin-top: 8%;
 
+    .row {
+        justify-content: center;
+    }
+
     .gs-btn {
         @include btn($primary, 25px, $bg: true);
         @include box-shadow(0, 1px, 6px, rgba(0, 0, 0, 0.25));
-        width: 180px;
-        height: 64px;
+        width: 164px;
+        height: 54px;
 
         &:hover,
         &:active {
             background-color: darken($primary, 5);
-            @include box-shadow(0, 8px, 50px, rgba(0, 0, 0, .25));
+            @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, .25));
+        }
+    }
+}
+
+/******************************
+*  REGISTER
+******************************/
+.register {
+    height: 100%;
+    flex-direction: column;
+    margin-top: 6%;
+
+    .register-header {
+        font-size: $font-md;
+        margin-bottom: 60px;
+    }
+
+    form {
+        a {
+            color: #000;
+            text-decoration: underline;
+            font-size: $font-xs;
+            font-weight: $font-mid;
+
+            &:hover {
+                color: darken($primary, 5);
+            }
+        }
+
+        input.form-control {
+            background-color: #fff;
+            border: 2px solid $light-grey;
+            font-size: $font-sm;
+            width: 400px;
+
+            &::placeholder {
+                color: $light-grey;
+            }
+
+            &#password-confirm {
+                margin-bottom: 35px;
+            }
+        }
+
+        .submit-btn {
+            @include btn($primary, 25px, $bg: true);
+            @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
+            width: 400px;
+            height: 48px;
+            font-size: $font-md;
+
+            &:hover,
+            &:active {
+                background-color: darken($primary, 5);
+                @include box-shadow(0, 10px, 60px, rgba(0, 0, 0, .25));
+            }
         }
     }
 }
@@ -103,7 +163,7 @@ nav.navbar {
     margin-top: 8%;
 
     .row {
-        width: 100%
+        width: 100%;
     }
 
     .login-header {

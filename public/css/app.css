@@ -3,14 +3,14 @@
 html,
 body {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   color: #fff;
   margin-top: 45px;
 }
 
 html h1,
 body h1 {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 400;
 }
 
@@ -53,7 +53,7 @@ nav.navbar .navbar-nav .nav-item:not(:last-child) {
 
 nav.navbar .navbar-nav .nav-item .nav-link {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   color: #000;
   padding: 0;
 }
@@ -67,7 +67,8 @@ nav.navbar .navbar-nav .nav-item .nav-link:hover {
   transition: text-decoration 0.2s ease, -webkit-text-decoration 0.2s ease;
 }
 
-nav.navbar .login-btn {
+nav.navbar .login-btn,
+nav.navbar .register-btn {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
@@ -82,24 +83,32 @@ nav.navbar .login-btn {
 
 nav.navbar .login-btn:hover,
 nav.navbar .login-btn:focus,
-nav.navbar .login-btn:active {
+nav.navbar .login-btn:active,
+nav.navbar .register-btn:hover,
+nav.navbar .register-btn:focus,
+nav.navbar .register-btn:active {
   outline: none;
   border: none;
 }
 
-nav.navbar .login-btn:hover {
+nav.navbar .login-btn:hover,
+nav.navbar .register-btn:hover {
   background-color: #0A9D53;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 nav.navbar .login-btn:active,
-nav.navbar .login-btn:focus {
+nav.navbar .login-btn:focus,
+nav.navbar .register-btn:active,
+nav.navbar .register-btn:focus {
   background-color: #022514;
 }
 
 nav.navbar .login-btn:hover,
-nav.navbar .login-btn:active {
+nav.navbar .login-btn:active,
+nav.navbar .register-btn:hover,
+nav.navbar .register-btn:active {
   color: #fff;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
   -webkit-transition: box-shadow 0.2s;
@@ -118,6 +127,11 @@ nav.navbar .login-btn:active {
   margin-top: 8%;
 }
 
+.landing .row {
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
 .landing .gs-btn {
   box-sizing: border-box;
   text-decoration: none;
@@ -130,8 +144,8 @@ nav.navbar .login-btn:active {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
-  width: 180px;
-  height: 64px;
+  width: 164px;
+  height: 54px;
 }
 
 .landing .gs-btn:hover,
@@ -155,7 +169,109 @@ nav.navbar .login-btn:active {
 .landing .gs-btn:hover,
 .landing .gs-btn:active {
   background-color: #088546;
-  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
+/******************************
+*  REGISTER
+******************************/
+
+.register {
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin-top: 6%;
+}
+
+.register .register-header {
+  font-size: 22px;
+  margin-bottom: 60px;
+}
+
+.register form a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.register form a:hover {
+  color: #088546;
+}
+
+.register form input.form-control {
+  background-color: #fff;
+  border: 2px solid #9E9E9E;
+  font-size: 20px;
+  width: 400px;
+}
+
+.register form input.form-control::-webkit-input-placeholder {
+  color: #9E9E9E;
+}
+
+.register form input.form-control::-moz-placeholder {
+  color: #9E9E9E;
+}
+
+.register form input.form-control:-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.register form input.form-control::-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.register form input.form-control::placeholder {
+  color: #9E9E9E;
+}
+
+.register form input.form-control#password-confirm {
+  margin-bottom: 35px;
+}
+
+.register form .submit-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #0A9D53;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  width: 400px;
+  height: 48px;
+  font-size: 22px;
+}
+
+.register form .submit-btn:hover,
+.register form .submit-btn:focus,
+.register form .submit-btn:active {
+  outline: none;
+  border: none;
+}
+
+.register form .submit-btn:hover {
+  background-color: #0A9D53;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.register form .submit-btn:active,
+.register form .submit-btn:focus {
+  background-color: #022514;
+}
+
+.register form .submit-btn:hover,
+.register form .submit-btn:active {
+  background-color: #088546;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.25);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
 }
@@ -184,7 +300,7 @@ nav.navbar .login-btn:active {
 .login form a {
   color: #000;
   text-decoration: underline;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -195,7 +311,7 @@ nav.navbar .login-btn:active {
 .login form input.form-control {
   background-color: #fff;
   border: 2px solid #9E9E9E;
-  font-size: 16px;
+  font-size: 20px;
   width: 400px;
 }
 
