@@ -148,7 +148,7 @@ nav.navbar {
             &:hover,
             &:active {
                 background-color: darken($primary, 5);
-                @include box-shadow(0, 10px, 60px, rgba(0, 0, 0, .25));
+                @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, .25));
             }
         }
     }
@@ -209,7 +209,7 @@ nav.navbar {
             &:hover,
             &:active {
                 background-color: darken($primary, 5);
-                @include box-shadow(0, 10px, 70px, rgba(0, 0, 0, .25));
+                @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, .25));
             }
         }
     }
@@ -229,7 +229,7 @@ nav.navbar {
         margin: 0;
 
         &.hero {
-            margin-top: 6%;
+            margin-top: 3%;
         }
 
         &.projects {
@@ -249,7 +249,7 @@ nav.navbar {
     .settings-btn {
         @include btn(#fff, 25px, $bg: true);
         @include box-shadow(0, 4px, 15px, rgba(0, 0, 0, 0.15));
-        width: 200px;
+        width: 175px;
         height: 52px;
         line-height: 30px;
         color: #000;
@@ -273,10 +273,10 @@ nav.navbar {
     .add-btn {
         @include btn($primary, 25px, $bg: true);
         @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, 0.25));
-        width: 367px;
-        height: 75px;
+        width: 300px;
+        height: 60px;
         line-height: 30px;
-        font-size: 44px;
+        font-size: $font-xl;
 
         span {
             padding-left: 20px;
@@ -285,24 +285,29 @@ nav.navbar {
         &:hover,
         &:active {
             background-color: darken($primary, 5);
-            @include box-shadow(0, 10px, 70px, rgba(0, 0, 0, 0.25));
+            @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
         }
     }
 
     .project-card {
-        @include border-radius(25px);
+        @include btn(#fff, 25px, $bg: true);
         @include box-shadow(0, 4px, 50px, rgba(0, 0, 0, 0.15));
-        background-color: #fff;
+        color: #000;
         width: auto;
         max-width: 100%;
-        padding: 48px;
-
-        // &:not(:last-child) {
-        //     margin-right: 118px;
-        // }
+        padding: 36px;
 
         .project-title {
             margin-bottom: 10px;
         }
     }
+}
+
+/******************************
+*  PROJECT VIEW
+******************************/
+.project-header {
+    height: 20%;
+    flex-direction: column;
+    background-color: $dark-grey;
 }

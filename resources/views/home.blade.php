@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="row projects d-flex justify-content-between">
-            <div class="container project-card">
+            <button class="container project-card">
                 <div class="row project-title">
                     <h3>Community Name</h3>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="row">
                     <p>Kickoff Date</p>
                 </div>
-            </div>
+            </button>
             <div class="container project-card">
                 <div class="row project-title">
                     <h3>Community Name</h3>
