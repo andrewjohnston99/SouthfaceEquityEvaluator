@@ -43,6 +43,18 @@ If you make changes to the YAML file, the vagrant VM will need to be reconfigure
 ```
 vagrant reload --provision
 ```
+
+Fixing cross-env issue
+```
+npm install cross-env -g
+npm install --save
+```
+
+Watch for Asset Changes (Sass compilation)
+```
+npm run watch-poll
+```
+
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
