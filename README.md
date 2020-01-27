@@ -26,6 +26,17 @@ To shutdown the VM, enter:
 vagrant halt
 ```
 
+## VM Database Management
+The VM comes default with a MySQL Database named "Homestead". To pull the latest database updates, run the following command from the root of the project:
+```
+vagrant ssh
+```
+Then enter the following commands inside the ssh session:
+```
+vagrant@southfaceequityevaluator:~$ cd code
+vagrant@southfaceequityevaluator:~/code$ php artisan migrate
+```
+
 ## Configuring your Homestead YAML
 
 The VM for the Southface Equity Evaluator is based on Laravel Homestead. File paths and other assignments are made in the Homestead YAML file. By default the project is setup to run on Windows when the root is placed inside the C:\ directory, ex. "C:\SouthfaceEquityEvaluator"
