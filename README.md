@@ -37,7 +37,7 @@ vagrant@southfaceequityevaluator:~$ cd code
 vagrant@southfaceequityevaluator:~/code$ php artisan migrate
 ```
 
-## Configuring your Homestead YAML
+## Configuring your Homestead YAML (first time setup)
 
 The VM for the Southface Equity Evaluator is based on Laravel Homestead. File paths and other assignments are made in the Homestead YAML file. By default the project is setup to run on Windows when the root is placed inside the C:\ directory, ex. "C:\SouthfaceEquityEvaluator"
 
@@ -55,13 +55,15 @@ If you make changes to the YAML file, the vagrant VM will need to be reconfigure
 vagrant reload --provision
 ```
 
-Fixing cross-env issue
+## Project Troubleshooting Commands
+
+Fix cross-env issue:
 ```
 npm install cross-env -g
 npm install --save
 ```
 
-Watch for Asset Changes (Sass compilation)
+Watch for Asset Changes (Sass compilation):
 ```
 npm run watch-poll
 ```
