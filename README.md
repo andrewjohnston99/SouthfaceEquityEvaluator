@@ -55,6 +55,16 @@ Watch for Asset Changes (Sass compilation)
 npm run watch-poll
 ```
 
+Login and Register Controller Location
+```
+app\Http\Controllers\Auth
+```
+
+Unstage File
+```
+git update-index --assume-unchanged <file>
+```
+
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).

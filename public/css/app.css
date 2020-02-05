@@ -560,16 +560,154 @@ nav.navbar .register-btn:active {
   margin-bottom: 10px;
 }
 
+.dashboard .project-card:hover {
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.3);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
 /******************************
 *  PROJECT VIEW
 ******************************/
 
 .project-header {
-  height: 20%;
+  height: 130px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
   background-color: #2D2A32;
+}
+
+.project-header .row {
+  height: 50%;
+  width: 100%;
+  margin: 6px 35px 0 35px;
+}
+
+.project-header .row .btn-col:last-child {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.project-header .row.nav-row {
+  align-content: center;
+  width: 80%;
+}
+
+.project-header .row.nav-row .col {
+  text-align: center;
+}
+
+.project-header .row.nav-row .col a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.project-header .row.nav-row .col a:hover,
+.project-header .row.nav-row .col a:focus,
+.project-header .row.nav-row .col a:active {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 8px;
+}
+
+.project-header .back-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.project-header .back-btn:hover,
+.project-header .back-btn:focus,
+.project-header .back-btn:active {
+  color: #0A9D53;
+}
+
+.project-header .back-btn:hover svg,
+.project-header .back-btn:focus svg,
+.project-header .back-btn:active svg {
+  fill: #0A9D53;
+}
+
+.project-header .back-btn span {
+  padding-left: 8px;
+}
+
+.project-header .back-btn svg {
+  fill: #fff;
+  vertical-align: middle;
+  margin-top: 3px;
+}
+
+.project-header .share-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.project-header .share-btn:hover,
+.project-header .share-btn:focus,
+.project-header .share-btn:active {
+  color: #0A9D53;
+}
+
+.project-header .share-btn:hover svg,
+.project-header .share-btn:focus svg,
+.project-header .share-btn:active svg {
+  fill: #0A9D53;
+}
+
+.project-header .save-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #0A9D53;
+  color: #fff;
+  border-radius: 25px;
+  width: 150px;
+  height: 40px;
+  line-height: 20px;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.project-header .save-btn:hover,
+.project-header .save-btn:focus,
+.project-header .save-btn:active {
+  outline: none;
+  border: none;
+}
+
+.project-header .save-btn:hover {
+  background-color: #0A9D53;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.project-header .save-btn:active,
+.project-header .save-btn:focus {
+  background-color: #022514;
+}
+
+.project-header .save-btn:hover,
+.project-header .save-btn:active {
+  background-color: #088546;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
 }
 
 /*!

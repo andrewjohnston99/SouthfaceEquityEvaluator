@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="row projects d-flex justify-content-between">
-            <button class="container project-card">
+            <button class="container project-card" onclick="window.location='{{ url('project') }}'" type="button">
                 <div class="row project-title">
                     <h3>Community Name</h3>
                 </div>
@@ -57,7 +57,7 @@
                     <p>Kickoff Date</p>
                 </div>
             </button>
-            <div class="container project-card">
+            <button class="container project-card" onclick="window.location='{{ url('project') }}'" type="button">
                 <div class="row project-title">
                     <h3>Community Name</h3>
                 </div>
@@ -73,7 +73,7 @@
                 <div class="row">
                     <p>Kickoff Date</p>
                 </div>
-            </div>
+            </button>
         </div>
     </div>
 
