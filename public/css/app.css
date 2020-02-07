@@ -11693,7 +11693,6 @@ nav.navbar .register-btn:active {
 
 .project-header .row.nav-row {
   align-content: center;
-  width: 80%;
 }
 
 .project-header .row.nav-row .col {
@@ -11812,7 +11811,7 @@ nav.navbar .register-btn:active {
 
 .table-responsive {
   width: unset;
-  margin: 40px;
+  margin: 60px;
 }
 
 .table-responsive table {

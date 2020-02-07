@@ -21,7 +21,16 @@
             <a href="#genEquity">General Equity</a>
         </div>
         <div class="col">
+            <a href="#services">Services/Employment</a>
+        </div>
+        <div class="col">
             <a href="#population">Population</a>
+        </div>
+        <div class="col">
+            <a href="#balCommunity">Community</a>
+        </div>
+        <div class="col">
+            <a href="#housing">Housing</a>
         </div>
         <div class="col">
             <a href="#physForm">Physical Form</a>
