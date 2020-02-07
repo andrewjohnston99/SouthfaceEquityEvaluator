@@ -380,3 +380,12 @@ nav.navbar {
         }
     }
 }
+
+.table-responsive {
+    width: unset;
+    margin: 40px;
+
+    table {
+        width: 100%;
+    }
+}

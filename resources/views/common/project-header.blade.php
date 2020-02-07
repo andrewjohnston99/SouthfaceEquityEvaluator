@@ -15,19 +15,19 @@
     </div>
     <div class="row nav-row">
         <div class="col">
-            <a href="">Instructions</a>
+            <a href="#instructions">Instructions</a>
         </div>
         <div class="col">
-            <a href="">General Equity</a>
+            <a href="#genEquity">General Equity</a>
         </div>
         <div class="col">
-            <a href="">Population</a>
+            <a href="#population">Population</a>
         </div>
         <div class="col">
-            <a href="">Physical Form</a>
+            <a href="#physForm">Physical Form</a>
         </div>
         <div class="col">
-            <a href="">Affordability</a>
+            <a href="#affordability">Affordability</a>
         </div>
     </div>
 </div>
