@@ -17,4 +17,13 @@
     @include('tables.gen-equity')
     
     @include('tables.services')
+
+    @include('tables.population')
+
+    @include('tables.community')
+
+    @include('tables.housing')
+
+    @include('tables.physical')
+    
 @endsection

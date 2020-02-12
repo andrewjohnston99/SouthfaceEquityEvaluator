@@ -27,16 +27,16 @@
             <a href="#population">Population</a>
         </div>
         <div class="col">
-            <a href="#balCommunity">Community</a>
+            <a href="#community">Community</a>
         </div>
         <div class="col">
             <a href="#housing">Housing</a>
         </div>
         <div class="col">
-            <a href="#physForm">Physical Form</a>
+            <a href="#physical">Physical Form</a>
         </div>
         <div class="col">
-            <a href="#affordability">Affordability</a>
+            <a href="{{ url('affordability') }}">Affordability</a>
         </div>
     </div>
 </div>

@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('home', 'home');
 Route::view('settings', 'settings');
 Route::view('project', 'project');
+Route::view('affordability', 'affordability');
