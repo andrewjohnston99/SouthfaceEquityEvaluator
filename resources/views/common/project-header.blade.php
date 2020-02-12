@@ -15,9 +15,15 @@
     </div>
     <div class="row nav-row">
         <div class="col">
+            <a href="">Cover Sheet</a>
+        </div>
+        <div class="col">
             <a href="#instructions">Instructions</a>
         </div>
         <div class="col">
+            <a href="#genEquity">Project Evaluation Scorecard</a>
+        </div>
+        <!-- <div class="col">
             <a href="#genEquity">General Equity</a>
         </div>
         <div class="col">
@@ -34,6 +40,9 @@
         </div>
         <div class="col">
             <a href="#physical">Physical Form</a>
+        </div> -->
+        <div class="col">
+            <a href="">Contacts & Info</a>
         </div>
         <div class="col">
             <a href="{{ url('affordability') }}">Affordability</a>
