@@ -11,20 +11,9 @@
             </tr>
         </thead>
         <tbody>
-            <thead>
-            <tr class="text-center">
-                <td class="align-middle font-weight-bold" colspan="2">SERVICES AND EMPLOYMENT</td>
-                <td>Points</td>
-                <td>Planned</td>
-                <td>Achieved</td>
-                <td>Confirmation Documents</td>
-                <td>Notes: DATE</td>
-            </tr>
             <tr class="table-warning">
                 <th scope="col" colspan="7">REQUIRED</th>
             </tr>
-        </thead>
-        <tbody>
             <tr class="text-center">
                 <th scope="row">PPE 0.1</th>
                 <td class="text-left">No Loss of Affordability</td>
@@ -39,7 +28,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row" rowspan="6">PPE 1.0</th> 
-                <td>Proportion of Affordability <a class="font-weight-bold" href="">(see Affordability Worksheet)</a></td>
+                <td>Proportion of Affordability <a class="font-weight-bold" href="{{ url('affordability') }}">(see Affordability Worksheet)</a></td>
                 <td class="text-center" colspan="3">Select All That Apply:</td>
                 <td></td>
                 <td></td>
@@ -80,7 +69,7 @@
                 <th scope="row" rowspan="6">PPE 1.1</th>
             </tr>
             <tr class="text-center">
-                <td class="text-left">Mixed Use - Percentage of Lot Area/td>
+                <td class="text-left">Mixed Use - Percentage of Lot Area</td>
                 <td class="text-center" colspan="3">Select One:</td>
                 <td></td>
                 <td></td>
