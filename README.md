@@ -5,6 +5,8 @@ Southface Equity Evaluator, Georgia Tech CS Junior Design - Team 9327
 
 The Southface Equity Evaluator utilizes a bundled vagrant virtual machine for development and deployment. To utilize this VM you will need 2 pieces of software: [Vagrant](https://releases.hashicorp.com/vagrant/2.2.6/) (tested on version 2.2.6) & [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (tested on version 6.0.14 r133895 (Qt5.6.2)).
 
+**NOTE:** VirtualBox must be installed before Vagrant.
+ 
 To start the VM and run the project from your local machine, open terminal and navigate to the project root, then enter:
 ```
 vagrant up
