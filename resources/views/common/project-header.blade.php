@@ -21,7 +21,7 @@
             <a href="#instructions">Instructions</a>
         </div>
         <div class="col">
-            <a href="#genEquity">Project Evaluation Scorecard</a>
+            <a href="{{ url('project') }}">Project Evaluation Scorecard</a>
         </div>
         <!-- <div class="col">
             <a href="#genEquity">General Equity</a>

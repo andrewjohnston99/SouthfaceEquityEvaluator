@@ -16,7 +16,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row" rowspan="5">HD 1.0</th> 
-                <td>Housing</td>
+                <td class="text-left">Housing</td>
                 <td class="text-center" colspan="3">Select All That Apply:</td>
                 <td></td>
                 <td></td>
@@ -55,7 +55,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">HD 1.1</th> 
-                <td>LEFT INTENTIONALLY BLANK</td>
+                <td class="text-left">LEFT INTENTIONALLY BLANK</td>
                 <td class="text-center" colspan="1">TBD</td>
                 <td></td>
                 <td></td>
@@ -64,7 +64,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">HD 1.2</th> 
-                <td>LEFT INTENTIONALLY BLANK</td>
+                <td class="text-left">LEFT INTENTIONALLY BLANK</td>
                 <td class="text-center" colspan="1">TBD</td>
                 <td></td>
                 <td></td>

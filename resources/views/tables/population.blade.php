@@ -28,7 +28,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row" rowspan="5">PPE 1.0</th> 
-                <td>Proportion of Affordability <a class="font-weight-bold" href="{{ url('affordability') }}">(see Affordability Worksheet)</a></td>
+                <td class="text-left">Proportion of Affordability <a class="font-weight-bold" href="{{ url('affordability') }}">(see Affordability Worksheet)</a></td>
                 <td class="text-center" colspan="3">Select All That Apply:</td>
                 <td></td>
                 <td></td>
@@ -108,7 +108,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">PPE 1.2</th> 
-                <td>LEFT INTENTIONALLY BLANK</td>
+                <td class="text-left">LEFT INTENTIONALLY BLANK</td>
                 <td class="text-center" colspan="1">TBD</td>
                 <td></td>
                 <td></td>
@@ -117,7 +117,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">PPE 1.3</th> 
-                <td>LEFT INTENTIONALLY BLANK</td>
+                <td class="text-left">LEFT INTENTIONALLY BLANK</td>
                 <td class="text-center" colspan="1">TBD</td>
                 <td></td>
                 <td></td>

@@ -69,7 +69,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row" rowspan="21">SE 1.0</th> 
-                <td>Services</td>
+                <td class="text-left">Services</td>
                 <td class="text-center" colspan="3">Select All:</td>
                 <td></td>
                 <td></td>

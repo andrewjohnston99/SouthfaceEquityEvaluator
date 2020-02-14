@@ -11492,7 +11492,6 @@ nav.navbar .register-btn:active {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
-  margin: 0 75px 60px 75px;
 }
 
 .dashboard .row {
