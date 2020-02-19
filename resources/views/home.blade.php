@@ -13,7 +13,7 @@
 @section('content')
     <div class="dashboard container">
         <div class="row d-flex justify-content-between align-items-center header">
-            <a href="{{ url('landing') }}">
+            <a href="{{ url('/') }}">
                 <img src="{{ URL::asset('images/southface-logo-sm.png') }}" />
             </a>
             <button id="settingsBtn" class="settings-btn d-flex justify-content-center align-items-center" onclick="window.location='{{ url('settings') }}'" type="button">
