@@ -10,7 +10,7 @@
                 <td>Notes: DATE</td>
             </tr>
             <tr class="table-warning">
-                <th scope="col" colspan="7">REQUIRED</th>
+                <th class="text-center" scope="col" colspan="7">REQUIRED</th>
             </tr>
         </thead>
         <tbody>

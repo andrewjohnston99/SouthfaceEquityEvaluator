@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr class="table-info">
-                <td class="font-style-bold" scope="col" colspan="7">OPTIONAL</td>
+                <th class="text-center" scope="col" colspan="7">OPTIONAL</th>
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.0</th>

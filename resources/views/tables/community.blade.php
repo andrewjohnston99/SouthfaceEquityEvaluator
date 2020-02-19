@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr class="table-warning">
-                <th scope="col" colspan="7">REQUIRED</th>
+                <th class="text-center" scope="col" colspan="7">REQUIRED</th>
             </tr>
             <tr class="text-center">
                 <th scope="row">BC 0.1</th>
