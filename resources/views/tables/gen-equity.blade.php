@@ -118,6 +118,8 @@
             </tr>
             <tr class="table-secondary text-center">
                 <td class="text-left" colspan="3">GENERAL EQUITY TOTAL</td>
+            <tr class="table-secondary">
+                <td colspan="3">GENERAL EQUITY TOTAL</td>
                 <td>{{ $equity_planned_total }}</td>
                 <td>{{ $equity_actual_total }}</td>
                 <td colspan="2"></td>
