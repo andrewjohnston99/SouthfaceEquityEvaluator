@@ -40,29 +40,29 @@ Please make the following edits to the specified files. You don't need to start 
 ---
 #### Table Head Classes
 ```html
-<th class="points">Points</th>
-<th class="planned">Planned</th>
-<th class="achieved">Achieved</th>
-<th class="confirmation">Confirmation Documents</th>
-<th class="notes">Notes: DATE</th>
+<th class="align-middle points">Points</th>
+<th class="align-middle planned">Planned</th>
+<th class="align-middle achieved">Achieved</th>
+<th class="align-middle confirmation">Confirmation Documents</th>
+<th class="align-middle notes">Notes: DATE</th>
 ```
 #### Table Head Classes - Physical
 ```html
 <th class="text-center align-middle font-weight-bold title" colspan="2">PHYSICAL FORM</th>
-<th class="points">Points</th>
-<th class="planned">Planned</th>
-<th class="achieved">Achieved</th>
-<th class="confirmation">Confirmation Documents</th>
-<th class="notes">Notes: DATE</th>
+<th class="align-middle points">Points</th>
+<th class="align-middle planned">Planned</th>
+<th class="align-middle achieved">Achieved</th>
+<th class="align-middle confirmation">Confirmation Documents</th>
+<th class="align-middle notes">Notes: DATE</th>
 ```
 #### Table Head Classes - Services
 ```html
 <th class="text-center align-middle font-weight-bold title" colspan="2">SERVICES AND EMPLOYMENT</th>
-<th class="points">Points</th>
-<th class="planned">Planned</th>
-<th class="achieved">Achieved</th>
-<th class="confirmation">Confirmation Documents</th>
-<th class="notes">Notes: DATE</th>
+<th class="align-middle points">Points</th>
+<th class="align-middle planned">Planned</th>
+<th class="align-middle achieved">Achieved</th>
+<th class="align-middle confirmation">Confirmation Documents</th>
+<th class="align-middle notes">Notes: DATE</th>
 ```
 #### Textarea Element
 ```html
