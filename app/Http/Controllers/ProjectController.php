@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
@@ -16,10 +18,21 @@ class ProjectController extends Controller
     */
 
     /**
+     * Show the project page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index() {
+        return view('project');
+    }
+
+    /**
      * Create new project instance
      *
-     * @param array $data
-     * @return \App\Project
+     * @param Request $request
+     * @return Response
      */
-
+    public function create(Request $request) {
+        /*TODO: create project*/
+    }
 }

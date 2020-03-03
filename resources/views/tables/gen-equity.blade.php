@@ -19,10 +19,10 @@
                 <td class="text-left">Specialized Housing (Senior, Assisted Living, Transitional)</td>
                 <td>20</td>
                 <td id="e10" class="editable">
-                    <input id="e10-input" type="checkbox" />&nbsp;
+                    <input id="e10-input" class="planned" type="checkbox" data-value="20" />&nbsp;
                 </td>
                 <td id="f10" class="editable">
-                    <input id="f10-input" type="checkbox" />&nbsp;
+                    <input id="f10-input" type="checkbox" data-value="20" />&nbsp;
                 </td>
                 <td id="g10" class="editable">
                     <input id="g10-input" type="text" />&nbsp;
@@ -36,10 +36,10 @@
                 <td class="text-left">Lifecycle Housing (raising children through aging in place)</td>
                 <td>15</td>
                 <td id="e11" class="editable">
-                    <input id="e11-input" type="checkbox" />&nbsp;
+                    <input id="e11-input" class="planned" type="checkbox" data-value="15" />&nbsp;
                 </td>
                 <td id="f11" class="editable">
-                    <input id="f11-input" type="checkbox" />&nbsp;
+                    <input id="f11-input" type="checkbox" data-value="15" />&nbsp;
                 </td>
                 <td id="g11" class="editable">
                     <input id="g11-input" type="text" />&nbsp;
@@ -53,10 +53,10 @@
                 <td class="text-left">Interim uses</td>
                 <td>10</td>
                 <td id="e12" class="editable">
-                    <input id="e12-input" type="checkbox" />&nbsp;
+                    <input id="e12-input" class="planned" type="checkbox" data-value="10" />&nbsp;
                 </td>
                 <td id="f12" class="editable">
-                    <input id="f12-input" type="checkbox" />&nbsp;
+                    <input id="f12-input" type="checkbox" data-value="10" />&nbsp;
                 </td>
                 <td id="g12" class="editable">
                     <input id="g12-input" type="text" />&nbsp;
@@ -70,10 +70,10 @@
                 <td class="text-left">Small scale development that fosters hyper local economic development.</td>
                 <td>15</td>
                 <td id="e13" class="editable">
-                    <input id="e13-input" type="checkbox" />&nbsp;
+                    <input id="e13-input" class="planned" type="checkbox" data-value="15" />&nbsp;
                 </td>
                 <td id="f13" class="editable">
-                    <input id="f13-input" type="checkbox" />&nbsp;
+                    <input id="f13-input" type="checkbox" data-value="15" />&nbsp;
                 </td>
                 <td id="g13" class="editable">
                     <input id="g13-input" type="text" />&nbsp;
@@ -87,10 +87,10 @@
                 <td class="text-left">Permanent Housing</td>
                 <td>20</td>
                 <td id="e14" class="editable">
-                    <input id="e14-input" type="checkbox" />&nbsp;
+                    <input id="e14-input" class="planned" type="checkbox" data-value="20" />&nbsp;
                 </td>
                 <td id="f14" class="editable">
-                    <input id="f14-input" type="checkbox" />&nbsp;
+                    <input id="f14-input" type="checkbox" data-value="20" />&nbsp;
                 </td>
                 <td id="g14" class="editable">
                     <input id="g14-input" type="text" />&nbsp;
@@ -104,10 +104,10 @@
                 <td class="text-left">Car sharing program (e.g. ZipCar)</td>
                 <td>5+</td>
                 <td id="e15" class="editable">
-                    <input id="e15-input" type="checkbox" />&nbsp;
+                    <input id="e15-input" class="planned" type="checkbox" data-value="5" />&nbsp;
                 </td>
                 <td id="f15" class="editable">
-                    <input id="f15-input" type="checkbox" />&nbsp;
+                    <input id="f15-input" type="checkbox" data-value="5" />&nbsp;
                 </td>
                 <td id="g15" class="editable">
                     <input id="g15-input" type="text" />&nbsp;
@@ -117,11 +117,9 @@
                 </td>
             </tr>
             <tr class="table-secondary text-center">
-                <td class="text-left" colspan="3">GENERAL EQUITY TOTAL</td>
-            <tr class="table-secondary">
                 <td colspan="3">GENERAL EQUITY TOTAL</td>
-                <td>{{ $equity_planned_total }}</td>
-                <td>{{ $equity_actual_total }}</td>
+                <td id="equity_planned">0</td>
+                <td id="equity_actual">0</td>
                 <td colspan="2"></td>
             </tr>
         </tbody>
