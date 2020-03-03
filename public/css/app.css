@@ -12785,6 +12785,17 @@ nav.navbar .register-btn:active {
   width: 100%;
 }
 
+.table-responsive table th.points,
+.table-responsive table th.planned,
+.table-responsive table th.achieved {
+  width: 5%;
+}
+
+.table-responsive table th.confirmation,
+.table-responsive table th.notes {
+  width: 15%;
+}
+
 /******************************
 *  Pretty Checkbox
 ******************************/

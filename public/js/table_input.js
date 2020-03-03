@@ -24,7 +24,7 @@ $(document).ready(function() {
             var temp_int = parseInt($(this).attr("data-value"));
 
             // Set new cell values
-            if ($(this).hasClass("planned")) {
+            if ($(this).hasClass("planned-input")) {
                 equity_planned_total += temp_int;
                 $("#equity_planned").html(equity_planned_total);
             } else {
@@ -53,7 +53,7 @@ $(document).ready(function() {
         } else {
             var temp_int = parseInt($(this).attr("data-value"));
 
-            if ($(this).hasClass("planned")) {
+            if ($(this).hasClass("planned-input")) {
                 if (equity_planned_total - temp_int < 0) {
                     equity_planned_total = 0;
                     $("#equity_planned").html(equity_planned_total);

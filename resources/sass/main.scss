@@ -385,6 +385,16 @@ nav.navbar {
 
     table {
         width: 100%;
+
+        th {
+            &.points, &.planned, &.achieved {
+                width: 5%;
+            }
+
+            &.confirmation, &.notes {
+                width: 15%;
+            }
+        }
     }
 }
 

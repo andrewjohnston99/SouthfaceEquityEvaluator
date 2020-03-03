@@ -2,12 +2,12 @@
     <table id="equityTable" class="table table-bordered">
         <thead>
             <tr class="text-center">
-                <th class="text-center align-middle font-weight-bold" colspan="2">GENERAL EQUITY</th>
-                <th>Points</th>
-                <th>Planned</th>
-                <th>Achieved</th>
-                <th>Confirmation Documents</th>
-                <th>Notes: DATE</th>
+                <th class="text-center align-middle font-weight-bold title" colspan="2">GENERAL EQUITY</th>
+                <th class="points">Points</th>
+                <th class="planned">Planned</th>
+                <th class="achieved">Achieved</th>
+                <th class="confirmation">Confirmation Documents</th>
+                <th class="notes">Notes: DATE</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +20,7 @@
                 <td class="align-middle">20</td>
                 <td id="e10" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="e10-input" class="planned" type="checkbox" data-value="20" />
+                        <input id="e10-input" class="planned-input" type="checkbox" data-value="20" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
@@ -35,10 +35,11 @@
                     </div>
                 </td>
                 <td id="g10" class="align-middle">
-                    <input id="g10-input" type="text" />
+                    {{-- <input id="g10-input" type="text" /> --}}
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h10" class="align-middle">
-                    <input id="h10-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -47,7 +48,7 @@
                 <td class="align-middle">15</td>
                 <td id="e11" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="e11-input" class="planned" type="checkbox" data-value="15" />
+                        <input id="e11-input" class="planned-input" type="checkbox" data-value="15" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
@@ -62,10 +63,10 @@
                     </div>
                 </td>
                 <td id="g11" class="align-middle">
-                    <input id="g11-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h11" class="align-middle">
-                    <input id="h11-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -74,7 +75,7 @@
                 <td class="align-middle">10</td>
                 <td id="e12" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="e12-input" class="planned" type="checkbox" data-value="10" />
+                        <input id="e12-input" class="planned-input" type="checkbox" data-value="10" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
@@ -89,10 +90,10 @@
                     </div>
                 </td>
                 <td id="g12" class="align-middle">
-                    <input id="g12-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h12" class="align-middle">
-                    <input id="h12-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -101,7 +102,7 @@
                 <td class="align-middle">15</td>
                 <td id="e13" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="e13-input" class="planned" type="checkbox" data-value="15" />
+                        <input id="e13-input" class="planned-input" type="checkbox" data-value="15" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
@@ -116,10 +117,10 @@
                     </div>
                 </td>
                 <td id="g13" class="align-middle">
-                    <input id="g13-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h13" class="align-middle">
-                    <input id="h13-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -128,7 +129,7 @@
                 <td class="align-middle">20</td>
                 <td id="e14" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="e14-input" class="planned" type="checkbox" data-value="20" />
+                        <input id="e14-input" class="planned-input" type="checkbox" data-value="20" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
@@ -143,10 +144,10 @@
                     </div>
                 </td>
                 <td id="g14" class="align-middle">
-                    <input id="g14-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h14" class="align-middle">
-                    <input id="h14-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -155,7 +156,7 @@
                 <td class="align-middle">5+</td>
                 <td id="e15" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="e15-input" class="planned" type="checkbox" data-value="5" />
+                        <input id="e15-input" class="planned-input" type="checkbox" data-value="5" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
@@ -170,10 +171,10 @@
                     </div>
                 </td>
                 <td id="g15" class="align-middle">
-                    <input id="g15-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h15" class="align-middle">
-                    <input id="h15-input" type="text" />
+                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="table-secondary text-center">
