@@ -10,7 +10,6 @@ Please make the following edits to the specified files. You don't need to start 
    * Copy the `<textarea>` element below to the `<td>` cells in the Confirmation Documents and Notes columns
    * Add the `text-center` class to the last `<tr>` element in the file
    * Inside the last `<tr>` element, there are two `<td>` cells with 0 as the value. Add `id="comm_planned"` to the first `<td>` and `id="comm_actual"` to the second one
-<br>
 2. `/resources/views/tables/housing.blade.php`
    * Replace the `<th>` Points, Planned, Achieved, Confirmation Documents, and Notes cells with the ones listed below in the *Table Head Classes* section
    * Add the `align-middle` class to all `<td>` elements in the Points, Planned, Achieved, Confirmation Documents, and Notes columns
@@ -18,21 +17,18 @@ Please make the following edits to the specified files. You don't need to start 
    * Copy the checkbox element below to the `<td>` cells in the Planned and Achieved columns
    * Add the `text-center` class to the last `<tr>` element in the file
    * Inside the last `<tr>` element, there are two `<td>` cells with 0 as the value. Add `id="house_planned"` to the first `<td>` and `id="house_actual"` to the second one
-<br>
 3. `/resources/views/tables/physical.blade.php`
    * Replace all the `<td>` cells at the top of the document with the ones listed below in the *Table Head Classes - Physical* section
    * Add the `align-middle` class to all `<td>` elements in the Points, Planned, Achieved, Confirmation Documents, and Notes columns
    * Copy the `<textarea>` element below to the `<td>` cells in the Confirmation Documents and Notes columns
    * Add the `text-center` class to the last `<tr>` element in the file
    * Inside the last `<tr>` element, there are two `<td>` cells with 0 as the value. Add `id="phys_planned"` to the first `<td>` and `id="phys_actual"` to the second one
-<br>
 4. `/resources/views/tables/population.blade.php`
    * Replace the `<th>` Points, Planned, Achieved, Confirmation Documents, and Notes cells with the ones listed below in the *Table Head Classes* section
    * Add the `align-middle` class to all `<td>` elements in the Points, Planned, Achieved, Confirmation Documents, and Notes columns
    * Copy the `<textarea>` element below to the `<td>` cells in the Confirmation Documents and Notes columns
    * Add the `text-center` class to the last `<tr>` element in the file
    * Inside the last `<tr>` element, there are two `<td>` cells with 0 as the value. Add `id="pop_planned"` to the first `<td>` and `id="pop_actual"` to the second one
-<br>
 5. `/resources/views/tables/services.blade.php`
    * Replace all the `<td>` cells at the top of the document with the ones listed below in the *Table Head Classes - Services* section
    * Add the `align-middle` class to all `<td>` elements in the Points, Planned, Achieved, Confirmation Documents, and Notes columns
