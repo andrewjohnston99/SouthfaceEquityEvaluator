@@ -431,8 +431,8 @@
             </tr>
             <tr class="table-secondary text-center">
                 <td colspan="3">TOTAL POINTS</td>
-                <td id="phys_planned">0</td>
-                <td id="phys_actual">0</td>
+                <td>0</td>
+                <td>0</td>
                 <td colspan="2"></td>
             </tr>
         </tbody>
