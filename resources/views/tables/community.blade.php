@@ -16,26 +16,30 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">BC 0.1</th>
-                <td class="text-left">Transitioning Parcels</td> <!-- Do these need align-middle? Do I need to add textarea to the last two?  -->
+                <td class="text-left">Transitioning Parcels</td>
                 <td class="align-middle">-</td>
                 <td class="align-middle">-</td>
                 <td class="align-middle"></td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <th class="table-info" colspan="7">OPTIONAL</th>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="5">BC 1.0</th>                             <!-- Do I need align-middle or textarea here? -->
+                <th scope="row" rowspan="5">BC 1.0</th>
                 <td class="text-left">Housing</td>
-                <td class="text-center" colspan="3">Select All That Apply:</td>
+                <td class="align-middle" colspan="3">Select All That Apply:</td>
                 <td class="align-middle"></td>
                 <td class="align-middle"></td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">1</span>ELI ≤ 30% AMI 19% of Units</td>
-                <td class="align-middle">0+</td>                    <!-- Should this have text-center (what it had before), align-middle, or both? -->
+                <td class="align-middle">0+</td>
                 <td class="align-middle"></td>
                 <td class="align-middle"></td>
                 <td class="align-middle">
@@ -86,7 +90,7 @@
             </tr>
             <tr class="text-center">
                 <td class="text-left">Mixed Use - Percentage of Lot Area</td>
-                <td class="text-center" colspan="3">Select One:</td>                         <!-- align-middle or text-center? -->
+                <td class="align-middle" colspan="3">Select One:</td>
                 <td class="align-middle"></td>
                 <td class="align-middle"></td>
             </tr>
