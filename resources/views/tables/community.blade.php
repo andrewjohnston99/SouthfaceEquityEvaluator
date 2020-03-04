@@ -177,4 +177,3 @@
         </tbody>
     </table>
 </div>
-
