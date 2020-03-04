@@ -1,3 +1,4 @@
+/*TODO: check spacing on 1.0 elements*/
 <div id="community" class="table-responsive">
     <table id="commTable" class="table table-bordered">
         <thead>
@@ -27,7 +28,7 @@
                 <th class="table-info" colspan="7">OPTIONAL</th>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="5">BC 1.0</th> 
+                <th scope="row" rowspan="5">BC 1.0</th>
                 <td class="text-left">Housing</td>
                 <td class="text-center" colspan="3">Select All That Apply:</td>
                 <td></td>
@@ -107,7 +108,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row">BC 1.2</th> 
+                <th scope="row">BC 1.2</th>
                 <td class="text-left">LEFT INTENTIONALLY BLANK</td>
                 <td class="text-center" colspan="1">TBD</td>
                 <td></td>
@@ -116,7 +117,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row">BC 1.3</th> 
+                <th scope="row">BC 1.3</th>
                 <td class="text-left">LEFT INTENTIONALLY BLANK</td>
                 <td class="text-center" colspan="1">TBD</td>
                 <td></td>

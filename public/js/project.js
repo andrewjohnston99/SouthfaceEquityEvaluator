@@ -1,18 +1,4 @@
 $(document).ready(function() {
-    // Get values from text inputs in gen equity table
-    var g10_input = $("#g10 input").val();
-    var h10_input = $("#h10 input").val();
-    var g11_input = $("#g11 input").val();
-    var h11_input = $("#h11 input").val();
-    var g12_input = $("#g12 input").val();
-    var h12_input = $("#h12 input").val();
-    var g13_input = $("#g13 input").val();
-    var h13_input = $("#h13 input").val();
-    var g14_input = $("#g14 input").val();
-    var h14_input = $("#h14 input").val();
-    var g15_input = $("#g15 input").val();
-    var h15_input = $("#h15 input").val();
-
     // Tally planned points
     var equity_planned_total = 0;
     var equity_actual_total = 0;
@@ -31,25 +17,6 @@ $(document).ready(function() {
                 equity_actual_total += temp_int;
                 $("#equity_actual").html(equity_actual_total);
             }
-
-            // $.ajax({
-            //     type: 'POST',
-            //     url: "update-project",
-            //     datatype: 'JSON',
-            //     headers: {
-            //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            //     },
-            //     data: {
-            //         'equity_planned_total': equity_planned_total,
-            //         'equity_actual_total': equity_actual_total
-            //     },
-            //     success: function (response) {
-            //         if (response.hasOwnProperty('equity_planned_total')) {
-            //             $('#equity_planned').html(response.equity_planned);
-            //         }
-            //     },
-            //     error: function (response) {}
-            // });
         } else {
             var temp_int = parseInt($(this).attr("data-value"));
 
@@ -71,5 +38,62 @@ $(document).ready(function() {
                 }
             }
         }
+    });
+
+    $('#saveChanges').on('click', function(e) {
+        e.preventDefault();
+
+        var data = Object();
+        var tables = $('.table');
+        var tableData = [];
+
+        tables.each(function(i) {
+            var inputs = $('#' + this.id + ' [id*="-input"]');
+
+            inputs.each(function(i) {
+                var temp = Object();
+                temp.id = this.id;
+                temp.cell = this.id.split('-')[0];
+
+                if (this.type === "checkbox") {
+                    temp.checked = this.checked;
+                    temp.value = this.dataset.value;
+                } else if (this.type === "textarea") {
+                    temp.content = this.value;
+                }
+
+                tableData.push(temp);
+            });
+
+            data[this.id] = tableData;
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "save-project",
+            datatype: "JSON",
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+            },
+            data: data,
+            success: function(response) {
+
+            },
+            error: function(response) {}
+        });
+    });
+
+    $('button#project-*').on('click', function(e) {
+        e.preventDefault();
+
+        var id = this.id.split('-')[1];
+
+        $.ajax({
+            type: "GET",
+            url: "get-project",
+            data: {id: id},
+            success: function(response){},
+            error: function(response){}
+        });
     });
 });

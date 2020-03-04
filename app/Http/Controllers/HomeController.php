@@ -23,6 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $request = Request::create('/get-projects', 'GET');
+        $projects = json_decode(app()->handle($request)->getContent(), true);
+
+        $projectData = array();
+
+        foreach ($projects as $project) {
+            $projectData[$project['project_id']] = $project['project_metadata'];
+        }
+
+        return view('home')->with('projects', $projectData);
     }
 }

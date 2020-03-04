@@ -1,7 +1,7 @@
 <div id="genEquity" class="table-responsive">
     <table id="equityTable" class="table table-bordered">
         <thead>
-            <tr class="text-center">
+            <tr class="text-center header">
                 <th class="text-center align-middle font-weight-bold title" colspan="2">GENERAL EQUITY</th>
                 <th class="points">Points</th>
                 <th class="planned">Planned</th>
@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="table-info">
+            <tr class="table-info header">
                 <th class="text-center" scope="col" colspan="7">OPTIONAL</th>
             </tr>
             <tr class="text-center">
@@ -35,11 +35,10 @@
                     </div>
                 </td>
                 <td id="g10" class="align-middle">
-                    {{-- <input id="g10-input" type="text" /> --}}
                     <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h10" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -63,10 +62,10 @@
                     </div>
                 </td>
                 <td id="g11" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="g11-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h11" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h11-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -90,10 +89,10 @@
                     </div>
                 </td>
                 <td id="g12" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="g12-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h12" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="312-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -117,10 +116,10 @@
                     </div>
                 </td>
                 <td id="g13" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="g13-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h13" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h13-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -144,10 +143,10 @@
                     </div>
                 </td>
                 <td id="g14" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="g14-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h14" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h14-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -171,10 +170,10 @@
                     </div>
                 </td>
                 <td id="g15" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="g15-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h15" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h15-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="table-secondary text-center">

@@ -1,5 +1,5 @@
  <div id="services" class="table-responsive">
-    <table class="table table-bordered">
+    <table id="servicesTable" class="table table-bordered">
         <thead>
             <tr class="text-center">
                 <td class="align-middle font-weight-bold" colspan="2">SERVICES AND EMPLOYMENT</td>
@@ -68,7 +68,7 @@
                 <th class="table-info" colspan="7">OPTIONAL</th>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="21">SE 1.0</th> 
+                <th scope="row" rowspan="21">SE 1.0</th>
                 <td class="text-left">Services</td>
                 <td class="text-center" colspan="3">Select All:</td>
                 <td></td>
@@ -129,7 +129,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr> 
+            </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">8</span>Library</td>
                 <td class="text-center">5</td>
@@ -137,7 +137,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr> 
+            </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">9</span>Fire Station</td>
                 <td class="text-center">5</td>
@@ -145,7 +145,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr> 
+            </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">10</span>Police Station</td>
                 <td class="text-center">5</td>
@@ -161,7 +161,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>    
+            </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">12</span>Bank</td>
                 <td class="text-center">5</td>
@@ -169,7 +169,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr> 
+            </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">13</span>Laundry</td>
                 <td class="text-center">1</td>
@@ -185,7 +185,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>   
+            </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">15</span>Hardware Store</td>
                 <td class="text-center">5</td>
@@ -201,7 +201,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr> 
+            </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">17</span>Medical Clinic</td>
                 <td class="text-center">10</td>
@@ -209,7 +209,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr> 
+            </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">18</span>Theater</td>
                 <td class="text-center">5</td>

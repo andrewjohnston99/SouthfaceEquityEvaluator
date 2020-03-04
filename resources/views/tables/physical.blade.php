@@ -1,5 +1,5 @@
 <div id="physical" class="table-responsive">
-    <table class="table table-bordered">
+    <table id="physicalTable" class="table table-bordered">
         <thead>
             <tr class="text-center">
                 <td class="align-middle font-weight-bold" colspan="2">PHYSICAL FORM</td>
@@ -24,7 +24,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="3">PF 0.2</th> 
+                <th scope="row" rowspan="3">PF 0.2</th>
                 <td class="text-left">Connect and Open Community</td>
                 <td class="text-center" colspan="3">Select One</td>
                 <td></td>
@@ -54,7 +54,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="3">PF 0.4</th> 
+                <th scope="row" rowspan="3">PF 0.4</th>
                 <td class="text-left">Tree-Lined and Shaded Streets</td>
                 <td class="text-center" colspan="3">Select One</td>
                 <td></td>
@@ -78,7 +78,7 @@
                 <th class="table-info" colspan="7">OPTIONAL</th>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="3">PF 1.0</th> 
+                <th scope="row" rowspan="3">PF 1.0</th>
                 <td class="text-left">Minimum Building Energy Efficiency	</td>
                 <td class="text-center" colspan="3">Select All that Apply:</td>
                 <td></td>
@@ -101,7 +101,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="3">PF 1.1</th> 
+                <th scope="row" rowspan="3">PF 1.1</th>
                 <td class="text-left">Minimum Building Water Efficiency </td>
                 <td class="text-center" colspan="3">Select All that Apply:</td>
                 <td></td>
@@ -124,7 +124,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="4">PF 1.2</th> 
+                <th scope="row" rowspan="4">PF 1.2</th>
                 <td class="text-left">Historic Resource Preservation and Adaptive Use</td>
                 <td class="text-center" colspan="3">Select One:</td>
                 <td></td>
@@ -151,7 +151,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="9">PF 1.3</th> 
+                <th scope="row" rowspan="9">PF 1.3</th>
                 <td class="text-left">Compact Development - Residential:</td>
                 <td class="text-center" colspan="3">Select One:</td>
                 <td></td>
@@ -208,7 +208,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="1">PF 1.4</th> 
+                <th scope="row" rowspan="1">PF 1.4</th>
                 <td class="text-left">Reduced Parking Footprint</td>
                 <td class="text-center">5</td>
                 <td></td>
@@ -217,7 +217,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="5">PF 1.5</th> 
+                <th scope="row" rowspan="5">PF 1.5</th>
                 <td class="text-left">Transit Facilities</td>
                 <td class="text-center" colspan="3">Select All that Apply:</td>
                 <td></td>
@@ -256,7 +256,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="4">PF 1.6</th> 
+                <th scope="row" rowspan="4">PF 1.6</th>
                 <td class="text-left">Access to Recreation Facilities and Regional Trails</td>
                 <td class="text-center" colspan="3">Select All that Apply:</td>
                 <td></td>
@@ -287,7 +287,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="4">PF 1.7</th> 
+                <th scope="row" rowspan="4">PF 1.7</th>
                 <td class="text-left">Light Pollution Reduction</td>
                 <td class="text-center" colspan="3">Select All that Apply:</td>
                 <td></td>
@@ -318,7 +318,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="1">PF 1.8</th> 
+                <th scope="row" rowspan="1">PF 1.8</th>
                 <td class="text-left">LEFT INTENTIONALLY BLANK</td>
                 <td class="text-center" colspan="1">TBD</td>
                 <td></td>
@@ -327,7 +327,7 @@
                 <td></td>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="1">PF 1.9</th> 
+                <th scope="row" rowspan="1">PF 1.9</th>
                 <td class="text-left">LEFT INTENTIONALLY BLANK</td>
                 <td class="text-center" colspan="1">TBD</td>
                 <td></td>

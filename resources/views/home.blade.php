@@ -10,6 +10,14 @@
     </style>
 @endsection
 
+@section('js')
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <script src="{{ URL::asset('js/project.js') }}"></script>
+@endsection
+
 @section('content')
     <div class="dashboard container">
         <div class="row d-flex justify-content-between align-items-center header">
@@ -40,40 +48,14 @@
             </div>
         </div>
         <div class="row projects d-flex justify-content-between">
-            <button class="container project-card" onclick="window.location='{{ url('project') }}'" type="button">
-                <div class="row project-title">
-                    <h3>Community Name</h3>
-                </div>
-                <div class="row">
-                    <p>Review Date</p>
-                </div>
-                <div class="row">
-                    <p>Site Address</p>
-                </div>
-                <div class="row">
-                    <p>Charrette Date</p>
-                </div>
-                <div class="row">
-                    <p>Kickoff Date</p>
-                </div>
-            </button>
-            <button class="container project-card" onclick="window.location='{{ url('project') }}'" type="button">
-                <div class="row project-title">
-                    <h3>Community Name</h3>
-                </div>
-                <div class="row">
-                    <p>Review Date</p>
-                </div>
-                <div class="row">
-                    <p>Site Address</p>
-                </div>
-                <div class="row">
-                    <p>Charrette Date</p>
-                </div>
-                <div class="row">
-                    <p>Kickoff Date</p>
-                </div>
-            </button>
+            @isset($projects)
+                @foreach ($projects as $project)
+                    @include('project.button')
+                @endforeach
+            @endisset
+            @empty($projects)
+                @include('project.no-button')
+            @endempty
         </div>
     </div>
 

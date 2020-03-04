@@ -22,5 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('settings', 'settings');
 
 Route::get('project', 'ProjectController@index');
+Route::get('get-projects', 'ProjectController@getProjects');
+Route::post('create-project', 'ProjectController@create');
+Route::put('save-project', 'ProjectController@save');
+Route::get('token', 'ProjectController@token');
 
 Route::view('affordability', 'affordability');
