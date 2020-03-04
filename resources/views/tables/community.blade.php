@@ -27,7 +27,7 @@
                 <th class="table-info" colspan="7">OPTIONAL</th>
             </tr>
             <tr class="text-center">
-                <th scope="row" rowspan="5">BC 1.0</th>                             <!-- Do I need align-middle or textarea here> -->
+                <th scope="row" rowspan="5">BC 1.0</th>                             <!-- Do I need align-middle or textarea here? -->
                 <td class="text-left">Housing</td>
                 <td class="text-center" colspan="3">Select All That Apply:</td>
                 <td class="align-middle"></td>
