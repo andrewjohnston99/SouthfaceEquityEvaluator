@@ -17,8 +17,8 @@ class CreateProjectsTable extends Migration
             $table->bigIncrements('project_id');
             $table->bigInteger('user_id');
             $table->json('project_metadata');
-            $table->binary('project_xls');
-            $table->json('project_json');
+            $table->binary('project_xls')->nullable();
+            $table->json('project_json')->nullable();
         });
     }
 
