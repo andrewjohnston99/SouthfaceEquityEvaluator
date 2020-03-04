@@ -2,7 +2,7 @@
     <table id="commTable" class="table table-bordered">
         <thead>
             <tr class="text-center">
-                <th class="text-center align-middle font-weight-bold" colspan="2">BALANCED COMMUNITY</th>
+                <th class="text-center align-middle font-weight-bold title" colspan="2">BALANCED COMMUNITY</th>
                 <th class="align-middle points">Points</th>
                 <th class="align-middle planned">Planned</th>
                 <th class="align-middle achieved">Achieved</th>
