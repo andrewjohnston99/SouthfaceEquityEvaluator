@@ -49,8 +49,12 @@
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">B.</span>Projects without Internal Streets</td>
                 <td class="align-middle">-</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <th scope="row">PF 0.3</th>
@@ -69,7 +73,7 @@
                 <th scope="row" rowspan="3">PF 0.4</th> 
                 <td class="text-left">Tree-Lined and Shaded Streets</td>
                 <td class="align-middle" colspan="3">Select One</td>
-                <td class="align-middle"></td>                                                              <!-- Do these need textarea?    -->
+                <td class="align-middle"></td>
                 <td class="align-middle"></td>
             </tr>
             <tr class="text-center">
@@ -87,8 +91,12 @@
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">B.</span>Shaded Streets</td>
                 <td class="align-middle">-</td>
-                <td class="align-middle"></td>                                                              <!-- Do these need textarea?    -->
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <th class="table-info" colspan="7">OPTIONAL</th>
@@ -167,20 +175,32 @@
                 <td class="align-middle">3</td>
                 <td class="align-middle" rowspan = "3"></td>
                 <td class="align-middle" rowspan = "3"></td>
-                <td class="align-middle"></td>                                                     <!-- Do these (and the rows below) need textarea?    -->
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">B.</span>Federally funded projects obtain confirmation</td>
                 <td class="align-middle">3</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">C.</span>Building or site listed in or determined eligible for the National Register of Historic Places undergoes qualified professional review</td>
                 <td class="align-middle">1</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <th scope="row" rowspan="9">PF 1.3</th> 
@@ -204,44 +224,72 @@
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">B.</span>20 units/acre</td>
                 <td class="align-middle">4</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">C.</span>35 units/acre</td>
                 <td class="align-middle">5</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">D.</span>65 units/acre</td>
                 <td class="align-middle">6</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">E.</span>95 units/acre</td>
                 <td class="align-middle">7</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">F.</span>125 units/acre</td>
                 <td class="align-middle">8</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">G.</span>155 units/acre</td>
                 <td class="align-middle">9</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left"><span class="font-weight-bold" style="margin-right: 30px;">H.</span>≥185 units/acre</td>
                 <td class="align-middle">10</td>
-                <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
             </tr>
             <tr class="text-center">
                 <th scope="row" rowspan="1">PF 1.4</th> 
