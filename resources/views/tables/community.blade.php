@@ -169,9 +169,9 @@
                 </td>
             </tr>
             <tr class="table-secondary text-center">
-                <td class = "align-middle" colspan="3">BALANCED COMMUNITY TOTAL</td>
-                <td class = "align-middle" id="comm_planned">0</td>
-                <td class = "align-middle" id="comm_actual">0</td>
+                <td class="align-middle" colspan="3">BALANCED COMMUNITY TOTAL</td>
+                <td class="align-middle" id="comm_planned">0</td>
+                <td class="align-middle" id="comm_actual">0</td>
                 <td colspan="2"></td>
             </tr>
         </tbody>
