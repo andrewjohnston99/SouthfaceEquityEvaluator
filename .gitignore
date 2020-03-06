@@ -6,3 +6,6 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 database/master/ib_buffer_pool
+.idea/
+.DS_Store
+*/.DS_Store
