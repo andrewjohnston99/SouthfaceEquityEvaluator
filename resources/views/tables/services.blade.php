@@ -78,7 +78,7 @@
             <tr class="text-center">
                 <th scope="row" rowspan="21">SE 1.0</th>
                 <td class="text-left align-middle">Services</td>
-                <td class="align-middle" colspan="3">Select All:</td>
+                <td class="align-middle" colspan="3">Select All That Apply:</td>
                 <td class="align-middle"></td>
                 <td class="align-middle"></td>
             </tr>
