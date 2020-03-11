@@ -48,9 +48,9 @@
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle">Security</td>
-                <td class="text-left align-middle" colspan="3">Select All:</td>
-                <td class="text-left align-middle"></td>
-                <td class="text-left align-middle"></td>
+                <td class="align-middle" colspan="3">Select All:</td>
+                <td class="align-middle"></td>
+                <td class="align-middle"></td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">A.</span>Lighting </td>
