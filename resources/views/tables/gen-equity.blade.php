@@ -16,7 +16,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.0</th>
-                <td class="text-left">Specialized Housing (Senior, Assisted Living, Transitional)</td>
+                <td class="text-left align-middle">Specialized Housing (Senior, Assisted Living, Transitional)</td>
                 <td class="align-middle">20</td>
                 <td id="e10" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
@@ -43,7 +43,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.1</th>
-                <td class="text-left">Lifecycle Housing (raising children through aging in place)</td>
+                <td class="text-left align-middle">Lifecycle Housing (raising children through aging in place)</td>
                 <td class="align-middle">15</td>
                 <td id="e11" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
@@ -70,7 +70,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.2</th>
-                <td class="text-left">Interim uses</td>
+                <td class="text-left align-middle">Interim uses</td>
                 <td class="align-middle">10</td>
                 <td id="e12" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
@@ -97,7 +97,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.3</th>
-                <td class="text-left">Small scale development that fosters hyper local economic development.</td>
+                <td class="text-left align-middle">Small scale development that fosters hyper local economic development.</td>
                 <td class="align-middle">15</td>
                 <td id="e13" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
@@ -124,7 +124,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.4</th>
-                <td class="text-left">Permanent Housing</td>
+                <td class="text-left align-middle">Permanent Housing</td>
                 <td class="align-middle">20</td>
                 <td id="e14" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
@@ -151,7 +151,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.5</th>
-                <td class="text-left">Car sharing program (e.g. ZipCar)</td>
+                <td class="text-left align-middle">Car sharing program (e.g. ZipCar)</td>
                 <td class="align-middle">5+</td>
                 <td id="e15" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">

@@ -12805,3 +12805,235 @@ nav.navbar .register-btn:active {
   margin-right: 0;
 }
 
+/******************************
+*  SETTING VIEW
+******************************/
+
+.setting-header {
+  height: 130px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: #2D2A32;
+}
+
+.setting-header .row {
+  height: 50%;
+  width: 100%;
+  margin: 6px 35px 0 35px;
+}
+
+.setting-header .row .btn-col:last-child {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.setting-header .row.nav-row {
+  align-content: center;
+}
+
+.setting-header .row.nav-row .col {
+  text-align: center;
+}
+
+.setting-header .row.nav-row .col a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.setting-header .row.nav-row .col a:hover,
+.setting-header .row.nav-row .col a:focus,
+.setting-header .row.nav-row .col a:active {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 8px;
+}
+
+.setting-header .back-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.setting-header .back-btn:hover,
+.setting-header .back-btn:focus,
+.setting-header .back-btn:active {
+  color: #0A9D53;
+}
+
+.setting-header .back-btn:hover svg,
+.setting-header .back-btn:focus svg,
+.setting-header .back-btn:active svg {
+  fill: #0A9D53;
+}
+
+.setting-header .back-btn span {
+  padding-left: 8px;
+}
+
+.setting-header .back-btn svg {
+  fill: #fff;
+  vertical-align: middle;
+  margin-top: 3px;
+}
+
+/******************************
+*  CREATE PROJECT
+******************************/
+
+.create-project {
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin-top: 6%;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: #000;
+}
+
+.create-project p {
+  color: #000;
+}
+
+.create-project .create-header {
+  font-size: 22px;
+  margin-bottom: 60px;
+  color: #000;
+}
+
+.create-project form a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.create-project form a:hover {
+  color: #088546;
+}
+
+.create-project form input.form-control {
+  background-color: #fff;
+  border: 2px solid #9E9E9E;
+  font-size: 20px;
+  width: 400px;
+  color: #000;
+}
+
+.create-project form input.form-control::-webkit-input-placeholder {
+  color: #9E9E9E;
+}
+
+.create-project form input.form-control::-moz-placeholder {
+  color: #9E9E9E;
+}
+
+.create-project form input.form-control:-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.create-project form input.form-control::-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.create-project form input.form-control::placeholder {
+  color: #9E9E9E;
+}
+
+.create-project form input.form-control#password-confirm {
+  margin-bottom: 35px;
+}
+
+.create-project form #createProjectBtn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #0A9D53;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  width: 400px;
+  height: 48px;
+  font-size: 22px;
+}
+
+.create-project form #createProjectBtn:hover,
+.create-project form #createProjectBtn:focus,
+.create-project form #createProjectBtn:active {
+  outline: none;
+  border: none;
+}
+
+.create-project form #createProjectBtn:hover {
+  background-color: #0A9D53;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.create-project form #createProjectBtn:active,
+.create-project form #createProjectBtn:focus {
+  background-color: #022514;
+}
+
+.create-project form #createProjectBtn:hover,
+.create-project form #createProjectBtn:active {
+  background-color: #088546;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
+.create-project form #cancelProjectBtn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #0A9D53;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  width: 400px;
+  height: 48px;
+  font-size: 22px;
+}
+
+.create-project form #cancelProjectBtn:hover,
+.create-project form #cancelProjectBtn:focus,
+.create-project form #cancelProjectBtn:active {
+  outline: none;
+  border: none;
+}
+
+.create-project form #cancelProjectBtn:hover {
+  background-color: #0A9D53;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.create-project form #cancelProjectBtn:active,
+.create-project form #cancelProjectBtn:focus {
+  background-color: #022514;
+}
+
+.create-project form #cancelProjectBtn:hover,
+.create-project form #cancelProjectBtn:active {
+  background-color: #088546;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+
