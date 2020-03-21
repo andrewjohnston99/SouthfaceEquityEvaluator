@@ -5,14 +5,12 @@
                 <th class="text-center align-middle font-weight-bold title" colspan="2">GENERAL EQUITY</th>
                 <th class="points">Points</th>
                 <th class="planned">Planned</th>
-                <th class="achieved">Achieved</th>
-                <th class="confirmation">Confirmation Documents</th>
                 <th class="notes">Notes: DATE</th>
             </tr>
         </thead>
         <tbody>
             <tr class="table-info header">
-                <th class="text-center" scope="col" colspan="7">OPTIONAL</th>
+                <th class="text-center" scope="col" colspan="6">OPTIONAL</th>
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.0</th>
@@ -25,17 +23,6 @@
                             <label></label>
                         </div>
                     </div>
-                </td>
-                <td id="f10" class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="f10-input" type="checkbox" data-value="20" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td id="g10" class="align-middle">
-                    <textarea id="g10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h10" class="align-middle">
                     <textarea id="h10-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
@@ -53,17 +40,6 @@
                         </div>
                     </div>
                 </td>
-                <td id="f11" class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="f11-input" type="checkbox" data-value="15" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td id="g11" class="align-middle">
-                    <textarea id="g11-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
                 <td id="h11" class="align-middle">
                     <textarea id="g11-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
@@ -79,17 +55,6 @@
                             <label></label>
                         </div>
                     </div>
-                </td>
-                <td id="f12" class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="f12-input" type="checkbox" data-value="10" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td id="g12" class="align-middle">
-                    <textarea id="g12-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h12" class="align-middle">
                     <textarea id="h12-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
@@ -107,17 +72,6 @@
                         </div>
                     </div>
                 </td>
-                <td id="f13" class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="f13-input" type="checkbox" data-value="15" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td id="g13" class="align-middle">
-                    <textarea id="g13-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
                 <td id="h13" class="align-middle">
                     <textarea id="h13-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
@@ -133,17 +87,6 @@
                             <label></label>
                         </div>
                     </div>
-                </td>
-                <td id="f14" class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="f14-input" type="checkbox" data-value="20" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td id="g14" class="align-middle">
-                    <textarea id="g14-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h14" class="align-middle">
                     <textarea id="h14-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
@@ -161,17 +104,6 @@
                         </div>
                     </div>
                 </td>
-                <td id="f15" class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="f15-input" type="checkbox" data-value="5" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td id="g15" class="align-middle">
-                    <textarea id="g15-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
                 <td id="h15" class="align-middle">
                     <textarea id="h15-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
@@ -179,7 +111,6 @@
             <tr class="table-secondary text-center">
                 <td colspan="3">GENERAL EQUITY TOTAL</td>
                 <td id="equity_planned" data-value="0">0</td>
-                <td id="equity_actual" data-value="0">0</td>
                 <td colspan="2"></td>
             </tr>
         </tbody>

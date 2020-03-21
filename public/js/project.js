@@ -3,7 +3,7 @@ $(document).ready(function() {
     var equity_planned_total = parseInt(
         $("#equity_planned").attr("data-value")
     );
-    var equity_actual_total = parseInt($("#equity_actual").attr("data-value"));
+
     // Listen for checkbox changes
     $("#equityTable input:checkbox").change(function() {
         if ($(this).is(":checked")) {
@@ -11,44 +11,21 @@ $(document).ready(function() {
             var temp_int = parseInt($(this).attr("data-value"));
 
             // Set new cell values
-            if ($(this).hasClass("planned-input")) {
-                equity_planned_total += temp_int;
-                $("#equity_planned").attr("data-value", equity_planned_total);
-                $("#equity_planned").html(equity_planned_total);
-            } else {
-                equity_actual_total += temp_int;
-                $("#equity_actual").attr("data-value", equity_actual_total);
-                $("#equity_actual").html(equity_actual_total);
-            }
+            equity_planned_total += temp_int;
+            $("#equity_planned").attr("data-value", equity_planned_total);
+            $("#equity_planned").html(equity_planned_total);
+
         } else {
             var temp_int = parseInt($(this).attr("data-value"));
 
-            if ($(this).hasClass("planned-input")) {
-                if (equity_planned_total - temp_int < 0) {
-                    equity_planned_total = 0;
-                    $("#equity_planned").attr(
-                        "data-value",
-                        equity_planned_total
-                    );
-                    $("#equity_planned").html(equity_planned_total);
-                } else {
-                    equity_planned_total -= temp_int;
-                    $("#equity_planned").attr(
-                        "data-value",
-                        equity_planned_total
-                    );
-                    $("#equity_planned").html(equity_planned_total);
-                }
+            if (equity_planned_total - temp_int < 0) {
+                equity_planned_total = 0;
+                $("#equity_planned").attr("data-value", equity_planned_total);
+                $("#equity_planned").html(equity_planned_total);
             } else {
-                if (equity_actual_total - temp_int < 0) {
-                    equity_actual_total = 0;
-                    $("#equity_actual").attr("data-value", equity_actual_total);
-                    $("#equity_actual").html(equity_actual_total);
-                } else {
-                    equity_actual_total -= temp_int;
-                    $("#equity_actual").attr("data-value", equity_actual_total);
-                    $("#equity_actual").html(equity_actual_total);
-                }
+                equity_planned_total -= temp_int;
+                $("#equity_planned").attr("data-value", equity_planned_total);
+                $("#equity_planned").html(equity_planned_total);
             }
         }
     });
