@@ -20,11 +20,19 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('settings', 'settings');
+Route::view('about', 'about');
+Route::view('contact', 'contact');
+Route::view('pricing', 'pricing');
 
-Route::get('project', 'ProjectController@index');
-Route::get('get-projects', 'ProjectController@getProjects');
-Route::post('create-project', 'ProjectController@create');
-Route::put('save-project', 'ProjectController@save');
+// Route::get('{uid}/settings', );
+
+/******************************************* */
+/* TODO: DEV ONLY. REMOVE BEFORE PRODUCTION  */
 Route::get('token', 'ProjectController@token');
+/******************************************* */
+
+Route::resource('projects', 'ProjectController');
+
+
 
 Route::view('affordability', 'affordability');

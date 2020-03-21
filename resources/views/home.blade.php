@@ -10,6 +10,10 @@
     </style>
 @endsection
 
+@section('token')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
 @section('js')
     <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -21,7 +25,7 @@
 @section('content')
     <div class="dashboard container">
         <div class="row d-flex justify-content-between align-items-center header">
-            <a href="{{ url('/') }}">
+            <a href="{{ url('/home') }}">
                 <img src="{{ URL::asset('images/southface-logo-sm.png') }}" />
             </a>
             <button id="settingsBtn" class="settings-btn d-flex justify-content-center align-items-center" onclick="window.location='{{ url('settings') }}'" type="button">
@@ -49,9 +53,11 @@
         </div>
         <div class="row projects d-flex justify-content-between">
             @isset($projects)
-                @foreach ($projects as $project)
-                    @include('project.button')
-                @endforeach
+                <form action="/" method="get" id="getProjectForm">
+                    @foreach ($projects as $project)
+                        @include('project.button')
+                    @endforeach
+                </form>
             @endisset
             @empty($projects)
                 @include('project.no-button')

@@ -65,7 +65,7 @@
                     <textarea id="g11-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h11" class="align-middle">
-                    <textarea id="h11-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="g11-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -92,7 +92,7 @@
                     <textarea id="g12-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
                 <td id="h12" class="align-middle">
-                    <textarea id="312-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h12-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -178,8 +178,8 @@
             </tr>
             <tr class="table-secondary text-center">
                 <td colspan="3">GENERAL EQUITY TOTAL</td>
-                <td id="equity_planned">0</td>
-                <td id="equity_actual">0</td>
+                <td id="equity_planned" data-value="0">0</td>
+                <td id="equity_actual" data-value="0">0</td>
                 <td colspan="2"></td>
             </tr>
         </tbody>

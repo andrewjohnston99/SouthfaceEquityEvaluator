@@ -1,4 +1,4 @@
-<button id="project-{{ array_search($project, $projects) }}" class="container project-card" type="button">
+<button id="project-{{ array_search($project, $projects) }}" class="container project-card" type="submit" onclick="this.form.action='/projects/{{ array_search($project, $projects) }}';">
     <div class="row project-title">
         <h3>{{ $project['title'] }}</h3>
     </div>

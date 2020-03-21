@@ -1,4 +1,3 @@
-/*TODO: check spacing on 1.0 elements*/
 <div id="community" class="table-responsive">
     <table id="commTable" class="table table-bordered">
         <thead>

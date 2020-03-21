@@ -19,6 +19,35 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+    <script>
+        console.log("here");
+        $(document).ready(function() {
+            var data = {!! json_encode($project) !!};
+
+            $.each(data, function(index, table) {
+                var planned = parseInt($('#' + index.replace('Table', '') + "_planned").attr("data-value"));
+                var actual = parseInt($('#' + index.replace('Table', '') + "_actual").attr("data-value"));
+
+                $.each(table, function(index, item) {
+                    var input = $('#' + item.cell + "-input")[0];
+
+                    if (input != undefined) {
+                        if (input.type === 'checkbox' && item.checked === 'true') {
+                            input.checked = true;
+                            planned += parseInt(item.value);
+                        }
+
+                        if (input.type === 'textarea' && item.value !== null) {
+                            input.value = item.value;
+                        }
+                    }
+                });
+
+                $('#' + index.replace('Table', '') + "_planned").attr("data-value", planned);
+                $('#' + index.replace('Table', '') + "_planned").html(planned);
+            });
+        });
+    </script>
     <script src="{{ URL::asset('js/project.js') }}"></script>
 @endsection
 

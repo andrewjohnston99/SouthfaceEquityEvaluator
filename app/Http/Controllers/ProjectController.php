@@ -3,43 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Log;
 use App\Project;
-
 
 class ProjectController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Project Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the creation, modification, and deletion of projects.
-    |
-    */
-
     /**
-     * Show the project page for project with specified {id}
+     * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        $id = $request->query('id');
-        $project = Project::where('project_id', $id)->get();
-
-        // return view('project');
-        return response()->json($project, 200);
-    }
-
-    /**
-     * Get all projects for user
-     *
-     *
-     * @return Response
-     */
-    public function getProjects(Request $request)
+    public function index()
     {
         $uid = auth()->user()->id;
 
@@ -49,12 +23,22 @@ class ProjectController extends Controller
     }
 
     /**
-     * Create new project instance
+     * Show the form for creating a new resource.
      *
-     * @param Request $request
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
+    {
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
         $result = $request->project_metadata;
         Project::create([
@@ -65,16 +49,45 @@ class ProjectController extends Controller
         return response()->json($result, 200);
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return View
+     */
+    public function show($id)
+    {
+        Log::debug('getting resource: '.$id);
+        $uid = auth()->user()->id;
+
+        $data = Project::select('project_json')
+            ->where('user_id', $uid)
+            ->where('project_id', $id)
+            ->pluck('project_json');
+
+        return view('project')->with('project', $data[0]);
+    }
 
     /**
-     * Save project
+     * Show the form for editing the specified resource.
      *
-     * @param Request $request
-     * @return Response
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function save(Request $request)
+    public function edit($id)
     {
-        $id = $request->query('id');
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
         $data = json_encode($request->all());
 
         Project::where('project_id', $id)
@@ -83,6 +96,16 @@ class ProjectController extends Controller
         return response()->json(["result" => "success"], 200);
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
     public function token()
     {

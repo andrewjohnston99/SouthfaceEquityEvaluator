@@ -16,13 +16,10 @@
     {{-- Include per-page js --}}
     @yield('js')
 
-
 </head>
 <body>
+
     @yield('content')
 
-
-    {{-- Include per-page js --}}
-    @yield('js')
 </body>
 </html>

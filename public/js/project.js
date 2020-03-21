@@ -1,8 +1,9 @@
 $(document).ready(function() {
     // Tally planned points
-    var equity_planned_total = 0;
-    var equity_actual_total = 0;
-
+    var equity_planned_total = parseInt(
+        $("#equity_planned").attr("data-value")
+    );
+    var equity_actual_total = parseInt($("#equity_actual").attr("data-value"));
     // Listen for checkbox changes
     $("#equityTable input:checkbox").change(function() {
         if ($(this).is(":checked")) {
@@ -12,9 +13,11 @@ $(document).ready(function() {
             // Set new cell values
             if ($(this).hasClass("planned-input")) {
                 equity_planned_total += temp_int;
+                $("#equity_planned").attr("data-value", equity_planned_total);
                 $("#equity_planned").html(equity_planned_total);
             } else {
                 equity_actual_total += temp_int;
+                $("#equity_actual").attr("data-value", equity_actual_total);
                 $("#equity_actual").html(equity_actual_total);
             }
         } else {
@@ -23,77 +26,78 @@ $(document).ready(function() {
             if ($(this).hasClass("planned-input")) {
                 if (equity_planned_total - temp_int < 0) {
                     equity_planned_total = 0;
+                    $("#equity_planned").attr(
+                        "data-value",
+                        equity_planned_total
+                    );
                     $("#equity_planned").html(equity_planned_total);
                 } else {
                     equity_planned_total -= temp_int;
+                    $("#equity_planned").attr(
+                        "data-value",
+                        equity_planned_total
+                    );
                     $("#equity_planned").html(equity_planned_total);
                 }
             } else {
                 if (equity_actual_total - temp_int < 0) {
                     equity_actual_total = 0;
+                    $("#equity_actual").attr("data-value", equity_actual_total);
                     $("#equity_actual").html(equity_actual_total);
                 } else {
                     equity_actual_total -= temp_int;
+                    $("#equity_actual").attr("data-value", equity_actual_total);
                     $("#equity_actual").html(equity_actual_total);
                 }
             }
         }
     });
 
-    $('#saveChanges').on('click', function(e) {
+    $("#saveChanges").on("click", function(e) {
         e.preventDefault();
+        e.stopImmediatePropagation();
 
         var data = Object();
-        var tables = $('.table');
-        var tableData = [];
+        var tables = $(".table");
+        var BASE = window.location.pathname;
 
         tables.each(function(i) {
-            var inputs = $('#' + this.id + ' [id*="-input"]');
+            var inputs = $("#" + this.id + ' [id*="-input"]');
+            var tableData = Object();
+            var table = this.id.split("table")[0];
 
             inputs.each(function(i) {
                 var temp = Object();
-                temp.id = this.id;
-                temp.cell = this.id.split('-')[0];
+                temp.cell = this.id.split("-")[0];
+                temp.html = this.outerHTML;
 
                 if (this.type === "checkbox") {
                     temp.checked = this.checked;
                     temp.value = this.dataset.value;
                 } else if (this.type === "textarea") {
-                    temp.content = this.value;
+                    temp.value = this.value;
                 }
 
-                tableData.push(temp);
+                tableData[this.id] = temp;
             });
 
             data[this.id] = tableData;
         });
 
         $.ajax({
-            type: "POST",
-            url: "save-project",
+            type: "PUT",
+            url: BASE,
             datatype: "JSON",
             headers: {
                 "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
             },
             data: data,
             success: function(response) {
-
+                alert("Changes saved!");
             },
-            error: function(response) {}
-        });
-    });
-
-    $('button#project-*').on('click', function(e) {
-        e.preventDefault();
-
-        var id = this.id.split('-')[1];
-
-        $.ajax({
-            type: "GET",
-            url: "get-project",
-            data: {id: id},
-            success: function(response){},
-            error: function(response){}
+            error: function(response) {
+                alert("Hmm something went wrong.");
+            }
         });
     });
 });
