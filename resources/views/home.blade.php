@@ -43,7 +43,7 @@
                 <h1 class="equity">Equity Evaluator</h1>
             </div>
             <div class="col flex-grow-1 d-flex align-items-center justify-content-end">
-                <button id="addBtn" class="add-btn d-flex justify-content-center align-items-center" type="button">
+                <button id="addBtn" class="add-btn d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#createProjectModal" type="button">
                     New Project
                     <span>
                         @include('icons.add')
@@ -65,4 +65,5 @@
         </div>
     </div>
 
+    @include('create_project')
 @endsection
