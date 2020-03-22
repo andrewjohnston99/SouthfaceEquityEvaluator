@@ -12072,7 +12072,7 @@ html,
 body {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
-  color: #fff;
+  color: #000;
   margin-top: 45px;
 }
 
@@ -12098,6 +12098,11 @@ body h2 {
 html button,
 body button {
   cursor: pointer;
+}
+
+html input.form-control:focus,
+body input.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
 }
 
 /******************************
@@ -12692,13 +12697,13 @@ nav.navbar .register-btn:active {
 .project-header .back-btn:hover,
 .project-header .back-btn:focus,
 .project-header .back-btn:active {
-  color: #0A9D53;
+  color: #088546;
 }
 
 .project-header .back-btn:hover svg,
 .project-header .back-btn:focus svg,
 .project-header .back-btn:active svg {
-  fill: #0A9D53;
+  fill: #088546;
 }
 
 .project-header .back-btn span {
@@ -12725,13 +12730,13 @@ nav.navbar .register-btn:active {
 .project-header .share-btn:hover,
 .project-header .share-btn:focus,
 .project-header .share-btn:active {
-  color: #0A9D53;
+  color: #088546;
 }
 
 .project-header .share-btn:hover svg,
 .project-header .share-btn:focus svg,
 .project-header .share-btn:active svg {
-  fill: #0A9D53;
+  fill: #088546;
 }
 
 .project-header .save-btn {
@@ -12797,7 +12802,7 @@ nav.navbar .register-btn:active {
 }
 
 /******************************
-*  Pretty Checkbox
+*  PRETTY CHECKBOX
 ******************************/
 
 .pretty {
@@ -12806,81 +12811,172 @@ nav.navbar .register-btn:active {
 }
 
 /******************************
-*  SETTING VIEW
+*  SETTINGS VIEW
 ******************************/
 
-.setting-header {
-  height: 130px;
+.settings-frame {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
-  -webkit-box-align: center;
-          align-items: center;
-  background-color: #2D2A32;
+  margin: 30px 30px 0 30px;
 }
 
-.setting-header .row {
-  height: 50%;
-  width: 100%;
-  margin: 6px 35px 0 35px;
+.settings-frame.container-fluid {
+  width: auto;
 }
 
-.setting-header .row .btn-col:last-child {
-  text-align: right;
-  padding-right: 20px;
+.settings-frame .row {
+  padding: 0;
 }
 
-.setting-header .row.nav-row {
-  align-content: center;
+.settings-frame .row.btn {
+  height: 175px;
 }
 
-.setting-header .row.nav-row .col {
-  text-align: center;
-}
-
-.setting-header .row.nav-row .col a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.setting-header .row.nav-row .col a:hover,
-.setting-header .row.nav-row .col a:focus,
-.setting-header .row.nav-row .col a:active {
-  border-bottom: 2px solid #fff;
-  padding-bottom: 8px;
-}
-
-.setting-header .back-btn {
+.settings-frame .row.btn .back-btn {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
   border: none;
   cursor: pointer;
   background: transparent;
-  color: #fff;
+  color: #000;
   margin-top: 10px;
 }
 
-.setting-header .back-btn:hover,
-.setting-header .back-btn:focus,
-.setting-header .back-btn:active {
-  color: #0A9D53;
+.settings-frame .row.btn .back-btn:hover,
+.settings-frame .row.btn .back-btn:focus,
+.settings-frame .row.btn .back-btn:active {
+  color: #088546;
 }
 
-.setting-header .back-btn:hover svg,
-.setting-header .back-btn:focus svg,
-.setting-header .back-btn:active svg {
-  fill: #0A9D53;
+.settings-frame .row.btn .back-btn:hover svg,
+.settings-frame .row.btn .back-btn:focus svg,
+.settings-frame .row.btn .back-btn:active svg {
+  fill: #088546;
 }
 
-.setting-header .back-btn span {
+.settings-frame .row.btn .back-btn span {
   padding-left: 8px;
 }
 
-.setting-header .back-btn svg {
-  fill: #fff;
+.settings-frame .row.btn .back-btn svg {
+  fill: #000;
   vertical-align: middle;
   margin-top: 3px;
+}
+
+.settings-frame .nav-col ul.nav {
+  padding: 0;
+}
+
+.settings-frame .nav-col ul.nav li {
+  margin-bottom: 20px;
+}
+
+.settings-frame .nav-col ul.nav li a.nav-link {
+  display: inline;
+  color: #000;
+  padding: 0;
+  padding-bottom: 4px;
+}
+
+.settings-frame .nav-col ul.nav li a.nav-link.active {
+  border-bottom: 2px solid #000;
+}
+
+.settings-frame .nav-col ul.nav li a.nav-link.logout {
+  color: #EB5757;
+}
+
+.settings-frame .nav-col ul.nav li a.nav-link.logout:hover,
+.settings-frame .nav-col ul.nav li a.nav-link.logout:focus,
+.settings-frame .nav-col ul.nav li a.nav-link.logout:active {
+  text-decoration: none;
+  border: none;
+}
+
+.settings-frame .nav-col ul.nav li a.nav-link:hover,
+.settings-frame .nav-col ul.nav li a.nav-link:focus,
+.settings-frame .nav-col ul.nav li a.nav-link:active {
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+}
+
+.settings-frame .content form {
+  width: 60%;
+}
+
+.settings-frame .content form .form-group label {
+  color: #000;
+}
+
+.settings-frame .content form .form-group input.form-control {
+  background-color: #fff;
+  border: 2px solid #9E9E9E;
+  font-size: 20px;
+}
+
+.settings-frame .content form .form-group input.form-control::-webkit-input-placeholder {
+  color: #9E9E9E;
+}
+
+.settings-frame .content form .form-group input.form-control::-moz-placeholder {
+  color: #9E9E9E;
+}
+
+.settings-frame .content form .form-group input.form-control:-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.settings-frame .content form .form-group input.form-control::-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.settings-frame .content form .form-group input.form-control::placeholder {
+  color: #9E9E9E;
+}
+
+.settings-frame .content form .btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #0A9D53;
+  color: #fff;
+  border-radius: 25px;
+  width: 220px;
+  height: 40px;
+  line-height: 20px;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.settings-frame .content form .btn:hover,
+.settings-frame .content form .btn:focus,
+.settings-frame .content form .btn:active {
+  outline: none;
+  border: none;
+}
+
+.settings-frame .content form .btn:hover {
+  background-color: #0A9D53;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.settings-frame .content form .btn:active,
+.settings-frame .content form .btn:focus {
+  background-color: #022514;
+}
+
+.settings-frame .content form .btn:hover,
+.settings-frame .content form .btn:active {
+  background-color: #088546;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
 }
 
 /******************************

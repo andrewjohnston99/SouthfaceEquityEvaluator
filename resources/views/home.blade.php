@@ -28,7 +28,7 @@
             <a href="{{ url('/home') }}">
                 <img src="{{ URL::asset('images/southface-logo-sm.png') }}" />
             </a>
-            <button id="settingsBtn" class="settings-btn d-flex justify-content-center align-items-center" onclick="window.location='{{ url('settings') }}'" type="button">
+            <button id="settingsBtn" class="settings-btn d-flex justify-content-center align-items-center" onclick="window.location='{{ route('account') }}'" type="button">
                 <span>
                     @include('icons.settings')
                 </span>

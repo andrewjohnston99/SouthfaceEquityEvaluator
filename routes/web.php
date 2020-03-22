@@ -19,12 +19,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::view('settings', 'settings');
+// Route::view('settings', 'settings')->name('account');
+// Route::view('security', 'security');
 Route::view('about', 'about');
 Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');
 
-// Route::get('{uid}/settings', );
+Route::get('settings/account', 'UserController@index')->name('account');
+Route::get('settings/security', 'UserController@index');
+Route::put('settings/account', 'UserController@update');
+
 
 /******************************************* */
 /* TODO: DEV ONLY. REMOVE BEFORE PRODUCTION  */
@@ -36,3 +40,4 @@ Route::resource('projects', 'ProjectController');
 
 
 Route::view('affordability', 'affordability');
+// Route::view('projects-contacts', 'contact');

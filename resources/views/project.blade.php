@@ -15,14 +15,9 @@
 @endsection
 
 @section('js')
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-    <script>
-        console.log("here");
+    <script type="text/javascript">
         $(document).ready(function() {
-            var data = {!! json_encode($project) !!};
+            var data = @json($project);
 
             $.each(data, function(index, table) {
                 var planned = parseInt($('#' + index.replace('Table', '') + "_planned").attr("data-value"));

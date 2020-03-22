@@ -2,7 +2,7 @@ html,
 body {
     font-family: $font-primary;
     font-size: $font-sm;
-    color: #fff;
+    color: #000;
     margin-top: 45px;
 
     h1 {
@@ -23,6 +23,10 @@ body {
 
     button {
         cursor: pointer;
+    }
+
+    input.form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
     }
 }
 
@@ -59,7 +63,8 @@ nav.navbar {
         }
     }
 
-    .login-btn, .register-btn {
+    .login-btn,
+    .register-btn {
         @include btn($primary, 10px, $bg: false);
         width: 140px;
         height: 45px;
@@ -335,7 +340,9 @@ nav.navbar {
                     color: #fff;
                     text-decoration: none;
 
-                    &:hover, &:focus, &:active {
+                    &:hover,
+                    &:focus,
+                    &:active {
                         border-bottom: 2px solid #fff;
                         padding-bottom: 8px;
                     }
@@ -372,7 +379,8 @@ nav.navbar {
         padding: 0;
         margin-left: 10px;
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             background-color: darken($primary, 5);
             @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
         }
@@ -387,11 +395,15 @@ nav.navbar {
         width: 100%;
 
         th {
-            &.points, &.planned, &.achieved {
+
+            &.points,
+            &.planned,
+            &.achieved {
                 width: 5%;
             }
 
-            &.confirmation, &.notes {
+            &.confirmation,
+            &.notes {
                 width: 15%;
             }
         }
@@ -399,7 +411,7 @@ nav.navbar {
 }
 
 /******************************
-*  Pretty Checkbox
+*  PRETTY CHECKBOX
 ******************************/
 .pretty {
     font-size: 30px;
@@ -407,54 +419,112 @@ nav.navbar {
 }
 
 /******************************
-*  SETTING VIEW
+*  SETTINGS VIEW
 ******************************/
-.setting-header {
-    height: 130px;
+.settings-frame {
     flex-direction: column;
-    align-items: center;
-    background-color: $dark-grey;
+    margin: 30px 30px 0 30px;
+
+    &.container-fluid {
+        width: auto;
+    }
 
     .row {
-        height: 50%;
-        width: 100%;
-        margin: 6px 35px 0 35px;
+        padding: 0;
 
-        .btn-col:last-child {
-            text-align: right;
-            padding-right: 20px;
+        &.btn {
+            height: 175px;
+
+            .back-btn {
+                @include txt-btn(#000);
+                margin-top: 10px;
+
+                span {
+                    padding-left: 8px;
+                }
+
+                svg {
+                    fill: #000;
+                    vertical-align: middle;
+                    margin-top: 3px;
+                }
+            }
         }
+    }
 
-        &.nav-row {
-            align-content: center;
+    .nav-col {
+        ul.nav {
+            padding: 0;
 
-            .col {
-                text-align: center;
+            li {
+                margin-bottom: 20px;
 
-                a {
-                    color: #fff;
-                    text-decoration: none;
+                a.nav-link {
+                    display: inline;
+                    color: #000;
+                    padding: 0;
+                    padding-bottom: 4px;
 
-                    &:hover, &:focus, &:active {
-                        border-bottom: 2px solid #fff;
-                        padding-bottom: 8px;
+                    &.active {
+                        border-bottom: 2px solid #000;
+                    }
+
+                    &.logout {
+                        color: $red;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            text-decoration: none;
+                            border: none;
+                        }
+                    }
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        text-decoration: none;
+                        border-bottom: 2px solid #000;
                     }
                 }
             }
         }
     }
-    .back-btn {
-        @include txt-btn(#fff);
-        margin-top: 10px;
 
-        span {
-            padding-left: 8px;
-        }
+    .content {
+        form {
+            width: 60%;
 
-        svg {
-            fill: #fff;
-            vertical-align: middle;
-            margin-top: 3px;
+            .form-group {
+                label {
+                    color: #000;
+                }
+
+                input.form-control {
+                    background-color: #fff;
+                    border: 2px solid $light-grey;
+                    font-size: $font-sm;
+
+                    &::placeholder {
+                        color: $light-grey;
+                    }
+                }
+            }
+
+            .btn {
+                @include btn($primary, 25px, $bg: true);
+                width: 220px;
+                height: 40px;
+                line-height: 20px;
+                padding: 0;
+                margin-left: 10px;
+
+                &:hover,
+                &:active {
+                    background-color: darken($primary, 5);
+                    @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
+                }
+            }
         }
     }
 }
@@ -521,6 +591,7 @@ nav.navbar {
                 @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, .25));
             }
         }
+
         #cancelProjectBtn {
             @include btn($primary, 25px, $bg: true);
             @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));

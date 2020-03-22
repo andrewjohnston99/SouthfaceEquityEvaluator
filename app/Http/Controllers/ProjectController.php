@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Project;
 
 class ProjectController extends Controller
@@ -41,6 +40,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $result = $request->project_metadata;
+
         Project::create([
             'user_id' => auth()->user()->id,
             'project_metadata' => $result
@@ -53,11 +53,10 @@ class ProjectController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return View
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function show($id)
     {
-        Log::debug('getting resource: '.$id);
         $uid = auth()->user()->id;
 
         $data = Project::select('project_json')
