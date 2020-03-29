@@ -2,14 +2,6 @@
 
 @section('title', 'Home')
 
-@section('css')
-    <style>
-        html, body {
-            background-color: #FFFFFE;
-        }
-    </style>
-@endsection
-
 @section('token')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
@@ -23,18 +15,16 @@
 @endsection
 
 @section('content')
-    <div class="dashboard container">
-        <div class="row d-flex justify-content-between align-items-center header">
-            <a href="{{ url('/home') }}">
-                <img src="{{ URL::asset('images/southface-logo-sm.png') }}" />
-            </a>
-            <button id="settingsBtn" class="settings-btn d-flex justify-content-center align-items-center" onclick="window.location='{{ route('account') }}'" type="button">
-                <span>
-                    @include('icons.settings')
-                </span>
-                Settings
-            </button>
-        </div>
+    @extends('common.project-header')
+
+    @section('project-btns')
+        <a class="settings" href="{{ route('account') }}">
+
+            Settings</a>
+    @endsection
+
+    {{-- <div class="dashboard container">
+
         <div class="row d-flex hero">
             <div class="col">
                 <img src="{{ URL::asset('images/equity.png') }}" />
@@ -65,5 +55,5 @@
         </div>
     </div>
 
-    @include('create_project')
+    @include('create_project') --}}
 @endsection

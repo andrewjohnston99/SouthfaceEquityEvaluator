@@ -3,7 +3,7 @@ body {
     font-family: $font-primary;
     font-size: $font-sm;
     color: #000;
-    margin-top: 45px;
+    background-color: #fff;
 
     h1 {
         font-size: $font-xl;
@@ -315,75 +315,19 @@ nav.navbar {
 *  PROJECT VIEW
 ******************************/
 .project-header {
-    height: 130px;
-    flex-direction: column;
+    height: 94px;
+    flex-direction: row;
     align-items: center;
-    background-color: $dark-grey;
+    justify-content: space-between;
+    border-bottom: 1px solid $light-grey;
+    padding: 0 50px;
 
-    .row {
-        height: 50%;
-        width: 100%;
-        margin: 6px 35px 0 35px;
-
-        .btn-col:last-child {
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        &.nav-row {
-            align-content: center;
-
-            .col {
-                text-align: center;
-
-                a {
-                    color: #fff;
-                    text-decoration: none;
-
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        border-bottom: 2px solid #fff;
-                        padding-bottom: 8px;
-                    }
-                }
-            }
-        }
+    .southface-icon {
+        height: 20%;
     }
 
-    .back-btn {
-        @include txt-btn(#fff);
-        margin-top: 10px;
-
-        span {
-            padding-left: 8px;
-        }
-
-        svg {
-            fill: #fff;
-            vertical-align: middle;
-            margin-top: 3px;
-        }
-    }
-
-    .share-btn {
-        @include txt-btn(#fff);
-        margin-top: 10px;
-    }
-
-    .save-btn {
-        @include btn($primary, 25px, $bg: true);
-        width: 170px;
-        height: 40px;
-        line-height: 20px;
-        padding: 0;
-        margin-left: 10px;
-
-        &:hover,
-        &:active {
-            background-color: darken($primary, 5);
-            @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
-        }
+    .settings {
+        @include new-btn();
     }
 }
 
