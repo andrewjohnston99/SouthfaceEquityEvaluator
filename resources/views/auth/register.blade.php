@@ -57,7 +57,7 @@
                             <!-- <label for="organization" class="col-md-4 col-form-label text-md-right">{{ __('organization') }}</label> -->
 
                             <div class="col-md-6">
-                                <input id="organization" type="text" name="organization" placeholder="organization">
+                                <input id="organization" type="text" name="organization" value="{{ old('organization') }}" placeholder="organization" required autocomplete="organization">
                             </div>
                         </div>
 
