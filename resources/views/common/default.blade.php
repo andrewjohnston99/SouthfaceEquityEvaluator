@@ -12,17 +12,15 @@
 
     {{-- Include per-page css --}}
     @yield('css')
+</head>
+<body>
+
+    @yield('content')
 
     {{-- Include app.js --}}
     <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
     {{-- Include per-page js --}}
     @yield('js')
-
-</head>
-<body>
-
-    @yield('content')
-
 </body>
 </html>

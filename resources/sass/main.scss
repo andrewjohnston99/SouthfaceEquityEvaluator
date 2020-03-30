@@ -21,11 +21,16 @@ body {
         font-weight: $font-reg;
     }
 
+    h3 {
+        font-size: $font-md;
+        font-weight: $font-reg;
+    }
+
     button {
         cursor: pointer;
     }
 
-    input.form-control:focus {
+    .form-control:focus {
         box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
     }
 }
@@ -532,53 +537,30 @@ nav.navbar {
 /******************************
 *  CREATE PROJECT
 ******************************/
-.create-project {
-    height: 100%;
-    flex-direction: column;
-    margin-top: 6%;
-    font-family: $font-primary;
-    font-size: $font-sm;
-    color: #000;
+.modal.create-project {
 
-    p {
-        color: #000;
+    .modal-header {
+        border: none;
     }
 
-    .create-header {
-        font-size: $font-md;
-        margin-bottom: 60px;
-        color: #000;
-    }
-
-    form {
-        a {
-            color: #000;
-            text-decoration: underline;
-            font-size: $font-xs;
-            font-weight: $font-mid;
-
-            &:hover {
-                color: darken($primary, 5);
-            }
-        }
-
-        input.form-control {
+    .modal-body form {
+        .form-control {
             background-color: #fff;
             border: 2px solid $light-grey;
             font-size: $font-sm;
-            width: 400px;
-            color: #000;
+            margin-bottom: 30px;
 
             &::placeholder {
                 color: $light-grey;
             }
-
-            &#password-confirm {
-                margin-bottom: 35px;
-            }
         }
 
-        #createProjectBtn {
+        .row {
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        button.create {
             @include btn($primary, 25px, $bg: true);
             @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
             width: 400px;
@@ -592,18 +574,9 @@ nav.navbar {
             }
         }
 
-        #cancelProjectBtn {
-            @include btn($primary, 25px, $bg: true);
-            @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
-            width: 400px;
-            height: 48px;
-            font-size: $font-md;
-
-            &:hover,
-            &:active {
-                background-color: darken($primary, 5);
-                @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, .25));
-            }
+        button.close-btn {
+            @include txt-btn($red);
+            font-size: $font-lg;
         }
     }
 }

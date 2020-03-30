@@ -81,14 +81,14 @@ $btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
     border: none;
     cursor: pointer;
 
-    background: transparent;
     color: $color;
+    background: none;
 
     &:hover, &:focus, &:active {
-        color: darken($primary, 5%);
+        color: darken($color, 5%);
 
         svg {
-            fill: darken($primary, 5%);
+            fill: darken($color, 5%);
         }
     }
 }
