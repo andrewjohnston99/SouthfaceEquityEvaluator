@@ -46,7 +46,7 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.2</th>
-                <td class="text-left align-middle">Interim uses</td>
+                <td class="text-left align-middle">Interim Uses (open space, retail, events, art and creative placemaking)</td>
                 <td class="align-middle">10</td>
                 <td id="e12" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
@@ -62,11 +62,11 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.3</th>
-                <td class="text-left align-middle">Small scale development that fosters hyper local economic development.</td>
-                <td class="align-middle">15</td>
+                <td class="text-left align-middle">Small Scale Commercial and Industrial Development</td>
+                <td class="align-middle">20</td>
                 <td id="e13" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="e13-input" class="planned-input" type="checkbox" data-value="15" />
+                        <input id="e13-input" class="planned-input" type="checkbox" data-value="20" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
@@ -94,11 +94,11 @@
             </tr>
             <tr class="text-center">
                 <th scope="row">GE 1.5</th>
-                <td class="text-left align-middle">Car sharing program (e.g. ZipCar)</td>
-                <td class="align-middle">5+</td>
+                <td class="text-left align-middle">Long-Term Housing</td>
+                <td class="align-middle">15</td>
                 <td id="e15" class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="e15-input" class="planned-input" type="checkbox" data-value="5" />
+                        <input id="e15-input" class="planned-input" type="checkbox" data-value="15" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
@@ -106,6 +106,92 @@
                 </td>
                 <td id="h15" class="align-middle">
                     <textarea id="h15-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <th scope="row" rowspan="5">GE 1.6</th>
+            </tr>
+            <tr class="text-center">
+                <td class="text-left align-middle">Shared Mobility Devices</td>
+                <td class="align-middle">-</td>
+                <td class="align-middle">-</td>
+                <td class="align-middle">-</td>
+            </tr>
+            <tr class="text-center">
+                <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">A.</span>Car-Share and Bike-Share Stations on Property</td>
+                <td class="align-middle">5</td>
+                <td class="align-middle">
+                    <div class="pretty p-default p-thick p-smooth">
+                        <input id="" class="planned-input" type="checkbox" data-value="5" />
+                        <div class="state p-success-o">
+                            <label></label>
+                        </div>
+                    </div>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">B.</span>Car-Share and Bike-Share Stations 1/2 mi.</td>
+                <td class="align-middle">3</td>
+                <td class="align-middle">
+                    <div class="pretty p-default p-thick p-smooth">
+                        <input id="" class="planned-input" type="checkbox" data-value="3" />
+                        <div class="state p-success-o">
+                            <label></label>
+                        </div>
+                    </div>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">C.</span>Docking Stations and Ride-Share Drop-Off/Pick-Up Area</td>
+                <td class="align-middle">3</td>
+                <td class="align-middle">
+                    <div class="pretty p-default p-thick p-smooth">
+                        <input id="" class="planned-input" type="checkbox" data-value="3" />
+                        <div class="state p-success-o">
+                            <label></label>
+                        </div>
+                    </div>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <th scope="row">GE 1.7</th>
+                <td class="text-left align-middle">Development Team Diversity</td>
+                <td class="align-middle">10</td>
+                <td class="align-middle">
+                    <div class="pretty p-default p-thick p-smooth">
+                        <input id="" class="planned-input" type="checkbox" data-value="10" />
+                        <div class="state p-success-o">
+                            <label></label>
+                        </div>
+                    </div>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <th scope="row">GE 1.8</th>
+                <td class="text-left align-middle">Community Benefits Agreement</td>
+                <td class="align-middle">10</td>
+                <td class="align-middle">
+                    <div class="pretty p-default p-thick p-smooth">
+                        <input id="" class="planned-input" type="checkbox" data-value="10" />
+                        <div class="state p-success-o">
+                            <label></label>
+                        </div>
+                    </div>
+                </td>
+                <td class="align-middle">
+                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="table-secondary text-center">
