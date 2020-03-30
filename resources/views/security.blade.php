@@ -14,7 +14,7 @@
             <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
     </div>
     <div class="form-group">
-        <label for="password">New Confirm Password</label>
+        <label for="password">Confirm New Password</label>
             <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
     </div>
     <div class="text-right">
