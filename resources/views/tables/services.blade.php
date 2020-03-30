@@ -449,32 +449,14 @@
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">A.</span>Alignment with Local Skills</td>
                 <td class="align-middle">5</td>
-                <td class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="5" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td class="align-middle">
+                <td class="align-middle" rowspan="2"></td>
+                <td class="align-middle" rowspan="2">
                     <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">B.</span>Apprenticeship, On-the-Job Training and First Source</td>
                 <td class="align-middle">10</td>
-                <td class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="10" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
             </tr>
             <tr class="text-center">
                 <th scope="row" rowspan="5">SE 1.3</th>
@@ -487,47 +469,18 @@
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">A.</span>7%</td>
                 <td class="align-middle">1</td>
-                <td class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="1" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td class="align-middle">
+                <td class="align-middle" rowspan="3"></td>
+                <td class="align-middle" rowspan="3">
                     <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">B.</span>15%</td>
                 <td class="align-middle">2</td>
-                <td class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="2" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">C.</span>20%</td>
                 <td class="align-middle">5</td>
-                <td class="align-middle">
-                    <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="5" />
-                        <div class="state p-success-o">
-                            <label></label>
-                        </div>
-                    </div>
-                </td>
-                <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
             </tr>
             <tr class="text-center">
                 <th scope="row" class="align-middle">SE 1.4</th>
