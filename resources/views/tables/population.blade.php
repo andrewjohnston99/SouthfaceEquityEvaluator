@@ -31,7 +31,7 @@
                     <span style="font-style: italic">Note: one point per each additional percentage above ideal percentage</span>
                 </td>
                 <td class="text-center align-middle" colspan="2">Select All That Apply:</td>
-                <td class="align-middle"></td>
+                <td class="align-middle">-</td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">1.</span>ELI ≤ 30% AMI 19% of Units</td>
@@ -99,7 +99,7 @@
             <tr class="text-center">
                 <td class="text-left align-middle">Mixed Use - Percentage of Lot Area</td>
                 <td class="text-center align-middle" colspan="2">Select One:</td>
-                <td class="align-middle"></td>
+                <td class="align-middle">-</td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">A.</span>60%</td>
