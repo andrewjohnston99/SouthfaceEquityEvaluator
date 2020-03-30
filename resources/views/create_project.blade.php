@@ -48,8 +48,8 @@
                         <option>West Lake</option>
                     </select>
                     <input id="projectTitle" class="form-control" type="text" name="projectTitle" placeholder="Project Title" required autofocus>
-                    <input id="charretteDate" class="form-control" type="text" name="charretteDate" placeholder="Charrette Date" required autofocus>
-                    <input id="kickoffDate" class="form-control" type="text" name="kickoffDate" placeholder="Kickoff Date" required autofocus>
+                    <input id="charretteDate" class="form-control flatpickr flatpickr-input" type="date" name="charretteDate" placeholder="Charrette Date" required autofocus>
+                    <input id="kickoffDate" class="form-control" type="date" name="kickoffDate" placeholder="Kickoff Date" required autofocus>
                     <textarea id="siteAddress" class="form-control" name="siteAddress" placeholder="Site Address" required></textarea>
                     <div class="row">
                         <button class="close-btn" type="button" data-dismiss="modal" aria-label="Close">Cancel</button>

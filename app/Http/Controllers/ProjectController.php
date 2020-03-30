@@ -39,14 +39,20 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $result = $request->project_metadata;
+        $metadata = (object) [
+            'title' => $request->projectTitle,
+            'address' => $request->siteAddress,
+            'charrette' => $request->charretteDate,
+            'kickoff' => $request->kickoffDate,
+            'marta' => $request->martaStation
+        ];
 
         Project::create([
             'user_id' => auth()->user()->id,
-            'project_metadata' => $result
+            'project_metadata' => json_encode($metadata)
         ]);
 
-        return response()->json($result, 200);
+        return view('project');
     }
 
     /**

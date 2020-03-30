@@ -538,6 +538,11 @@ nav.navbar {
 *  CREATE PROJECT
 ******************************/
 .modal.create-project {
+    .modal-content {
+        padding: 20px;
+        border: none;
+        border-radius: 15px;
+    }
 
     .modal-header {
         border: none;
@@ -549,6 +554,10 @@ nav.navbar {
             border: 2px solid $light-grey;
             font-size: $font-sm;
             margin-bottom: 30px;
+
+            &.datepicker-here {
+                z-index: 9999 !important;
+            }
 
             &::placeholder {
                 color: $light-grey;

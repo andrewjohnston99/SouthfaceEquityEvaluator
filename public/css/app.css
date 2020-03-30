@@ -12989,6 +12989,12 @@ nav.navbar .register-btn:active {
 *  CREATE PROJECT
 ******************************/
 
+.modal.create-project .modal-content {
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+}
+
 .modal.create-project .modal-header {
   border: none;
 }
@@ -12998,6 +13004,10 @@ nav.navbar .register-btn:active {
   border: 2px solid #9E9E9E;
   font-size: 20px;
   margin-bottom: 30px;
+}
+
+.modal.create-project .modal-body form .form-control.datepicker-here {
+  z-index: 9999 !important;
 }
 
 .modal.create-project .modal-body form .form-control::-webkit-input-placeholder {
