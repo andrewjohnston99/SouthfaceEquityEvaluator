@@ -4,11 +4,11 @@
 
     <div class="form-group">
         <label for="userName">Name</label>
-        <input type="text" class="form-control" id="userName" placeholder="">
+        <input type="text" class="form-control" id="userName" placeholder="{{ $user->name }}">
     </div>
     <div class="form-group">
         <label for="userEmail">Email address</label>
-        <input type="email" class="form-control" id="userEmail" placeholder="">
+        <input type="email" class="form-control" id="userEmail" placeholder="{{ $user->email }}">
     </div>
     <div class="form-group">
         <label for="userOrganization">Organization</label>
