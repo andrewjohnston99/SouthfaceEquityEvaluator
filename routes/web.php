@@ -29,6 +29,8 @@ Route::get('settings/account', 'UserController@index')->name('account');
 Route::get('settings/security', 'UserController@index');
 Route::put('settings/account', 'UserController@update');
 
+Route::get('change-password', 'ChangePasswordController@index');
+Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
 /******************************************* */
 /* TODO: DEV ONLY. REMOVE BEFORE PRODUCTION  */

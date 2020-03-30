@@ -101,34 +101,22 @@
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">A.</span>60%</td>
                 <td class="align-middle">2</td>
-                <td class="align-middle"></td>
-                <td class="align-middle">
+                <td class="align-middle" rowspan="4"></td>
+                <td class="align-middle" rowspan="4">
                     <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">B.</span>70%</td>
                 <td class="align-middle">3</td>
-                <td class="align-middle"></td>
-                <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">C.</span>80%</td>
                 <td class="align-middle">4</td>
-                <td class="align-middle"></td>
-                <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
             </tr>
             <tr class="text-center">
                 <td class="text-left align-middle"><span class="font-weight-bold" style="margin-right: 30px;">D.</span>90%</td>
                 <td class="align-middle">5</td>
-                <td class="align-middle"></td>
-                <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
-                </td>
             </tr>
             <tr class="text-center">
                 <th scope="row" class="align-middle">BC 1.2</th>
