@@ -7,11 +7,11 @@
                 <th class="align-middle planned">Planned</th>
                 <th class="align-middle notes">Notes: DATE</th>
             </tr>
+        </thead>
+        <tbody>
             <tr class="table-warning">
                 <th class="text-center" scope="col" colspan="6">REQUIRED</th>
             </tr>
-        </thead>
-        <tbody>
             <tr class="text-center">
                 <th scope="row" rowspan="4">SE 0.1</th>
             </tr>
