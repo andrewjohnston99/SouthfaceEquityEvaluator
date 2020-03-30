@@ -13,7 +13,7 @@
                 <th class="text-center" scope="col" colspan="6">OPTIONAL</th>
             </tr>
             <tr class="text-center">
-                <th scope="row">GE 1.0</th>
+                <th scope="row" class="align-middle">GE 1.0</th>
                 <td class="text-left align-middle">Specialized Housing (Senior, Assisted Living, Transitional)</td>
                 <td class="align-middle">20</td>
                 <td id="e10" class="align-middle">
@@ -29,7 +29,7 @@
                 </td>
             </tr>
             <tr class="text-center">
-                <th scope="row">GE 1.1</th>
+                <th scope="row" class="align-middle">GE 1.1</th>
                 <td class="text-left align-middle">Lifecycle Housing (raising children through aging in place)</td>
                 <td class="align-middle">15</td>
                 <td id="e11" class="align-middle">
@@ -45,7 +45,7 @@
                 </td>
             </tr>
             <tr class="text-center">
-                <th scope="row">GE 1.2</th>
+                <th scope="row" class="align-middle">GE 1.2</th>
                 <td class="text-left align-middle">Interim Uses (open space, retail, events, art and creative placemaking)</td>
                 <td class="align-middle">10</td>
                 <td id="e12" class="align-middle">
@@ -61,7 +61,7 @@
                 </td>
             </tr>
             <tr class="text-center">
-                <th scope="row">GE 1.3</th>
+                <th scope="row" class="align-middle">GE 1.3</th>
                 <td class="text-left align-middle">Small Scale Commercial and Industrial Development</td>
                 <td class="align-middle">20</td>
                 <td id="e13" class="align-middle">
@@ -77,7 +77,7 @@
                 </td>
             </tr>
             <tr class="text-center">
-                <th scope="row">GE 1.4</th>
+                <th scope="row" class="align-middle">GE 1.4</th>
                 <td class="text-left align-middle">Permanent Housing</td>
                 <td class="align-middle">20</td>
                 <td id="e14" class="align-middle">
@@ -93,7 +93,7 @@
                 </td>
             </tr>
             <tr class="text-center">
-                <th scope="row">GE 1.5</th>
+                <th scope="row" class="align-middle">GE 1.5</th>
                 <td class="text-left align-middle">Long-Term Housing</td>
                 <td class="align-middle">15</td>
                 <td id="e15" class="align-middle">
@@ -163,7 +163,7 @@
                 </td>
             </tr>
             <tr class="text-center">
-                <th scope="row">GE 1.7</th>
+                <th scope="row" class="align-middle">GE 1.7</th>
                 <td class="text-left align-middle">Development Team Diversity</td>
                 <td class="align-middle">10</td>
                 <td class="align-middle">
@@ -179,7 +179,7 @@
                 </td>
             </tr>
             <tr class="text-center">
-                <th scope="row">GE 1.8</th>
+                <th scope="row" class="align-middle">GE 1.8</th>
                 <td class="text-left align-middle">Community Benefits Agreement</td>
                 <td class="align-middle">10</td>
                 <td class="align-middle">
