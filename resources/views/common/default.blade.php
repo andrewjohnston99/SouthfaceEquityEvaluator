@@ -10,13 +10,10 @@
 
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
-    {{-- Include per-page css --}}
     @yield('css')
 
-    {{-- Include app.js --}}
     <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
-    {{-- Include per-page js --}}
     @yield('js')
 
 </head>

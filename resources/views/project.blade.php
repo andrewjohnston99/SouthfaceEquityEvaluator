@@ -16,7 +16,7 @@
 
 @section('content')
 
-    @include('common.project-header')
+    @include('project_header_content')
 
     @include('tables.gen-equity')
 

@@ -15,45 +15,32 @@
 @endsection
 
 @section('content')
-    @extends('common.project-header')
+    @include('home_header_content')
 
-    @section('project-btns')
-        <a class="settings" href="{{ route('account') }}">
-
-            Settings</a>
-    @endsection
-
-    {{-- <div class="dashboard container">
-
-        <div class="row d-flex hero">
-            <div class="col">
-                <img src="{{ URL::asset('images/equity.png') }}" />
-            </div>
-            <div class="col d-flex align-items-center">
-                <h1 class="equity">Equity Evaluator</h1>
-            </div>
-            <div class="col flex-grow-1 d-flex align-items-center justify-content-end">
-                <button id="addBtn" class="add-btn d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#createProjectModal" type="button">
-                    New Project
-                    <span>
-                        @include('icons.add')
-                    </span>
-                </button>
-            </div>
-        </div>
-        <div class="row projects d-flex justify-content-between">
-            @isset($projects)
-                <form action="/" method="get" id="getProjectForm">
-                    @foreach ($projects as $project)
-                        @include('project.button')
-                    @endforeach
-                </form>
-            @endisset
-            @empty($projects)
-                @include('project.no-button')
-            @endempty
+    <div class="home">
+        <div class="hero d-flex">
+            <h2>These are all your projects.</h2>
+            <button class="add-btn" data-toggle="modal" data-target="#createProjectModal" type="button">
+                <span>
+                    <i class="material-icons align-middle">add</i>
+                </span>
+                New Project
+            </button>
         </div>
     </div>
 
-    @include('create_project') --}}
+    <div class="projects d-flex">
+        @isset($projects)
+            <form action="/" method="get" id="getProjectForm">
+                @foreach ($projects as $project)
+                    @include('button')
+                @endforeach
+            </form>
+        @endisset
+        @empty($projects)
+            <h3 class="no-projects align-self-center">No saved projects!</h3>
+        @endempty
+    </div>
+
+    @include('create_project')
 @endsection

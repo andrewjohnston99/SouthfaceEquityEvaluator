@@ -4,6 +4,7 @@ body {
     font-size: $font-sm;
     color: #000;
     background-color: #fff;
+    height: 100%;
 
     h1 {
         font-size: $font-xl;
@@ -27,6 +28,10 @@ body {
 
     input.form-control:focus {
         box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
+    }
+
+    i.material-icons {
+        padding-bottom: 1px;
     }
 }
 
@@ -221,93 +226,33 @@ nav.navbar {
 }
 
 /******************************
-*  DASHBOARD
+* HOME VIEW
 ******************************/
-.dashboard {
-    height: 100%;
-    flex-direction: column;
-    // background-color: $background;
+.home {
+    padding: 0 50px;
 
-    .row {
-        width: 100%;
-        margin: 0;
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 30%;
+        margin-top: 30px;
 
-        &.hero {
-            margin-top: 3%;
-        }
+        .add-btn {
+            @include new-btn();
 
-        &.projects {
-            margin-top: 8%;
-        }
-    }
-
-    .col {
-        flex-grow: unset;
-        padding: 0;
-    }
-
-    h1.equity {
-        font-weight: $font-bold;
-    }
-
-    .settings-btn {
-        @include btn(#fff, 25px, $bg: true);
-        @include box-shadow(0, 4px, 15px, rgba(0, 0, 0, 0.15));
-        width: 175px;
-        height: 52px;
-        line-height: 30px;
-        color: #000;
-
-        span {
-            padding-right: 20px;
-        }
-
-        &:hover,
-        &:active {
-            background-color: $primary;
-            color: #fff;
-            @include box-shadow(0, 8px, 30px, rgba(0, 0, 0, 0.20));
-
-            svg path {
-                fill: #fff;
+            span {
+                margin-right: 10px;
             }
         }
     }
+}
 
-    .add-btn {
-        @include btn($primary, 25px, $bg: true);
-        @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, 0.25));
-        width: 300px;
-        height: 60px;
-        line-height: 30px;
-        font-size: $font-xl;
+.projects {
+    flex-direction: row;
+    height: 70%;
 
-        span {
-            padding-left: 20px;
-        }
-
-        &:hover,
-        &:active {
-            background-color: darken($primary, 5);
-            @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
-        }
-    }
-
-    .project-card {
-        @include btn(#fff, 25px, $bg: true);
-        @include box-shadow(0, 4px, 50px, rgba(0, 0, 0, 0.15));
-        color: #000;
-        width: auto;
-        max-width: 100%;
-        padding: 36px;
-
-        .project-title {
-            margin-bottom: 10px;
-        }
-
-        &:hover {
-            @include box-shadow(0, 8px, 60px, rgba(0, 0, 0, 0.3))
-        }
+    h3 {
+        margin: auto;
     }
 }
 
@@ -319,15 +264,21 @@ nav.navbar {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid $light-grey;
+    border-bottom: 1px solid #d6d6d6;
     padding: 0 50px;
 
     .southface-icon {
         height: 20%;
+        width: 20%;
     }
 
     .settings {
         @include new-btn();
+        padding: 10px 15px;
+
+        span {
+            margin-right: 10px;
+        }
     }
 }
 

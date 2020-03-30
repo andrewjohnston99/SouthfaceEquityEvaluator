@@ -1,4 +1,40 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap);@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/vendor/material-design-icons/iconMaterialIcons-Regular.eot?e79bfd88537def476913f3ed52f4f4b3); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/fonts/vendor/material-design-icons/iconMaterialIcons-Regular.woff2?570eb83859dc23dd0eec423a49e147fe) format('woff2'),
+       url(/fonts/vendor/material-design-icons/iconMaterialIcons-Regular.woff?012cf6a10129e2275d79d6adac7f3b02) format('woff'),
+       url(/fonts/vendor/material-design-icons/iconMaterialIcons-Regular.ttf?a37b0c01c0baf1888ca812cc0508f6e2) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+@charset "UTF-8";
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -12073,7 +12109,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   color: #000;
-  margin-top: 45px;
+  background-color: #fff;
+  height: 100%;
 }
 
 html h1,
@@ -12103,6 +12140,11 @@ body button {
 html input.form-control:focus,
 body input.form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
+}
+
+html i.material-icons,
+body i.material-icons {
+  padding-bottom: 1px;
 }
 
 /******************************
@@ -12457,185 +12499,59 @@ nav.navbar .register-btn:active {
 }
 
 /******************************
-*  DASHBOARD
+* HOME VIEW
 ******************************/
 
-.dashboard {
-  height: 100%;
-  -webkit-box-orient: vertical;
+.home {
+  padding: 0 50px;
+}
+
+.home .hero {
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-          flex-direction: column;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  height: 30%;
+  margin-top: 30px;
 }
 
-.dashboard .row {
-  width: 100%;
-  margin: 0;
-}
-
-.dashboard .row.hero {
-  margin-top: 3%;
-}
-
-.dashboard .row.projects {
-  margin-top: 8%;
-}
-
-.dashboard .col {
-  -webkit-box-flex: unset;
-          flex-grow: unset;
-  padding: 0;
-}
-
-.dashboard h1.equity {
-  font-weight: 700;
-}
-
-.dashboard .settings-btn {
+.home .hero .add-btn {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
   border: none;
   cursor: pointer;
-  background: #fff;
-  color: #fff;
-  border-radius: 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 175px;
-  height: 52px;
-  line-height: 30px;
-  color: #000;
-}
-
-.dashboard .settings-btn:hover,
-.dashboard .settings-btn:focus,
-.dashboard .settings-btn:active {
-  outline: none;
-  border: none;
-}
-
-.dashboard .settings-btn:hover {
-  background-color: #fff;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.dashboard .settings-btn:active,
-.dashboard .settings-btn:focus {
-  background-color: #bfbfbf;
-}
-
-.dashboard .settings-btn span {
-  padding-right: 20px;
-}
-
-.dashboard .settings-btn:hover,
-.dashboard .settings-btn:active {
-  background-color: #0A9D53;
-  color: #fff;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  height: 53px;
+  padding: 10px;
+  background-color: #F6F6F6;
+  color: #0A9D53;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
 }
 
-.dashboard .settings-btn:hover svg path,
-.dashboard .settings-btn:active svg path {
-  fill: #fff;
-}
-
-.dashboard .add-btn {
-  box-sizing: border-box;
-  text-decoration: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  background: #0A9D53;
-  color: #fff;
-  border-radius: 25px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+.home .hero .add-btn:hover {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.04);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
-  width: 300px;
-  height: 60px;
-  line-height: 30px;
-  font-size: 36px;
+  background-color: #e9e9e9;
 }
 
-.dashboard .add-btn:hover,
-.dashboard .add-btn:focus,
-.dashboard .add-btn:active {
-  outline: none;
-  border: none;
+.home .hero .add-btn span {
+  margin-right: 10px;
 }
 
-.dashboard .add-btn:hover {
-  background-color: #0A9D53;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.projects {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  height: 70%;
 }
 
-.dashboard .add-btn:active,
-.dashboard .add-btn:focus {
-  background-color: #022514;
-}
-
-.dashboard .add-btn span {
-  padding-left: 20px;
-}
-
-.dashboard .add-btn:hover,
-.dashboard .add-btn:active {
-  background-color: #088546;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-}
-
-.dashboard .project-card {
-  box-sizing: border-box;
-  text-decoration: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  background: #fff;
-  color: #fff;
-  border-radius: 25px;
-  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.15);
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  color: #000;
-  width: auto;
-  max-width: 100%;
-  padding: 36px;
-}
-
-.dashboard .project-card:hover,
-.dashboard .project-card:focus,
-.dashboard .project-card:active {
-  outline: none;
-  border: none;
-}
-
-.dashboard .project-card:hover {
-  background-color: #fff;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.dashboard .project-card:active,
-.dashboard .project-card:focus {
-  background-color: #bfbfbf;
-}
-
-.dashboard .project-card .project-title {
-  margin-bottom: 10px;
-}
-
-.dashboard .project-card:hover {
-  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.3);
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
+.projects h3 {
+  margin: auto;
 }
 
 /******************************
@@ -12643,142 +12559,49 @@ nav.navbar .register-btn:active {
 ******************************/
 
 .project-header {
-  height: 130px;
-  -webkit-box-orient: vertical;
+  height: 94px;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-          flex-direction: column;
+          flex-direction: row;
   -webkit-box-align: center;
           align-items: center;
-  background-color: #2D2A32;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 0 50px;
 }
 
-.project-header .row {
-  height: 50%;
-  width: 100%;
-  margin: 6px 35px 0 35px;
+.project-header .southface-icon {
+  height: 20%;
+  width: 20%;
 }
 
-.project-header .row .btn-col:last-child {
-  text-align: right;
-  padding-right: 20px;
-}
-
-.project-header .row.nav-row {
-  align-content: center;
-}
-
-.project-header .row.nav-row .col {
-  text-align: center;
-}
-
-.project-header .row.nav-row .col a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.project-header .row.nav-row .col a:hover,
-.project-header .row.nav-row .col a:focus,
-.project-header .row.nav-row .col a:active {
-  border-bottom: 2px solid #fff;
-  padding-bottom: 8px;
-}
-
-.project-header .back-btn {
+.project-header .settings {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
   border: none;
   cursor: pointer;
-  background: transparent;
-  color: #fff;
-  margin-top: 10px;
-}
-
-.project-header .back-btn:hover,
-.project-header .back-btn:focus,
-.project-header .back-btn:active {
-  color: #088546;
-}
-
-.project-header .back-btn:hover svg,
-.project-header .back-btn:focus svg,
-.project-header .back-btn:active svg {
-  fill: #088546;
-}
-
-.project-header .back-btn span {
-  padding-left: 8px;
-}
-
-.project-header .back-btn svg {
-  fill: #fff;
-  vertical-align: middle;
-  margin-top: 3px;
-}
-
-.project-header .share-btn {
-  box-sizing: border-box;
-  text-decoration: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  background: transparent;
-  color: #fff;
-  margin-top: 10px;
-}
-
-.project-header .share-btn:hover,
-.project-header .share-btn:focus,
-.project-header .share-btn:active {
-  color: #088546;
-}
-
-.project-header .share-btn:hover svg,
-.project-header .share-btn:focus svg,
-.project-header .share-btn:active svg {
-  fill: #088546;
-}
-
-.project-header .save-btn {
-  box-sizing: border-box;
-  text-decoration: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  background: #0A9D53;
-  color: #fff;
-  border-radius: 25px;
-  width: 170px;
-  height: 40px;
-  line-height: 20px;
-  padding: 0;
-  margin-left: 10px;
-}
-
-.project-header .save-btn:hover,
-.project-header .save-btn:focus,
-.project-header .save-btn:active {
-  outline: none;
-  border: none;
-}
-
-.project-header .save-btn:hover {
-  background-color: #0A9D53;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.project-header .save-btn:active,
-.project-header .save-btn:focus {
-  background-color: #022514;
-}
-
-.project-header .save-btn:hover,
-.project-header .save-btn:active {
-  background-color: #088546;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  height: 53px;
+  padding: 10px;
+  background-color: #F6F6F6;
+  color: #0A9D53;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
+  padding: 10px 15px;
+}
+
+.project-header .settings:hover {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.04);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  background-color: #e9e9e9;
+}
+
+.project-header .settings span {
+  margin-right: 10px;
 }
 
 .table-responsive {
