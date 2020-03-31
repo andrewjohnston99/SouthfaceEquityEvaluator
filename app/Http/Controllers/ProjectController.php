@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Project;
 
 class ProjectController extends Controller
@@ -22,16 +23,6 @@ class ProjectController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -39,20 +30,26 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $metadata = (object) [
+        $metadata = array (
             'title' => $request->projectTitle,
             'address' => $request->siteAddress,
             'charrette' => $request->charretteDate,
             'kickoff' => $request->kickoffDate,
             'marta' => $request->martaStation
-        ];
+        );
 
-        Project::create([
+        $metadata = json_decode(json_encode($metadata));
+
+        $new_project = Project::create([
             'user_id' => auth()->user()->id,
-            'project_metadata' => json_encode($metadata)
+            'project_metadata' => $metadata
         ]);
 
-        return view('project');
+        $project = null;
+
+        $url = 'projects/' . $new_project->project_id;
+
+        return redirect($url)->with('project',$project);
     }
 
     /**
@@ -74,17 +71,6 @@ class ProjectController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -93,7 +79,9 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
+        Log::debug('in update');
         $data = json_encode($request->all());
+        Log::debug('got data');
 
         Project::where('project_id', $id)
             ->update(['project_json' => $data]);
@@ -112,6 +100,9 @@ class ProjectController extends Controller
         //
     }
 
+    /**
+     * TODO: DELETE THIS FUNCTION. DEV ONLY
+     */
     public function token()
     {
         return csrf_token();
