@@ -25,10 +25,24 @@ class UserController extends Controller
     //     return view('settings')->with('user', $user);
     // }
 
-    public function update(Request $request) {
-        $uid = auth()->user()->id;
+    /**
+     * Change Password and Redirect to Home.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function store(Request $request)
+    {
 
-        dd($request);
-        // User::where('user_id', $uid)
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . auth()->user()->id],
+            'userOrganization' => ['max:255'],
+        ]);
+
+        User::find(auth()->user()->id)->update(['name'=> ($request->name)]);
+        User::find(auth()->user()->id)->update(['email'=> ($request->email)]);
+        User::find(auth()->user()->id)->update(['organization'=> ($request->userOrganization)]);
+
+        return redirect('/settings/account');
     }
 }
