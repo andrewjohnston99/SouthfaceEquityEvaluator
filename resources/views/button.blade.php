@@ -11,7 +11,4 @@
     <div class="row">
         <p>Kickoff Date: {{ $project['kickoff'] }}</p>
     </div>
-    {{-- <div class="row">
-        <p>{{ $record->marta }}</p>
-    </div> --}}
 </button>

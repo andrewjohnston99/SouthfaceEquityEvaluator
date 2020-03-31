@@ -12132,13 +12132,19 @@ body h2 {
   font-weight: 400;
 }
 
+html h3,
+body h3 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
 html button,
 body button {
   cursor: pointer;
 }
 
-html input.form-control:focus,
-body input.form-control:focus {
+html .form-control:focus,
+body .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
 }
 
@@ -12662,21 +12668,21 @@ nav.navbar .register-btn:active {
   outline: none;
   border: none;
   cursor: pointer;
-  background: transparent;
   color: #000;
+  background: none;
   margin-top: 10px;
 }
 
 .settings-frame .row.btn .back-btn:hover,
 .settings-frame .row.btn .back-btn:focus,
 .settings-frame .row.btn .back-btn:active {
-  color: #088546;
+  color: black;
 }
 
 .settings-frame .row.btn .back-btn:hover svg,
 .settings-frame .row.btn .back-btn:focus svg,
 .settings-frame .row.btn .back-btn:active svg {
-  fill: #088546;
+  fill: black;
 }
 
 .settings-frame .row.btn .back-btn span {
@@ -12806,71 +12812,54 @@ nav.navbar .register-btn:active {
 *  CREATE PROJECT
 ******************************/
 
-.create-project {
-  height: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  margin-top: 6%;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  color: #000;
+.modal.create-project .modal-content {
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
 }
 
-.create-project p {
-  color: #000;
+.modal.create-project .modal-header {
+  border: none;
 }
 
-.create-project .create-header {
-  font-size: 22px;
-  margin-bottom: 60px;
-  color: #000;
-}
-
-.create-project form a {
-  color: #000;
-  text-decoration: underline;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.create-project form a:hover {
-  color: #088546;
-}
-
-.create-project form input.form-control {
+.modal.create-project .modal-body form .form-control {
   background-color: #fff;
   border: 2px solid #9E9E9E;
   font-size: 20px;
-  width: 400px;
-  color: #000;
+  margin-bottom: 30px;
 }
 
-.create-project form input.form-control::-webkit-input-placeholder {
+.modal.create-project .modal-body form .form-control.datepicker-here {
+  z-index: 9999 !important;
+}
+
+.modal.create-project .modal-body form .form-control::-webkit-input-placeholder {
   color: #9E9E9E;
 }
 
-.create-project form input.form-control::-moz-placeholder {
+.modal.create-project .modal-body form .form-control::-moz-placeholder {
   color: #9E9E9E;
 }
 
-.create-project form input.form-control:-ms-input-placeholder {
+.modal.create-project .modal-body form .form-control:-ms-input-placeholder {
   color: #9E9E9E;
 }
 
-.create-project form input.form-control::-ms-input-placeholder {
+.modal.create-project .modal-body form .form-control::-ms-input-placeholder {
   color: #9E9E9E;
 }
 
-.create-project form input.form-control::placeholder {
+.modal.create-project .modal-body form .form-control::placeholder {
   color: #9E9E9E;
 }
 
-.create-project form input.form-control#password-confirm {
-  margin-bottom: 35px;
+.modal.create-project .modal-body form .row {
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
 }
 
-.create-project form #createProjectBtn {
+.modal.create-project .modal-body form button.create {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
@@ -12887,72 +12876,52 @@ nav.navbar .register-btn:active {
   font-size: 22px;
 }
 
-.create-project form #createProjectBtn:hover,
-.create-project form #createProjectBtn:focus,
-.create-project form #createProjectBtn:active {
+.modal.create-project .modal-body form button.create:hover,
+.modal.create-project .modal-body form button.create:focus,
+.modal.create-project .modal-body form button.create:active {
   outline: none;
   border: none;
 }
 
-.create-project form #createProjectBtn:hover {
+.modal.create-project .modal-body form button.create:hover {
   background-color: #0A9D53;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.create-project form #createProjectBtn:active,
-.create-project form #createProjectBtn:focus {
+.modal.create-project .modal-body form button.create:active,
+.modal.create-project .modal-body form button.create:focus {
   background-color: #022514;
 }
 
-.create-project form #createProjectBtn:hover,
-.create-project form #createProjectBtn:active {
+.modal.create-project .modal-body form button.create:hover,
+.modal.create-project .modal-body form button.create:active {
   background-color: #088546;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
 }
 
-.create-project form #cancelProjectBtn {
+.modal.create-project .modal-body form button.close-btn {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
   border: none;
   cursor: pointer;
-  background: #0A9D53;
-  color: #fff;
-  border-radius: 25px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  width: 400px;
-  height: 48px;
-  font-size: 22px;
+  color: #EB5757;
+  background: none;
+  font-size: 28px;
 }
 
-.create-project form #cancelProjectBtn:hover,
-.create-project form #cancelProjectBtn:focus,
-.create-project form #cancelProjectBtn:active {
-  outline: none;
-  border: none;
+.modal.create-project .modal-body form button.close-btn:hover,
+.modal.create-project .modal-body form button.close-btn:focus,
+.modal.create-project .modal-body form button.close-btn:active {
+  color: #e84040;
 }
 
-.create-project form #cancelProjectBtn:hover {
-  background-color: #0A9D53;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.create-project form #cancelProjectBtn:active,
-.create-project form #cancelProjectBtn:focus {
-  background-color: #022514;
-}
-
-.create-project form #cancelProjectBtn:hover,
-.create-project form #cancelProjectBtn:active {
-  background-color: #088546;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-  -webkit-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
+.modal.create-project .modal-body form button.close-btn:hover svg,
+.modal.create-project .modal-body form button.close-btn:focus svg,
+.modal.create-project .modal-body form button.close-btn:active svg {
+  fill: #e84040;
 }
 

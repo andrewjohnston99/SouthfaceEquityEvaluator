@@ -91,14 +91,14 @@ $shadow-xl: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0p
     border: none;
     cursor: pointer;
 
-    background: transparent;
     color: $color;
+    background: none;
 
     &:hover, &:focus, &:active {
-        color: darken($primary, 5%);
+        color: darken($color, 5%);
 
         svg {
-            fill: darken($primary, 5%);
+            fill: darken($color, 5%);
         }
     }
 }

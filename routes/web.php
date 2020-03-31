@@ -24,19 +24,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('about', 'about');
 Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');
-Route::view('project', 'project');
 
 Route::get('settings/account', 'UserController@index')->name('account');
 Route::get('settings/security', 'UserController@index');
 Route::put('settings/account', 'UserController@update');
 
+Route::get('change-password', 'ChangePasswordController@index');
+Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
 /******************************************* */
 /* TODO: DEV ONLY. REMOVE BEFORE PRODUCTION  */
 Route::get('token', 'ProjectController@token');
 /******************************************* */
 
-// Route::resource('projects', 'ProjectController');
+Route::resource('projects', 'ProjectController');
 
 
 

@@ -14,11 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $uid = auth()->user()->id;
-
-        $user = User::where('user_id', $uid);
-
-        return view('settings')->with('user', $user);
+        return view('settings')->with('user', auth()->user());
     }
 
     // public function security() {

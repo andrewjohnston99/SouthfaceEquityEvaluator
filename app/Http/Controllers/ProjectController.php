@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Project;
 
 class ProjectController extends Controller
@@ -22,16 +23,6 @@ class ProjectController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -39,14 +30,26 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $result = $request->project_metadata;
+        $metadata = array (
+            'title' => $request->projectTitle,
+            'address' => $request->siteAddress,
+            'charrette' => $request->charretteDate,
+            'kickoff' => $request->kickoffDate,
+            'marta' => $request->martaStation
+        );
 
-        Project::create([
+        $metadata = json_decode(json_encode($metadata));
+
+        $new_project = Project::create([
             'user_id' => auth()->user()->id,
-            'project_metadata' => $result
+            'project_metadata' => $metadata
         ]);
 
-        return response()->json($result, 200);
+        $project = null;
+
+        $url = 'projects/' . $new_project->project_id;
+
+        return redirect($url)->with('project',$project);
     }
 
     /**
@@ -65,17 +68,6 @@ class ProjectController extends Controller
             ->pluck('project_json');
 
         return view('project')->with('project', $data[0]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -106,6 +98,9 @@ class ProjectController extends Controller
         //
     }
 
+    /**
+     * TODO: DELETE THIS FUNCTION. DEV ONLY
+     */
     public function token()
     {
         return csrf_token();

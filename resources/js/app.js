@@ -3,3 +3,4 @@
  */
 
 require('./bootstrap');
+require('flatpickr/dist/flatpickr');
