@@ -41,7 +41,6 @@ $(document).ready(function() {
         tables.each(function(i) {
             var inputs = $("#" + this.id + ' [id*="-input"]');
             var tableData = Object();
-            var table = this.id.split("table")[0];
 
             inputs.each(function(i) {
                 var temp = Object();

@@ -18,7 +18,7 @@
                 <td class="align-middle">-</td>
                 <td class="align-middle">-</td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h49-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -27,7 +27,7 @@
             <tr class="text-center">
                 <th scope="row" rowspan="5">PPE 1.0</th>
                 <td class="text-left align-middle">Proportion of Affordability <a class="font-weight-bold" href="{{ url('affordability') }}">(see Affordability Worksheet)</a>
-                    <br> 
+                    <br>
                     <span style="font-style: italic">Note: one point per each additional percentage above ideal percentage</span>
                 </td>
                 <td class="text-center align-middle" colspan="2">Select All That Apply:</td>
@@ -38,14 +38,14 @@
                 <td class="text-center align-middle">0+</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="" />
+                        <input id="e50-input" type="checkbox" data-value="" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h50-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -53,14 +53,14 @@
                 <td class="text-center align-middle">0+</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="" />
+                        <input id="e51-input" type="checkbox" data-value="" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h51-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -68,14 +68,14 @@
                 <td class="text-center align-middle">0+</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="" />
+                        <input id="e52-input" type="checkbox" data-value="" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h52-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -83,14 +83,14 @@
                 <td class="text-center align-middle">0+</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="" />
+                        <input id="e53-input" type="checkbox" data-value="" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h53-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -106,7 +106,7 @@
                 <td class="text-center align-middle">2</td>
                 <td class="align-middle" rowspan="4"></td>
                 <td class="align-middle" rowspan="4">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h54-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -127,7 +127,7 @@
                 <td class="text-center align-middle" colspan="1">TBD</td>
                 <td class="align-middle"></td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h55-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -136,7 +136,7 @@
                 <td class="text-center align-middle" colspan="1">TBD</td>
                 <td class="align-middle"></td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h56-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="table-secondary text-center">

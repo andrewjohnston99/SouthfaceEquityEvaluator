@@ -18,7 +18,7 @@
                 <td class="align-middle">-</td>
                 <td class="align-middle">-</td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h57-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -35,14 +35,14 @@
                 <td class="align-middle">0+</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="" />
+                        <input id="e58-input" type="checkbox" data-value="" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h58-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -50,14 +50,14 @@
                 <td class="align-middle">0+</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="" />
+                        <input id="e59-input" type="checkbox" data-value="" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h59-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -65,14 +65,14 @@
                 <td class="align-middle">0+</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="" />
+                        <input id="e60-input" type="checkbox" data-value="" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h60-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -80,14 +80,14 @@
                 <td class="align-middle">0+</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" type="checkbox" data-value="" />
+                        <input id="e61-input" type="checkbox" data-value="" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h61-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -103,7 +103,7 @@
                 <td class="align-middle">2</td>
                 <td class="align-middle" rowspan="4"></td>
                 <td class="align-middle" rowspan="4">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h62-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -124,7 +124,7 @@
                 <td class="align-middle" colspan="1">TBD</td>
                 <td class="align-middle"></td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h63-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -133,7 +133,7 @@
                 <td class="align-middle" colspan="1">TBD</td>
                 <td class="align-middle"></td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h64-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="table-secondary text-center">
