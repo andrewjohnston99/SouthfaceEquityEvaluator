@@ -14,10 +14,10 @@
     <script src="{{ URL::asset('js/project.js') }}"></script>
     <script>
         document.getElementById("charretteDate").flatpickr({
-            dateFormat: "d-m-Y",
+            dateFormat: "m-d-Y"
         });
         document.getElementById("kickoffDate").flatpickr({
-            dateFormat: "d-m-Y",
+            dateFormat: "m-d-Y"
         });
     </script>
 @endsection
@@ -37,15 +37,11 @@
         </div>
     </div>
 
-    <div class="projects d-flex">
+    <div class="projects">
         @isset($projects)
-            <form action="/" method="get" id="getProjectForm">
-                <div class="project-btn-wrapper h-100 d-flex flex-row justify-content-between">
-                    @foreach ($projects as $project)
-                        @include('button')
-                    @endforeach
-                </div>
-            </form>
+            @foreach ($projects as $project)
+                @include('project_card')
+            @endforeach
         @endisset
         @empty($projects)
             <h3 class="no-projects align-self-center">No saved projects!</h3>

@@ -253,13 +253,12 @@ nav.navbar {
 }
 
 .projects {
-    flex-direction: row;
-    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
     padding: 0 50px;
-
-    form {
-        flex-direction: row;
-    }
+    margin-top: 40px;
 
     .no-projects, .project-card {
         margin: auto;
@@ -268,8 +267,28 @@ nav.navbar {
     .project-card {
         @include new-btn();
         height: 380px;
-        width: 535px;
+        width: 100%;
         color: #000;
+        padding: 20px 30px;
+
+        .row {
+            margin: unset;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.project-title {
+                align-self: center;
+                margin-bottom: 40px;
+            }
+
+            .site-address {
+                text-indent: -145px;
+                padding-left: 145px;
+            }
+        }
     }
 }
 
