@@ -7,7 +7,6 @@
             <div class="modal-body">
                 <form action="{{ url('projects') }}" method="POST">
                     @csrf
-
                     <select class="form-control" id="martaStation" name="martaStation">
                         <option selected disabled hidden>Please choose the Marta station closest to your development.</option>
                         <option>Arts Center</option>

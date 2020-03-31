@@ -79,9 +79,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Log::debug('in update');
         $data = json_encode($request->all());
-        Log::debug('got data');
 
         Project::where('project_id', $id)
             ->update(['project_json' => $data]);
