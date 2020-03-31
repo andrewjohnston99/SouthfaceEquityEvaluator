@@ -38,6 +38,11 @@ body {
     i.material-icons {
         padding-bottom: 1px;
     }
+
+    .row, .col {
+        margin: 0;
+        padding: 0 50px;
+    }
 }
 
 /******************************
@@ -304,11 +309,11 @@ nav.navbar {
     padding: 0 50px;
 
     .southface-icon {
-        height: 20%;
-        width: 20%;
+        height: 50px;
+        width: 50px;
     }
 
-    .settings {
+    .settings, .save {
         @include new-btn();
         padding: 10px 15px;
 
@@ -316,11 +321,81 @@ nav.navbar {
             margin-right: 10px;
         }
     }
+
+    .exit {
+        @include txt-btn($red);
+        font-size: 24px;
+        margin-left: 50px;
+    }
+
+    .info-container {
+        a, h2, i {
+            margin-right: 20px;
+        }
+
+        h2 {
+            margin-bottom: 0;
+        }
+
+        .material-icons {
+            font-size: 30px;
+            padding-bottom: 0;
+            padding-top: 3px;
+        }
+
+        .form-control {
+            color: #000;
+            border: 1px solid $light-grey;
+        }
+    }
+}
+
+.row.info {
+    margin-top: 30px;
+
+    .material-icons {
+        padding: 0;
+        padding-top: 2px;
+        margin-right: 12px;
+        color: $primary;
+    }
+}
+
+.row.project-content {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    ul {
+        list-style: none;
+
+        li {
+            margin-bottom: 15px;
+
+            &::before {
+                content: "\25CB";
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+                font-size: 28px;
+                padding-bottom: 7px;
+                vertical-align: middle;
+            }
+
+            &.edited::before {
+                content: "\2022";
+                color: $primary;
+                width: .6em;
+                margin-left: -.6em;
+                font-size: 47px;
+            }
+        }
+    }
 }
 
 .table-responsive {
     width: unset;
-    margin: 60px;
 
     table {
         width: 100%;

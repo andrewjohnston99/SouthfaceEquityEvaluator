@@ -13001,6 +13001,14 @@ body i.material-icons {
   padding-bottom: 1px;
 }
 
+html .row,
+html .col,
+body .row,
+body .col {
+  margin: 0;
+  padding: 0 50px;
+}
+
 /******************************
 *  HEADER
 ******************************/
@@ -13475,11 +13483,12 @@ nav.navbar .register-btn:active {
 }
 
 .project-header .southface-icon {
-  height: 20%;
-  width: 20%;
+  height: 50px;
+  width: 50px;
 }
 
-.project-header .settings {
+.project-header .settings,
+.project-header .save {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
@@ -13496,20 +13505,108 @@ nav.navbar .register-btn:active {
   padding: 10px 15px;
 }
 
-.project-header .settings:hover {
+.project-header .settings:hover,
+.project-header .save:hover {
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.04);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
   background-color: #e9e9e9;
 }
 
-.project-header .settings span {
+.project-header .settings span,
+.project-header .save span {
   margin-right: 10px;
+}
+
+.project-header .exit {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #e84040 !important;
+  font-size: 24px;
+  margin-left: 50px;
+}
+
+.project-header .exit:hover,
+.project-header .exit:focus,
+.project-header .exit:active {
+  color: #db1a1a;
+}
+
+.project-header .exit:hover svg,
+.project-header .exit:focus svg,
+.project-header .exit:active svg {
+  fill: #db1a1a;
+}
+
+.project-header .info-container a,
+.project-header .info-container h2,
+.project-header .info-container i {
+  margin-right: 20px;
+}
+
+.project-header .info-container h2 {
+  margin-bottom: 0;
+}
+
+.project-header .info-container .material-icons {
+  font-size: 30px;
+  padding-bottom: 0;
+  padding-top: 3px;
+}
+
+.project-header .info-container .form-control {
+  color: #000;
+  border: 1px solid #9E9E9E;
+}
+
+.row.info {
+  margin-top: 30px;
+}
+
+.row.info .material-icons {
+  padding: 0;
+  padding-top: 2px;
+  margin-right: 12px;
+  color: #0A9D53;
+}
+
+.row.project-content {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li::before {
+  content: "\25CB";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-size: 28px;
+  padding-bottom: 7px;
+  vertical-align: middle;
+}
+
+.sidebar ul li.edited::before {
+  content: "\2022";
+  color: #0A9D53;
+  width: 0.6em;
+  margin-left: -0.6em;
+  font-size: 47px;
 }
 
 .table-responsive {
   width: unset;
-  margin: 60px;
 }
 
 .table-responsive table {
@@ -13566,7 +13663,7 @@ nav.navbar .register-btn:active {
   border: none;
   background: none;
   cursor: pointer;
-  color: #000;
+  color: #000 !important;
   margin-top: 10px;
 }
 
@@ -13626,7 +13723,7 @@ nav.navbar .register-btn:active {
   border: none;
   background: none;
   cursor: pointer;
-  color: #e84040;
+  color: #e84040 !important;
 }
 
 .settings-frame .nav-col ul.nav li a.nav-link.logout:hover,
@@ -13811,7 +13908,7 @@ nav.navbar .register-btn:active {
   border: none;
   background: none;
   cursor: pointer;
-  color: #e84040;
+  color: #e84040 !important;
   font-size: 28px;
 }
 

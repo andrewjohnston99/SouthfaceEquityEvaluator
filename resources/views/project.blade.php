@@ -17,7 +17,7 @@
 @section('js')
     <script type="text/javascript">
             $(document).ready(function() {
-                var data = @json($project);
+                var data = @json($data['project']);
 
                 if (data == null) {
                     return;
@@ -54,9 +54,22 @@
 
     @include('project_header_content')
 
-    @include('tables.gen-equity')
+    <div class="row info">
+        <i class="material-icons align-middle">info</i>
+        <p>Click on any of the items in the sidebar to get more information.</p>
+    </div>
 
-    @include('tables.services')
+    <div class="row project-content">
+        <div class="col-2 sidebar">
+            @include('common.project_sidebar')
+        </div>
+
+        <div class="col-10">
+            @include('tables.gen-equity')
+        </div>
+    </div>
+
+    {{-- @include('tables.services')
 
     @include('tables.population')
 
@@ -64,7 +77,7 @@
 
     @include('tables.housing')
 
-    @include('tables.physical')
+    @include('tables.physical') --}}
 
 @endsection
 

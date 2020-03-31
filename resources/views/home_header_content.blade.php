@@ -5,5 +5,6 @@
         <span>
             <i class="material-icons align-middle">settings</i>
         </span>
-        Settings</a>
+        Settings
+    </a>
 @endsection

@@ -30,7 +30,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $metadata = array (
+        $metadata = array(
             'title' => $request->projectTitle,
             'address' => $request->siteAddress,
             'charrette' => $request->charretteDate,
@@ -49,7 +49,7 @@ class ProjectController extends Controller
 
         $url = 'projects/' . $new_project->project_id;
 
-        return redirect($url)->with('project',$project);
+        return redirect($url)->with('data', ['project' => $project, 'title' => $new_project->metadata['title']]);
     }
 
     /**
@@ -65,9 +65,9 @@ class ProjectController extends Controller
         $data = Project::select('project_json')
             ->where('user_id', $uid)
             ->where('project_id', $id)
-            ->pluck('project_json');
+            ->select('project_json','project_metadata')->get();
 
-        return view('project')->with('project', $data[0]);
+        return view('project')->with('data', ['project' => $data[0]['project_json'], 'title' => $data[0]['project_metadata']['title']]);
     }
 
     /**
