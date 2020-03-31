@@ -12997,7 +12997,7 @@ nav.navbar .register-btn:active {
 
 .modal.create-project .modal-header {
   border: none;
-  padding-bottom: none;
+  padding-bottom: 0;
 }
 
 .modal.create-project .modal-body form .form-control {
