@@ -7,6 +7,7 @@
             <div class="modal-body">
                 <form action="{{ url('projects') }}" method="POST">
                     @csrf
+                    <label for="martaStation">Marta Station</label>
                     <select class="form-control" id="martaStation" name="martaStation">
                         <option selected disabled hidden>Please choose the Marta station closest to your development.</option>
                         <option>Arts Center</option>
@@ -46,18 +47,17 @@
                         <option>West End</option>
                         <option>West Lake</option>
                     </select>
+                    <label for="projectTitle">Project Title</label>
                     <input id="projectTitle" class="form-control" type="text" name="projectTitle" placeholder="Project Title" required autofocus>
+                    <label for="charretteDate">Charrette Date</label>
                     <input id="charretteDate" class="form-control flatpickr flatpickr-input" type="date" name="charretteDate" placeholder="Charrette Date" required autofocus>
+                    <label for="kickoffDate">Kickoff Date</label>
                     <input id="kickoffDate" class="form-control" type="date" name="kickoffDate" placeholder="Kickoff Date" required autofocus>
-                    <textarea id="siteAddress" class="form-control" name="siteAddress" placeholder="Site Address" required></textarea>
+                    <label for="siteAddress">Site Address</label>
+                    <textarea id="siteAddress" class="form-control" name="siteAddress" placeholder="123 ABC Rd&#13;&#10;Atlanta, GA 30332" required></textarea>
                     <div class="row">
                         <button class="close-btn" type="button" data-dismiss="modal" aria-label="Close">Cancel</button>
-                        <button class="create" type="submit">
-                            <span>
-                                <i class="material-icons align-middle">add</i>
-                            </span>
-                            Create
-                        </button>
+                        <button class="create" type="submit">Create</button>
                     </div>
                 </form>
             </div>

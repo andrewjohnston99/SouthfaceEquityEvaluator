@@ -12866,13 +12866,14 @@ nav.navbar .register-btn:active {
 
 .modal.create-project .modal-header {
   border: none;
+  padding-bottom: 0;
 }
 
 .modal.create-project .modal-body form .form-control {
   background-color: #fff;
   border: 2px solid #9E9E9E;
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .modal.create-project .modal-body form .form-control.datepicker-here {
