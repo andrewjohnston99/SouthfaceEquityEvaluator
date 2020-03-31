@@ -26,9 +26,8 @@ Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');
 
 Route::get('settings/account', 'UserController@index')->name('account');
+Route::post('settings/account', 'UserController@store')->name('update.account');
 Route::get('settings/security', 'UserController@index');
-Route::put('settings/account', 'UserController@update');
-
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 

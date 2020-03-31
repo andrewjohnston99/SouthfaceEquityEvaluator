@@ -30,7 +30,7 @@ class ChangePasswordController extends Controller
     } 
    
     /**
-     * Show the application dashboard.
+     * Change Password and Redirect to Home.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
