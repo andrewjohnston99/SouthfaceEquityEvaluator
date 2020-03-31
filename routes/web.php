@@ -24,7 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('about', 'about');
 Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');
-Route::view('project', 'project');
 
 Route::get('settings/account', 'UserController@index')->name('account');
 Route::post('settings/account', 'UserController@store')->name('update.account');
@@ -37,7 +36,7 @@ Route::post('change-password', 'ChangePasswordController@store')->name('change.p
 Route::get('token', 'ProjectController@token');
 /******************************************* */
 
-// Route::resource('projects', 'ProjectController');
+Route::resource('projects', 'ProjectController');
 
 
 

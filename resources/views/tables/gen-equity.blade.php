@@ -122,14 +122,14 @@
                 <td class="align-middle">5</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" class="planned-input" type="checkbox" data-value="5" />
+                        <input id="e16-input" class="planned-input" type="checkbox" data-value="5" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h16-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -137,14 +137,14 @@
                 <td class="align-middle">3</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" class="planned-input" type="checkbox" data-value="3" />
+                        <input id="e17-input" class="planned-input" type="checkbox" data-value="3" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h17-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -152,14 +152,14 @@
                 <td class="align-middle">3</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" class="planned-input" type="checkbox" data-value="3" />
+                        <input id="e18-input" class="planned-input" type="checkbox" data-value="3" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h18-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -168,14 +168,14 @@
                 <td class="align-middle">10</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" class="planned-input" type="checkbox" data-value="10" />
+                        <input id="e19-input" class="planned-input" type="checkbox" data-value="10" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h19-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="text-center">
@@ -184,14 +184,14 @@
                 <td class="align-middle">10</td>
                 <td class="align-middle">
                     <div class="pretty p-default p-thick p-smooth">
-                        <input id="" class="planned-input" type="checkbox" data-value="10" />
+                        <input id="e20-input" class="planned-input" type="checkbox" data-value="10" />
                         <div class="state p-success-o">
                             <label></label>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle">
-                    <textarea id="" class="form-control form-control-sm" placeholder="Example text..."></textarea>
+                    <textarea id="h20-input" class="form-control form-control-sm" placeholder="Example text..."></textarea>
                 </td>
             </tr>
             <tr class="table-secondary text-center">

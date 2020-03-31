@@ -20,6 +20,10 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
     <script src="{{ URL::asset('js/project.js') }}"></script>
+<script>
+    document.getElementById("charretteDate").flatpickr({});
+    document.getElementById("kickoffDate").flatpickr({});
+</script>
 @endsection
 
 @section('content')
