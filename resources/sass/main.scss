@@ -546,6 +546,7 @@ nav.navbar {
 
     .modal-header {
         border: none;
+        padding-bottom: none;
     }
 
     .modal-body form {
@@ -553,7 +554,7 @@ nav.navbar {
             background-color: #fff;
             border: 2px solid $light-grey;
             font-size: $font-sm;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
 
             &.datepicker-here {
                 z-index: 9999 !important;

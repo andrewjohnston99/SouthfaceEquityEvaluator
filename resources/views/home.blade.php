@@ -21,8 +21,12 @@
         crossorigin="anonymous"></script>
     <script src="{{ URL::asset('js/project.js') }}"></script>
 <script>
-    document.getElementById("charretteDate").flatpickr({});
-    document.getElementById("kickoffDate").flatpickr({});
+    document.getElementById("charretteDate").flatpickr({
+        dateFormat: "d-m-Y",
+    });
+    document.getElementById("kickoffDate").flatpickr({
+        dateFormat: "d-m-Y",
+    });
 </script>
 @endsection
 
