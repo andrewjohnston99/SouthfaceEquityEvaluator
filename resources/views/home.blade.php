@@ -36,9 +36,11 @@
     <div class="projects d-flex">
         @isset($projects)
             <form action="/" method="get" id="getProjectForm">
-                @foreach ($projects as $project)
-                    @include('button')
-                @endforeach
+                <div class="project-btn-wrapper h-100 d-flex flex-row justify-content-between">
+                    @foreach ($projects as $project)
+                        @include('button')
+                    @endforeach
+                </div>
             </form>
         @endisset
         @empty($projects)

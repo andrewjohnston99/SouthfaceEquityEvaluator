@@ -52,7 +52,12 @@
                     <textarea id="siteAddress" class="form-control" name="siteAddress" placeholder="Site Address" required></textarea>
                     <div class="row">
                         <button class="close-btn" type="button" data-dismiss="modal" aria-label="Close">Cancel</button>
-                        <button class="create" type="submit">Create</button>
+                        <button class="create" type="submit">
+                            <span>
+                                <i class="material-icons align-middle">add</i>
+                            </span>
+                            Create
+                        </button>
                     </div>
                 </form>
             </div>

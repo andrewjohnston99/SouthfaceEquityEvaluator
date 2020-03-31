@@ -12554,10 +12554,44 @@ nav.navbar .register-btn:active {
   -webkit-box-direction: normal;
           flex-direction: row;
   height: 70%;
+  padding: 0 50px;
 }
 
-.projects h3 {
+.projects form {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+.projects .no-projects,
+.projects .project-card {
   margin: auto;
+}
+
+.projects .project-card {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 53px;
+  padding: 10px;
+  background-color: #F6F6F6;
+  color: #0A9D53;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  height: 380px;
+  width: 535px;
+  color: #000;
+}
+
+.projects .project-card:hover {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.04);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  background-color: #e9e9e9;
 }
 
 /******************************
@@ -12667,9 +12701,9 @@ nav.navbar .register-btn:active {
   text-decoration: none;
   outline: none;
   border: none;
+  background: none;
   cursor: pointer;
   color: #000;
-  background: none;
   margin-top: 10px;
 }
 
@@ -12695,6 +12729,14 @@ nav.navbar .register-btn:active {
   margin-top: 3px;
 }
 
+.settings-frame .row.btn .back-btn:hover {
+  color: #0A9D53;
+}
+
+.settings-frame .row.btn .back-btn:hover svg {
+  fill: #0A9D53;
+}
+
 .settings-frame .nav-col ul.nav {
   padding: 0;
 }
@@ -12715,7 +12757,25 @@ nav.navbar .register-btn:active {
 }
 
 .settings-frame .nav-col ul.nav li a.nav-link.logout {
-  color: #EB5757;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #e84040;
+}
+
+.settings-frame .nav-col ul.nav li a.nav-link.logout:hover,
+.settings-frame .nav-col ul.nav li a.nav-link.logout:focus,
+.settings-frame .nav-col ul.nav li a.nav-link.logout:active {
+  color: #db1a1a;
+}
+
+.settings-frame .nav-col ul.nav li a.nav-link.logout:hover svg,
+.settings-frame .nav-col ul.nav li a.nav-link.logout:focus svg,
+.settings-frame .nav-col ul.nav li a.nav-link.logout:active svg {
+  fill: #db1a1a;
 }
 
 .settings-frame .nav-col ul.nav li a.nav-link.logout:hover,
@@ -12766,46 +12826,32 @@ nav.navbar .register-btn:active {
   color: #9E9E9E;
 }
 
-.settings-frame .content form .btn {
+.settings-frame .content form button.save {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
   border: none;
   cursor: pointer;
-  background: #0A9D53;
-  color: #fff;
-  border-radius: 25px;
-  width: 220px;
-  height: 40px;
-  line-height: 20px;
-  padding: 0;
-  margin-left: 10px;
-}
-
-.settings-frame .content form .btn:hover,
-.settings-frame .content form .btn:focus,
-.settings-frame .content form .btn:active {
-  outline: none;
-  border: none;
-}
-
-.settings-frame .content form .btn:hover {
-  background-color: #0A9D53;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.settings-frame .content form .btn:active,
-.settings-frame .content form .btn:focus {
-  background-color: #022514;
-}
-
-.settings-frame .content form .btn:hover,
-.settings-frame .content form .btn:active {
-  background-color: #088546;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  height: 53px;
+  padding: 10px;
+  background-color: #F6F6F6;
+  color: #0A9D53;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
+  width: 158px;
+}
+
+.settings-frame .content form button.save:hover {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.04);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  background-color: #e9e9e9;
+}
+
+.settings-frame .content form button.save span {
+  margin-right: 10px;
 }
 
 /******************************
@@ -12865,41 +12911,33 @@ nav.navbar .register-btn:active {
   outline: none;
   border: none;
   cursor: pointer;
-  background: #0A9D53;
-  color: #fff;
-  border-radius: 25px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  height: 53px;
+  padding: 10px;
+  background-color: #F6F6F6;
+  color: #0A9D53;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
-  width: 400px;
-  height: 48px;
-  font-size: 22px;
-}
-
-.modal.create-project .modal-body form button.create:hover,
-.modal.create-project .modal-body form button.create:focus,
-.modal.create-project .modal-body form button.create:active {
-  outline: none;
-  border: none;
+  font-size: 28px;
+  line-height: 28px;
+  width: 200px;
 }
 
 .modal.create-project .modal-body form button.create:hover {
-  background-color: #0A9D53;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.modal.create-project .modal-body form button.create:active,
-.modal.create-project .modal-body form button.create:focus {
-  background-color: #022514;
-}
-
-.modal.create-project .modal-body form button.create:hover,
-.modal.create-project .modal-body form button.create:active {
-  background-color: #088546;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.04);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
+  background-color: #e9e9e9;
+}
+
+.modal.create-project .modal-body form button.create span {
+  margin-right: 10px;
+}
+
+.modal.create-project .modal-body form button.create span .material-icons {
+  font-size: 28px;
+  padding-bottom: 3px;
 }
 
 .modal.create-project .modal-body form button.close-btn {
@@ -12907,21 +12945,21 @@ nav.navbar .register-btn:active {
   text-decoration: none;
   outline: none;
   border: none;
-  cursor: pointer;
-  color: #EB5757;
   background: none;
+  cursor: pointer;
+  color: #e84040;
   font-size: 28px;
 }
 
 .modal.create-project .modal-body form button.close-btn:hover,
 .modal.create-project .modal-body form button.close-btn:focus,
 .modal.create-project .modal-body form button.close-btn:active {
-  color: #e84040;
+  color: #db1a1a;
 }
 
 .modal.create-project .modal-body form button.close-btn:hover svg,
 .modal.create-project .modal-body form button.close-btn:focus svg,
 .modal.create-project .modal-body form button.close-btn:active svg {
-  fill: #e84040;
+  fill: #db1a1a;
 }
 

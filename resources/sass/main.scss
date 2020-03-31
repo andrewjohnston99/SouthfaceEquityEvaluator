@@ -255,9 +255,21 @@ nav.navbar {
 .projects {
     flex-direction: row;
     height: 70%;
+    padding: 0 50px;
 
-    h3 {
+    form {
+        flex-direction: row;
+    }
+
+    .no-projects, .project-card {
         margin: auto;
+    }
+
+    .project-card {
+        @include new-btn();
+        height: 380px;
+        width: 535px;
+        color: #000;
     }
 }
 
@@ -348,6 +360,14 @@ nav.navbar {
                     vertical-align: middle;
                     margin-top: 3px;
                 }
+
+                &:hover {
+                    color: $primary;
+
+                    svg {
+                        fill: $primary;
+                    }
+                }
             }
         }
     }
@@ -370,7 +390,7 @@ nav.navbar {
                     }
 
                     &.logout {
-                        color: $red;
+                        @include txt-btn($red);
 
                         &:hover,
                         &:focus,
@@ -411,18 +431,12 @@ nav.navbar {
                 }
             }
 
-            .btn {
-                @include btn($primary, 25px, $bg: true);
-                width: 220px;
-                height: 40px;
-                line-height: 20px;
-                padding: 0;
-                margin-left: 10px;
+            button.save {
+                @include new-btn();
+                width: 158px;
 
-                &:hover,
-                &:active {
-                    background-color: darken($primary, 5);
-                    @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
+                span {
+                    margin-right: 10px;
                 }
             }
         }
@@ -465,16 +479,18 @@ nav.navbar {
         }
 
         button.create {
-            @include btn($primary, 25px, $bg: true);
-            @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
-            width: 400px;
-            height: 48px;
-            font-size: $font-md;
+            @include new-btn();
+            font-size: $font-lg;
+            line-height: $font-lg;
+            width: 200px;
 
-            &:hover,
-            &:active {
-                background-color: darken($primary, 5);
-                @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, .25));
+            span {
+                margin-right: 10px;
+
+                .material-icons {
+                    font-size: $font-lg;
+                    padding-bottom: 3px;
+                }
             }
         }
 

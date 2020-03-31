@@ -5,7 +5,7 @@ $primary-light: #20C65A;
 $primary-soft: #52B788;
 $primary-faded: rgba(#A1D9C6, .5);
 $secondary: #FABC07;
-$red: #EB5757;
+$red: darken(#EB5757, 5%);
 $dark-grey: #2D2A32;
 $light-grey: #9E9E9E;
 $off-white: #F6F6F6;
@@ -89,16 +89,16 @@ $shadow-xl: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0p
     text-decoration: none;
     outline: none;
     border: none;
+    background: none;
     cursor: pointer;
 
     color: $color;
-    background: none;
 
     &:hover, &:focus, &:active {
-        color: darken($color, 5%);
+        color: darken($color, 10%);
 
         svg {
-            fill: darken($color, 5%);
+            fill: darken($color, 10%);
         }
     }
 }
