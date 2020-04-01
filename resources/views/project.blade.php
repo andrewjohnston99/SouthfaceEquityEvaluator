@@ -65,13 +65,16 @@
             @include('common.project_sidebar')
         </div>
 
-        @include('tables.gen-equity')
-        @include('tables.services')
+        <div class="col-10">
+            @include('tables.equity')
+        </div>
+
+        {{-- @include('tables.services')
         @include('tables.population')
         @include('tables.contact')
         @include('tables.community')
         @include('tables.housing')
-        @include('tables.physical')
+        @include('tables.physical') --}}
     </div>
 @endsection
 

@@ -49,7 +49,7 @@ class ProjectController extends Controller
 
         $url = 'projects/' . $new_project->project_id;
 
-        return redirect($url)->with('data', ['project' => $project, 'title' => $new_project->metadata['title']]);
+        return redirect($url)->with('data', ['project' => $project, 'title' => $new_project->metadata['title'], 'id' => $new_project->id]);
     }
 
     /**
@@ -76,7 +76,7 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, $table = "equity")
+    public function edit($id)
     {
         $uid = auth()->user()->id;
 
@@ -85,7 +85,7 @@ class ProjectController extends Controller
             ->where('project_id', $id)
             ->select('project_json','project_metadata')->get();
 
-        return view('project')->with('data', ['project' => $data[0]['project_json'], 'title' => $data[0]['project_metadata']['title']]);
+        return view('project')->with('data', ['project' => $data[0]['project_json'], 'title' => $data[0]['project_metadata']['title'], 'id' => $id]);
     }
 
     /**

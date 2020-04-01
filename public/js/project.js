@@ -23,6 +23,7 @@ $(document).ready(function() {
 
         var data = Object();
         var BASE = window.location.pathname;
+        BASE = BASE.replace("/edit", "");
 
         tables.each(function(i) {
             var inputs = $("#" + this.id + ' [id*="-input"]');

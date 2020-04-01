@@ -292,6 +292,7 @@ nav.navbar {
         .row {
             margin: unset;
             margin-bottom: 30px;
+            padding: 0;
 
             &:last-child {
                 margin-bottom: 0;
@@ -456,6 +457,10 @@ nav.navbar {
         &.btn {
             height: 175px;
 
+            .btn-col {
+                padding: 0;
+            }
+
             .back-btn {
                 @include txt-btn(#000);
                 margin-top: 10px;
@@ -542,7 +547,7 @@ nav.navbar {
 
             button.save {
                 @include new-btn();
-                width: 158px;
+                width: auto;
 
                 span {
                     margin-right: 10px;

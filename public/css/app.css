@@ -13464,6 +13464,7 @@ nav.navbar .register-btn:active {
 .projects .project-card .row {
   margin: unset;
   margin-bottom: 30px;
+  padding: 0;
 }
 
 .projects .project-card .row:last-child {
@@ -13589,7 +13590,7 @@ nav.navbar .register-btn:active {
   border: none;
   background: none;
   cursor: pointer;
-  color: #e84040 !important;
+  color: #e84040;
   font-size: 24px;
   margin-left: 50px;
 }
@@ -13697,6 +13698,10 @@ nav.navbar .register-btn:active {
   height: 175px;
 }
 
+.settings-frame .row.btn .btn-col {
+  padding: 0;
+}
+
 .settings-frame .row.btn .back-btn {
   box-sizing: border-box;
   text-decoration: none;
@@ -13704,7 +13709,7 @@ nav.navbar .register-btn:active {
   border: none;
   background: none;
   cursor: pointer;
-  color: #000 !important;
+  color: #000;
   margin-top: 10px;
 }
 
@@ -13764,7 +13769,7 @@ nav.navbar .register-btn:active {
   border: none;
   background: none;
   cursor: pointer;
-  color: #e84040 !important;
+  color: #e84040;
 }
 
 .settings-frame .nav-col ul.nav li a.nav-link.logout:hover,
@@ -13841,7 +13846,7 @@ nav.navbar .register-btn:active {
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
-  width: 158px;
+  width: auto;
 }
 
 .settings-frame .content form button.save:hover {
@@ -13949,7 +13954,7 @@ nav.navbar .register-btn:active {
   border: none;
   background: none;
   cursor: pointer;
-  color: #e84040 !important;
+  color: #e84040;
   font-size: 28px;
 }
 

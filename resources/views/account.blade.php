@@ -30,7 +30,7 @@
             <span>
                 <i class="material-icons align-middle">save</i>
             </span>
-            Changes
+            Save Changes
         </button>
     </div>
 </form>

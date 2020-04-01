@@ -27,9 +27,9 @@
             </span>
             Save
         </button>
-        <a class="exit" href="{{ route('projects.show') }}">Exit</a>
+        <a class="exit" href="{{ route('projects.show', ['id' => $data['id']]) }}">Exit</a>
     @else
-        <a class="edit" href="{{ route('projects.edit' , ['id' => $data['id']]) }}">
+        <a class="edit" href="{{ route('projects.edit', ['id' => $data['id']]) }}">
             <span>
                 <i class="material-icons align-middle">edit</i>
             </span>
