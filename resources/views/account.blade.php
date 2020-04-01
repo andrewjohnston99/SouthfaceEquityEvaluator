@@ -19,11 +19,18 @@
             </span>
         @enderror
     </div>
-    <div class="form-group">
-        <label for="userOrganization">Organization</label>
-        <input id="email" type="userOrganization" class="form-control" name="userOrganization" value="{{ $user->organization }}" placeholder="{{ $user->organization }}">
-    </div>
+    @isset($user->organization)
+        <div class="form-group">
+            <label for="userOrganization">Organization</label>
+            <input type="text" class="form-control" id="userOrganization" placeholder="{{ $user->organization }}">
+        </div>
+    @endisset
     <div class="text-right">
-        <button type="submit" class="btn">Save Changes</button>
+        <button type="submit" class="save">
+            <span>
+                <i class="material-icons align-middle">save</i>
+            </span>
+            Changes
+        </button>
     </div>
 </form>

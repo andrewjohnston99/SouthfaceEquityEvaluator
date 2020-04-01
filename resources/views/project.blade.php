@@ -1,6 +1,6 @@
 @extends('common.default')
 
-@section('title', 'Project')
+@section('title', 'Edit Project')
 
 @section('token')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,7 +17,7 @@
 @section('js')
     <script type="text/javascript">
             $(document).ready(function() {
-                var data = @json($project);
+                var data = @json($data['project']);
 
                 if (data == null) {
                     return;
@@ -48,24 +48,31 @@
             });
     </script>
     <script src="{{ URL::asset('js/project.js') }}"></script>
+    <script src="{{ URL::asset('js/tables.js') }}"></script>
 @endsection
 
 @section('content')
 
-    @include('common.project-header')
+    @include('project_header_content')
 
-    @include('tables.gen-equity')
+    <div class="row info">
+        <i class="material-icons align-middle">info</i>
+        <p>Click on any of the items in the sidebar to get more information.</p>
+    </div>
 
-    @include('tables.services')
+    <div class="row project-content">
+        <div class="col-2 sidebar">
+            @include('common.project_sidebar')
+        </div>
 
-    @include('tables.population')
-
-    @include('tables.community')
-
-    @include('tables.housing')
-
-    @include('tables.physical')
-
+        @include('tables.gen-equity')
+        @include('tables.services')
+        @include('tables.population')
+        @include('tables.contact')
+        @include('tables.community')
+        @include('tables.housing')
+        @include('tables.physical')
+    </div>
 @endsection
 
 

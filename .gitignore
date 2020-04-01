@@ -9,3 +9,4 @@ database/master/ib_buffer_pool
 .idea/
 .DS_Store
 */.DS_Store
+node_modules

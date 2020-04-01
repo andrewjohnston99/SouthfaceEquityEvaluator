@@ -5,9 +5,10 @@ $primary-light: #20C65A;
 $primary-soft: #52B788;
 $primary-faded: rgba(#A1D9C6, .5);
 $secondary: #FABC07;
-$red: #EB5757;
+$red: darken(#EB5757, 5%);
 $dark-grey: #2D2A32;
 $light-grey: #9E9E9E;
+$off-white: #F6F6F6;
 
 // Font
 $font-primary: 'Poppins',
@@ -32,8 +33,17 @@ $font-bold: 700;
     transition: box-shadow .2s;
 }
 
-$btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+@mixin box-shadow-full($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
 
+    transition: box-shadow .2s;
+}
+
+$btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+$shadow-md: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
+$shadow-xl: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.04);
 
 // Buttons
 @mixin border-radius ($radius) {
@@ -79,16 +89,37 @@ $btn-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
     text-decoration: none;
     outline: none;
     border: none;
+    background: none;
     cursor: pointer;
 
-    color: $color;
-    background: none;
+    color: $color !important;
 
     &:hover, &:focus, &:active {
-        color: darken($color, 5%);
+        color: darken($color, 10%);
 
         svg {
-            fill: darken($color, 5%);
+            fill: darken($color, 10%);
         }
+    }
+}
+
+@mixin new-btn() {
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    height: 53px;
+    padding: 10px;
+    background-color: $off-white;
+    color: $primary;
+
+    @include border-radius(5px);
+    @include box-shadow-full($shadow-md);
+
+    &:hover {
+        @include box-shadow-full($shadow-xl);
+        background-color: darken($off-white, 5%);
     }
 }

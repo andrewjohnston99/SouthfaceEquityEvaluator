@@ -3,7 +3,8 @@ body {
     font-family: $font-primary;
     font-size: $font-sm;
     color: #000;
-    margin-top: 45px;
+    background-color: #fff;
+    height: 100%;
 
     h1 {
         font-size: $font-xl;
@@ -31,8 +32,30 @@ body {
     }
 
     .form-control:focus {
+        border: none;
         box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
     }
+
+    i.material-icons {
+        padding-bottom: 1px;
+    }
+
+    .row, .col {
+        margin: 0;
+        padding: 0 50px;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+/******************************
+*  PRETTY CHECKBOX
+******************************/
+.pretty {
+    font-size: 30px;
+    margin-right: 0;
 }
 
 /******************************
@@ -226,92 +249,86 @@ nav.navbar {
 }
 
 /******************************
-*  DASHBOARD
+* HOME VIEW
 ******************************/
-.dashboard {
-    height: 100%;
-    flex-direction: column;
-    // background-color: $background;
+.home {
+    padding: 0 50px;
 
-    .row {
-        width: 100%;
-        margin: 0;
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 30%;
+        margin-top: 30px;
 
-        &.hero {
-            margin-top: 3%;
-        }
+        .add-btn {
+            @include new-btn();
 
-        &.projects {
-            margin-top: 8%;
-        }
-    }
-
-    .col {
-        flex-grow: unset;
-        padding: 0;
-    }
-
-    h1.equity {
-        font-weight: $font-bold;
-    }
-
-    .settings-btn {
-        @include btn(#fff, 25px, $bg: true);
-        @include box-shadow(0, 4px, 15px, rgba(0, 0, 0, 0.15));
-        width: 175px;
-        height: 52px;
-        line-height: 30px;
-        color: #000;
-
-        span {
-            padding-right: 20px;
-        }
-
-        &:hover,
-        &:active {
-            background-color: $primary;
-            color: #fff;
-            @include box-shadow(0, 8px, 30px, rgba(0, 0, 0, 0.20));
-
-            svg path {
-                fill: #fff;
+            span {
+                margin-right: 10px;
             }
         }
     }
+}
 
-    .add-btn {
-        @include btn($primary, 25px, $bg: true);
-        @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, 0.25));
-        width: 300px;
-        height: 60px;
-        line-height: 30px;
-        font-size: $font-xl;
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 0 50px;
+    margin-top: 40px;
 
-        span {
-            padding-left: 20px;
-        }
-
-        &:hover,
-        &:active {
-            background-color: darken($primary, 5);
-            @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
-        }
+    .no-projects, .project-card {
+        margin: auto;
     }
 
     .project-card {
-        @include btn(#fff, 25px, $bg: true);
-        @include box-shadow(0, 4px, 50px, rgba(0, 0, 0, 0.15));
+        @include new-btn();
+        height: 380px;
+        width: 100%;
         color: #000;
-        width: auto;
-        max-width: 100%;
-        padding: 36px;
+        padding: 20px 30px;
 
-        .project-title {
-            margin-bottom: 10px;
+        .row {
+            margin: unset;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.project-title {
+                align-self: center;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .site-address {
+                text-indent: -145px;
+                padding-left: 145px;
+            }
         }
+    }
+}
 
-        &:hover {
-            @include box-shadow(0, 8px, 60px, rgba(0, 0, 0, 0.3))
+/******************************
+*  REPORT VIEW
+******************************/
+.report {
+    padding: 0 50px;
+
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 30%;
+        margin-top: 30px;
+
+        .export {
+            @include new-btn();
+
+            span {
+                margin-right: 10px;
+            }
         }
     }
 }
@@ -320,81 +337,86 @@ nav.navbar {
 *  PROJECT VIEW
 ******************************/
 .project-header {
-    height: 130px;
-    flex-direction: column;
+    height: 94px;
+    flex-direction: row;
     align-items: center;
-    background-color: $dark-grey;
+    justify-content: space-between;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 0 50px;
 
-    .row {
-        height: 50%;
-        width: 100%;
-        margin: 6px 35px 0 35px;
-
-        .btn-col:last-child {
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        &.nav-row {
-            align-content: center;
-
-            .col {
-                text-align: center;
-
-                a {
-                    color: #fff;
-                    text-decoration: none;
-
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        border-bottom: 2px solid #fff;
-                        padding-bottom: 8px;
-                    }
-                }
-            }
-        }
+    .southface-icon {
+        height: 50px;
+        width: 50px;
     }
 
-    .back-btn {
-        @include txt-btn(#fff);
-        margin-top: 10px;
+    .settings, .save, .edit {
+        @include new-btn();
+        padding: 10px 15px;
 
         span {
-            padding-left: 8px;
-        }
-
-        svg {
-            fill: #fff;
-            vertical-align: middle;
-            margin-top: 3px;
+            margin-right: 10px;
         }
     }
 
-    .share-btn {
-        @include txt-btn(#fff);
-        margin-top: 10px;
+    .exit {
+        @include txt-btn($red);
+        font-size: 24px;
+        margin-left: 50px;
     }
 
-    .save-btn {
-        @include btn($primary, 25px, $bg: true);
-        width: 170px;
-        height: 40px;
-        line-height: 20px;
+    .info-container {
+        a, h2, i {
+            margin-right: 20px;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            white-space: nowrap;
+        }
+
+        .material-icons {
+            font-size: 30px;
+            padding-bottom: 0;
+            padding-top: 3px;
+        }
+
+        .form-control {
+            color: #000;
+            border: 1px solid $light-grey;
+        }
+    }
+}
+
+.row.info {
+    margin-top: 30px;
+
+    .material-icons {
         padding: 0;
-        margin-left: 10px;
+        padding-top: 2px;
+        margin-right: 12px;
+        color: $primary;
+    }
+}
 
-        &:hover,
-        &:active {
-            background-color: darken($primary, 5);
-            @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
-        }
+.row.project-content {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    .optional div, .required div {
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    .material-icons {
+        font-size: 14px;
+        margin-right: 10px;
     }
 }
 
 .table-responsive {
     width: unset;
-    margin: 60px;
 
     table {
         width: 100%;
@@ -415,13 +437,7 @@ nav.navbar {
     }
 }
 
-/******************************
-*  PRETTY CHECKBOX
-******************************/
-.pretty {
-    font-size: 30px;
-    margin-right: 0;
-}
+
 
 /******************************
 *  SETTINGS VIEW
@@ -453,6 +469,14 @@ nav.navbar {
                     vertical-align: middle;
                     margin-top: 3px;
                 }
+
+                &:hover {
+                    color: $primary;
+
+                    svg {
+                        fill: $primary;
+                    }
+                }
             }
         }
     }
@@ -475,7 +499,7 @@ nav.navbar {
                     }
 
                     &.logout {
-                        color: $red;
+                        @include txt-btn($red);
 
                         &:hover,
                         &:focus,
@@ -516,18 +540,12 @@ nav.navbar {
                 }
             }
 
-            .btn {
-                @include btn($primary, 25px, $bg: true);
-                width: 220px;
-                height: 40px;
-                line-height: 20px;
-                padding: 0;
-                margin-left: 10px;
+            button.save {
+                @include new-btn();
+                width: 158px;
 
-                &:hover,
-                &:active {
-                    background-color: darken($primary, 5);
-                    @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, 0.25));
+                span {
+                    margin-right: 10px;
                 }
             }
         }
@@ -571,16 +589,18 @@ nav.navbar {
         }
 
         button.create {
-            @include btn($primary, 25px, $bg: true);
-            @include box-shadow(0, 4px, 25px, rgba(0, 0, 0, .25));
-            width: 400px;
-            height: 48px;
-            font-size: $font-md;
+            @include new-btn();
+            font-size: $font-lg;
+            line-height: $font-lg;
+            width: 200px;
 
-            &:hover,
-            &:active {
-                background-color: darken($primary, 5);
-                @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, .25));
+            span {
+                margin-right: 10px;
+
+                .material-icons {
+                    font-size: $font-lg;
+                    padding-bottom: 3px;
+                }
             }
         }
 

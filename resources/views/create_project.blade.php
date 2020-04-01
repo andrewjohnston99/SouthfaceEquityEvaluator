@@ -50,9 +50,9 @@
                     <label for="projectTitle">Project Title</label>
                     <input id="projectTitle" class="form-control" type="text" name="projectTitle" placeholder="Project Title" required autofocus>
                     <label for="charretteDate">Charrette Date</label>
-                    <input id="charretteDate" class="form-control flatpickr flatpickr-input" type="date" name="charretteDate" placeholder="Charrette Date" required autofocus>
+                    <input id="charretteDate" class="form-control" type="text" name="charretteDate" placeholder="Charrette Date" data-input required autofocus>
                     <label for="kickoffDate">Kickoff Date</label>
-                    <input id="kickoffDate" class="form-control" type="date" name="kickoffDate" placeholder="Kickoff Date" required autofocus>
+                    <input id="kickoffDate" class="form-control" type="text" name="kickoffDate" placeholder="Kickoff Date" data-input required autofocus>
                     <label for="siteAddress">Site Address</label>
                     <textarea id="siteAddress" class="form-control" name="siteAddress" placeholder="123 ABC Rd&#13;&#10;Atlanta, GA 30332" required></textarea>
                     <div class="row">
