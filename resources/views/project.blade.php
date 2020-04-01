@@ -1,6 +1,6 @@
 @extends('common.default')
 
-@section('title', 'Project')
+@section('title', 'Edit Project')
 
 @section('token')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -48,6 +48,7 @@
             });
     </script>
     <script src="{{ URL::asset('js/project.js') }}"></script>
+    <script src="{{ URL::asset('js/tables.js') }}"></script>
 @endsection
 
 @section('content')
@@ -64,21 +65,14 @@
             @include('common.project_sidebar')
         </div>
 
-        <div class="col-10">
-            @include('tables.gen-equity')
-        </div>
+        @include('tables.gen-equity')
+        @include('tables.services')
+        @include('tables.population')
+        @include('tables.contact')
+        @include('tables.community')
+        @include('tables.housing')
+        @include('tables.physical')
     </div>
-
-    {{-- @include('tables.services')
-
-    @include('tables.population')
-
-    @include('tables.community')
-
-    @include('tables.housing')
-
-    @include('tables.physical') --}}
-
 @endsection
 
 

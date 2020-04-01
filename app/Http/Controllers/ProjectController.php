@@ -63,6 +63,24 @@ class ProjectController extends Controller
         $uid = auth()->user()->id;
 
         $data = Project::select('project_json')
+        ->where('user_id', $uid)
+        ->where('project_id', $id)
+        ->select('project_json','project_metadata')->get();
+
+        return view('project_report')->with('data', ['project' => $data[0]['project_json'], 'title' => $data[0]['project_metadata']['title'], 'id' => $id]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id, $table = "equity")
+    {
+        $uid = auth()->user()->id;
+
+        $data = Project::select('project_json')
             ->where('user_id', $uid)
             ->where('project_id', $id)
             ->select('project_json','project_metadata')->get();

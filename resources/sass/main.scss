@@ -32,6 +32,7 @@ body {
     }
 
     .form-control:focus {
+        border: none;
         box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
     }
 
@@ -43,6 +44,18 @@ body {
         margin: 0;
         padding: 0 50px;
     }
+
+    p {
+        margin: 0;
+    }
+}
+
+/******************************
+*  PRETTY CHECKBOX
+******************************/
+.pretty {
+    font-size: 30px;
+    margin-right: 0;
 }
 
 /******************************
@@ -287,11 +300,34 @@ nav.navbar {
             &.project-title {
                 align-self: center;
                 margin-bottom: 40px;
+                text-align: center;
             }
 
             .site-address {
                 text-indent: -145px;
                 padding-left: 145px;
+            }
+        }
+    }
+}
+
+/******************************
+*  REPORT VIEW
+******************************/
+.report {
+    padding: 0 50px;
+
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 30%;
+        margin-top: 30px;
+
+        .export {
+            @include new-btn();
+
+            span {
+                margin-right: 10px;
             }
         }
     }
@@ -313,7 +349,7 @@ nav.navbar {
         width: 50px;
     }
 
-    .settings, .save {
+    .settings, .save, .edit {
         @include new-btn();
         padding: 10px 15px;
 
@@ -335,6 +371,7 @@ nav.navbar {
 
         h2 {
             margin-bottom: 0;
+            white-space: nowrap;
         }
 
         .material-icons {
@@ -367,30 +404,14 @@ nav.navbar {
 }
 
 .sidebar {
-    ul {
-        list-style: none;
+    .optional div, .required div {
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
 
-        li {
-            margin-bottom: 15px;
-
-            &::before {
-                content: "\25CB";
-                display: inline-block;
-                width: 1em;
-                margin-left: -1em;
-                font-size: 28px;
-                padding-bottom: 7px;
-                vertical-align: middle;
-            }
-
-            &.edited::before {
-                content: "\2022";
-                color: $primary;
-                width: .6em;
-                margin-left: -.6em;
-                font-size: 47px;
-            }
-        }
+    .material-icons {
+        font-size: 14px;
+        margin-right: 10px;
     }
 }
 
@@ -416,13 +437,7 @@ nav.navbar {
     }
 }
 
-/******************************
-*  PRETTY CHECKBOX
-******************************/
-.pretty {
-    font-size: 30px;
-    margin-right: 0;
-}
+
 
 /******************************
 *  SETTINGS VIEW
