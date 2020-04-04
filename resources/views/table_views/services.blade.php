@@ -18,6 +18,8 @@
     <script type="text/javascript">
             $(document).ready(function() {
                 var data = @json($data['project']);
+                var BASE = window.location.pathname;
+                var pageName = BASE.split("/").pop();
 
                 if (data == null) {
                     return;
@@ -45,6 +47,8 @@
                     $('#' + index.replace('Table', '') + "_planned").attr("data-value", planned);
                     $('#' + index.replace('Table', '') + "_planned").html(planned);
                 });
+
+                $('#tableSelect').val(pageName).change();
             });
     </script>
     <script src="{{ URL::asset('js/project.js') }}"></script>
