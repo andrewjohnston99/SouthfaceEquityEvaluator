@@ -42,7 +42,7 @@
                         <option>North Springs</option>
                         <option>Oakland City</option>
                         <option>Peachtree Center</option>
-                        <option>Sandy Spring</option>
+                        <option>Sandy Springs</option>
                         <option>Vine City</option>
                         <option>West End</option>
                         <option>West Lake</option>

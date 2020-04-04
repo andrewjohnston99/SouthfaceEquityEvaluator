@@ -3,7 +3,7 @@
 @section('page-content')
     <h2>{{ $data['title'] }}</h2>
     <i class="material-icons align-middle">navigate_next</i>
-    @if (Route::current()->getName() == 'projects.edit')
+    @if (Route::current()->getName() == 'projects.tables.show')
         <select class="form-control" id="tableSelect">
             <option value="equity">General Equity</option>
             <option value="physical">Physical Form</option>
@@ -20,7 +20,7 @@
 
 @section('project-btns')
 
-    @if (Route::current()->getName() == 'projects.edit')
+    @if (Route::current()->getName() == 'projects.tables.show')
         <button class="save" id="saveChanges">
             <span>
                 <i class="material-icons align-middle">save</i>

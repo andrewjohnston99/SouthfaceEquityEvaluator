@@ -1,20 +1,8 @@
 $(document).ready(function() {
-    var tables = $(".table");
-
     $("#tableSelect").change(function() {
-        var selected = $(this).children("option:selected").val();
-
-        if (selected == "contact") {
-            tables.addClass('d-none');
-        }
-
-        tables.each(function() {
-            if (this.id == selected) {
-                $(this).removeClass('d-none');
-            } else {
-                $(this).addClass('d-none');
-            }
-        });
+        var BASE = window.location.pathname;
+        BASE = BASE.substr(0, BASE.lastIndexOf("/") + 1);
+        window.location = BASE + $(this).children("option:selected").val();
     });
 
     $("#saveChanges").on("click", function(e) {
@@ -22,6 +10,7 @@ $(document).ready(function() {
         e.stopImmediatePropagation();
 
         var data = Object();
+        var tables = $(".table");
         var BASE = window.location.pathname;
         BASE = BASE.replace("/edit", "");
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Project;
 
 class ProjectController extends Controller
@@ -85,7 +84,9 @@ class ProjectController extends Controller
             ->where('project_id', $id)
             ->select('project_json','project_metadata')->get();
 
-        return view('project')->with('data', ['project' => $data[0]['project_json'], 'title' => $data[0]['project_metadata']['title'], 'id' => $id]);
+        $url = 'projects/' . $id . '/tables/equity';
+
+        return redirect($url)->with('data', ['project' => $data[0]['project_json'], 'title' => $data[0]['project_metadata']['title'], 'id' => $id]);
     }
 
     /**

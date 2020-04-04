@@ -37,7 +37,7 @@ Route::get('token', 'ProjectController@token');
 /******************************************* */
 
 Route::resource('projects', 'ProjectController');
-
+Route::resource('projects.tables', 'ProjectTableController');
 
 
 Route::view('affordability', 'affordability');
