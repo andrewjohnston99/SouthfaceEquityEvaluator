@@ -10,31 +10,29 @@ $(document).ready(function() {
         e.stopImmediatePropagation();
 
         var data = Object();
-        var tables = $(".table");
+        var table = $(".table")[0];
         var BASE = window.location.pathname;
-        BASE = BASE.replace("/edit", "");
+        BASE = BASE.split("/tables/")[0];
 
-        tables.each(function(i) {
-            var inputs = $("#" + this.id + ' [id*="-input"]');
-            var tableData = Object();
+        var inputs = $("#" + table.id + ' [id*="-input"]');
+        var tableData = Object();
 
-            inputs.each(function(i) {
-                var temp = Object();
-                temp.cell = this.id.split("-")[0];
-                temp.html = this.outerHTML;
+        inputs.each(function(i) {
+            var temp = Object();
+            temp.cell = this.id.split("-")[0];
+            temp.html = this.outerHTML;
 
-                if (this.type === "checkbox") {
-                    temp.checked = this.checked;
-                    temp.value = this.dataset.value;
-                } else if (this.type === "textarea") {
-                    temp.value = this.value;
-                }
+            if (this.type === "checkbox") {
+                temp.checked = this.checked;
+                temp.value = this.dataset.value;
+            } else if (this.type === "textarea") {
+                temp.value = this.value;
+            }
 
-                tableData[this.id] = temp;
-            });
-
-            data[this.id] = tableData;
+            tableData[this.id] = temp;
         });
+
+        data[table.id] = tableData;
 
         $.ajax({
             type: "PUT",
@@ -43,7 +41,10 @@ $(document).ready(function() {
             headers: {
                 "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
             },
-            data: data,
+            data: {
+                'data': data,
+                'table': table.id
+            },
             success: function(response) {
                 alert("Changes saved!");
             },

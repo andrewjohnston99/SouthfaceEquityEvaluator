@@ -98,10 +98,21 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = json_encode($request->all());
+        $uid = auth()->user()->id;
+
+        $project = Project::where('user_id', $uid)
+                        ->where('project_id', $id)
+                        ->pluck('project_json');
+        $projectData = $project[0];
+
+        $data = $request->data[$request->table];
+
+        $projectData[$request->table] = $data;
+
+        $projectData = json_encode($projectData);
 
         Project::where('project_id', $id)
-            ->update(['project_json' => $data]);
+            ->update(['project_json' => $projectData]);
 
         return response()->json(["result" => "success"], 200);
     }
