@@ -46,7 +46,7 @@ class ProjectController extends Controller
 
         $project = null;
 
-        $url = 'projects/' . $new_project->project_id;
+        $url = 'projects/' . $new_project->project_id . '/tables/equity';
 
         return redirect($url)->with('data', ['project' => $project, 'title' => $new_project->metadata['title'], 'id' => $new_project->id]);
     }
