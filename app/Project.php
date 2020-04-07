@@ -48,4 +48,11 @@ class Project extends Model
         'project_metadata' => 'array',
         'project_json' => 'array'
     ];
+
+    /**
+     * Get the user that owns the project.
+     */
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
 }
