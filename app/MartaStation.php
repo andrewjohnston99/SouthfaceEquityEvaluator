@@ -31,7 +31,7 @@ class MartaStation extends Model
     ];
 
     /**
-     * Stations that belong to the table.
+     * Tables that belong to the station.
      */
     public function tables() {
         return $this->belongsToMany('App\Table', 'StationsTables', 'station_id', 'table_id');

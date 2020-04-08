@@ -5,13 +5,9 @@
     <i class="material-icons align-middle">navigate_next</i>
     @if (Route::current()->getName() == 'projects.tables.show')
         <select class="form-control" id="tableSelect">
-            <option value="equity">General Equity</option>
-            <option value="physical">Physical Form</option>
-            <option value="services">Services</option>
-            <option value="population">Population/Preservation</option>
-            <option value="community">Balanced Community</option>
-            <option value="housing">Housing Diversity</option>
-            <option value="contact">Edit Contacts</option>
+            @foreach ($data['tables'] as $table)
+                <option value="{{ $table->abbrev }}">{{ $table->name }}</option>
+            @endforeach
         </select>
     @else
         <h2>Report</h2>

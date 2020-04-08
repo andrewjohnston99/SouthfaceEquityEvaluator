@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MartaStation;
 use Illuminate\Http\Request;
 use App\Project;
 
@@ -29,26 +30,30 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $project = new Project;
+        $project->user_id = auth()->user()->id;
+
         $metadata = array(
             'title' => $request->projectTitle,
             'address' => $request->siteAddress,
             'charrette' => $request->charretteDate,
-            'kickoff' => $request->kickoffDate,
-            'marta' => $request->martaStation
+            'kickoff' => $request->kickoffDate
         );
-
         $metadata = json_decode(json_encode($metadata));
+        $project->project_metadata = $metadata;
 
-        $new_project = Project::create([
-            'user_id' => auth()->user()->id,
-            'project_metadata' => $metadata
-        ]);
+        $station = MartaStation::where('name', $request->martaStation)->first();
+        $project->station_id = $station->id;
+        $project->save();
 
-        $project = null;
+        $tables = $station->tables;
+        // dd($tables);
 
-        $url = 'projects/' . $new_project->project_id . '/tables/equity';
+        $projectData = null;
 
-        return redirect($url)->with('data', ['project' => $project, 'title' => $new_project->metadata['title'], 'id' => $new_project->id]);
+        $url = 'projects/' . $project->project_id . '/tables/equity';
+
+        return redirect($url)->with('data', ['project' => $projectData, 'title' => $project->metadata['title'], 'tables' => $tables, 'id' => $project->id]);
     }
 
     /**

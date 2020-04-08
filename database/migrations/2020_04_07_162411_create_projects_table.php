@@ -15,10 +15,16 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('project_id');
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('station_id');
             $table->json('project_metadata');
             $table->binary('project_xls')->nullable();
             $table->json('project_json')->nullable();
+        });
+
+        Schema::table('projects', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('station_id')->references('id')->on('MartaStations');
         });
     }
 

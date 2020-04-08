@@ -1,4 +1,4 @@
-<a id="project-{{ array_search($project, $projects) }}" class="project-card d-flex flex-column" type="submit" href="/projects/{{ array_search($project, $projects) }}">
+<a id="project-{{ array_search($project, $data['projects']) }}" class="project-card d-flex flex-column" type="submit" href="/projects/{{ array_search($project, $data['projects']) }}">
     <div class="row project-title">
         <h2>{{ $project['title'] }}</h2>
     </div>

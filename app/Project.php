@@ -33,8 +33,17 @@ class Project extends Model
      * @var array
      */
     protected $fillable = [
+        'project_metadata'
+    ];
+
+    /**
+     * Attributes not for mass assignment
+     *
+     * @var array
+     */
+    protected $guarded = [
         'user_id',
-        'project_metadata',
+        'station_id',
         'project_xls',
         'project_json'
     ];
@@ -54,5 +63,12 @@ class Project extends Model
      */
     public function user() {
         return $this->belongsTo('App\User');
+    }
+
+    /**
+     * Get the station associated with the project.
+     */
+    public function station() {
+        return $this->hasOne('App\User');
     }
 }
