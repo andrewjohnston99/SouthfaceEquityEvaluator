@@ -1,8 +1,9 @@
 $(document).ready(function() {
     $("#tableSelect").change(function() {
         var BASE = window.location.pathname;
+        var selected = $(this).children("option:selected").val()
         BASE = BASE.substr(0, BASE.lastIndexOf("/") + 1);
-        window.location = BASE + $(this).children("option:selected").val();
+        window.location = BASE + selected;
     });
 
     $("#saveChanges").on("click", function(e) {
