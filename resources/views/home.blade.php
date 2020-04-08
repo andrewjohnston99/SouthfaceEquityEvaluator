@@ -38,12 +38,12 @@
     </div>
 
     <div class="projects">
-        @isset($projects)
-            @foreach ($projects as $project)
+        @isset($data['projects'])
+            @foreach ($data['projects'] as $project)
                 @include('project_card')
             @endforeach
         @endisset
-        @empty($projects)
+        @empty($data['projects'])
             <h3 class="no-projects align-self-center">No saved projects!</h3>
         @endempty
     </div>

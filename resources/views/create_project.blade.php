@@ -10,42 +10,9 @@
                     <label for="martaStation">Marta Station</label>
                     <select class="form-control" id="martaStation" name="martaStation">
                         <option selected disabled hidden>Please choose the Marta station closest to your development.</option>
-                        <option>Arts Center</option>
-                        <option>Ashby</option>
-                        <option>Avondale</option>
-                        <option>Bankhead</option>
-                        <option>Buckhead</option>
-                        <option>Chamblee</option>
-                        <option>Civic Center</option>
-                        <option>College Park</option>
-                        <option>Decatur</option>
-                        <option>Doraville</option>
-                        <option>Dunwoody</option>
-                        <option>East Point</option>
-                        <option>Eastlake</option>
-                        <option>Edgewood Candler Park</option>
-                        <option>Five Points</option>
-                        <option>Garnett</option>
-                        <option>Georgia Dome/GWCC/Philips Arena/CNN Center</option>
-                        <option>Georgia State</option>
-                        <option>Hamilton Holmes</option>
-                        <option>Indian Creek</option>
-                        <option>Inman Park</option>
-                        <option>Kensington</option>
-                        <option>King Memorial</option>
-                        <option>Lakewood Fort McPherson</option>
-                        <option>Lenox</option>
-                        <option>Lindbergh</option>
-                        <option>Medical Center</option>
-                        <option>Midtown</option>
-                        <option>North Avenue</option>
-                        <option>North Springs</option>
-                        <option>Oakland City</option>
-                        <option>Peachtree Center</option>
-                        <option>Sandy Springs</option>
-                        <option>Vine City</option>
-                        <option>West End</option>
-                        <option>West Lake</option>
+                        @foreach ($data['stations'] as $station)
+                            <option>{{ $station }}</option>
+                        @endforeach
                     </select>
                     <label for="projectTitle">Project Title</label>
                     <input id="projectTitle" class="form-control" type="text" name="projectTitle" placeholder="Project Title" required autofocus>

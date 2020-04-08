@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MartaStation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProjectController;
 
@@ -34,6 +35,13 @@ class HomeController extends Controller
             $projectData[$project['project_id']] = $project['project_metadata'];
         }
 
-        return view('home')->with('projects', $projectData);
+        $stations = MartaStation::all();
+        $stationNames = array();
+
+        foreach($stations as $station) {
+            array_push($stationNames, $station->name);
+        }
+
+        return view('home')->with('data', ['projects' => $projectData, 'stations' => $stationNames]);
     }
 }
