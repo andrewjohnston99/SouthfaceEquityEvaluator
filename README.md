@@ -37,6 +37,7 @@ Then enter the following commands inside the ssh session:
 ```
 vagrant@southfaceequityevaluator:~$ cd code
 vagrant@southfaceequityevaluator:~/code$ php artisan migrate
+vagrant@southfaceequityevaluator:~/code$ php artisan db:seed
 ```
 
 ## Configuring your Homestead YAML (first time setup)
