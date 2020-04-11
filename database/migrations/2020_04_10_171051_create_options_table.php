@@ -17,7 +17,7 @@ class CreateOptionsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('question_id');
             $table->unsignedTinyInteger('points');
-            $table->string('name');
+            $table->string('name')->nullable()->change();
             $table->boolean('allocated');
         });
 

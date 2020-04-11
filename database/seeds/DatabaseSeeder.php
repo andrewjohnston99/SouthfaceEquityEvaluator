@@ -14,7 +14,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             MartaStationsSeeder::class,
-            TablesSeeder::class,
+            ProjectTablesSeeder::class,
+            ItemsSeeder::class,
+            QuestionsSeeder::class,
+            OptionsSeeder::class,
+            ProjectItemsOptionsSeeder::class,
         ]);
     }
 }

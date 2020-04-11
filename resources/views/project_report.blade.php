@@ -15,5 +15,8 @@
                 Export Report
             </button>
         </div>
+        <div class="scores d-flex justify-content-center">
+            <h1 class="mt-5">{{ $data['scores']['total'] }} Total Points</h1>
+        </div>
     </div>
 @endsection

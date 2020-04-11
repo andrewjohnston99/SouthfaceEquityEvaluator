@@ -32,7 +32,8 @@ class HomeController extends Controller
         $projectData = array();
 
         foreach ($projects as $project) {
-            $projectData[$project['project_id']] = $project['project_metadata'];
+            $projectData[$project['id']] = $project['project_metadata'];
+            $projectData[$project['id']]['title'] = $project['title'];
         }
 
         $stations = MartaStation::all();

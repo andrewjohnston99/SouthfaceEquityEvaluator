@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MartaStation extends Model
+class Question extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'MartaStations';
+    protected $table = 'Questions';
 
     /**
      * Indicates if the model should be timestamped.
@@ -26,14 +26,21 @@ class MartaStation extends Model
      * @var string
      */
     protected $fillable = [
-        'abbrev',
-        'name'
+        'type',
+        'header'
     ];
 
     /**
-     * Tables that belong to the station.
+     * Get the item that owns the question.
      */
-    public function tables() {
-        return $this->belongsToMany('App\ProjectTable', 'StationsTables', 'station_id', 'table_id');
+    public function item() {
+        return $this->belongsTo('App\Item');
+    }
+
+    /**
+     * Get the options for the question.
+     */
+    public function options() {
+        return $this->hasMany('App\Option', 'question_id', 'id');
     }
 }

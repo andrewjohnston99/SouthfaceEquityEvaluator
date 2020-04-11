@@ -15,8 +15,8 @@ class CreateMartastationTable extends Migration
     {
         Schema::create('MartaStations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('abbrev');
-            $table->string('name');
+            $table->string('abbrev')->nullable();
+            $table->string('name')->nullable();
         });
     }
 

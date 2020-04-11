@@ -11,14 +11,7 @@ class Project extends Model
      *
      * @var string
      */
-    protected $table = 'projects';
-
-    /**
-     * The primary key associated with the table.
-     *
-     * @var string
-     */
-    protected $primaryKey = 'project_id';
+    protected $table = 'Projects';
 
     /**
      * Turn off timestamps

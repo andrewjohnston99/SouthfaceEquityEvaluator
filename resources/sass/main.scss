@@ -317,11 +317,11 @@ nav.navbar {
 ******************************/
 .report {
     padding: 0 50px;
+    height: 100%;
 
     .hero {
         flex-direction: row;
         justify-content: space-between;
-        height: 30%;
         margin-top: 30px;
 
         .export {
@@ -352,7 +352,6 @@ nav.navbar {
 
     .settings, .save, .edit {
         @include new-btn();
-        padding: 10px 15px;
 
         span {
             margin-right: 10px;

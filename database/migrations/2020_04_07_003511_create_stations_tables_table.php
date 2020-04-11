@@ -21,7 +21,7 @@ class CreateStationsTablesTable extends Migration
 
         Schema::table('StationsTables', function(Blueprint $table){
             $table->foreign('station_id')->references('id')->on('MartaStations');
-            $table->foreign('table_id')->references('id')->on('Tables');
+            $table->foreign('table_id')->references('id')->on('ProjectTables');
         });
     }
 

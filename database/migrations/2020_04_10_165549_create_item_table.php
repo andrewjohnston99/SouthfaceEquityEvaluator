@@ -22,7 +22,7 @@ class CreateItemTable extends Migration
         });
 
         Schema::table('Items', function (Blueprint $table) {
-            $table->foreign('table_id')->references('id')->on('Tables');
+            $table->foreign('table_id')->references('id')->on('ProjectTables');
         });
     }
 

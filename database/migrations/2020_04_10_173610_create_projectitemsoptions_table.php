@@ -21,7 +21,7 @@ class CreateProjectitemsoptionsTable extends Migration
         });
 
         Schema::table('ProjectItemsOptions', function (Blueprint $table) {
-            $table->foreign('project_id')->references('project_id')->on('projects');
+            $table->foreign('project_id')->references('id')->on('Projects');
             $table->foreign('item_id')->references('id')->on('Items');
             $table->foreign('option_id')->references('id')->on('Options');
         });

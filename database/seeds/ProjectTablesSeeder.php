@@ -1,10 +1,10 @@
 <?php
 
 use App\MartaStation;
-use App\Table;
+use App\ProjectTable;
 use Illuminate\Database\Seeder;
 
-class TablesSeeder extends Seeder
+class ProjectTablesSeeder extends Seeder
 {
     private $tables = ['General Equity', 'Physical Form', 'Services and Employment', 'Population Preservation/Expansion', 'Balanced Community', 'Housing Diversity'];
     private $abbreviations = ['equity', 'physical', 'services', 'population', 'community', 'housing'];
@@ -23,7 +23,7 @@ class TablesSeeder extends Seeder
         $housing =['ArtsCenter', 'Brookhaven', 'Buckhead', 'EastLake', 'MedicalCenter', 'NorthSprings'];
 
         foreach (array_combine($this->tables, $this->abbreviations) as $table => $abbrev) {
-           $t = Table::firstOrCreate(['name' => $table, 'abbrev' => $abbrev]);
+           $t = ProjectTable::firstOrCreate(['name' => $table, 'abbrev' => $abbrev]);
 
             if ($abbrev == 'equity' || $abbrev == 'physical') {
                $t->stations()->sync(array_keys($stations));
