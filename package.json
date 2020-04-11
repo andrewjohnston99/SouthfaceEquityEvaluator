@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "acorn": "^7.1.1",
         "flatpickr": "^4.6.3",
         "kind-of": "^6.0.3",
         "material-design-icons": "^3.0.1",
