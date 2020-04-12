@@ -26,6 +26,7 @@ class Project extends Model
      * @var array
      */
     protected $fillable = [
+        'title',
         'project_metadata'
     ];
 
@@ -36,9 +37,7 @@ class Project extends Model
      */
     protected $guarded = [
         'user_id',
-        'station_id',
-        'project_xls',
-        'project_json'
+        'station_id'
     ];
 
     /**

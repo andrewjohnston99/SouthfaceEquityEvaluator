@@ -9,6 +9,11 @@ use App\Http\Controllers\ProjectController;
 class HomeController extends Controller
 {
     /**
+     * The project controller instance.
+     */
+    protected $projectController;
+
+    /**
      * Create a new controller instance.
      *
      * @return void

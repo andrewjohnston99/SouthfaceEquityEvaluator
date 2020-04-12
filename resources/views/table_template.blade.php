@@ -15,7 +15,7 @@
 @endsection
 
 @section('js')
-    {{-- @include('common.project_select_js') --}}
+    @include('common.project_select_js')
     <script src="{{ URL::asset('js/project.js') }}"></script>
     <script src="{{ URL::asset('js/tables.js') }}"></script>
 @endsection
@@ -35,7 +35,7 @@
         </div>
 
         <div class="col-10">
-            @include('table_template')
+            @include('table')
         </div>
     </div>
 @endsection

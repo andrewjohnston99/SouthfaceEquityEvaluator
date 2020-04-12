@@ -3,12 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\MartaStation;
-use Illuminate\Http\Request;
 use App\Project;
+use Illuminate\Support\Facades\DB;
+
 
 
 class ProjectTableController extends Controller
 {
+    /**
+     * The project controller instance.
+     */
+    protected $projectController;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @param  ProjectController  $projectController
+     * @return void
+     */
+    public function __construct(ProjectController $projectController)
+    {
+        $this->projectController = $projectController;
+    }
+
      /**
      * Show the specified project table.
      *
@@ -18,17 +35,30 @@ class ProjectTableController extends Controller
      */
     public function show($projectId, $table)
     {
-        $uid = auth()->user()->id;
+        $optionalItems = $this->projectController->getOptionalProjectAnswers($projectId, $table);
+        if (!count($optionalItems)) {
+            $optionalItems = null;
+        }
 
-        $project = Project::where('user_id', $uid)
-            ->where('project_id', $projectId)
-            ->select('project_json','project_metadata', 'station_id')->get();
+        $requiredItems = $this->projectController->getRequiredProjectAnswers($projectId, $table);
+        if (!count($requiredItems)) {
+            $requiredItems = null;
+        }
 
-        $station = MartaStation::where('id', $project[0]['station_id'])->first();
+        $questions = $this->projectController->getProjectQuestions($projectId);
+
+        $tableInfo = DB::table('Projects as p')
+            ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
+            ->join('StationsTables as mt', 'mt.station_id', '=', 'ms.id')
+            ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
+            ->where('tb.abbrev', $table)
+            ->select('tb.*')
+            ->first();
+
+        $projectInfo = Project::select('title', 'station_id')->where('id', $projectId)->first();
+        $station = MartaStation::where('id', $projectInfo['station_id'])->first();
         $tables = $station->tables;
 
-        $view = 'table_views.' . $table;
-
-        return view($view)->with('data', ['project' => $project[0]['project_json'], 'title' => $project[0]['project_metadata']['title'], 'tables' => $tables, 'id' => $projectId]);
+        return view('table_template')->with('data', ['optionalItems' => $optionalItems, 'requiredItems' => $requiredItems, 'questions' => $questions, 'tableInfo' => $tableInfo, 'tables' => $tables, 'title' => $projectInfo['title'], 'id' => $projectId]);
     }
 }

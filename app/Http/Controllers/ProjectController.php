@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\MartaStation;
-use App\Option;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Question;
@@ -12,12 +11,12 @@ use Illuminate\Support\Facades\DB;
 class ProjectController extends Controller
 {
     /**
-     * Get all entries from ProjectItemsOptions for specified resource.
+     * Get all optional entries from ProjectItemsOptions for specified resource.
      *
      * @param int $id
      * @return \Illuminate\Support\Collection
      */
-    private function getProjectAnswers($id)
+    public function getOptionalProjectAnswers($id, $tableAbbrev)
     {
         return DB::table('Projects as p')
             ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
@@ -30,8 +29,35 @@ class ProjectController extends Controller
                     ->on('pio.project_id', '=', 'p.id');
             })
             ->where('p.id', $id)
-            ->whereNotNull('pio.option_id')
-            ->select('tb.name as table_name', 'itm.name as item', 'itm.required as required', 'itm.instructions as item_instructions', 'qt.id as question_id', 'pio.option_id')
+            ->where('tb.abbrev', $tableAbbrev)
+            ->where('itm.required', false)
+            ->select('p.title as project_title', 'tb.name as table_name', 'tb.abbrev as table_abbrev', 'itm.name as item', 'itm.required as required', 'itm.instructions as item_instructions', 'qt.id as question_id', 'pio.option_id')
+            ->orderBy('itm.name', 'asc')
+            ->get();
+    }
+
+    /**
+     * Get all required entries from ProjectItemsOptions for specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Support\Collection
+     */
+    public function getRequiredProjectAnswers($id, $tableAbbrev)
+    {
+        return DB::table('Projects as p')
+            ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
+            ->join('StationsTables as mt', 'mt.station_id', '=', 'ms.id')
+            ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
+            ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
+            ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
+            ->leftJoin('ProjectItemsOptions as pio', function ($join) {
+                $join->on('pio.item_id', '=', 'qt.item_id')
+                    ->on('pio.project_id', '=', 'p.id');
+            })
+            ->where('p.id', $id)
+            ->where('tb.abbrev', $tableAbbrev)
+            ->where('itm.required', true)
+            ->select('p.title as project_title', 'tb.name as table_name', 'tb.abbrev as table_abbrev', 'itm.name as item', 'itm.required as required', 'itm.instructions as item_instructions', 'qt.id as question_id', 'pio.option_id')
             ->orderBy('itm.name', 'asc')
             ->get();
     }
@@ -42,7 +68,7 @@ class ProjectController extends Controller
      * @param int $id
      * @return \App\Question
      */
-    private function getProjectQuestions($id)
+    public function getProjectQuestions($id)
     {
         return Question::join('Options as o', 'o.question_id', '=', 'Questions.id')
             ->join('Items as itm', 'Questions.item_id', '=', 'itm.id')
@@ -53,7 +79,8 @@ class ProjectController extends Controller
             ->where('p.id', $id)
             ->orderBy('Questions.id')
             ->distinct()
-            ->get(['Questions.id']);
+            ->get(['Questions.id', 'Questions.header']);
+
     }
 
     /**
@@ -81,15 +108,41 @@ class ProjectController extends Controller
     }
 
     /**
+     * Get table score for a specified resource.
+     *
+     * @param int     $id
+     * @param string  $tableAbbrev
+     * @return int
+     */
+    private function getTableScore($id, $tableAbbrev)
+    {
+        return DB::table('Projects as p')
+            ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
+            ->join('StationsTables as mt', 'mt.station_id', '=', 'ms.id')
+            ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
+            ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
+            ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
+            ->leftJoin('ProjectItemsOptions as pio', function ($join) {
+                $join->on('pio.item_id', '=', 'qt.item_id')
+                    ->on('pio.project_id', '=', 'p.id');
+            })
+            ->join('Options as o', 'o.id', '=', 'pio.option_id')
+            ->where('p.id', $id)
+            ->where('tb.abbrev', $tableAbbrev)
+            ->whereNotNull('pio.option_id')
+            ->sum('o.points');
+    }
+
+
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $uid = auth()->user()->id;
-
-        $projects = Project::where('user_id', $uid)->get();
+        $projects = auth()->user()->projects;
 
         return response()->json($projects, 200);
     }
@@ -155,15 +208,11 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $uid = auth()->user()->id;
+        $defaultTable = 'equity';
 
-        $project = $this->getProjectAnswers($id);
+        $url = 'projects/' . $id . '/tables/' . $defaultTable;
 
-        $questions = $this->getProjectQuestions($id);
-
-        $url = 'projects/' . $id . '/tables/equity';
-
-        // return redirect($url)->with('data', ['project' => $project, 'title' => $data[0]['project_metadata']['title'], 'id' => $id]);
+        return redirect($url);
     }
 
     /**

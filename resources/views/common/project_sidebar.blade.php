@@ -1,39 +1,22 @@
-<h3>Optional Items</h3>
-<div class="optional">
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.0</p>
+@isset($data['optionalItems'])
+    <h3>Optional Items</h3>
+    <div class="optional">
+    @foreach ($data['optionalItems'] as $item)
+        <div class="d-flex flex-row align-items-center">
+            <i class="material-icons">radio_button_unchecked</i>
+            <p>{{ $item->item }}</p>
+        </div>
+    @endforeach
     </div>
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.1</p>
+@endisset
+@isset($data['requiredItems'])
+    <h3>Required Items</h3>
+    <div class="required">
+    @foreach ($data['requiredItems'] as $item)
+        <div class="d-flex flex-row align-items-center">
+            <i class="material-icons">radio_button_unchecked</i>
+            <p>{{ $item->item }}</p>
+        </div>
+    @endforeach
     </div>
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.2</p>
-    </div>
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.3</p>
-    </div>
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.4</p>
-    </div>
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.5</p>
-    </div>
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.6</p>
-    </div>
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.7</p>
-    </div>
-    <div class="d-flex flex-row align-items-center">
-        <i class="material-icons">radio_button_unchecked</i>
-        <p>GE 1.8</p>
-    </div>
-</div>
+@endisset
