@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::view('settings', 'settings')->name('account');
 // Route::view('security', 'security');
+Route::view('landing', 'landing');
 Route::view('about', 'about');
 Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');

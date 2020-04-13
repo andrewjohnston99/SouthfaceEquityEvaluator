@@ -2,14 +2,14 @@
 
 @section('title', 'Affordability Worksheet')
 
-@include('common.project-header')
+{{-- @include('common.project-header') --}}
 
 @section('css')
     <style>
         html, body {
             margin-top: 0;
         }
-    </style> 
+    </style>
 @endsection
 
 @section('content')
@@ -52,5 +52,5 @@
             </tr>
         </tbody>
 
-    
+
 @endsection
