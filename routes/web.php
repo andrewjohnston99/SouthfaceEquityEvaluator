@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::view('settings', 'settings')->name('account');
-// Route::view('security', 'security');
 Route::view('about', 'about');
 Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');
@@ -36,8 +34,8 @@ Route::post('change-password', 'ChangePasswordController@store')->name('change.p
 Route::get('token', 'ProjectController@token');
 /******************************************* */
 
-Route::resource('projects', 'ProjectController');
-Route::resource('projects.tables', 'ProjectTableController');
+Route::resource('projects', 'ProjectController')->middleware('auth');
+Route::resource('projects.tables', 'ProjectTableController')->middleware('auth');
 
 
 Route::view('affordability', 'affordability');

@@ -38,13 +38,6 @@ class Item extends Model
     }
 
     /**
-     * Get the note for the item.
-     */
-    public function note() {
-        return $this->hasOne('App\Note');
-    }
-
-    /**
      * Get the table that owns the item.
      */
     public function table() {

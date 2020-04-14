@@ -15,9 +15,7 @@
 @endsection
 
 @section('js')
-    @include('common.project_select_js')
     <script src="{{ URL::asset('js/project.js') }}"></script>
-    <script src="{{ URL::asset('js/tables.js') }}"></script>
 @endsection
 
 @section('content')

@@ -21,20 +21,11 @@ class OptionsSeeder extends Seeder
             $op = Option::firstOrCreate([
                 'question_id' => $index,
                 'points' => $pv,
-                'allocated' => false
             ]);
 
             $op->question()->associate(Question::where('id', $index)->first());
 
             $index++;
         }
-
-        $op = Option::firstOrCreate([
-            'question_id' => 2,
-            'points' => 4,
-            'allocated' => false
-        ]);
-
-        $op->question()->associate(Question::where('id', 2)->first());
     }
 }

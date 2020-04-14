@@ -15,13 +15,12 @@ class CreateNotesTable extends Migration
     {
         Schema::create('Notes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('option_id');
             $table->mediumText('text')->nullable();
-            $table->string('placeholder')->default('Example text...');
         });
 
         Schema::table('Notes', function (Blueprint $table) {
-            $table->foreign('item_id')->references('id')->on('Items');
+            $table->foreign('option_id')->references('id')->on('Options');
         });
     }
 

@@ -337,6 +337,15 @@ nav.navbar {
 /******************************
 *  PROJECT VIEW
 ******************************/
+.flash-message {
+    width: 35%;
+    position: fixed;
+    z-index: 9999;
+    margin-top: 16px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
 .project-header {
     height: 94px;
     flex-direction: row;

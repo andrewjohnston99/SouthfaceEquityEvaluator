@@ -36,4 +36,11 @@ class Option extends Model
     public function question() {
         return $this->belongsTo('App\Question', 'question_id');
     }
+
+    /**
+     * Get the question that owns the option.
+     */
+    public function note() {
+        return $this->hasOne('App\Note');
+    }
 }

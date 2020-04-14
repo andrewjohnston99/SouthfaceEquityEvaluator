@@ -13531,6 +13531,16 @@ nav.navbar .register-btn:active {
 *  PROJECT VIEW
 ******************************/
 
+.flash-message {
+  width: 35%;
+  position: fixed;
+  z-index: 9999;
+  margin-top: 16px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
 .project-header {
   height: 94px;
   -webkit-box-orient: horizontal;

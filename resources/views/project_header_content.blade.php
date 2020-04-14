@@ -17,7 +17,7 @@
 @section('project-btns')
 
     @if (Route::current()->getName() == 'projects.tables.show')
-        <button class="save" id="saveChanges">
+        <button class="save" id="saveChanges" form="tableForm" type="submt">
             <span>
                 <i class="material-icons align-middle">save</i>
             </span>

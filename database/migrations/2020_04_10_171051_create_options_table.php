@@ -17,8 +17,7 @@ class CreateOptionsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('question_id');
             $table->unsignedTinyInteger('points');
-            $table->string('name')->nullable()->change();
-            $table->boolean('allocated');
+            $table->string('title')->nullable();
         });
 
         Schema::table('Options', function (Blueprint $table) {

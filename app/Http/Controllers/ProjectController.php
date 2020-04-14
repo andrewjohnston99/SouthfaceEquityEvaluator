@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\DB;
 class ProjectController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Get all optional entries from ProjectItemsOptions for specified resource.
      *
      * @param int $id
@@ -24,7 +34,7 @@ class ProjectController extends Controller
             ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
             ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
             ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
-            ->leftJoin('ProjectItemsOptions as pio', function ($join) {
+            ->leftJoin('ProjectTableItemsOptions as pio', function ($join) {
                 $join->on('pio.item_id', '=', 'qt.item_id')
                     ->on('pio.project_id', '=', 'p.id');
             })
@@ -50,7 +60,7 @@ class ProjectController extends Controller
             ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
             ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
             ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
-            ->leftJoin('ProjectItemsOptions as pio', function ($join) {
+            ->leftJoin('ProjectTableItemsOptions as pio', function ($join) {
                 $join->on('pio.item_id', '=', 'qt.item_id')
                     ->on('pio.project_id', '=', 'p.id');
             })
@@ -80,7 +90,6 @@ class ProjectController extends Controller
             ->orderBy('Questions.id')
             ->distinct()
             ->get(['Questions.id', 'Questions.header']);
-
     }
 
     /**
@@ -97,7 +106,7 @@ class ProjectController extends Controller
             ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
             ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
             ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
-            ->leftJoin('ProjectItemsOptions as pio', function ($join) {
+            ->leftJoin('ProjectTableItemsOptions as pio', function ($join) {
                 $join->on('pio.item_id', '=', 'qt.item_id')
                     ->on('pio.project_id', '=', 'p.id');
             })
@@ -114,7 +123,7 @@ class ProjectController extends Controller
      * @param string  $tableAbbrev
      * @return int
      */
-    private function getTableScore($id, $tableAbbrev)
+    public function getTableScore($id, $tableAbbrev)
     {
         return DB::table('Projects as p')
             ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
@@ -122,7 +131,7 @@ class ProjectController extends Controller
             ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
             ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
             ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
-            ->leftJoin('ProjectItemsOptions as pio', function ($join) {
+            ->leftJoin('ProjectTableItemsOptions as pio', function ($join) {
                 $join->on('pio.item_id', '=', 'qt.item_id')
                     ->on('pio.project_id', '=', 'p.id');
             })
@@ -132,8 +141,6 @@ class ProjectController extends Controller
             ->whereNotNull('pio.option_id')
             ->sum('o.points');
     }
-
-
 
     /**
      * Display a listing of the resource.
@@ -213,34 +220,6 @@ class ProjectController extends Controller
         $url = 'projects/' . $id . '/tables/' . $defaultTable;
 
         return redirect($url);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $uid = auth()->user()->id;
-
-        $project = Project::where('user_id', $uid)
-            ->where('project_id', $id)
-            ->pluck('project_json');
-        $projectData = $project[0];
-
-        $data = $request->data[$request->table];
-
-        $projectData[$request->table] = $data;
-
-        $projectData = json_encode($projectData);
-
-        Project::where('project_id', $id)
-            ->update(['project_json' => $projectData]);
-
-        return response()->json(["result" => "success"], 200);
     }
 
     /**
