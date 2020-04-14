@@ -1316,12 +1316,6 @@
             "autoloading",
             "laminas",
             "zf"
-        ],
-        "funding": [
-            {
-                "url": "https://funding.communitybridge.org/projects/laminas-project",
-                "type": "community_bridge"
-            }
         ]
     },
     {
@@ -4613,17 +4607,17 @@
     },
     {
         "name": "symfony/http-foundation",
-        "version": "v4.4.4",
-        "version_normalized": "4.4.4.0",
+        "version": "v4.4.7",
+        "version_normalized": "4.4.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/http-foundation.git",
-            "reference": "491a20dfa87e0b3990170593bc2de0bb34d828a5"
+            "reference": "62f92509c9abfd1f73e17b8cf1b72c0bdac6611b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/491a20dfa87e0b3990170593bc2de0bb34d828a5",
-            "reference": "491a20dfa87e0b3990170593bc2de0bb34d828a5",
+            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/62f92509c9abfd1f73e17b8cf1b72c0bdac6611b",
+            "reference": "62f92509c9abfd1f73e17b8cf1b72c0bdac6611b",
             "shasum": ""
         },
         "require": {
@@ -4635,7 +4629,7 @@
             "predis/predis": "~1.0",
             "symfony/expression-language": "^3.4|^4.0|^5.0"
         },
-        "time": "2020-01-31T09:11:17+00:00",
+        "time": "2020-03-30T14:07:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
