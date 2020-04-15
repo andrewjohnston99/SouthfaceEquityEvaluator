@@ -132,6 +132,19 @@ nav.navbar {
 }
 
 /******************************
+*  ABOUT
+******************************/
+.about {
+    height: 100%;
+    flex-direction: column;
+    margin-top: 8%;
+
+    .row {
+        text-align: center;
+    }
+}
+
+/******************************
 *  REGISTER
 ******************************/
 .register {

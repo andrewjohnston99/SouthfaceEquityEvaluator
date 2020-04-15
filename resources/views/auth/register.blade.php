@@ -44,12 +44,6 @@
 
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input id="organization" type="text" class="form-control" name="organization" value="{{ old('organization') }}" placeholder="Organization" autocomplete="organization">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
 
                                 @error('password')
@@ -63,6 +57,16 @@
                         <div class="form-group row">
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="col d-flex justify-content-center">
+                            <h2 class="register-header">Are you part of an organization?</h2>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input id="organization" type="text" class="form-control" name="organization" value="{{ old('organization') }}" placeholder="Organization" autocomplete="organization">
                             </div>
                         </div>
 

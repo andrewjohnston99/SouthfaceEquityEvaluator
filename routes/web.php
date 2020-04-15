@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::view('landing', 'landing');
 Route::view('about', 'about');
 Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');

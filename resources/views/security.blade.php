@@ -10,7 +10,7 @@
             <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password">
     </div>
     <div class="form-group">
-        <label for="password">New Passowrd</label>
+        <label for="password">New Password</label>
             <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
     </div>
     <div class="form-group">
