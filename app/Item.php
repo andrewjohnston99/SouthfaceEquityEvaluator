@@ -33,8 +33,8 @@ class Item extends Model
     /**
      * Get the questions for the item.
      */
-    public function questions() {
-        return $this->hasOne('App\Question');
+    public function question() {
+        return $this->hasOne('App\Question', 'item_id');
     }
 
     /**

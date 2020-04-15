@@ -21,7 +21,7 @@ class CreateQuestionsTable extends Migration
         });
 
         Schema::table('Questions', function (Blueprint $table) {
-            $table->foreign('item_id')->references('id')->on('Items');
+            $table->foreign('item_id')->references('id')->on('Items')->onDelete('cascade');
         });
     }
 

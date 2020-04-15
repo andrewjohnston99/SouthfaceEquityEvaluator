@@ -22,7 +22,7 @@ class CreateProjectsTable extends Migration
         });
 
         Schema::table('Projects', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('station_id')->references('id')->on('MartaStations');
         });
     }

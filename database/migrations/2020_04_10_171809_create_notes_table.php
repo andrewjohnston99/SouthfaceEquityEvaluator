@@ -20,7 +20,7 @@ class CreateNotesTable extends Migration
         });
 
         Schema::table('Notes', function (Blueprint $table) {
-            $table->foreign('option_id')->references('id')->on('Options');
+            $table->foreign('option_id')->references('id')->on('Options')->onDelete('cascade');
         });
     }
 

@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
             // ProjectTablesSeeder::class,
             // ItemsSeeder::class,
             // QuestionsSeeder::class,
-            // OptionsSeeder::class,
+            OptionsSeeder::class,
             // NotesSeeder::class,
-            ProjectTableItemsOptionsSeeder::class,
+            // ProjectTableItemsOptionsSeeder::class,
         ]);
     }
 }
