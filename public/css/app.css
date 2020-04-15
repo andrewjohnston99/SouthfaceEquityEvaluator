@@ -13167,6 +13167,22 @@ nav.navbar .register-btn:active {
 }
 
 /******************************
+*  ABOUT
+******************************/
+
+.about {
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin-top: 8%;
+}
+
+.about .row {
+  text-align: center;
+}
+
+/******************************
 *  REGISTER
 ******************************/
 
@@ -13735,7 +13751,7 @@ nav.navbar .register-btn:active {
 }
 
 .settings-frame .row.btn .back-btn span {
-  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .settings-frame .row.btn .back-btn svg {
