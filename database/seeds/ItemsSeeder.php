@@ -21,19 +21,26 @@ class ItemsSeeder extends Seeder
      */
     public function run()
     {
-        // foreach($this->equity as $item) {
-        //     $i= Item::firstOrCreate([
-        //         'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')[0],
-        //         'name' => $item,
-        //         'required' => false,
-        //     ]);
-
-        //     $i->table()->associate(ProjectTable::where('abbrev', 'equity')->pluck('id')[0]);
-        // }
-
         $url = config('prismic.url');
         $token = config('prismic.token');
         $api = Api::get($url, $token);
+
+        // Retrieve general equity items
+        $response = $api->query([
+            Predicates::at('document.type', 'item'),
+            Predicates::at('my.item.table', 'XpepDhIAACIAr14z')
+        ]);
+
+        foreach ($response->results as $doc) {
+            $i = Item::updateOrCreate([
+                'name' => $doc->data->item_name[0]->text,
+                'required' => $doc->data->required,
+                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
+                'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
+            ]);
+
+            $i->table()->associate(ProjectTable::where('abbrev', 'equity')->pluck('id')->first());
+        }
 
         // Retrieve phyical form items
         $response = $api->query([
@@ -52,24 +59,72 @@ class ItemsSeeder extends Seeder
             $i->table()->associate(ProjectTable::where('abbrev', 'physical')->pluck('id')->first());
         }
 
-        // foreach($this->physicalOp as $item) {
-        //     $i= Item::firstOrCreate([
-        //         'table_id' => ProjectTable::where('abbrev', 'physical')->pluck('id')[0],
-        //         'name' => $item,
-        //         'required' => false,
-        //     ]);
+        // Retrieve services items
+        $response = $api->query([
+            Predicates::at('document.type', 'item'),
+            Predicates::at('my.item.table', 'XpewxBIAACEAr31W')
+        ]);
 
-        //     $i->table()->associate(ProjectTable::where('abbrev', 'physical')->pluck('id')[0]);
-        // }
+        foreach ($response->results as $doc) {
+            $i = Item::updateOrCreate([
+                'name' => $doc->data->item_name[0]->text,
+                'required' => $doc->data->required,
+                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
+                'table_id' => ProjectTable::where('abbrev', 'services')->pluck('id')->first()
+            ]);
 
-        // foreach($this->physicalReq as $item) {
-        //     $i= Item::firstOrCreate([
-        //         'table_id' => ProjectTable::where('abbrev', 'physical')->pluck('id')[0],
-        //         'name' => $item,
-        //         'required' => true,
-        //     ]);
+            $i->table()->associate(ProjectTable::where('abbrev', 'services')->pluck('id')->first());
+        }
 
-        //     $i->table()->associate(ProjectTable::where('abbrev', 'physical')->pluck('id')[0]);
-        // }
+        // Retrieve population items
+        $response = $api->query([
+            Predicates::at('document.type', 'item'),
+            Predicates::at('my.item.table', 'Xpe1ihIAACEAr5Nq')
+        ]);
+
+        foreach ($response->results as $doc) {
+            $i = Item::updateOrCreate([
+                'name' => $doc->data->item_name[0]->text,
+                'required' => $doc->data->required,
+                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
+                'table_id' => ProjectTable::where('abbrev', 'population')->pluck('id')->first()
+            ]);
+
+            $i->table()->associate(ProjectTable::where('abbrev', 'population')->pluck('id')->first());
+        }
+
+        // Retrieve community items
+        $response = $api->query([
+            Predicates::at('document.type', 'item'),
+            Predicates::at('my.item.table', 'Xpe6gxIAACIAr6mk')
+        ]);
+
+        foreach ($response->results as $doc) {
+            $i = Item::updateOrCreate([
+                'name' => $doc->data->item_name[0]->text,
+                'required' => $doc->data->required,
+                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
+                'table_id' => ProjectTable::where('abbrev', 'community')->pluck('id')->first()
+            ]);
+
+            $i->table()->associate(ProjectTable::where('abbrev', 'community')->pluck('id')->first());
+        }
+
+        // Retrieve housing items
+        $response = $api->query([
+            Predicates::at('document.type', 'item'),
+            Predicates::at('my.item.table', 'Xpe9axIAACAAr7bV')
+        ]);
+
+        foreach ($response->results as $doc) {
+            $i = Item::updateOrCreate([
+                'name' => $doc->data->item_name[0]->text,
+                'required' => $doc->data->required,
+                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
+                'table_id' => ProjectTable::where('abbrev', 'housing')->pluck('id')->first()
+            ]);
+
+            $i->table()->associate(ProjectTable::where('abbrev', 'housing')->pluck('id')->first());
+        }
     }
 }

@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
             // UserSeeder::class,
             // MartaStationsSeeder::class,
             // ProjectTablesSeeder::class,
-            // ItemsSeeder::class,
-            // QuestionsSeeder::class,
+            ItemsSeeder::class,
+            QuestionsSeeder::class,
             OptionsSeeder::class,
-            // NotesSeeder::class,
+            NotesSeeder::class,
             // ProjectTableItemsOptionsSeeder::class,
         ]);
     }

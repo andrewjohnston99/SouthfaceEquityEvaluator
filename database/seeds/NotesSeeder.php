@@ -15,8 +15,10 @@ class NotesSeeder extends Seeder
     {
         $optionIds = Option::pluck('id')->all();
 
+        Note::truncate();
+
         foreach ($optionIds as $id) {
-            $note = Note::firstOrCreate([
+            $note = Note::updateOrCreate([
                 'option_id' => $id,
             ]);
 
