@@ -25,10 +25,18 @@ class ItemsSeeder extends Seeder
         $token = config('prismic.token');
         $api = Api::get($url, $token);
 
+        // Retrieve table document IDs
+        $tables = $api->query([Predicates::at('document.type', 'projecttable')]);
+        $tableIDs =[];
+
+        foreach ($tables->results as $doc) {
+            $tableIDs[current($doc->data->table_name)->text] = $doc->id;
+        }
+
         // Retrieve general equity items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', 'XpepDhIAACIAr14z')
+            Predicates::at('my.item.table', $tableIDs['General Equity'])
         ]);
 
         foreach ($response->results as $doc) {
@@ -45,7 +53,7 @@ class ItemsSeeder extends Seeder
         // Retrieve phyical form items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', 'XpdZohIAAB8ArffY')
+            Predicates::at('my.item.table', $tableIDs['Physical Form'])
         ]);
 
         foreach ($response->results as $doc) {
@@ -62,7 +70,7 @@ class ItemsSeeder extends Seeder
         // Retrieve services items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', 'XpewxBIAACEAr31W')
+            Predicates::at('my.item.table', $tableIDs['Services and Employment'])
         ]);
 
         foreach ($response->results as $doc) {
@@ -79,7 +87,7 @@ class ItemsSeeder extends Seeder
         // Retrieve population items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', 'Xpe1ihIAACEAr5Nq')
+            Predicates::at('my.item.table', $tableIDs['Population Preservation/Expansion'])
         ]);
 
         foreach ($response->results as $doc) {
@@ -96,7 +104,7 @@ class ItemsSeeder extends Seeder
         // Retrieve community items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', 'Xpe6gxIAACIAr6mk')
+            Predicates::at('my.item.table', $tableIDs['Balanced Community'])
         ]);
 
         foreach ($response->results as $doc) {
@@ -113,7 +121,7 @@ class ItemsSeeder extends Seeder
         // Retrieve housing items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', 'Xpe9axIAACAAr7bV')
+            Predicates::at('my.item.table', $tableIDs['Housing Diversity'])
         ]);
 
         foreach ($response->results as $doc) {
