@@ -7,6 +7,7 @@ use App\Note;
 use App\Option;
 use App\Project;
 use App\ProjectTable;
+use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
@@ -41,17 +42,38 @@ class ProjectTableController extends Controller
      */
     public function show($projectId, $table)
     {
-        $optionalItems = $this->projectController->getOptionalProjectAnswers($projectId, $table);
-        if (!count($optionalItems)) {
-            $optionalItems = null;
+        $optionalAnswers = $this->projectController->getOptionalProjectAnswers($projectId, $table);
+        if ($optionalAnswers->isEmpty()) {
+            $optionalAnswers = null;
+        }
+        // dd($optionalItems);
+
+        $requiredAnswers = $this->projectController->getRequiredProjectAnswers($projectId, $table);
+        if ($requiredAnswers->isEmpty()) {
+            $requiredAnswers = null;
         }
 
-        $requiredItems = $this->projectController->getRequiredProjectAnswers($projectId, $table);
-        if (!count($requiredItems)) {
-            $requiredItems = null;
+        $optionalQuestionData = $this->projectController->getOptionalProjectQuestions($projectId, $table);
+        $optionalQuestions = [];
+
+        if (!$optionalQuestionData->isEmpty()) {
+            foreach($optionalQuestionData as $q) {
+                array_push($optionalQuestions, Question::where('id', $q->question_id)->first());
+            }
+        } else {
+            $optionalQuestions = null;
         }
 
-        $questions = $this->projectController->getProjectQuestions($projectId);
+        $requiredQuestionData = $this->projectController->getRequiredProjectQuestions($projectId, $table);
+        $requiredQuestions = [];
+
+        if (!$requiredQuestionData->isEmpty()) {
+            foreach($requiredQuestionData as $q) {
+                array_push($requiredQuestions, Question::where('id', $q->question_id)->first());
+            }
+        } else {
+            $requiredQuestions = null;
+        }
 
         $tableInfo = DB::table('Projects as p')
             ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
@@ -67,7 +89,7 @@ class ProjectTableController extends Controller
         $station = MartaStation::where('id', $projectInfo['station_id'])->first();
         $tables = $station->tables;
 
-        return view('table_template')->with('data', ['optionalItems' => $optionalItems, 'requiredItems' => $requiredItems, 'questions' => $questions, 'tableInfo' => $tableInfo, 'tables' => $tables, 'title' => $projectInfo['title'], 'tableScore' => $tableScore, 'id' => $projectId]);
+        return view('table_template')->with('data', ['optionalAnswers' => $optionalAnswers, 'requiredAnswers' => $requiredAnswers, 'optionalQuestions' => $optionalQuestions, 'requiredQuestions' => $requiredQuestions, 'tableInfo' => $tableInfo, 'tables' => $tables, 'title' => $projectInfo['title'], 'tableScore' => $tableScore, 'id' => $projectId]);
     }
 
     /**

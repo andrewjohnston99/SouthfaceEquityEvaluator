@@ -34,7 +34,7 @@ class ProjectController extends Controller
             ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
             ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
             ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
-            ->leftJoin('ProjectTableItemsOptions as pio', function ($join) {
+            ->join('ProjectTableItemsOptions as pio', function ($join) {
                 $join->on('pio.item_id', '=', 'qt.item_id')
                     ->on('pio.project_id', '=', 'p.id');
             })
@@ -60,7 +60,7 @@ class ProjectController extends Controller
             ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
             ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
             ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
-            ->leftJoin('ProjectTableItemsOptions as pio', function ($join) {
+            ->join('ProjectTableItemsOptions as pio', function ($join) {
                 $join->on('pio.item_id', '=', 'qt.item_id')
                     ->on('pio.project_id', '=', 'p.id');
             })
@@ -73,24 +73,51 @@ class ProjectController extends Controller
     }
 
     /**
-     * Get all questions for a specified resource.
+     * Get all optional questions for a specified resource.
      *
      * @param int $id
      * @return \App\Question
      */
-    public function getProjectQuestions($id)
+    public function getOptionalProjectQuestions($id, $tableAbbrev)
     {
-        return Question::join('Options as o', 'o.question_id', '=', 'Questions.id')
-            ->join('Items as itm', 'Questions.item_id', '=', 'itm.id')
+        return DB::table('Questions as qt')
+            ->join('Items as itm', 'qt.item_id', '=', 'itm.id')
             ->join('ProjectTables as tb', 'itm.table_id', '=', 'tb.id')
             ->join('StationsTables as mt', 'mt.table_id', '=', 'tb.id')
             ->join('MartaStations as ms', 'mt.station_id', '=', 'ms.id')
             ->join('Projects as p', 'p.station_id', '=', 'ms.id')
             ->where('p.id', $id)
-            ->orderBy('Questions.id')
+            ->where('tb.abbrev', $tableAbbrev)
+            ->where('itm.required', false)
+            ->orderBy('itm.name', 'asc')
             ->distinct()
-            ->get(['Questions.id', 'Questions.header']);
+            ->select('qt.id as question_id', 'itm.name as item_name')
+            ->get();
     }
+
+    /**
+     * Get all required questions for a specified resource.
+     *
+     * @param int $id
+     * @return \App\Question
+     */
+    public function getRequiredProjectQuestions($id, $tableAbbrev)
+    {
+        return DB::table('Questions as qt')
+            ->join('Items as itm', 'qt.item_id', '=', 'itm.id')
+            ->join('ProjectTables as tb', 'itm.table_id', '=', 'tb.id')
+            ->join('StationsTables as mt', 'mt.table_id', '=', 'tb.id')
+            ->join('MartaStations as ms', 'mt.station_id', '=', 'ms.id')
+            ->join('Projects as p', 'p.station_id', '=', 'ms.id')
+            ->where('p.id', $id)
+            ->where('tb.abbrev', $tableAbbrev)
+            ->where('itm.required', true)
+            ->orderBy('itm.name', 'asc')
+            ->distinct()
+            ->select('qt.id as question_id', 'itm.name as item_name')
+            ->get();
+    }
+
 
     /**
      * Get total score for a specified resource.
@@ -168,24 +195,21 @@ class ProjectController extends Controller
         $project->title = $request->projectTitle;
 
         $metadata = array(
-            'address' => $request->siteAddress,
-            'charrette' => $request->charretteDate,
-            'kickoff' => $request->kickoffDate
+            'address' => isset($request->siteAddress) ? $request->siteAddress : "No Address",
+            'charrette' => isset($request->charretteDate) ? $request->charretteDate : "No Charrette Date",
+            'kickoff' => isset($request->kickoffDate) ? $request->kickoffDate : "No Kickoff Date"
         );
         $metadata = json_decode(json_encode($metadata));
         $project->project_metadata = $metadata;
 
         $station = MartaStation::where('name', $request->martaStation)->first();
+        // dd($station);
         $project->station_id = $station->id;
         $project->save();
 
-        $tables = $station->tables;
+        $url = 'projects/' . $project->id . '/tables/equity';
 
-        $projectData = null;
-
-        $url = 'projects/' . $project->project_id . '/tables/equity';
-
-        return redirect($url)->with('data', ['project' => $projectData, 'title' => $project->title, 'tables' => $tables, 'id' => $project->id]);
+        return redirect($url);
     }
 
     /**

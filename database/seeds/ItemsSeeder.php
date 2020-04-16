@@ -36,16 +36,19 @@ class ItemsSeeder extends Seeder
         // Retrieve general equity items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', $tableIDs['General Equity'])
-        ]);
+            Predicates::at('my.item.table', $tableIDs['General Equity'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate([
-                'name' => $doc->data->item_name[0]->text,
-                'required' => $doc->data->required,
-                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
-                'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
-            ]);
+            $i = Item::updateOrCreate(
+                ['name' => $doc->data->item_name[0]->text],
+                [
+                    'required' => $doc->data->required,
+                    'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
+                    'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
+                ]
+            );
 
             $i->table()->associate(ProjectTable::where('abbrev', 'equity')->pluck('id')->first());
         }
@@ -53,16 +56,19 @@ class ItemsSeeder extends Seeder
         // Retrieve phyical form items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', $tableIDs['Physical Form'])
-        ]);
+            Predicates::at('my.item.table', $tableIDs['Physical Form'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate([
-                'name' => $doc->data->item_name[0]->text,
-                'required' => $doc->data->required,
-                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
-                'table_id' => ProjectTable::where('abbrev', 'physical')->pluck('id')->first()
-            ]);
+            $i = Item::updateOrCreate(
+                ['name' => $doc->data->item_name[0]->text],
+                [
+                    'required' => $doc->data->required,
+                    'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
+                    'table_id' => ProjectTable::where('abbrev', 'physical')->pluck('id')->first()
+                ]
+            );
 
             $i->table()->associate(ProjectTable::where('abbrev', 'physical')->pluck('id')->first());
         }
@@ -70,16 +76,19 @@ class ItemsSeeder extends Seeder
         // Retrieve services items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', $tableIDs['Services and Employment'])
-        ]);
+            Predicates::at('my.item.table', $tableIDs['Services and Employment'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate([
-                'name' => $doc->data->item_name[0]->text,
-                'required' => $doc->data->required,
-                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
-                'table_id' => ProjectTable::where('abbrev', 'services')->pluck('id')->first()
-            ]);
+            $i = Item::updateOrCreate(
+                ['name' => $doc->data->item_name[0]->text],
+                [
+                    'required' => $doc->data->required,
+                    'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
+                    'table_id' => ProjectTable::where('abbrev', 'services')->pluck('id')->first()
+                ]
+            );
 
             $i->table()->associate(ProjectTable::where('abbrev', 'services')->pluck('id')->first());
         }
@@ -87,16 +96,19 @@ class ItemsSeeder extends Seeder
         // Retrieve population items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', $tableIDs['Population Preservation/Expansion'])
-        ]);
+            Predicates::at('my.item.table', $tableIDs['Population Preservation/Expansion'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate([
-                'name' => $doc->data->item_name[0]->text,
-                'required' => $doc->data->required,
-                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
-                'table_id' => ProjectTable::where('abbrev', 'population')->pluck('id')->first()
-            ]);
+            $i = Item::updateOrCreate(
+                ['name' => $doc->data->item_name[0]->text],
+                [
+                    'required' => $doc->data->required,
+                    'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
+                    'table_id' => ProjectTable::where('abbrev', 'population')->pluck('id')->first()
+                ]
+            );
 
             $i->table()->associate(ProjectTable::where('abbrev', 'population')->pluck('id')->first());
         }
@@ -104,16 +116,19 @@ class ItemsSeeder extends Seeder
         // Retrieve community items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', $tableIDs['Balanced Community'])
-        ]);
+            Predicates::at('my.item.table', $tableIDs['Balanced Community'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate([
-                'name' => $doc->data->item_name[0]->text,
-                'required' => $doc->data->required,
-                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
-                'table_id' => ProjectTable::where('abbrev', 'community')->pluck('id')->first()
-            ]);
+            $i = Item::updateOrCreate(
+                ['name' => $doc->data->item_name[0]->text],
+                [
+                    'required' => $doc->data->required,
+                    'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
+                    'table_id' => ProjectTable::where('abbrev', 'community')->pluck('id')->first()
+                ]
+            );
 
             $i->table()->associate(ProjectTable::where('abbrev', 'community')->pluck('id')->first());
         }
@@ -121,16 +136,19 @@ class ItemsSeeder extends Seeder
         // Retrieve housing items
         $response = $api->query([
             Predicates::at('document.type', 'item'),
-            Predicates::at('my.item.table', $tableIDs['Housing Diversity'])
-        ]);
+            Predicates::at('my.item.table', $tableIDs['Housing Diversity'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate([
-                'name' => $doc->data->item_name[0]->text,
-                'required' => $doc->data->required,
-                'instructions' => isset($doc->data->instructions) ? RichText::asText($doc->data->instructions) : null,
-                'table_id' => ProjectTable::where('abbrev', 'housing')->pluck('id')->first()
-            ]);
+            $i = Item::updateOrCreate(
+                ['name' => $doc->data->item_name[0]->text],
+                [
+                    'required' => $doc->data->required,
+                    'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
+                    'table_id' => ProjectTable::where('abbrev', 'housing')->pluck('id')->first()
+                ]
+            );
 
             $i->table()->associate(ProjectTable::where('abbrev', 'housing')->pluck('id')->first());
         }

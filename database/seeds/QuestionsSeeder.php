@@ -26,8 +26,9 @@ class QuestionsSeeder extends Seeder
         // Retrieve general equity questions
         $response = $api->query([
             Predicates::at('document.type', 'question'),
-            Predicates::at('document.tags', ['General Equity'])
-        ]);
+            Predicates::at('document.tags', ['General Equity'])],
+            [ 'pageSize' => 100 ]
+        );
 
         $type = 1;
 
@@ -51,11 +52,13 @@ class QuestionsSeeder extends Seeder
             }
 
             $itemName = current(preg_grep('/GE/', $doc->tags));
-            $q = Question::updateOrCreate([
-                'header' => current($doc->data->header)->text,
-                'type' => $type,
-                'item_id' => Item::where('name', $itemName)->pluck('id')->first()
-            ]);
+            $q = Question::updateOrCreate(
+                ['item_id' => Item::where('name', $itemName)->pluck('id')->first()],
+                [
+                    'header' => current($doc->data->header)->text,
+                    'type' => $type,
+                ]
+            );
 
             $q->item()->associate(Item::where('name', $itemName)->pluck('id')->first());
         }
@@ -63,8 +66,9 @@ class QuestionsSeeder extends Seeder
         // Retrieve physical form questions
         $response = $api->query([
             Predicates::at('document.type', 'question'),
-            Predicates::at('document.tags', ['Physical Form'])
-        ]);
+            Predicates::at('document.tags', ['Physical Form'])],
+            [ 'pageSize' => 100 ]
+        );
 
         $type = 1;
 
@@ -91,20 +95,22 @@ class QuestionsSeeder extends Seeder
             }
 
             $itemName = current(preg_grep('/PF/', $doc->tags));
-            $q = Question::updateOrCreate([
-                'header' => current($doc->data->header)->text,
-                'type' => $type,
-                'item_id' => Item::where('name', $itemName)->pluck('id')->first()
-            ]);
-
+            $q = Question::updateOrCreate(
+                ['item_id' => Item::where('name', $itemName)->pluck('id')->first()],
+                [
+                    'header' => current($doc->data->header)->text,
+                    'type' => $type,
+                ]
+            );
             $q->item()->associate(Item::where('name', $itemName)->pluck('id')->first());
         }
 
         // Retrieve services questions
         $response = $api->query([
             Predicates::at('document.type', 'question'),
-            Predicates::at('document.tags', ['Services and Employment'])
-        ]);
+            Predicates::at('document.tags', ['Services and Employment'])],
+            [ 'pageSize' => 100 ]
+        );
 
         $type = 1;
 
@@ -131,11 +137,13 @@ class QuestionsSeeder extends Seeder
             }
 
             $itemName = current(preg_grep('/SE/', $doc->tags));
-            $q = Question::updateOrCreate([
-                'header' => current($doc->data->header)->text,
-                'type' => $type,
-                'item_id' => Item::where('name', $itemName)->pluck('id')->first()
-            ]);
+            $q = Question::updateOrCreate(
+                ['item_id' => Item::where('name', $itemName)->pluck('id')->first()],
+                [
+                    'header' => current($doc->data->header)->text,
+                    'type' => $type,
+                ]
+            );
 
             $q->item()->associate(Item::where('name', $itemName)->pluck('id')->first());
         }
@@ -143,8 +151,9 @@ class QuestionsSeeder extends Seeder
         // Retrieve population questions
         $response = $api->query([
             Predicates::at('document.type', 'question'),
-            Predicates::at('document.tags', ['Population Preservation/Expansion'])
-        ]);
+            Predicates::at('document.tags', ['Population Preservation/Expansion'])],
+            [ 'pageSize' => 100 ]
+        );
 
         $type = 1;
 
@@ -171,11 +180,13 @@ class QuestionsSeeder extends Seeder
             }
 
             $itemName = current(preg_grep('/PPE/', $doc->tags));
-            $q = Question::updateOrCreate([
-                'header' => current($doc->data->header)->text,
-                'type' => $type,
-                'item_id' => Item::where('name', $itemName)->pluck('id')->first()
-            ]);
+            $q = Question::updateOrCreate(
+                ['item_id' => Item::where('name', $itemName)->pluck('id')->first()],
+                [
+                    'header' => current($doc->data->header)->text,
+                    'type' => $type,
+                ]
+            );
 
             $q->item()->associate(Item::where('name', $itemName)->pluck('id')->first());
         }
@@ -183,8 +194,9 @@ class QuestionsSeeder extends Seeder
         // Retrieve community questions
         $response = $api->query([
             Predicates::at('document.type', 'question'),
-            Predicates::at('document.tags', ['Balanced Community'])
-        ]);
+            Predicates::at('document.tags', ['Balanced Community'])],
+            [ 'pageSize' => 100 ]
+        );
 
         $type = 1;
 
@@ -211,11 +223,13 @@ class QuestionsSeeder extends Seeder
             }
 
             $itemName = current(preg_grep('/BC/', $doc->tags));
-            $q = Question::updateOrCreate([
-                'header' => current($doc->data->header)->text,
-                'type' => $type,
-                'item_id' => Item::where('name', $itemName)->pluck('id')->first()
-            ]);
+            $q = Question::updateOrCreate(
+                ['item_id' => Item::where('name', $itemName)->pluck('id')->first()],
+                [
+                    'header' => current($doc->data->header)->text,
+                    'type' => $type,
+                ]
+            );
 
             $q->item()->associate(Item::where('name', $itemName)->pluck('id')->first());
         }
@@ -223,8 +237,9 @@ class QuestionsSeeder extends Seeder
         // Retrieve housing questions
         $response = $api->query([
             Predicates::at('document.type', 'question'),
-            Predicates::at('document.tags', ['Housing Diversity'])
-        ]);
+            Predicates::at('document.tags', ['Housing Diversity'])],
+            [ 'pageSize' => 100 ]
+        );
 
         $type = 1;
 
@@ -251,11 +266,13 @@ class QuestionsSeeder extends Seeder
             }
 
             $itemName = current(preg_grep('/HD/', $doc->tags));
-            $q = Question::updateOrCreate([
-                'header' => current($doc->data->header)->text,
-                'type' => $type,
-                'item_id' => Item::where('name', $itemName)->pluck('id')->first()
-            ]);
+            $q = Question::updateOrCreate(
+                ['item_id' => Item::where('name', $itemName)->pluck('id')->first()],
+                [
+                    'header' => current($doc->data->header)->text,
+                    'type' => $type,
+                ]
+            );
 
             $q->item()->associate(Item::where('name', $itemName)->pluck('id')->first());
         }

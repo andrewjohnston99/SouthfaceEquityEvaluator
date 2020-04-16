@@ -25,11 +25,12 @@ class OptionsSeeder extends Seeder
         // Retrieve general equity options
         $response = $api->query([
             Predicates::at('document.type', 'option'),
-            Predicates::at('document.tags', ['General Equity'])
-        ]);
+            Predicates::at('document.tags', ['General Equity'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
-            $itemName = current(preg_grep('/PF/', $doc->tags));
+            $itemName = current(preg_grep('/GE/', $doc->tags));
 
             $o = Option::updateOrCreate([
                 'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
@@ -44,8 +45,9 @@ class OptionsSeeder extends Seeder
         // Retrieve physical form options
         $response = $api->query([
             Predicates::at('document.type', 'option'),
-            Predicates::at('document.tags', ['Physical Form'])
-        ]);
+            Predicates::at('document.tags', ['Physical Form'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/PF/', $doc->tags));
@@ -63,8 +65,9 @@ class OptionsSeeder extends Seeder
         // Retrieve services options
         $response = $api->query([
             Predicates::at('document.type', 'option'),
-            Predicates::at('document.tags', ['Services and Employment'])
-        ]);
+            Predicates::at('document.tags', ['Services and Employment'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/SE/', $doc->tags));
@@ -82,8 +85,9 @@ class OptionsSeeder extends Seeder
         // Retrieve population options
         $response = $api->query([
             Predicates::at('document.type', 'option'),
-            Predicates::at('document.tags', ['Population Preservation/Expansion'])
-        ]);
+            Predicates::at('document.tags', ['Population Preservation/Expansion'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/PPE/', $doc->tags));
@@ -101,8 +105,9 @@ class OptionsSeeder extends Seeder
         // Retrieve community options
         $response = $api->query([
             Predicates::at('document.type', 'option'),
-            Predicates::at('document.tags', ['Balanced Community'])
-        ]);
+            Predicates::at('document.tags', ['Balanced Community'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/BC/', $doc->tags));
@@ -120,8 +125,9 @@ class OptionsSeeder extends Seeder
         // Retrieve housing options
         $response = $api->query([
             Predicates::at('document.type', 'option'),
-            Predicates::at('document.tags', ['Housing Diversity'])
-        ]);
+            Predicates::at('document.tags', ['Housing Diversity'])],
+            [ 'pageSize' => 100 ]
+        );
 
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/HD/', $doc->tags));
