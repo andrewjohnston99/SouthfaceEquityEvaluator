@@ -16,8 +16,9 @@ class CreateOptionsTable extends Migration
         Schema::create('Options', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('question_id');
-            $table->unsignedTinyInteger('points');
-            $table->string('title')->nullable();
+            $table->unsignedTinyInteger('points')->nullable();
+            $table->mediumText('title')->nullable();
+            $table->string('label')->nullable();
         });
 
         Schema::table('Options', function (Blueprint $table) {
