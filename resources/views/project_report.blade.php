@@ -18,5 +18,13 @@
         <div class="scores d-flex justify-content-center">
             <h1 class="mt-5">{{ $data['scores']['total'] }} Total Points</h1>
         </div>
+        <div class="scores d-flex justify-content-center">
+            <form method="post" action="{{url('upload')}}" enctype="multipart/form-data">
+                {{csrf_field()}}
+                <label for="document">Upload Confirmation Documents</label>
+                <input type="file" class="form-control" name="document">
+                <button type="submit" class="btn btn-success">Upload</button>
+            </form>
+        </div>
     </div>
 @endsection

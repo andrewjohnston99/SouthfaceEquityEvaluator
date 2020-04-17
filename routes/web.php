@@ -30,6 +30,8 @@ Route::get('settings/security', 'UserController@index');
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
+Route::post('upload', 'ProjectController@uploadDocument');
+
 /******************************************* */
 /* TODO: DEV ONLY. REMOVE BEFORE PRODUCTION  */
 Route::get('token', 'ProjectController@token');
