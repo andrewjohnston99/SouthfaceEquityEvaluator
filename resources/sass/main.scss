@@ -274,7 +274,7 @@ nav.navbar {
         margin-top: 30px;
 
         .add-btn {
-            @include new-btn();
+            @include light-btn();
 
             span {
                 margin-right: 10px;
@@ -296,7 +296,7 @@ nav.navbar {
     }
 
     .project-card {
-        @include new-btn();
+        @include light-btn();
         height: 380px;
         width: 100%;
         color: #000;
@@ -338,7 +338,7 @@ nav.navbar {
         margin-top: 30px;
 
         .export {
-            @include new-btn();
+            @include light-btn();
 
             span {
                 margin-right: 10px;
@@ -373,7 +373,7 @@ nav.navbar {
     }
 
     .settings, .save, .edit {
-        @include new-btn();
+        @include light-btn();
 
         span {
             margin-right: 10px;
@@ -423,16 +423,24 @@ nav.navbar {
 .row.project-content {
     margin-top: 40px;
     margin-bottom: 20px;
+
+    .col-2 {
+        padding: 0;
+    }
 }
 
 .sidebar {
     .optional div, .required div {
         margin-left: 20px;
         margin-bottom: 15px;
+
+        button {
+            @include txt-btn(#000);
+        }
     }
 
     .material-icons {
-        font-size: 14px;
+        font-size: 16px;
         margin-right: 10px;
     }
 }
@@ -445,16 +453,30 @@ nav.navbar {
 
         th {
 
-            &.points,
-            &.planned,
-            &.achieved {
+            &.points {
                 width: 5%;
             }
 
-            &.confirmation,
+            &.planned {
+                width: 25%;
+            }
+
             &.notes {
                 width: 15%;
             }
+        }
+    }
+}
+
+.contact {
+    form {
+        h2 {
+            font-family: $font-secondary;
+        }
+
+        .row {
+            padding: 0;
+            margin-bottom: 20px;
         }
     }
 }
@@ -567,7 +589,7 @@ nav.navbar {
             }
 
             button.save {
-                @include new-btn();
+                @include light-btn();
                 width: auto;
 
                 span {
@@ -615,7 +637,7 @@ nav.navbar {
         }
 
         button.create {
-            @include new-btn();
+            @include light-btn();
             font-size: $font-lg;
             line-height: $font-lg;
             width: 200px;

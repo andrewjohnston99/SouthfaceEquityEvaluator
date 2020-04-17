@@ -9,7 +9,6 @@ use App\Project;
 use App\ProjectTable;
 use App\Question;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
 
 
@@ -42,6 +41,14 @@ class ProjectTableController extends Controller
      */
     public function show($projectId, $table)
     {
+        $projectInfo = Project::select('title', 'station_id')->where('id', $projectId)->first();
+        $station = MartaStation::where('id', $projectInfo['station_id'])->first();
+        $tables = $station->tables;
+
+        if ($table == 'contact') {
+            return view('table_template')->with('data', ['tables' => $tables, 'title' => $projectInfo['title'], 'id' => $projectId]);
+        }
+
         $optionalAnswers = $this->projectController->getOptionalProjectAnswers($projectId, $table);
         if ($optionalAnswers->isEmpty()) {
             $optionalAnswers = null;
@@ -84,10 +91,6 @@ class ProjectTableController extends Controller
             ->first();
 
         $tableScore = $this->projectController->getTableScore($projectId, $table);
-
-        $projectInfo = Project::select('title', 'station_id')->where('id', $projectId)->first();
-        $station = MartaStation::where('id', $projectInfo['station_id'])->first();
-        $tables = $station->tables;
 
         return view('table_template')->with('data', ['optionalAnswers' => $optionalAnswers, 'requiredAnswers' => $requiredAnswers, 'optionalQuestions' => $optionalQuestions, 'requiredQuestions' => $requiredQuestions, 'tableInfo' => $tableInfo, 'tables' => $tables, 'title' => $projectInfo['title'], 'tableScore' => $tableScore, 'id' => $projectId]);
     }

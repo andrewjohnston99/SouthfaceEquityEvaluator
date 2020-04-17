@@ -2,7 +2,7 @@
 <th scope="row" rowspan="{{ count($question->options) + 1 }}" class="align-middle">{{ $question->item->name }}</th>
     <td class="text-left align-middle">{{ $question->header }}</td>
     <td class="align-middle" colspan="2">Select One:</td>
-    <td class="align-middle">-</td>
+    <td class="align-middle"></td>
 </tr>
 @foreach ($question->options as $option)
     @if ($loop->first)
@@ -10,7 +10,7 @@
             <td class="text-left align-middle">{{ $option->title }}</td>
             <td class="align-middle">{{ isset($option->label) ? $option->label : $option->points }}</td>
             <td class="align-middle" rowspan="{{ $loop->count }}">
-                <select name="option-{{ $option->id }}" id="option-{{ $option->id }}">
+                <select class="form-control" name="option-{{ $option->id }}" id="option-{{ $option->id }}">
                     @foreach ($option->question->options as $item)
                         <option value="{{ isset($item->points) ? $item->points : '' }}">{{ $item->label }}</option>
                     @endforeach

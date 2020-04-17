@@ -13670,14 +13670,47 @@ nav.navbar .register-btn:active {
   margin-bottom: 20px;
 }
 
+.row.project-content .col-2 {
+  padding: 0;
+}
+
 .sidebar .optional div,
 .sidebar .required div {
   margin-left: 20px;
   margin-bottom: 15px;
 }
 
+.sidebar .optional div button,
+.sidebar .required div button {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #000;
+}
+
+.sidebar .optional div button:hover,
+.sidebar .optional div button:focus,
+.sidebar .optional div button:active,
+.sidebar .required div button:hover,
+.sidebar .required div button:focus,
+.sidebar .required div button:active {
+  color: black;
+}
+
+.sidebar .optional div button:hover svg,
+.sidebar .optional div button:focus svg,
+.sidebar .optional div button:active svg,
+.sidebar .required div button:hover svg,
+.sidebar .required div button:focus svg,
+.sidebar .required div button:active svg {
+  fill: black;
+}
+
 .sidebar .material-icons {
-  font-size: 14px;
+  font-size: 16px;
   margin-right: 10px;
 }
 
@@ -13689,15 +13722,25 @@ nav.navbar .register-btn:active {
   width: 100%;
 }
 
-.table-responsive table th.points,
-.table-responsive table th.planned,
-.table-responsive table th.achieved {
+.table-responsive table th.points {
   width: 5%;
 }
 
-.table-responsive table th.confirmation,
+.table-responsive table th.planned {
+  width: 25%;
+}
+
 .table-responsive table th.notes {
   width: 15%;
+}
+
+.contact form h2 {
+  font-family: "Roboto", sans-serif;
+}
+
+.contact form .row {
+  padding: 0;
+  margin-bottom: 20px;
 }
 
 /******************************

@@ -1,4 +1,4 @@
-<form action="{{ route('projects.tables.update', ['project' => $data['id'], 'table' => $data['tableInfo']->abbrev]) }}" method="POST" id="tableForm">
+<form action="{{ route('projects.tables.update', ['project' => $data['id'], 'table' => $data['tableInfo']->abbrev])}}" method="POST" id="tableForm">
     @method('PUT')
     @csrf
     <div id="{{ $data['tableInfo']->abbrev }}" class="table-responsive">

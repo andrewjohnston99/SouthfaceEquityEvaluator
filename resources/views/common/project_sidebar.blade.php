@@ -4,7 +4,7 @@
     @foreach ($data['requiredQuestions'] as $question)
         <div class="d-flex flex-row align-items-center">
             <i class="material-icons">radio_button_unchecked</i>
-            <p>{{ $question->item->name }}</p>
+            <button type="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{ isset($question->item->instructions) ? $question->item->instructions : 'No extra instructions here!' }}">{{ $question->item->name }}</button>
         </div>
     @endforeach
     </div>
@@ -15,7 +15,7 @@
     @foreach ($data['optionalQuestions'] as $question)
         <div class="d-flex flex-row align-items-center">
             <i class="material-icons">radio_button_unchecked</i>
-            <p>{{ $question->item->name }}</p>
+            <button type="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{ isset($question->item->instructions) ? $question->item->instructions : 'No extra instructions here!' }}">{{ $question->item->name }}</button>
         </div>
     @endforeach
     </div>

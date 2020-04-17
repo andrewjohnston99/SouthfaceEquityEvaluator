@@ -9,6 +9,10 @@ $(document).ready(function() {
         window.location = BASE + selected;
     });
 
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+
     $(".alert").delay(4000).fadeOut(700, function() {
         $(this).alert('close');
     });

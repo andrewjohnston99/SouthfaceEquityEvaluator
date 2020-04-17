@@ -8,6 +8,7 @@
             @foreach ($data['tables'] as $table)
                 <option value="{{ $table->abbrev }}">{{ $table->name }}</option>
             @endforeach
+            <option value="contact">Edit Contacts and Info</option>
         </select>
     @else
         <h2>Report</h2>
@@ -17,7 +18,7 @@
 @section('project-btns')
 
     @if (Route::current()->getName() == 'projects.tables.show')
-        <button class="save" id="saveChanges" form="tableForm" type="submt">
+        <button class="save" id="saveChanges" form="{{ Request::segment(4) == 'contact' ? 'contactForm' : 'tableForm' }}" type="submt">
             <span>
                 <i class="material-icons align-middle">save</i>
             </span>

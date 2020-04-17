@@ -25,9 +25,11 @@ class Question extends Model
      *
      * @var string
      */
-    protected $fillable = [
+    protected $guarded = [
         'type',
-        'header'
+        'header',
+        'points',
+        'label'
     ];
 
     /**

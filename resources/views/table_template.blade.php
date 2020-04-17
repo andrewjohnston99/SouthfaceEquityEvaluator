@@ -22,18 +22,26 @@
 
     @include('project_header_content')
 
-    <div class="row info">
-        <i class="material-icons align-middle">info</i>
-        <p>Click on any of the items in the sidebar to get more information.</p>
-    </div>
+    @if (Request::segment(4) !== 'contact')
+        <div class="row info">
+            <i class="material-icons align-middle">info</i>
+            <p>Click on any of the items in the sidebar to get more information.</p>
+        </div>
+    @endif
 
     <div class="row project-content">
-        <div class="col-2 sidebar">
-            @include('common.project_sidebar')
-        </div>
+        @if (Request::segment(4) !== 'contact')
+            <div class="col-2 sidebar">
+                @include('common.project_sidebar')
+            </div>
+        @endif
 
-        <div class="col-10">
-            @include('table')
+        <div class="{{ Request::segment(4) == 'contact' ? 'col' : 'col-10' }}">
+            @if (isset($data['tableInfo']))
+                @include('table')
+            @else
+                @include('tables.contact')
+            @endif
         </div>
     </div>
 @endsection
