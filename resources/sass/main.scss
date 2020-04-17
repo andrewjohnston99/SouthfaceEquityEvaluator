@@ -330,7 +330,7 @@ nav.navbar {
 ******************************/
 .report {
     padding: 0 50px;
-    height: 100%;
+    height: 85%;
 
     .hero {
         flex-direction: row;
@@ -342,6 +342,26 @@ nav.navbar {
 
             span {
                 margin-right: 10px;
+            }
+        }
+    }
+
+    .scores {
+        height: 55%;
+    }
+
+    .upload-docs {
+        .upload {
+            @include light-btn();
+        }
+
+        #uploadDocsModal form {
+            i {
+                padding-bottom: 2px;
+            }
+
+            .submit {
+                @include light-btn();
             }
         }
     }

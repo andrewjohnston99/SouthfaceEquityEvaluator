@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use App\MartaStation;
 use Illuminate\Http\Request;
 use App\Project;
-use App\Question;
-use App\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ProjectController extends Controller
 {
@@ -259,44 +258,36 @@ class ProjectController extends Controller
     }
 
     public function uploadDocument(Request $request) {
-       
+
         // Get the uploaded file with name document
         $document = $request->file('document');
-    
+
         // Required validation
         $request->validate([
             'document' => 'required'
         ]);
-    
+
         // Check if uploaded file size was greater than maximum allowed file size
         if ($document->getError() == 1) {
             $max_size = $document->getMaxFileSize() / 1024 / 1024;  // Get size in Mb
             $error = 'The document size must be less than ' . $max_size . 'Mb.';
             return redirect()->back()->with('flash_danger', $error);
         }
-        
+
         $data = [
             'title' => 'Confirmation Document',
             'document' => $document,
             'username' => auth()->user()->name,
             'user_id' => auth()->user()->id,
             'organization' => auth()->user()->organization,
-            'project_name' => "project name goes here",
-            'project_id' => "project id goes here",
+            'project_name' => $request->projectTitle,
+            'project_id' => $request->projectId,
         ];
-        
+
         // If upload was successful send the email
         $to_email = 'equityevaluator@southface.org';
-        \Mail::to($to_email)->send(new \App\Mail\Upload($data));
+        Mail::to($to_email)->send(new \App\Mail\Upload($data));
         $request->session()->flash('alert-success', 'Your document has been uploaded.');
         return redirect()->back();
-    }
-
-    /**
-     * TODO: DELETE THIS FUNCTION. DEV ONLY
-     */
-    public function token()
-    {
-        return csrf_token();
     }
 }
