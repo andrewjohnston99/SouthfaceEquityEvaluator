@@ -17,6 +17,11 @@
                         <th class="text-center" scope="col" colspan="6">REQUIRED</th>
                     </tr>
                     @foreach ($data['requiredQuestions'] as $question)
+                        @if ($question->item->name == "PF 0.5")
+                            <tr class="text-center">
+                                <td class="font-weight-bold" colspan="5">Green Building Certification - EarthCraft, GreenGlobes, LEED, Other</td>
+                            </tr>
+                        @endif
                         @switch($question->type)
                             @case(1)
                                 @include('tables.not_specified', ['question' => $question])
@@ -33,8 +38,12 @@
                             @case(5)
                                 @include('tables.select_all', ['question' => $question])
                                 @break
+                            @case(6)
+                                @include('tables.enter_percentage', ['question' => $question])
+                                @break
                             @default
                                 @include('tables.not_specified', ['question' => $question])
+                                @break
                         @endswitch
                     @endforeach
                 @endisset
@@ -43,6 +52,11 @@
                         <th class="text-center" scope="col" colspan="6">OPTIONAL</th>
                     </tr>
                     @foreach ($data['optionalQuestions'] as $question)
+                        @if ($question->item->name == "PF 0.5")
+                            <tr class="text-center">
+                                <td class="font-weight-bold" colspan="5">Green Building Certification - EarthCraft, GreenGlobes, LEED, Other</td>
+                            </tr>
+                        @endif
                         @switch($question->type)
                             @case(1)
                                 @include('tables.not_specified', ['question' => $question])
@@ -58,6 +72,9 @@
                                 @break
                             @case(5)
                                 @include('tables.select_all', ['question' => $question])
+                                @break
+                            @case(6)
+                                @include('tables.enter_percentage', ['question' => $question])
                                 @break
                             @default
                                 @include('tables.not_specified', ['question' => $question])

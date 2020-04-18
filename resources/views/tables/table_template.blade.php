@@ -20,12 +20,12 @@
 
 @section('content')
 
-    @include('project_header_content')
+    @include('common.project_header_content')
 
     @if (Request::segment(4) !== 'contact')
         <div class="row info">
             <i class="material-icons align-middle">info</i>
-            <p>Click on any of the items in the sidebar to get more information.</p>
+        <p>Click on any of the items in the sidebar to get more information. Click <a href="{{ Storage::url('Southface Equity Evaluator Instructions.pdf') }}" target="_blank">here</a> to view the complete documentation.</p>
         </div>
     @endif
 
@@ -38,7 +38,7 @@
 
         <div class="{{ Request::segment(4) == 'contact' ? 'col' : 'col-10' }}">
             @if (isset($data['tableInfo']))
-                @include('table')
+                @include('tables.table')
             @else
                 @include('tables.contact')
             @endif
