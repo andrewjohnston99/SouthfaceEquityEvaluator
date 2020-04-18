@@ -1,5 +1,5 @@
 <tr class="text-center">
-<th scope="row" rowspan="{{ count($question->options) + 1 }}" class="align-middle">{{ $question->item->name }}</th>
+    <th scope="row" rowspan="{{ count($question->options) + 1 }}" class="align-middle">{{ $question->item->name }}</th>
     <td class="text-left align-middle">{{ $question->header }}</td>
     <td class="align-middle" colspan="2">Select One:</td>
     <td class="align-middle"></td>
@@ -8,11 +8,12 @@
     @if ($loop->first)
         <tr class="text-center">
             <td class="text-left align-middle">{{ $option->title }}</td>
-            <td class="align-middle">{{ isset($option->label) ? $option->label : $option->points }}</td>
+            <td class="align-middle">{{ isset($option->points) ? $option->points : $option->label }}</td>
             <td class="align-middle" rowspan="{{ $loop->count }}">
-                <select class="form-control" name="option-{{ $option->id }}" id="option-{{ $option->id }}">
+                <select class="form-control" name="select-{{ $option->id }}" id="select-{{ $option->id }}">
+                    <option value="">Select an item</option>
                     @foreach ($option->question->options as $item)
-                        <option value="{{ isset($item->points) ? $item->points : '' }}">{{ $item->label }}</option>
+                        <option value="{{ $item->id }}" {{ (isset($data['answers']) && array_search($item->id, array_column($data['answers']->toArray(), 'option_id')) !== false) ? 'selected="selected"' : '' }}>{{ $item->label }}</option>
                     @endforeach
                 </select>
             </td>
@@ -23,7 +24,7 @@
     @else
         <tr class="text-center">
             <td class="text-left align-middle">{{ $option->title }}</td>
-            <td class="align-middle">{{ isset($option->label) ? $option->label : $option->points }}</td>
+            <td class="align-middle">{{ isset($option->points) ? $option->points : $option->label }}</td>
         </tr>
     @endif
 @endforeach

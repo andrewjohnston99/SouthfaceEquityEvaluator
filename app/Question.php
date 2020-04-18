@@ -43,6 +43,6 @@ class Question extends Model
      * Get the options for the question.
      */
     public function options() {
-        return $this->hasMany('App\Option', 'question_id', 'id')->orderBy('title');
+        return $this->hasMany('App\Option', 'question_id', 'id')->orderBy('order');
     }
 }

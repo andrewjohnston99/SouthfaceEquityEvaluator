@@ -23,7 +23,7 @@
 @endsection
 
 @section('content')
-    @include('home_header_content')
+    @include('common.home_header_content')
 
     <div class="home">
         <div class="hero d-flex">

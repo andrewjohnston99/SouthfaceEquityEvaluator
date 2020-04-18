@@ -33,6 +33,3 @@ Route::post('change-password', 'ChangePasswordController@store')->name('change.p
 Route::post('upload', 'ProjectController@uploadDocument');
 Route::resource('projects', 'ProjectController')->middleware('auth');
 Route::resource('projects.tables', 'ProjectTableController')->middleware('auth');
-
-
-// Route::view('affordability', 'affordability');

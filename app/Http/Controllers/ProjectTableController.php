@@ -10,6 +10,8 @@ use App\ProjectTable;
 use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+
 
 
 
@@ -42,22 +44,21 @@ class ProjectTableController extends Controller
     public function show($projectId, $table)
     {
         $projectInfo = Project::select('title', 'station_id')->where('id', $projectId)->first();
+
+        if (!isset($projectInfo)) {
+            abort(404);
+        }
+
         $station = MartaStation::where('id', $projectInfo['station_id'])->first();
         $tables = $station->tables;
 
         if ($table == 'contact') {
-            return view('table_template')->with('data', ['tables' => $tables, 'title' => $projectInfo['title'], 'id' => $projectId]);
+            return view('tables.table_template')->with('data', ['tables' => $tables, 'title' => $projectInfo['title'], 'id' => $projectId]);
         }
 
-        $optionalAnswers = $this->projectController->getOptionalProjectAnswers($projectId, $table);
-        if ($optionalAnswers->isEmpty()) {
-            $optionalAnswers = null;
-        }
-        // dd($optionalItems);
-
-        $requiredAnswers = $this->projectController->getRequiredProjectAnswers($projectId, $table);
-        if ($requiredAnswers->isEmpty()) {
-            $requiredAnswers = null;
+        $answers = $this->projectController->getProjectAnswers($projectId, $table);
+        if ($answers->isEmpty()) {
+            $answers = null;
         }
 
         $optionalQuestionData = $this->projectController->getOptionalProjectQuestions($projectId, $table);
@@ -92,7 +93,7 @@ class ProjectTableController extends Controller
 
         $tableScore = $this->projectController->getTableScore($projectId, $table);
 
-        return view('table_template')->with('data', ['optionalAnswers' => $optionalAnswers, 'requiredAnswers' => $requiredAnswers, 'optionalQuestions' => $optionalQuestions, 'requiredQuestions' => $requiredQuestions, 'tableInfo' => $tableInfo, 'tables' => $tables, 'title' => $projectInfo['title'], 'tableScore' => $tableScore, 'id' => $projectId]);
+        return view('tables.table_template')->with('data', ['answers' => $answers, 'optionalQuestions' => $optionalQuestions, 'requiredQuestions' => $requiredQuestions, 'tableInfo' => $tableInfo, 'tables' => $tables, 'title' => $projectInfo['title'], 'tableScore' => $tableScore, 'id' => $projectId]);
     }
 
     /**
@@ -105,17 +106,27 @@ class ProjectTableController extends Controller
      */
     public function update(Request $request, $projectId, $table)
     {
+        $percentChanges = [];
         $optionIds = [];
         $notes = [];
         foreach ($request->all() as $id => $input) {
             if ($id != '_method' && $id != '_token' && !is_null($input)) {
-                if (strpos($id, 'option') !== false) {
+                if (strpos($id, 'option') == true) {
                     array_push($optionIds, preg_replace('/[^0-9]/', '', $id));
+                } elseif (strpos($id, 'select') == true) {
+                    array_push($optionIds, preg_replace('/[^0-9]/', '', $id));
+                } else if (explode("-", $id)[0] == 'percent') {
+                    array_push($optionIds, preg_replace('/[^0-9]/', '', $id));
+                    Option::where('id', preg_replace('/[^0-9]/', '', $id))->update(['percentage' => $input]);
+                    array_push($percentChanges, $id);
                 } else {
                     $notes[preg_replace('/[^0-9]/', '', $id)] = $input;
                 }
-
             }
+        }
+
+        foreach ($percentChanges as $id) {
+            Option::where('id', preg_replace('/[^0-9]/', '', $id))->update(['points' => $request['val-' . $id]]);
         }
 
         DB::transaction(function() use ($optionIds, $notes, $projectId, $table) {

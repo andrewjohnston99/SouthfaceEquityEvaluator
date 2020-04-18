@@ -30,7 +30,7 @@
                     <h1 class="accent">Contact Us</h1>
                 </div>
                 <div class="row text-left mb-5">
-                    <h3>Please send questions and inquiries to equityevaluator@southface.org.</h3>
+                    <h3>Please send questions and inquiries to <a href="mailto:equityevaluator@southface.org">equityevaluator@southface.org</a>.</h3>
                 </div>
         </div>
 

@@ -32,12 +32,14 @@ class OptionsSeeder extends Seeder
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/GE/', $doc->tags));
 
-            $o = Option::updateOrCreate([
-                'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
-                'points' => isset($doc->data->points) ? $doc->data->points: null,
-                'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null,
-                'question_id' => Item::where('name', $itemName)->first()->question->id
-            ]);
+            $o = Option::updateOrCreate(
+                ['question_id' => Item::where('name', $itemName)->first()->question->id, 'order' => $doc->data->order],
+                [
+                    'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
+                    'points' => isset($doc->data->points) ? $doc->data->points: null,
+                    'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null
+                ]
+            );
 
             Note::insertOrIgnore(['option_id' => $o->id]);
 
@@ -54,12 +56,14 @@ class OptionsSeeder extends Seeder
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/PF/', $doc->tags));
 
-            $o = Option::updateOrCreate([
-                'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
-                'points' => isset($doc->data->points) ? $doc->data->points: null,
-                'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null,
-                'question_id' => Item::where('name', $itemName)->first()->question->id
-            ]);
+            $o = Option::updateOrCreate(
+                ['question_id' => Item::where('name', $itemName)->first()->question->id, 'order' => $doc->data->order],
+                [
+                    'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
+                    'points' => isset($doc->data->points) ? $doc->data->points: null,
+                    'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null
+                ]
+            );
 
             Note::insertOrIgnore(['option_id' => $o->id]);
 
@@ -76,12 +80,14 @@ class OptionsSeeder extends Seeder
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/SE/', $doc->tags));
 
-            $o = Option::updateOrCreate([
-                'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
-                'points' => isset($doc->data->points) ? $doc->data->points: null,
-                'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null,
-                'question_id' => Item::where('name', $itemName)->first()->question->id
-            ]);
+            $o = Option::updateOrCreate(
+                ['question_id' => Item::where('name', $itemName)->first()->question->id, 'order' => $doc->data->order],
+                [
+                    'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
+                    'points' => isset($doc->data->points) ? $doc->data->points: null,
+                    'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null
+                ]
+            );
 
             Note::insertOrIgnore(['option_id' => $o->id]);
 
@@ -98,12 +104,14 @@ class OptionsSeeder extends Seeder
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/PPE/', $doc->tags));
 
-            $o = Option::updateOrCreate([
-                'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
-                'points' => isset($doc->data->points) ? $doc->data->points: null,
-                'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null,
-                'question_id' => Item::where('name', $itemName)->first()->question->id
-            ]);
+            $o = Option::updateOrCreate(
+                ['question_id' => Item::where('name', $itemName)->first()->question->id, 'order' => $doc->data->order],
+                [
+                    'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
+                    'points' => isset($doc->data->points) ? $doc->data->points: null,
+                    'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null
+                ]
+            );
 
             Note::insertOrIgnore(['option_id' => $o->id]);
 
@@ -120,12 +128,14 @@ class OptionsSeeder extends Seeder
         foreach ($response->results as $doc) {
             $itemName = current(preg_grep('/BC/', $doc->tags));
 
-            $o = Option::updateOrCreate([
-                'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
-                'points' => isset($doc->data->points) ? $doc->data->points: null,
-                'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null,
-                'question_id' => Item::where('name', $itemName)->first()->question->id
-            ]);
+            $o = Option::updateOrCreate(
+                ['question_id' => Item::where('name', $itemName)->first()->question->id, 'order' => $doc->data->order],
+                [
+                    'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
+                    'points' => isset($doc->data->points) ? $doc->data->points: null,
+                    'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null
+                ]
+            );
 
             Note::insertOrIgnore(['option_id' => $o->id]);
 
@@ -143,12 +153,12 @@ class OptionsSeeder extends Seeder
             $itemName = current(preg_grep('/HD/', $doc->tags));
 
             $o = Option::updateOrCreate(
+                ['question_id' => Item::where('name', $itemName)->first()->question->id, 'order' => $doc->data->order],
                 [
-                    'question_id' => Item::where('name', $itemName)->first()->question->id,
+                    'title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null,
                     'points' => isset($doc->data->points) ? $doc->data->points: null,
-                    'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null,
-                ],
-                ['title' => !empty(current($doc->data->title)->text) ? current($doc->data->title)->text : null]
+                    'label' => isset(current($doc->data->label)->text) ? current($doc->data->label)->text: null
+                ]
             );
 
             Note::insertOrIgnore(['option_id' => $o->id]);

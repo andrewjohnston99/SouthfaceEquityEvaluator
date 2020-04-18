@@ -44,6 +44,7 @@ class ItemsSeeder extends Seeder
             $i = Item::updateOrCreate(
                 ['name' => $doc->data->item_name[0]->text],
                 [
+                    'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
                     'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
@@ -64,6 +65,7 @@ class ItemsSeeder extends Seeder
             $i = Item::updateOrCreate(
                 ['name' => $doc->data->item_name[0]->text],
                 [
+                    'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
                     'table_id' => ProjectTable::where('abbrev', 'physical')->pluck('id')->first()
@@ -84,6 +86,7 @@ class ItemsSeeder extends Seeder
             $i = Item::updateOrCreate(
                 ['name' => $doc->data->item_name[0]->text],
                 [
+                    'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
                     'table_id' => ProjectTable::where('abbrev', 'services')->pluck('id')->first()
@@ -104,6 +107,7 @@ class ItemsSeeder extends Seeder
             $i = Item::updateOrCreate(
                 ['name' => $doc->data->item_name[0]->text],
                 [
+                    'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
                     'table_id' => ProjectTable::where('abbrev', 'population')->pluck('id')->first()
@@ -124,6 +128,7 @@ class ItemsSeeder extends Seeder
             $i = Item::updateOrCreate(
                 ['name' => $doc->data->item_name[0]->text],
                 [
+                    'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
                     'table_id' => ProjectTable::where('abbrev', 'community')->pluck('id')->first()
@@ -144,6 +149,7 @@ class ItemsSeeder extends Seeder
             $i = Item::updateOrCreate(
                 ['name' => $doc->data->item_name[0]->text],
                 [
+                    'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
                     'table_id' => ProjectTable::where('abbrev', 'housing')->pluck('id')->first()

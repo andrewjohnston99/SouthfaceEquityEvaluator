@@ -3,7 +3,7 @@
 @section('title', 'Project Report')
 
 @section('content')
-    @include('project_header_content')
+    @include('common.project_header_content')
 
     <div class="report d-flex flex-column">
         <div class="hero d-flex">

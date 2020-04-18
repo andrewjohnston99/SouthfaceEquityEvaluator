@@ -13029,6 +13029,7 @@ body p {
 ******************************/
 
 nav.navbar {
+  margin-top: 40px;
   padding-left: 4rem;
   padding-right: 4rem;
 }
@@ -13175,11 +13176,34 @@ nav.navbar .register-btn:active {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
-  margin-top: 8%;
+  font-family: "Roboto", sans-serif;
 }
 
 .about .row {
   text-align: center;
+}
+
+/******************************
+*  PRICING
+******************************/
+
+.pricing .card {
+  width: 470px;
+  min-height: 475px;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.04);
+  padding: 50px 15px;
+}
+
+.pricing .card ul {
+  list-style: none;
+}
+
+.pricing .card ul li:before {
+  content: "\2713";
+  padding-right: 8px;
+  color: #FABC07;
 }
 
 /******************************
@@ -13467,7 +13491,7 @@ nav.navbar .register-btn:active {
   height: 380px;
   width: 100%;
   color: #000;
-  padding: 20px 30px;
+  padding: 0 30px;
 }
 
 .projects .project-card:hover {
@@ -13488,14 +13512,53 @@ nav.navbar .register-btn:active {
 }
 
 .projects .project-card .row.project-title {
-  align-self: center;
   margin-bottom: 40px;
-  text-align: center;
+}
+
+.projects .project-card .row.project-title h2 {
+  margin: auto;
+  padding-left: 60px;
+}
+
+.projects .project-card .row.project-title i.material-icons {
+  padding-top: 3px;
+  padding: 30px;
+  font-size: 28px;
+}
+
+.projects .project-card .row.project-title .dropdown-menu {
+  top: -30px !important;
 }
 
 .projects .project-card .row .site-address {
   text-indent: -145px;
   padding-left: 145px;
+}
+
+.projects .modal button.close-btn {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #000;
+}
+
+.projects .modal button.close-btn:hover,
+.projects .modal button.close-btn:focus,
+.projects .modal button.close-btn:active {
+  color: black;
+}
+
+.projects .modal button.close-btn:hover svg,
+.projects .modal button.close-btn:focus svg,
+.projects .modal button.close-btn:active svg {
+  fill: black;
+}
+
+.projects .modal button.close-btn:hover {
+  color: #088546;
 }
 
 /******************************
@@ -13781,7 +13844,7 @@ nav.navbar .register-btn:active {
 }
 
 .table-responsive table th.planned {
-  width: 25%;
+  width: 21%;
 }
 
 .table-responsive table th.notes {

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Prismic\Api;
+use Prismic\Predicates;
 
 class ProjectController extends Controller
 {
@@ -21,12 +23,12 @@ class ProjectController extends Controller
     }
 
     /**
-     * Get all optional entries from ProjectItemsOptions for specified resource.
+     * Get all entries from ProjectItemsOptions for specified resource.
      *
      * @param int $id
      * @return \Illuminate\Support\Collection
      */
-    public function getOptionalProjectAnswers($id, $tableAbbrev)
+    public function getProjectAnswers($id, $tableAbbrev)
     {
         return DB::table('Projects as p')
             ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
@@ -40,35 +42,8 @@ class ProjectController extends Controller
             })
             ->where('p.id', $id)
             ->where('tb.abbrev', $tableAbbrev)
-            ->where('itm.required', false)
-            ->select('p.title as project_title', 'tb.name as table_name', 'tb.abbrev as table_abbrev', 'itm.name as item', 'itm.required as required', 'itm.instructions as item_instructions', 'qt.id as question_id', 'pio.option_id')
-            ->orderBy('itm.name', 'asc')
-            ->get();
-    }
-
-    /**
-     * Get all required entries from ProjectItemsOptions for specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Support\Collection
-     */
-    public function getRequiredProjectAnswers($id, $tableAbbrev)
-    {
-        return DB::table('Projects as p')
-            ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
-            ->join('StationsTables as mt', 'mt.station_id', '=', 'ms.id')
-            ->join('ProjectTables as tb', 'mt.table_id', '=', 'tb.id')
-            ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
-            ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
-            ->join('ProjectTableItemsOptions as pio', function ($join) {
-                $join->on('pio.item_id', '=', 'qt.item_id')
-                    ->on('pio.project_id', '=', 'p.id');
-            })
-            ->where('p.id', $id)
-            ->where('tb.abbrev', $tableAbbrev)
-            ->where('itm.required', true)
-            ->select('p.title as project_title', 'tb.name as table_name', 'tb.abbrev as table_abbrev', 'itm.name as item', 'itm.required as required', 'itm.instructions as item_instructions', 'qt.id as question_id', 'pio.option_id')
-            ->orderBy('itm.name', 'asc')
+            ->select('p.title as project_title', 'tb.name as table_name', 'tb.abbrev as table_abbrev', 'itm.name as item', 'itm.order as order', 'itm.required as required', 'itm.instructions as item_instructions', 'qt.id as question_id', 'pio.option_id')
+            ->orderBy('itm.order', 'asc')
             ->get();
     }
 
@@ -89,9 +64,9 @@ class ProjectController extends Controller
             ->where('p.id', $id)
             ->where('tb.abbrev', $tableAbbrev)
             ->where('itm.required', false)
-            ->orderBy('itm.name', 'asc')
+            ->orderBy('itm.order', 'asc')
             ->distinct()
-            ->select('qt.id as question_id', 'itm.name as item_name')
+            ->select('qt.id as question_id', 'itm.name as item_name', 'itm.order as order')
             ->get();
     }
 
@@ -112,9 +87,9 @@ class ProjectController extends Controller
             ->where('p.id', $id)
             ->where('tb.abbrev', $tableAbbrev)
             ->where('itm.required', true)
-            ->orderBy('itm.name', 'asc')
+            ->orderBy('itm.order', 'asc')
             ->distinct()
-            ->select('qt.id as question_id', 'itm.name as item_name')
+            ->select('qt.id as question_id', 'itm.name as item_name', 'itm.order as order')
             ->get();
     }
 
@@ -203,7 +178,6 @@ class ProjectController extends Controller
         $project->project_metadata = $metadata;
 
         $station = MartaStation::where('name', $request->martaStation)->first();
-        // dd($station);
         $project->station_id = $station->id;
         $project->save();
 
@@ -249,14 +223,26 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $project = Project::find($id);
+        $title = $project->title;
+        $project->delete();
+
+        $request->session()->flash('alert-success', $title . ' has been deleted.');
+        return redirect()->back();
     }
 
+    /**
+     * Email upload confirmation documents
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Routing\Redirector
+     */
     public function uploadDocument(Request $request) {
 
         // Get the uploaded file with name document

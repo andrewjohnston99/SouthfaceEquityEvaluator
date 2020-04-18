@@ -19,12 +19,8 @@
     @include('common.header')
 
     <div className="info" class="about container-fluid d-flex align-items-center">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col">
-                <div class="row">
-                    <h1 class="accent"></h1>
-                </div>
-
                 <div class="row">
                     <h1 class="accent">The Southface Equity Evaluator</h1>
                 </div>
