@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\ScoreBreakdown;
 use App\Mail\Upload;
 use App\MartaStation;
 use Illuminate\Http\Request;
 use App\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-use Prismic\Api;
-use Prismic\Predicates;
+use \Colors\RandomColor;
 
 class ProjectController extends Controller
 {
@@ -197,13 +197,28 @@ class ProjectController extends Controller
     {
         $uid = auth()->user()->id;
 
-        $title = Project::where('user_id', $uid)->where('id', $id)->pluck('title')->first();
+        $projectInfo = Project::where('user_id', $uid)->where('id', $id)->select('title', 'station_id')->first();
 
-        $projectScores = [
-            'total' => $this->getTotalScore($id),
-        ];
+        $station = MartaStation::where('id', $projectInfo['station_id'])->first();
 
-        return view('project_report')->with('data', ['scores' => $projectScores, 'title' => $title, 'id' => $id]);
+        $tableScores = [];
+        $chartLabels = [];
+        $chartColors = [];
+        $chart = new ScoreBreakdown;
+
+        foreach ($station->tables as $table) {
+            array_push($tableScores, $this->getTableScore($id, $table->abbrev));
+            array_push($chartLabels, $table->name);
+            array_push($chartColors, 'rgba(' . implode(',', RandomColor::one(array('format' => 'rgb', 'luminosity' => 'light'))) . ',.75)');
+        }
+
+        $chart->labels($chartLabels);
+        $chart->dataset('Score Breakdown', 'bar', $tableScores)->options(['backgroundColor' => $chartColors]);
+        $chart->displayLegend(false);
+
+        $total = $this->getTotalScore($id);
+
+        return view('project_report')->with('data', ['total' => $total, 'chart' => $chart, 'title' => $projectInfo['title'], 'id' => $id]);
     }
 
     /**
@@ -244,7 +259,8 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Routing\Redirector
      */
-    public function uploadDocument(Request $request) {
+    public function uploadDocument(Request $request)
+    {
 
         // Get the uploaded file with name document
         $document = $request->file('document');

@@ -4,6 +4,7 @@
 
 @section('js')
     <script src="{{ URL::asset('js/project.js') }}"></script>
+    {!! $data['chart']->script() !!}
 @endsection
 
 @section('content')
@@ -19,10 +20,15 @@
                 Export Report
             </button>
         </div>
-        <div class="scores d-flex justify-content-center">
-            <h1 class="mt-5">{{ $data['scores']['total'] }} Total Points</h1>
+        <div class="scores mt-5 d-flex flex-column justify-content-center">
+            <div class="row justify-content-center">
+                <h1 class="mt-5">{{ $data['total'] }} Total Points</h1>
+            </div>
+            <div class="row">
+                {!! $data['chart']->container() !!}
+            </div>
         </div>
-        <div class="upload-docs d-flex justify-content-center">
+        <div class="upload-docs mb-5 d-flex justify-content-center">
             <button class="upload" id="uploadDocs" data-toggle="modal" data-target="#uploadDocsModal" type="button">
                 <span>
                     <i class="material-icons align-middle">cloud_upload</i>

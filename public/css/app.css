@@ -13615,6 +13615,7 @@ nav.navbar .register-btn:active {
 
 .report .scores {
   height: 55%;
+  margin-bottom: 6rem;
 }
 
 .report .upload-docs .upload {
