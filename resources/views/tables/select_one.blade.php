@@ -11,9 +11,9 @@
             <td class="align-middle">{{ isset($option->points) ? $option->points : $option->label }}</td>
             <td class="align-middle" rowspan="{{ $loop->count }}">
                 <select class="form-control" name="select-{{ $option->id }}" id="select-{{ $option->id }}">
-                    <option value="">Select an item</option>
+                    <option>Select an item</option>
                     @foreach ($option->question->options as $item)
-                        <option value="{{ $item->id }}" {{ (isset($data['answers']) && array_search($item->id, array_column($data['answers']->toArray(), 'option_id')) !== false) ? 'selected="selected"' : '' }}>{{ $item->label }}</option>
+                        <option value="{{ $item->id }}" {{ isset($item->points) ? 'data-value=' . $item->points : '' }} {{ (isset($data['answers']) && array_search($item->id, array_column($data['answers']->toArray(), 'option_id')) !== false) ? 'selected="selected"' : '' }}>{{ $item->label }}</option>
                     @endforeach
                 </select>
             </td>

@@ -9,7 +9,7 @@
         <td class="text-left align-middle">{{ $option->title }}</td>
     <td class="align-middle" id="percentPoints-{{ $option->id }}">{{ (isset($data['answers']) && array_search($option->id, array_column($data['answers']->toArray(), 'option_id')) !== false) ? $option->points : $option->label }}</td>
         <td class="align-middle">
-        <input id="percent-{{ $option->id }}" name="percent-{{ $option->id }}" type="number" min="0" data-type={{ $option->order }} data-value="" {{ (isset($data['answers']) && array_search($option->id, array_column($data['answers']->toArray(), 'option_id')) !== false) ? 'value=' . $option->percentage : '' }} />
+        <input id="percent-{{ $option->id }}" name="percent-{{ $option->id }}" type="number" min="0" data-type={{ $option->order }} data-value="{{ isset($option->points) ? $option->points : 0 }}" {{ (isset($data['answers']) && array_search($option->id, array_column($data['answers']->toArray(), 'option_id')) !== false) ? 'value=' . $option->percentage : '' }} />
         </td>
         <td class="align-middle">
             <textarea id="note-{{ $option->note->id }}" name="note-{{ $option->note->id }}" class="form-control form-control-sm" placeholder="Example text..."></textarea>

@@ -109,17 +109,19 @@ class ProjectTableController extends Controller
         $percentChanges = [];
         $optionIds = [];
         $notes = [];
+
         foreach ($request->all() as $id => $input) {
+
             if ($id != '_method' && $id != '_token' && !is_null($input)) {
-                if (strpos($id, 'option') == true) {
+                if (preg_match('/\boption\b/', $id)) {
                     array_push($optionIds, preg_replace('/[^0-9]/', '', $id));
-                } elseif (strpos($id, 'select') == true) {
+                } else if (preg_match('/\bselect\b/', $id) && $input != "Select an item") {
                     array_push($optionIds, preg_replace('/[^0-9]/', '', $id));
                 } else if (explode("-", $id)[0] == 'percent') {
                     array_push($optionIds, preg_replace('/[^0-9]/', '', $id));
                     Option::where('id', preg_replace('/[^0-9]/', '', $id))->update(['percentage' => $input]);
                     array_push($percentChanges, $id);
-                } else {
+                } else if (preg_match('/\bnote\b/', $id)) {
                     $notes[preg_replace('/[^0-9]/', '', $id)] = $input;
                 }
             }
