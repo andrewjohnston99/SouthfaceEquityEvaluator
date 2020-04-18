@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\MartaStation;
 use App\Note;
 use App\Option;
@@ -10,7 +11,6 @@ use App\ProjectTable;
 use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 
 
@@ -52,8 +52,10 @@ class ProjectTableController extends Controller
         $station = MartaStation::where('id', $projectInfo['station_id'])->first();
         $tables = $station->tables;
 
+        $contactInfo = Contact::where('project_id', $projectId)->first();
+
         if ($table == 'contact') {
-            return view('tables.table_template')->with('data', ['tables' => $tables, 'title' => $projectInfo['title'], 'id' => $projectId]);
+            return view('tables.table_template')->with('data', ['tables' => $tables, 'title' => $projectInfo['title'], 'contactInfo' => $contactInfo, 'id' => $projectId]);
         }
 
         $answers = $this->projectController->getProjectAnswers($projectId, $table);
@@ -106,13 +108,16 @@ class ProjectTableController extends Controller
      */
     public function update(Request $request, $projectId, $table)
     {
+        if ($table == 'contact') {
+            return $this->contact($request, $projectId);
+        }
+
         $percentChanges = [];
         $optionIds = [];
         $notes = [];
 
-        foreach ($request->all() as $id => $input) {
-
-            if ($id != '_method' && $id != '_token' && !is_null($input)) {
+        foreach ($request->except(['_method', '_token']) as $id => $input) {
+            if (!is_null($input)) {
                 if (preg_match('/\boption\b/', $id)) {
                     array_push($optionIds, preg_replace('/[^0-9]/', '', $id));
                 } else if (preg_match('/\bselect\b/', $id) && $input != "Select an item") {
@@ -153,6 +158,34 @@ class ProjectTableController extends Controller
         });
 
         $url = 'projects/' . $projectId . '/tables/' . $table;
+        $request->session()->flash('alert-success', 'Changes saved!');
+
+        return redirect($url);
+    }
+
+    /**
+     * Update the contact and info for the specified resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $projectId
+     * @param  string $table
+     * @return \Illuminate\Http\Response
+     */
+    public function contact(Request $request, $projectId) {
+        $data = $request->except(['_method', '_token']);
+        $data = array_filter($data);
+        $update = [];
+
+        foreach ($data as $id => $val) {
+            $update[strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $id))] = $val;
+        }
+
+        Contact::updateOrCreate(
+            ['project_id' => $projectId],
+            $update
+        );
+
+        $url = 'projects/' . $projectId . '/tables/contact';
         $request->session()->flash('alert-success', 'Changes saved!');
 
         return redirect($url);

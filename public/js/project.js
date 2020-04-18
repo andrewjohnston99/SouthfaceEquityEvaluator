@@ -121,7 +121,7 @@ $(document).ready(function() {
         $('#deleteModal').modal('show');
     });
 
-    $('#saveChanges').click(function(e) {
+    $('#saveChanges[form="tableForm"]').click(function(e) {
         e.preventDefault();
 
         var data = $('#tableForm').serializeArray();

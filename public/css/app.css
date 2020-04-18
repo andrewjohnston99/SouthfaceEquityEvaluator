@@ -13860,6 +13860,10 @@ nav.navbar .register-btn:active {
   margin-bottom: 20px;
 }
 
+.contact form .col {
+  padding: 0 30px;
+}
+
 /******************************
 *  SETTINGS VIEW
 ******************************/
