@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\MartaStation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProjectController;
+use App\Mail\Help;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -49,5 +51,24 @@ class HomeController extends Controller
         }
 
         return view('home')->with('data', ['projects' => $projectData, 'stations' => $stationNames]);
+    }
+
+    /**
+     * Send help form data
+     *
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function help(Request $request) {
+        $data = [
+            'user' => auth()->user()->name,
+            'email' => auth()->user()->email,
+            'message' => $request->message,
+            'organization' => auth()->user()->organization,
+        ];
+
+        Mail::to(config('mail.from.address'))->send(new Help($data));
+
+        $request->session()->flash('alert-success', 'Your help request has been submitted!');
+        return redirect()->back();
     }
 }

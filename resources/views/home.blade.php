@@ -7,10 +7,6 @@
 @endsection
 
 @section('js')
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
     <script src="{{ URL::asset('js/project.js') }}"></script>
     <script>
         document.getElementById("charretteDate").flatpickr({
@@ -24,7 +20,6 @@
 
 @section('content')
     @include('common.home_header_content')
-
     <div class="home">
         <div class="hero d-flex">
             <h2>These are all your projects.</h2>
@@ -36,7 +31,6 @@
             </button>
         </div>
     </div>
-
     <div class="projects">
         @isset($data['projects'])
             @foreach ($data['projects'] as $project)
@@ -47,6 +41,20 @@
             <h3 class="no-projects align-self-center">No saved projects!</h3>
         @endempty
     </div>
-
+    <div class="help row justify-content-end">
+        <i class="material-icons btn" id="helpButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">help_outline</i>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <h4 class="text-center font-weight-bold">Need help?</h4>
+            <div class="dropdown-divider"></div>
+            <form class="px-4 py-3 pb-3" action="{{ route('help') }}" method="post">
+                @csrf
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" name="message" id="message" rows="10" placeholder="Let us know how we can help you out here."></textarea>
+                </div>
+                <button class="float-right btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
     @include('create_project')
 @endsection

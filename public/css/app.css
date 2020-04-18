@@ -12986,6 +12986,12 @@ body h3 {
   font-weight: 400;
 }
 
+html h4,
+body h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 html button,
 body button {
   cursor: pointer;
@@ -13085,17 +13091,15 @@ nav.navbar .register-btn:active {
 }
 
 nav.navbar .login-btn:hover,
-nav.navbar .register-btn:hover {
+nav.navbar .login-btn:focus,
+nav.navbar .login-btn:active,
+nav.navbar .register-btn:hover,
+nav.navbar .register-btn:focus,
+nav.navbar .register-btn:active {
   background-color: #0A9D53;
+  color: #fff;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-
-nav.navbar .login-btn:active,
-nav.navbar .login-btn:focus,
-nav.navbar .register-btn:active,
-nav.navbar .register-btn:focus {
-  background-color: #022514;
 }
 
 nav.navbar .login-btn:hover,
@@ -13148,15 +13152,13 @@ nav.navbar .register-btn:active {
   border: none;
 }
 
-.landing .gs-btn:hover {
+.landing .gs-btn:hover,
+.landing .gs-btn:focus,
+.landing .gs-btn:active {
   background-color: #0A9D53;
+  color: #fff;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-
-.landing .gs-btn:active,
-.landing .gs-btn:focus {
-  background-color: #022514;
 }
 
 .landing .gs-btn:hover,
@@ -13216,11 +13218,6 @@ nav.navbar .register-btn:active {
   -webkit-box-direction: normal;
           flex-direction: column;
   margin-top: 6%;
-}
-
-.register .register-header {
-  font-size: 22px;
-  margin-bottom: 60px;
 }
 
 .register form a {
@@ -13289,15 +13286,13 @@ nav.navbar .register-btn:active {
   border: none;
 }
 
-.register form .submit-btn:hover {
+.register form .submit-btn:hover,
+.register form .submit-btn:focus,
+.register form .submit-btn:active {
   background-color: #0A9D53;
+  color: #fff;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-
-.register form .submit-btn:active,
-.register form .submit-btn:focus {
-  background-color: #022514;
 }
 
 .register form .submit-btn:hover,
@@ -13396,15 +13391,13 @@ nav.navbar .register-btn:active {
   border: none;
 }
 
-.login form .submit-btn:hover {
+.login form .submit-btn:hover,
+.login form .submit-btn:focus,
+.login form .submit-btn:active {
   background-color: #0A9D53;
+  color: #fff;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-
-.login form .submit-btn:active,
-.login form .submit-btn:focus {
-  background-color: #022514;
 }
 
 .login form .submit-btn:hover,
@@ -13559,6 +13552,20 @@ nav.navbar .register-btn:active {
 
 .projects .modal button.close-btn:hover {
   color: #088546;
+}
+
+.help.row {
+  margin-top: 100px;
+}
+
+.help.row i.material-icons {
+  font-size: 34px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.help.row textarea.form-control {
+  font-size: 16px;
 }
 
 /******************************

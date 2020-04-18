@@ -1,5 +1,5 @@
 <p> ----Document Upload Metadata----</br>
-    Username: {{ $data['username'] }}</br>
+    User: {{ $data['user'] }}</br>
     User ID: {{ $data['user_id'] }}</br>
     Organization: {{ $data['organization'] }}</br>
     Project Name: {{ $data['project_name'] }}</br>

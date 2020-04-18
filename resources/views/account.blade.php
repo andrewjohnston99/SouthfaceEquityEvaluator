@@ -3,7 +3,7 @@
 
     <div class="form-group">
         <label for="userName">Name</label>
-        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" placeholder="{{ $user->name }}" required autocomplete="name" autofocus>
+        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" placeholder="Name" required autocomplete="name" autofocus>
         @error('name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
         <label for="userEmail">Email address</label>
-        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" placeholder="{{ $user->email }}" required autocomplete="email">
+        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" placeholder="Email" required autocomplete="email">
         @error('email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -22,7 +22,7 @@
     @isset($user->organization)
         <div class="form-group">
             <label for="userOrganization">Organization</label>
-            <input type="text" class="form-control" id="userOrganization" placeholder="{{ $user->organization }}">
+            <input type="text" class="form-control" id="userOrganization" value="{{ $user->organization }}" placeholder="Organization">
         </div>
     @endisset
     <div class="text-right">

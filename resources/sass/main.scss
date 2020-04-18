@@ -27,6 +27,11 @@ body {
         font-weight: $font-reg;
     }
 
+    h4 {
+        font-size: $font-sm;
+        font-weight: $font-reg;
+    }
+
     button {
         cursor: pointer;
     }
@@ -176,11 +181,6 @@ nav.navbar {
     height: 100%;
     flex-direction: column;
     margin-top: 6%;
-
-    .register-header {
-        font-size: $font-md;
-        margin-bottom: 60px;
-    }
 
     form {
         a {
@@ -370,6 +370,20 @@ nav.navbar {
                 color: darken($primary, 5%);
             }
         }
+    }
+}
+
+.help.row {
+    margin-top: 100px;
+
+    i.material-icons {
+        font-size: 34px;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    textarea.form-control {
+        font-size: $font-xs;
     }
 }
 

@@ -2,6 +2,10 @@
 
 @section('title', 'Project Report')
 
+@section('js')
+    <script src="{{ URL::asset('js/project.js') }}"></script>
+@endsection
+
 @section('content')
     @include('common.project_header_content')
 
@@ -43,7 +47,7 @@
                                 <input type="hidden" id="projectId" name="projectId" value="{{ $data['id'] }}">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="document">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                    <label class="custom-file-label text-truncate" for="customFile">Choose file</label>
                                 </div>
                                 <button type="submit" class="submit float-right mt-3">
                                     <span>

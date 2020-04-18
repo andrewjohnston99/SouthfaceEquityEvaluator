@@ -1,6 +1,4 @@
 <?php
-#App\Mail\Upload.php
-
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -30,9 +28,9 @@ class Upload extends Mailable
      */
     public function build()
     {
-        return $this->view('emails/upload')
+        return $this->view('emails.upload')
                 ->with('data', $this->data)
-                ->subject('Confirmation Document Upload')
+                ->subject('Confirmation Document Upload: ' . $this->data['user'])
                 ->attach($this->data['document']->getRealPath(),
                 [
                     'as' => $this->data['document']->getClientOriginalName(),

@@ -9,6 +9,11 @@ $(document).ready(function() {
         window.location = BASE + selected;
     });
 
+    $('.custom-file-input').on('change',function(){
+        var fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+    })
+
     $(function () {
         $('[data-toggle="popover"]').popover()
     });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Upload;
 use App\MartaStation;
 use Illuminate\Http\Request;
 use App\Project;
@@ -263,7 +264,7 @@ class ProjectController extends Controller
         $data = [
             'title' => 'Confirmation Document',
             'document' => $document,
-            'username' => auth()->user()->name,
+            'user' => auth()->user()->name,
             'user_id' => auth()->user()->id,
             'organization' => auth()->user()->organization,
             'project_name' => $request->projectTitle,
@@ -271,8 +272,8 @@ class ProjectController extends Controller
         ];
 
         // If upload was successful send the email
-        $to_email = 'equityevaluator@southface.org';
-        Mail::to($to_email)->send(new \App\Mail\Upload($data));
+        $to_email = config('mail.from.address');
+        Mail::to($to_email)->send(new Upload($data));
         $request->session()->flash('alert-success', 'Your document has been uploaded.');
         return redirect()->back();
     }
