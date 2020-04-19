@@ -1,4 +1,4 @@
-<a id="project-{{ array_search($project, $data['projects']) }}" class="project-card d-flex flex-column" type="submit" href="/projects/{{ array_search($project, $data['projects']) }}">
+<a id="project-{{ $project['id'] }}" class="project-card d-flex flex-column" type="submit" href="/projects/{{ $project['id'] }}">
     <div class="row project-title">
         <h2>{{ $project['title'] }}</h2>
         <i class="material-icons align-middle btn" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_vert</i>
@@ -16,5 +16,3 @@
         <h3 class="site-address"><strong>Site Address:</strong> {!! nl2br(e($project['address'])) !!}</h3>
     </div>
 </a>
-
-@include('common.confirm_action', ['modalId' => 'deleteModal'])

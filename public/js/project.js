@@ -23,7 +23,7 @@ $(document).ready(function() {
     });
 
     $('button.delete-toggle').click(function(e) {
-        e.preventDefault()();
+        e.preventDefault();
         $('#deleteModal').modal('show');
     });
 });

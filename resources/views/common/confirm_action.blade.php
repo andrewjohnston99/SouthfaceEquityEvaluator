@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h3 class="text-center mb-4">Are you sure you want to delete this project?</h3>
-                <form action="{{ Auth::guest() ? route('guest.destroy', ['id' => $data['id']]) : route('projects.destroy', ['id' => array_search($project, $data['projects'])]) }}" method="POST">
+                <form action="{{ Auth::guest() ? route('guest.destroy', ['id' => $data['id']]) : route('projects.destroy', ['id' => $projectId]) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <div class="row p-0 mt-4 d-flex flex-row justify-content-around">

@@ -34,8 +34,9 @@
         @isset($data['projects'])
             <div class="projects">
                 @foreach ($data['projects'] as $project)
-                    @include('project_card')
+                    @include('project_card', $project)
                 @endforeach
+                @include('common.confirm_action', ['modalId' => 'deleteModal', 'projectId' => $project['id']])
             </div>
         @endisset
         @empty($data['projects'])
