@@ -299,7 +299,8 @@ class GuestController extends Controller
      * @return\Illuminate\Routing\route
      */
     public function destroy($id) {
-        Guest::destroy($id);
+        $guest = Guest::find($id);
+        $guest->delete();
 
         return redirect()->route('register');
     }

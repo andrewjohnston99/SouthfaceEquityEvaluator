@@ -124,11 +124,12 @@ $(document).ready(function() {
 
     $('a.exit').click(function(e) {
         e.preventDefault();
-
-        if ($(this).attr('href').split('/').pop() === 'register') {
+        var curUrl = window.location.pathname;
+        if (curUrl.includes('guest')) {
+            $(this).removeAttr('href');
             $('#confirmExitModal').modal('show');
+        } else {
+            window.location = $(this).attr('href');
         }
-
-        window.location = $(this).attr('href');
     });
 })
