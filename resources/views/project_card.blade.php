@@ -17,20 +17,4 @@
     </div>
 </a>
 
-<div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h3 class="text-center mb-4">Are you sure you want to delete this project?</h3>
-                <form action="{{ route('projects.destroy', ['id' => array_search($project, $data['projects'])]) }}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <div class="row p-0 mt-4 d-flex flex-row justify-content-around">
-                        <button class="close-btn" type="button" data-dismiss="modal" aria-label="Close">Cancel</button>
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+@include('common.confirm_action', ['modalId' => 'deleteModal'])

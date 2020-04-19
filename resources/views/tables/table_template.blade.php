@@ -16,6 +16,7 @@
 
 @section('js')
     <script src="{{ URL::asset('js/project.js') }}"></script>
+    <script src="{{ URL::asset('js/tables.js') }}"></script>
 @endsection
 
 @section('content')
@@ -44,6 +45,10 @@
             @endif
         </div>
     </div>
+
+    @guest
+        @include('common.confirm_action', ['modalId' => 'confirmExitModal'])
+    @endguest
 @endsection
 
 

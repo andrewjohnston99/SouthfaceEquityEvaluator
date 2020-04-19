@@ -33,7 +33,7 @@ class CreateContactsTable extends Migration
         });
 
         Schema::table('Contacts', function (Blueprint $table) {
-            $table->foreign('project_id')->references('id')->on('Projects');
+            $table->foreign('project_id')->references('id')->on('Projects')->onDelete('cascade');
         });
     }
 

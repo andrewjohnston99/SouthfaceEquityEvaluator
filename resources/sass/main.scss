@@ -135,6 +135,15 @@ nav.navbar {
             @include box-shadow(0, 8px, 40px, rgba(0, 0, 0, .25));
         }
     }
+
+    a.guest {
+        color: #000;
+
+        &:hover {
+            text-decoration: underline;
+            color: darken($primary, 3%);
+        }
+    }
 }
 
 /******************************
@@ -316,7 +325,7 @@ nav.navbar {
     padding: 0 50px;
     margin-top: 40px;
 
-    .no-projects, .project-card {
+    .project-card {
         margin: auto;
     }
 
@@ -370,6 +379,14 @@ nav.navbar {
                 color: darken($primary, 5%);
             }
         }
+    }
+}
+
+.no-projects {
+    i.material-icons {
+        padding-top: 3px;
+        padding: 30px;
+        font-size: 28px;
     }
 }
 
@@ -547,6 +564,16 @@ nav.navbar {
             &.notes {
                 width: 15%;
             }
+        }
+    }
+}
+
+#confirmExitModal {
+    button.close-btn {
+        @include txt-btn(#000);
+
+        &:hover {
+            color: darken($primary, 5%);
         }
     }
 }

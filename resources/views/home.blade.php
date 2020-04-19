@@ -31,16 +31,18 @@
             </button>
         </div>
     </div>
-    <div class="projects">
         @isset($data['projects'])
-            @foreach ($data['projects'] as $project)
-                @include('project_card')
-            @endforeach
+            <div class="projects">
+                @foreach ($data['projects'] as $project)
+                    @include('project_card')
+                @endforeach
+            </div>
         @endisset
         @empty($data['projects'])
-            <h3 class="no-projects align-self-center">No saved projects!</h3>
+            <div class="no-projects h-50 d-flex justify-content-center">
+                <h3 class="text-center m-auto">No saved projects!</h3>
+            </div>
         @endempty
-    </div>
     <div class="help row justify-content-end">
         <i class="material-icons btn" id="helpButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">help_outline</i>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

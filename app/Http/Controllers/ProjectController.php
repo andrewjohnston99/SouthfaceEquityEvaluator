@@ -22,7 +22,7 @@ class ProjectController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['getProjectAnswers', 'getOptionalProjectQuestions', 'getRequiredProjectQuestions', 'getTotalScore', 'getTableScore']);
     }
 
     /**
@@ -103,7 +103,7 @@ class ProjectController extends Controller
      * @param int $id
      * @return int
      */
-    private function getTotalScore($id)
+    public function getTotalScore($id)
     {
         return DB::table('Projects as p')
             ->join('MartaStations as ms', 'p.station_id', '=', 'ms.id')
@@ -163,7 +163,7 @@ class ProjectController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -197,9 +197,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $uid = Auth::id();
-
-        $projectInfo = Project::where('user_id', $uid)->where('id', $id)->select('title', 'station_id')->first();
+        $projectInfo = Project::where('id', $id)->select('title', 'station_id')->first();
 
         $station = MartaStation::where('id', $projectInfo['station_id'])->first();
 
@@ -227,7 +225,7 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *@return \Illuminate\Routing\Redirector
      */
     public function edit($id)
     {
@@ -298,6 +296,9 @@ class ProjectController extends Controller
 
     /**
      * Generate PDF and mail for specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Routing\Redirector
      */
     public function export(Request $request, $id)
     {

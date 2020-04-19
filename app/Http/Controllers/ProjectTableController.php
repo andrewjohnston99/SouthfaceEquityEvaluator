@@ -10,6 +10,7 @@ use App\Project;
 use App\ProjectTable;
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
@@ -39,7 +40,7 @@ class ProjectTableController extends Controller
      *
      * @param  int     $projectId
      * @param  string  $table
-     * @return Response
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function show($projectId, $table)
     {

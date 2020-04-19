@@ -33,5 +33,12 @@ Route::post('change-password', 'ChangePasswordController@store')->name('change.p
 
 Route::post('upload', 'ProjectController@uploadDocument');
 Route::post('projects/{project}/export', 'ProjectController@export')->name('projects.export');
-Route::resource('projects', 'ProjectController')->middleware('auth');
-Route::resource('projects.tables', 'ProjectTableController')->middleware('auth');
+Route::resource('projects', 'ProjectController');
+Route::resource('projects.tables', 'ProjectTableController');
+
+Route::get('guest', 'GuestController@index')->name('guest');
+Route::post('guest', 'GuestController@create')->name('guest.create');
+Route::delete('guest/{guest}', 'GuestController@destroy')->name('guest.destroy');
+Route::get('guest/{guest}/tables/{table}', 'GuestController@show')->name('guest.tables.show');
+Route::put('guest/{guest}/tables/{table}', 'GuestController@update')->name('guest.tables.update');
+

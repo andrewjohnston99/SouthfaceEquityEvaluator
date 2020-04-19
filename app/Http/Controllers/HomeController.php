@@ -14,7 +14,7 @@ class HomeController extends Controller
     /**
      * The project controller instance.
      */
-    protected $projectController;
+    protected $project;
 
     /**
      * Create a new controller instance.

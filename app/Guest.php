@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Guest extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'Projects';
+    protected $table = 'Guests';
 
     /**
      * Turn off timestamps
@@ -36,7 +36,6 @@ class Project extends Model
      * @var array
      */
     protected $guarded = [
-        'user_id',
         'station_id'
     ];
 
@@ -48,18 +47,4 @@ class Project extends Model
     protected $casts = [
         'project_metadata' => 'array',
     ];
-
-    /**
-     * Get the user that owns the project.
-     */
-    public function user() {
-        return $this->belongsTo('App\User');
-    }
-
-    /**
-     * Get the station associated with the project.
-     */
-    public function station() {
-        return $this->hasOne('App\User');
-    }
 }

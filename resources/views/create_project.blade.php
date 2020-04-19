@@ -5,14 +5,16 @@
                 <h2 class="create-header">Create a New Project</h2>
             </div>
             <div class="modal-body">
-                <form action="{{ url('projects') }}" method="POST">
+                <form action="{{ Auth::guest() ? route('guest.create') : url('projects') }}" method="POST">
                     @csrf
                     <label for="martaStation">Marta Station</label>
                     <select class="form-control" id="martaStation" name="martaStation" required>
                         <option value="" selected disabled hidden>Please choose the Marta station closest to your development.</option>
-                        @foreach ($data['stations'] as $station)
-                            <option>{{ $station }}</option>
-                        @endforeach
+                        @isset($data['stations'])
+                            @foreach ($data['stations'] as $station)
+                                <option>{{ $station }}</option>
+                            @endforeach
+                        @endisset
                     </select>
                     <label for="projectTitle">Project Title</label>
                     <input id="projectTitle" class="form-control" type="text" name="projectTitle" placeholder="Project Title" required />

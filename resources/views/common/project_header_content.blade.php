@@ -3,12 +3,14 @@
 @section('page-content')
     <h2>{{ $data['title'] }}</h2>
     <i class="material-icons align-middle">navigate_next</i>
-    @if (Route::current()->getName() == 'projects.tables.show')
+    @if (Route::current()->getName() == 'projects.tables.show' || Route::current()->getName() == 'guest.tables.show')
         <select class="form-control" id="tableSelect">
             @foreach ($data['tables'] as $table)
                 <option value="{{ $table->abbrev }}">{{ $table->name }}</option>
             @endforeach
-            <option value="contact">Edit Contacts and Info</option>
+            @auth
+                <option value="contact">Edit Contacts and Info</option>
+            @endauth
         </select>
     @else
         <h2>Report</h2>
@@ -17,14 +19,19 @@
 
 @section('project-btns')
 
-    @if (Route::current()->getName() == 'projects.tables.show')
+    @if (Route::current()->getName() == 'projects.tables.show' || Route::current()->getName() == 'guest.tables.show')
         <button class="save" id="saveChanges" form="{{ Request::segment(4) == 'contact' ? 'contactForm' : 'tableForm' }}" type="submt">
             <span>
                 <i class="material-icons align-middle">save</i>
             </span>
             Save
         </button>
-        <a class="exit" href="{{ route('projects.show', ['id' => $data['id']]) }}">Exit</a>
+        @auth
+            <a class="exit" href="{{ route('projects.show', ['id' => $data['id']]) }}">Exit</a>
+        @endauth
+        @guest
+            <a class="exit" href="{{ route('register') }}">Exit</a>
+        @endguest
     @else
         <a class="edit" href="{{ route('projects.edit', ['id' => $data['id']]) }}">
             <span>
