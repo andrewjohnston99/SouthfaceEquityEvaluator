@@ -32,5 +32,6 @@ Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
 Route::post('upload', 'ProjectController@uploadDocument');
+Route::post('projects/{project}/export', 'ProjectController@export')->name('projects.export');
 Route::resource('projects', 'ProjectController')->middleware('auth');
 Route::resource('projects.tables', 'ProjectTableController')->middleware('auth');

@@ -1,4 +1,0 @@
-services:
-- class: \BenSampo\Enum\PHPStan\EnumMethodsClassReflectionExtension
-  tags:
-  - phpstan.broker.methodsClassReflectionExtension

@@ -41,3 +41,4 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // });
 
 window.chartjs = require('chart.js');
+window.taggle = require('taggle');

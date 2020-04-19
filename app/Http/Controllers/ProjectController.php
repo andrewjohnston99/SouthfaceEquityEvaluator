@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Charts\ScoreBreakdown;
+use App\Mail\ProjectReport;
 use App\Mail\Upload;
 use App\MartaStation;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use App\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use \Colors\RandomColor;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -152,7 +154,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = auth()->user()->projects;
+        $projects = Auth::user()->projects;
 
         return response()->json($projects, 200);
     }
@@ -166,7 +168,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $project = new Project;
-        $project->user_id = auth()->user()->id;
+        $project->user_id = Auth::id();
 
         $project->title = $request->projectTitle;
 
@@ -195,7 +197,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $uid = auth()->user()->id;
+        $uid = Auth::id();
 
         $projectInfo = Project::where('user_id', $uid)->where('id', $id)->select('title', 'station_id')->first();
 
@@ -280,9 +282,9 @@ class ProjectController extends Controller
         $data = [
             'title' => 'Confirmation Document',
             'document' => $document,
-            'user' => auth()->user()->name,
-            'user_id' => auth()->user()->id,
-            'organization' => auth()->user()->organization,
+            'user' => Auth::user()->name,
+            'user_id' => Auth::id(),
+            'organization' => Auth::user()->organization,
             'project_name' => $request->projectTitle,
             'project_id' => $request->projectId,
         ];
@@ -292,5 +294,53 @@ class ProjectController extends Controller
         Mail::to($to_email)->send(new Upload($data));
         $request->session()->flash('alert-success', 'Your document has been uploaded.');
         return redirect()->back();
+    }
+
+    /**
+     * Generate PDF and mail for specified resource.
+     */
+    public function export(Request $request, $id)
+    {
+        $project = Project::where('id', $id)->first();
+
+        $station = MartaStation::where('id', $project->station_id)->first();
+
+        $scores['total'] = $this->getTotalScore($id);
+
+        foreach ($station->tables as $table) {
+            $scores[$table->abbrev] = $this->getTableScore($id, $table->abbrev);
+        }
+
+        date_default_timezone_set('US/Eastern');
+
+        $data = [
+            'user' => Auth::user()->name,
+            'title' => $project->title,
+            'station' => $station->name,
+            'tables' => $station->tables,
+            'scores' => $scores,
+            'date' => date('m-d-Y'),
+            'time' => date('h:ia e'),
+        ];
+
+        if ($request->has('download')) {
+            $filename = $data['title'] . ' Report.pdf';
+            $stylesheet = public_path('css/report.css');
+
+            $mpdf = new \Mpdf\Mpdf();
+            $mpdf->WriteHTML($stylesheet, \Mpdf\HTMLParserMode::HEADER_CSS);
+            $mpdf->WriteHTML((new ProjectReport($data))->render(), \Mpdf\HTMLParserMode::HTML_BODY);
+            $mpdf->Output($filename, 'D');
+            return;
+        } else if ($request->has('emailSelf')) {
+            Mail::to(Auth::user()->email)->send(new ProjectReport($data));
+            $request->session()->flash('alert-success', 'Your report has been sent.');
+            return redirect()->back();
+        } else {
+            $to = $request->email;
+            Mail::to($to)->send(new ProjectReport($data));
+            $request->session()->flash('alert-success', 'Your report has been sent.');
+            return redirect()->back();
+        }
     }
 }

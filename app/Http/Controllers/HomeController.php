@@ -6,6 +6,7 @@ use App\MartaStation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProjectController;
 use App\Mail\Help;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -60,10 +61,10 @@ class HomeController extends Controller
      */
     public function help(Request $request) {
         $data = [
-            'user' => auth()->user()->name,
-            'email' => auth()->user()->email,
+            'user' => Auth::user()->name,
+            'email' => Auth::user()->email,
             'message' => $request->message,
-            'organization' => auth()->user()->organization,
+            'organization' => Auth::user()->organization,
         ];
 
         Mail::to(config('mail.from.address'))->send(new Help($data));

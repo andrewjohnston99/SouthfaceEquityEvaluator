@@ -1,0 +1,396 @@
+/* LISTS */
+
+/*
+A default margin-top/bottom for lists is NOT set in config.php - (standard browsers give outermost list a top and bottom margin).
+[mPDF default CSS set in configuration only works on basic elements, cannot do selectors such as "ol ol"]
+Need to add the following to do this, but also prevent margins in nested lists as per default HTML in most browsers:
+*/
+
+ul, ol {
+	margin-top: 0.83em;
+	margin-bottom: 0.83em;
+}
+
+ul ul, ul ol, ol ul, ol ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* INDEXES */
+div.mpdf_index_main {
+	font-family: sans-serif;
+	line-height: normal;
+}
+
+div.mpdf_index_entry {
+	line-height: normal;
+	text-indent: -1.5em;
+}
+
+div.mpdf_index_letter {
+	font-family: sans-serif;
+	font-size: 1.8em;
+	font-weight: bold;
+	line-height: normal;
+	text-transform: uppercase;
+	page-break-after: avoid;
+	margin-top: 0.3em;
+	margin-collapse: collapse;
+}
+
+a.mpdf_index_link {
+	color: #000000;
+	text-decoration: none;
+}
+
+/* TABLE OF CONTENTS */
+div.mpdf_toc {
+	font-family: sans-serif;
+	line-height: normal;
+}
+
+a.mpdf_toc_a {
+	text-decoration: none;
+	color: black;
+}
+
+div.mpdf_toc_level_0 { /* Whole line level 0 */
+	line-height: 1.5;
+	margin-left: 0;
+	padding-right: 0em; /* should match the outdent specified for ToC; 0 is default; suggested value 2em */
+}
+
+span.mpdf_toc_t_level_0 { /* Title level 0 - may be inside <a> */
+	font-weight: bold;
+}
+
+span.mpdf_toc_p_level_0 { /* Page no. level 0 - may be inside <a> */
+}
+
+div.mpdf_toc_level_1 { /* Whole line level 1 */
+	margin-left: 2em;
+	text-indent: -2em;
+	padding-right: 0em; /* should match the outdent specified for ToC; 0 is default; suggested value 2em */
+}
+
+span.mpdf_toc_t_level_1 { /* Title level 1 */
+	font-style: italic;
+	font-weight: bold;
+}
+
+span.mpdf_toc_p_level_1 { /* Page no. level 1 - may be inside <a> */
+}
+
+div.mpdf_toc_level_2 { /* Whole line level 2 */
+	margin-left: 4em;
+	text-indent: -2em;
+	padding-right: 0em; /* should match the outdent specified for ToC; 0 is default; suggested value 2em */
+}
+
+span.mpdf_toc_t_level_2 { /* Title level 2 */
+}
+
+span.mpdf_toc_p_level_2 { /* Page no. level 2 - may be inside <a> */
+}
+
+/* Base */
+
+body,
+body *:not(html):not(style):not(br):not(tr):not(code) {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #74787e;
+    height: 100%;
+    hyphens: auto;
+    line-height: 1.4;
+    margin: 0;
+    -moz-hyphens: auto;
+    -ms-word-break: break-all;
+    width: 100% !important;
+    -webkit-hyphens: auto;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    word-break: break-word;
+}
+
+p,
+ul,
+ol,
+blockquote {
+    line-height: 1.4;
+    text-align: left;
+}
+
+a {
+    color: #3869d4;
+}
+
+a img {
+    border: none;
+}
+
+/* Typography */
+
+h1 {
+    color: #3d4852;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: left;
+}
+
+h2 {
+    color: #3d4852;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: left;
+}
+
+h3 {
+    color: #3d4852;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: left;
+}
+
+p {
+    color: #3d4852;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-top: 0;
+    text-align: left;
+}
+
+p.sub {
+    font-size: 12px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Layout */
+
+.wrapper {
+    background-color: #f8fafc;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+/* Header */
+
+.header {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.header a {
+    color: #bbbfc3;
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+}
+
+/* Body */
+
+.body {
+    background-color: #ffffff;
+    border-bottom: 1px solid #edeff2;
+    border-top: 1px solid #edeff2;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.inner-body {
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 0;
+    width: 570px;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 570px;
+}
+
+/* Subcopy */
+
+.subcopy {
+    border-top: 1px solid #edeff2;
+    margin-top: 25px;
+    padding-top: 25px;
+}
+
+.subcopy p {
+    font-size: 12px;
+}
+
+/* Footer */
+
+.footer {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 570px;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 570px;
+}
+
+.footer p {
+    color: #aeaeae;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Tables */
+
+.table table {
+    margin: 30px auto;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.table th {
+    border-bottom: 1px solid #edeff2;
+    padding-bottom: 8px;
+    margin: 0;
+}
+
+.table th:first-of-type {
+    text-align: left;
+}
+
+.table td {
+    color: #74787e;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.content-cell {
+    padding: 35px;
+}
+
+/* Buttons */
+
+.action {
+    margin: 30px auto;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.button {
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-text-size-adjust: none;
+}
+
+.button-blue,
+.button-primary {
+    background-color: #3490dc;
+    border-top: 10px solid #3490dc;
+    border-right: 18px solid #3490dc;
+    border-bottom: 10px solid #3490dc;
+    border-left: 18px solid #3490dc;
+}
+
+.button-green,
+.button-success {
+    background-color: #38c172;
+    border-top: 10px solid #38c172;
+    border-right: 18px solid #38c172;
+    border-bottom: 10px solid #38c172;
+    border-left: 18px solid #38c172;
+}
+
+.button-red,
+.button-error {
+    background-color: #e3342f;
+    border-top: 10px solid #e3342f;
+    border-right: 18px solid #e3342f;
+    border-bottom: 10px solid #e3342f;
+    border-left: 18px solid #e3342f;
+}
+
+/* Panels */
+
+.panel {
+    margin: 0 0 21px;
+}
+
+.panel-content {
+    background-color: #f1f5f8;
+    padding: 16px;
+}
+
+.panel-item {
+    padding: 0;
+}
+
+.panel-item p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Promotions */
+
+.promotion {
+    background-color: #ffffff;
+    border: 2px dashed #9ba2ab;
+    margin: 0;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    padding: 24px;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.promotion h1 {
+    text-align: center;
+}
+
+.promotion p {
+    font-size: 15px;
+    text-align: center;
+}
+

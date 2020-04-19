@@ -13,12 +13,13 @@
     <div class="report d-flex flex-column">
         <div class="hero d-flex">
             <h2>Here's your project overview.</h2>
-            <button class="export" id="exportBtn" type="button">
+            <button class="export" id="exportBtn"  data-toggle="modal" data-target="#shareModal" type="button">
                 <span>
-                    <i class="material-icons align-middle">cloud_download</i>
+                    <i class="material-icons align-middle">share</i>
                 </span>
                 Export Report
             </button>
+            @include('share_project')
         </div>
         <div class="scores mt-5 d-flex flex-column justify-content-center">
             <div class="row justify-content-center">
