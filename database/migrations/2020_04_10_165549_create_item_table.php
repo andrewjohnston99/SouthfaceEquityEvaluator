@@ -19,6 +19,7 @@ class CreateItemTable extends Migration
             $table->string('name');
             $table->boolean('required');
             $table->mediumText('instructions')->nullable();
+            $table->unsignedInteger('order')->nullable();
         });
 
         Schema::table('Items', function (Blueprint $table) {

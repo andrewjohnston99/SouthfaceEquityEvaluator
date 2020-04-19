@@ -30,6 +30,13 @@ class CreateContactsTable extends Migration
             $table->string('gc_address')->nullable();
             $table->string('ss_phone')->nullable();
             $table->string('ss_email')->nullable();
+            $table->unsignedInteger('acerage')->nullable();
+            $table->unsignedInteger('greenspace')->nullable();
+            $table->unsignedInteger('residential_units')->nullable();
+            $table->unsignedInteger('multi_family_units')->nullable();
+            $table->unsignedInteger('single_family_units')->nullable();
+            $table->unsignedInteger('commercial_space')->nullable();
+            $table->unsignedInteger('residential_space')->nullable();
         });
 
         Schema::table('Contacts', function (Blueprint $table) {

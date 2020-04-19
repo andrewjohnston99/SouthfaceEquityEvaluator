@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateGuestFk extends Migration
+class CreateGuestTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,6 +13,13 @@ class UpdateGuestFk extends Migration
      */
     public function up()
     {
+        Schema::create('Guests', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('station_id');
+            $table->string('title');
+            $table->json('project_metadata');
+        });
+
         Schema::table('Guests', function (Blueprint $table) {
             $table->foreign('station_id')->references('id')->on('MartaStations');
         });
@@ -25,8 +32,6 @@ class UpdateGuestFk extends Migration
      */
     public function down()
     {
-        Schema::table('Guests', function (Blueprint $table) {
-            $table->dropForeign(['station_id']);
-        });
+        Schema::dropIfExists('Guests');
     }
 }

@@ -22,10 +22,10 @@ class CreateProjecttableitemsoptionsTable extends Migration
         });
 
         Schema::table('ProjectTableItemsOptions', function (Blueprint $table) {
-            $table->foreign('project_id')->references('id')->on('Projects');
-            $table->foreign('item_id')->references('id')->on('Items');
-            $table->foreign('option_id')->references('id')->on('Options');
-            $table->foreign('table_id')->references('id')->on('ProjectTables');
+            $table->foreign('project_id')->references('id')->on('Projects')->onDelete('cascade');
+            $table->foreign('item_id')->references('id')->on('Items')->onDelete('cascade');
+            $table->foreign('option_id')->references('id')->on('Options')->onDelete('cascade');
+            $table->foreign('table_id')->references('id')->on('ProjectTables')->onDelete('cascade');
         });
     }
 

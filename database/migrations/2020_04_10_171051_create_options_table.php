@@ -19,6 +19,8 @@ class CreateOptionsTable extends Migration
             $table->unsignedTinyInteger('points')->nullable();
             $table->mediumText('title')->nullable();
             $table->string('label')->nullable();
+            $table->unsignedInteger('order')->nullable();
+            $table->integer('percentage')->nullable();
         });
 
         Schema::table('Options', function (Blueprint $table) {
