@@ -13,10 +13,10 @@
         <div class="row btn">
             <div class="col btn-col">
                 <button class="back-btn d-flex justify-content-center" onclick="window.location='{{ url('home') }}'">
-                    @include('icons.back-arrow')
                     <span>
-                        Back to Dashboard
+                        <i class="material-icons align-middle">keyboard_backspace</i>
                     </span>
+                    Back to Dashboard
                 </button>
             </div>
         </div>

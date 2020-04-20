@@ -5,56 +5,25 @@
                 <h2 class="create-header">Create a New Project</h2>
             </div>
             <div class="modal-body">
-                <form action="{{ url('projects') }}" method="POST">
+                <form action="{{ Auth::guest() ? route('guest.create') : url('projects') }}" method="POST">
                     @csrf
                     <label for="martaStation">Marta Station</label>
-                    <select class="form-control" id="martaStation" name="martaStation">
-                        <option selected disabled hidden>Please choose the Marta station closest to your development.</option>
-                        <option>Arts Center</option>
-                        <option>Ashby</option>
-                        <option>Avondale</option>
-                        <option>Bankhead</option>
-                        <option>Buckhead</option>
-                        <option>Chamblee</option>
-                        <option>Civic Center</option>
-                        <option>College Park</option>
-                        <option>Decatur</option>
-                        <option>Doraville</option>
-                        <option>Dunwoody</option>
-                        <option>East Point</option>
-                        <option>Eastlake</option>
-                        <option>Edgewood Candler Park</option>
-                        <option>Five Points</option>
-                        <option>Garnett</option>
-                        <option>Georgia Dome/GWCC/Philips Arena/CNN Center</option>
-                        <option>Georgia State</option>
-                        <option>Hamilton Holmes</option>
-                        <option>Indian Creek</option>
-                        <option>Inman Park</option>
-                        <option>Kensington</option>
-                        <option>King Memorial</option>
-                        <option>Lakewood Fort McPherson</option>
-                        <option>Lenox</option>
-                        <option>Lindbergh</option>
-                        <option>Medical Center</option>
-                        <option>Midtown</option>
-                        <option>North Avenue</option>
-                        <option>North Springs</option>
-                        <option>Oakland City</option>
-                        <option>Peachtree Center</option>
-                        <option>Sandy Spring</option>
-                        <option>Vine City</option>
-                        <option>West End</option>
-                        <option>West Lake</option>
+                    <select class="form-control" id="martaStation" name="martaStation" required>
+                        <option value="" selected disabled hidden>Please choose the Marta station closest to your development.</option>
+                        @isset($data['stations'])
+                            @foreach ($data['stations'] as $station)
+                                <option>{{ $station }}</option>
+                            @endforeach
+                        @endisset
                     </select>
                     <label for="projectTitle">Project Title</label>
-                    <input id="projectTitle" class="form-control" type="text" name="projectTitle" placeholder="Project Title" required autofocus>
+                    <input id="projectTitle" class="form-control" type="text" name="projectTitle" placeholder="Project Title" required />
                     <label for="charretteDate">Charrette Date</label>
-                    <input id="charretteDate" class="form-control flatpickr flatpickr-input" type="date" name="charretteDate" placeholder="Charrette Date" required autofocus>
+                    <input id="charretteDate" class="form-control" type="text" name="charretteDate" placeholder="Charrette Date" data-input />
                     <label for="kickoffDate">Kickoff Date</label>
-                    <input id="kickoffDate" class="form-control" type="date" name="kickoffDate" placeholder="Kickoff Date" required autofocus>
+                    <input id="kickoffDate" class="form-control" type="text" name="kickoffDate" placeholder="Kickoff Date" data-input />
                     <label for="siteAddress">Site Address</label>
-                    <textarea id="siteAddress" class="form-control" name="siteAddress" placeholder="123 ABC Rd&#13;&#10;Atlanta, GA 30332" required></textarea>
+                    <textarea id="siteAddress" class="form-control" name="siteAddress" placeholder="123 ABC Rd&#13;&#10;Atlanta, GA 30332"></textarea>
                     <div class="row">
                         <button class="close-btn" type="button" data-dismiss="modal" aria-label="Close">Cancel</button>
                         <button class="create" type="submit">Create</button>

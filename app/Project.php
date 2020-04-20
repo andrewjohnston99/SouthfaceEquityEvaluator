@@ -11,14 +11,7 @@ class Project extends Model
      *
      * @var string
      */
-    protected $table = 'projects';
-
-    /**
-     * The primary key associated with the table.
-     *
-     * @var string
-     */
-    protected $primaryKey = 'project_id';
+    protected $table = 'Projects';
 
     /**
      * Turn off timestamps
@@ -33,10 +26,18 @@ class Project extends Model
      * @var array
      */
     protected $fillable = [
+        'title',
+        'project_metadata'
+    ];
+
+    /**
+     * Attributes not for mass assignment
+     *
+     * @var array
+     */
+    protected $guarded = [
         'user_id',
-        'project_metadata',
-        'project_xls',
-        'project_json'
+        'station_id'
     ];
 
     /**
@@ -46,6 +47,19 @@ class Project extends Model
      */
     protected $casts = [
         'project_metadata' => 'array',
-        'project_json' => 'array'
     ];
+
+    /**
+     * Get the user that owns the project.
+     */
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
+
+    /**
+     * Get the station associated with the project.
+     */
+    public function station() {
+        return $this->hasOne('App\User');
+    }
 }

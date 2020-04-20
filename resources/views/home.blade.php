@@ -2,76 +2,62 @@
 
 @section('title', 'Home')
 
-@section('css')
-    <style>
-        html, body {
-            background-color: #FFFFFE;
-        }
-    </style>
-@endsection
-
 @section('token')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 @section('js')
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
     <script src="{{ URL::asset('js/project.js') }}"></script>
-<script>
-    document.getElementById("charretteDate").flatpickr({
-        dateFormat: "d-m-Y",
-    });
-    document.getElementById("kickoffDate").flatpickr({
-        dateFormat: "d-m-Y",
-    });
-</script>
+    <script>
+        document.getElementById("charretteDate").flatpickr({
+            dateFormat: "m-d-Y"
+        });
+        document.getElementById("kickoffDate").flatpickr({
+            dateFormat: "m-d-Y"
+        });
+    </script>
 @endsection
 
 @section('content')
-    <div class="dashboard container">
-        <div class="row d-flex justify-content-between align-items-center header">
-            <a href="{{ url('/home') }}">
-                <img src="{{ URL::asset('images/southface-logo-sm.png') }}" />
-            </a>
-            <button id="settingsBtn" class="settings-btn d-flex justify-content-center align-items-center" onclick="window.location='{{ route('account') }}'" type="button">
+    @include('common.home_header_content')
+    <div class="home">
+        <div class="hero d-flex">
+            <h2>These are all your projects.</h2>
+            <button class="add-btn" data-toggle="modal" data-target="#createProjectModal" type="button">
                 <span>
-                    @include('icons.settings')
+                    <i class="material-icons align-middle">add</i>
                 </span>
-                Settings
+                New Project
             </button>
         </div>
-        <div class="row d-flex hero">
-            <div class="col">
-                <img src="{{ URL::asset('images/equity.png') }}" />
+    </div>
+        @isset($data['projects'])
+            <div class="projects">
+                @foreach ($data['projects'] as $project)
+                    @include('project_card', $project)
+                @endforeach
+                @include('common.confirm_action', ['modalId' => 'deleteModal', 'projectId' => isset($project['id']) ? $project['id'] : null])
             </div>
-            <div class="col d-flex align-items-center">
-                <h1 class="equity">Equity Evaluator</h1>
+        @endisset
+        @empty($data['projects'])
+            <div class="no-projects h-50 d-flex justify-content-center">
+                <h3 class="text-center m-auto">No saved projects!</h3>
             </div>
-            <div class="col flex-grow-1 d-flex align-items-center justify-content-end">
-                <button id="addBtn" class="add-btn d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#createProjectModal" type="button">
-                    New Project
-                    <span>
-                        @include('icons.add')
-                    </span>
-                </button>
-            </div>
-        </div>
-        <div class="row projects d-flex justify-content-between">
-            @isset($projects)
-                <form action="/" method="get" id="getProjectForm">
-                    @foreach ($projects as $project)
-                        @include('project.button')
-                    @endforeach
-                </form>
-            @endisset
-            @empty($projects)
-                @include('project.no-button')
-            @endempty
+        @endempty
+    <div class="help row justify-content-end">
+        <i class="material-icons btn" id="helpButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">help_outline</i>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <h4 class="text-center font-weight-bold">Need help?</h4>
+            <div class="dropdown-divider"></div>
+            <form class="px-4 py-3 pb-3" action="{{ route('help') }}" method="post">
+                @csrf
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" name="message" id="message" rows="10" placeholder="Let us know how we can help you out here."></textarea>
+                </div>
+                <button class="float-right btn btn-success" type="submit">Submit</button>
+            </form>
         </div>
     </div>
-
     @include('create_project')
 @endsection
