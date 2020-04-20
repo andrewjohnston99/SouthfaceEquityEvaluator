@@ -12,7 +12,8 @@ Southface Equity Evaluator, Georgia Tech CS Junior Design - Team 9327
 * Users could not delete projects
 * Users could not view a project's total score
 ### Known Problems
-None at time of release.
+* Some tables do not dynamically update the project score. 
+* The forgot passoword and reset password pages use stock templates.
 
 ## Installation
 ### Production Introduction
