@@ -24,6 +24,6 @@ return  [
     |
     */
 
-    'token' => 'MC5YcGRkM1JJQUFCOEFyZ3Js.77-9O3R7Oe-_ve-_ve-_ve-_vXvvv73vv70pXu-_ve-_vSRMB0s077-977-9al3vv73vv73vv71a77-977-977-9',
+    'token' => '',
 
 ];
