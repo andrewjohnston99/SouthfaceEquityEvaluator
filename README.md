@@ -14,6 +14,7 @@ Southface Equity Evaluator, Georgia Tech CS Junior Design - Team 9327
 ### Known Problems
 * Some tables do not dynamically update the project score. 
 * The forgot passoword and reset password pages use stock templates.
+* The database seeder does not automatically delete items that have been deleted from Prismic.
 
 ## Installation
 ### Production Introduction
