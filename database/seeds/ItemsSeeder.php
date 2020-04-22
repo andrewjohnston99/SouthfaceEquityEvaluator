@@ -3,18 +3,12 @@
 use App\Item;
 use App\ProjectTable;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Log;
 use Prismic\Api;
 use Prismic\Predicates;
 use Prismic\Dom\RichText;
 
 class ItemsSeeder extends Seeder
 {
-    private $equity = ['GE 1.0', 'GE 1.1', 'GE 1.2', 'GE 1.3', 'GE 1.4', 'GE 1.5'];
-    private $physicalOp = ['PF 0.1', 'PF 0.2', 'PF 0.3', 'PF 0.4', 'PF 0.5', 'PF 0.6'];
-    private $physicalReq = ['PF 1.1', 'PF 1.2', 'PF 1.3', 'PF 1.4', 'PF 1.45', 'PF 1.5', 'PF 1.6', 'PF 1.7', 'PF 1.8'];
-
-
     /**
      * Run the database seeds.
      *
@@ -35,6 +29,9 @@ class ItemsSeeder extends Seeder
         }
 
         // Retrieve general equity items
+        $dbItems = Item::where('table_id', 1)->pluck('name')->all();
+        $prismicItems = [];
+
         $response = $api->query([
             Predicates::at('document.type', 'item'),
             Predicates::at('my.item.table', $tableIDs['General Equity'])],
@@ -61,9 +58,19 @@ class ItemsSeeder extends Seeder
             }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'equity')->pluck('id')->first());
+            array_push($prismicItems, $i->name);
+        }
+
+        $deletedItems = array_diff($dbItems, $prismicItems);
+
+        foreach($deletedItems as $item) {
+            Item::where('name', $item)->delete();
         }
 
         // Retrieve phyical form items
+        $dbItems = Item::where('table_id', 1)->pluck('name')->all();
+        $prismicItems = [];
+
         $response = $api->query([
             Predicates::at('document.type', 'item'),
             Predicates::at('my.item.table', $tableIDs['Physical Form'])],
@@ -90,9 +97,19 @@ class ItemsSeeder extends Seeder
             }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'physical')->pluck('id')->first());
+            array_push($prismicItems, $i->name);
+        }
+
+        $deletedItems = array_diff($dbItems, $prismicItems);
+
+        foreach($deletedItems as $item) {
+            Item::where('name', $item)->delete();
         }
 
         // Retrieve services items
+        $dbItems = Item::where('table_id', 1)->pluck('name')->all();
+        $prismicItems = [];
+
         $response = $api->query([
             Predicates::at('document.type', 'item'),
             Predicates::at('my.item.table', $tableIDs['Services and Employment'])],
@@ -119,9 +136,19 @@ class ItemsSeeder extends Seeder
             }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'services')->pluck('id')->first());
+            array_push($prismicItems, $i->name);
+        }
+
+        $deletedItems = array_diff($dbItems, $prismicItems);
+
+        foreach($deletedItems as $item) {
+            Item::where('name', $item)->delete();
         }
 
         // Retrieve population items
+        $dbItems = Item::where('table_id', 1)->pluck('name')->all();
+        $prismicItems = [];
+
         $response = $api->query([
             Predicates::at('document.type', 'item'),
             Predicates::at('my.item.table', $tableIDs['Population Preservation/Expansion'])],
@@ -148,9 +175,19 @@ class ItemsSeeder extends Seeder
             }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'population')->pluck('id')->first());
+            array_push($prismicItems, $i->name);
+        }
+
+        $deletedItems = array_diff($dbItems, $prismicItems);
+
+        foreach($deletedItems as $item) {
+            Item::where('name', $item)->delete();
         }
 
         // Retrieve community items
+        $dbItems = Item::where('table_id', 1)->pluck('name')->all();
+        $prismicItems = [];
+
         $response = $api->query([
             Predicates::at('document.type', 'item'),
             Predicates::at('my.item.table', $tableIDs['Balanced Community'])],
@@ -177,9 +214,19 @@ class ItemsSeeder extends Seeder
             }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'community')->pluck('id')->first());
+            array_push($prismicItems, $i->name);
+        }
+
+        $deletedItems = array_diff($dbItems, $prismicItems);
+
+        foreach($deletedItems as $item) {
+            Item::where('name', $item)->delete();
         }
 
         // Retrieve housing items
+        $dbItems = Item::where('table_id', 1)->pluck('name')->all();
+        $prismicItems = [];
+
         $response = $api->query([
             Predicates::at('document.type', 'item'),
             Predicates::at('my.item.table', $tableIDs['Housing Diversity'])],
@@ -206,6 +253,13 @@ class ItemsSeeder extends Seeder
             }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'housing')->pluck('id')->first());
+            array_push($prismicItems, $i->name);
+        }
+
+        $deletedItems = array_diff($dbItems, $prismicItems);
+
+        foreach($deletedItems as $item) {
+            Item::where('name', $item)->delete();
         }
     }
 }
