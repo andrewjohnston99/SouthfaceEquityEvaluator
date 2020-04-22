@@ -3,6 +3,7 @@
 use App\Item;
 use App\ProjectTable;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Log;
 use Prismic\Api;
 use Prismic\Predicates;
 use Prismic\Dom\RichText;
@@ -41,15 +42,23 @@ class ItemsSeeder extends Seeder
         );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate(
-                ['name' => $doc->data->item_name[0]->text],
-                [
+            $i = Item::where('name', $doc->data->item_name[0]->text)->orWhere( 'order', $doc->data->order)->first();
+            if (!is_null($i)) {
+                $i->name = $doc->data->item_name[0]->text;
+                $i->order = $doc->data->order;
+                $i->required = $doc->data->required;
+                $i->instructions = isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null;
+                $i->table_id = ProjectTable::where('abbrev', 'equity')->pluck('id')->first();
+                $i->save();
+            } else {
+                $i = Item::create([
+                    'name' => $doc->data->item_name[0]->text,
                     'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
                     'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
-                ]
-            );
+                ]);
+            }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'equity')->pluck('id')->first());
         }
@@ -62,15 +71,23 @@ class ItemsSeeder extends Seeder
         );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate(
-                ['name' => $doc->data->item_name[0]->text],
-                [
+            $i = Item::where('name', $doc->data->item_name[0]->text)->orWhere( 'order', $doc->data->order)->first();
+            if (!is_null($i)) {
+                $i->name = $doc->data->item_name[0]->text;
+                $i->order = $doc->data->order;
+                $i->required = $doc->data->required;
+                $i->instructions = isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null;
+                $i->table_id = ProjectTable::where('abbrev', 'equity')->pluck('id')->first();
+                $i->save();
+            } else {
+                $i = Item::create([
+                    'name' => $doc->data->item_name[0]->text,
                     'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
-                    'table_id' => ProjectTable::where('abbrev', 'physical')->pluck('id')->first()
-                ]
-            );
+                    'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
+                ]);
+            }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'physical')->pluck('id')->first());
         }
@@ -83,15 +100,23 @@ class ItemsSeeder extends Seeder
         );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate(
-                ['name' => $doc->data->item_name[0]->text],
-                [
+            $i = Item::where('name', $doc->data->item_name[0]->text)->orWhere( 'order', $doc->data->order)->first();
+            if (!is_null($i)) {
+                $i->name = $doc->data->item_name[0]->text;
+                $i->order = $doc->data->order;
+                $i->required = $doc->data->required;
+                $i->instructions = isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null;
+                $i->table_id = ProjectTable::where('abbrev', 'equity')->pluck('id')->first();
+                $i->save();
+            } else {
+                $i = Item::create([
+                    'name' => $doc->data->item_name[0]->text,
                     'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
-                    'table_id' => ProjectTable::where('abbrev', 'services')->pluck('id')->first()
-                ]
-            );
+                    'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
+                ]);
+            }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'services')->pluck('id')->first());
         }
@@ -104,15 +129,23 @@ class ItemsSeeder extends Seeder
         );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate(
-                ['name' => $doc->data->item_name[0]->text],
-                [
+            $i = Item::where('name', $doc->data->item_name[0]->text)->orWhere( 'order', $doc->data->order)->first();
+            if (!is_null($i)) {
+                $i->name = $doc->data->item_name[0]->text;
+                $i->order = $doc->data->order;
+                $i->required = $doc->data->required;
+                $i->instructions = isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null;
+                $i->table_id = ProjectTable::where('abbrev', 'equity')->pluck('id')->first();
+                $i->save();
+            } else {
+                $i = Item::create([
+                    'name' => $doc->data->item_name[0]->text,
                     'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
-                    'table_id' => ProjectTable::where('abbrev', 'population')->pluck('id')->first()
-                ]
-            );
+                    'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
+                ]);
+            }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'population')->pluck('id')->first());
         }
@@ -125,15 +158,23 @@ class ItemsSeeder extends Seeder
         );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate(
-                ['name' => $doc->data->item_name[0]->text],
-                [
+            $i = Item::where('name', $doc->data->item_name[0]->text)->orWhere( 'order', $doc->data->order)->first();
+            if (!is_null($i)) {
+                $i->name = $doc->data->item_name[0]->text;
+                $i->order = $doc->data->order;
+                $i->required = $doc->data->required;
+                $i->instructions = isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null;
+                $i->table_id = ProjectTable::where('abbrev', 'equity')->pluck('id')->first();
+                $i->save();
+            } else {
+                $i = Item::create([
+                    'name' => $doc->data->item_name[0]->text,
                     'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
-                    'table_id' => ProjectTable::where('abbrev', 'community')->pluck('id')->first()
-                ]
-            );
+                    'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
+                ]);
+            }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'community')->pluck('id')->first());
         }
@@ -146,15 +187,23 @@ class ItemsSeeder extends Seeder
         );
 
         foreach ($response->results as $doc) {
-            $i = Item::updateOrCreate(
-                ['name' => $doc->data->item_name[0]->text],
-                [
+            $i = Item::where('name', $doc->data->item_name[0]->text)->orWhere( 'order', $doc->data->order)->first();
+            if (!is_null($i)) {
+                $i->name = $doc->data->item_name[0]->text;
+                $i->order = $doc->data->order;
+                $i->required = $doc->data->required;
+                $i->instructions = isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null;
+                $i->table_id = ProjectTable::where('abbrev', 'equity')->pluck('id')->first();
+                $i->save();
+            } else {
+                $i = Item::create([
+                    'name' => $doc->data->item_name[0]->text,
                     'order' => $doc->data->order,
                     'required' => $doc->data->required,
                     'instructions' => isset($doc->data->instruction_popover) ? RichText::asText($doc->data->instruction_popover) : null,
-                    'table_id' => ProjectTable::where('abbrev', 'housing')->pluck('id')->first()
-                ]
-            );
+                    'table_id' => ProjectTable::where('abbrev', 'equity')->pluck('id')->first()
+                ]);
+            }
 
             $i->table()->associate(ProjectTable::where('abbrev', 'housing')->pluck('id')->first());
         }
