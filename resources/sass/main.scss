@@ -75,6 +75,10 @@ nav.navbar {
         padding-top: 0;
         padding-bottom: .5rem;
         margin-right: 0;
+
+        img.transformation {
+            height: 50px;
+        }
     }
 
     .navbar-nav .nav-item {
@@ -480,6 +484,10 @@ nav.navbar {
         }
     }
 
+    .logout {
+        @include txt-btn($red);
+    }
+
     .exit {
         @include txt-btn($red);
         font-size: 24px;
@@ -598,7 +606,7 @@ nav.navbar {
 
 
 /******************************
-*  SETTINGS VIEW
+*  ome VIEW
 ******************************/
 .settings-frame {
     flex-direction: column;

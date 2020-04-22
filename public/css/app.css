@@ -13046,6 +13046,10 @@ nav.navbar .flex-column a.navbar-brand {
   margin-right: 0;
 }
 
+nav.navbar .flex-column a.navbar-brand img.transformation {
+  height: 50px;
+}
+
 nav.navbar .navbar-nav .nav-item:not(:last-child) {
   margin-right: 120px;
 }
@@ -13747,6 +13751,28 @@ nav.navbar .register-btn:active {
   margin-right: 10px;
 }
 
+.project-header .logout {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #e84040;
+}
+
+.project-header .logout:hover,
+.project-header .logout:focus,
+.project-header .logout:active {
+  color: #db1a1a;
+}
+
+.project-header .logout:hover svg,
+.project-header .logout:focus svg,
+.project-header .logout:active svg {
+  fill: #db1a1a;
+}
+
 .project-header .exit {
   box-sizing: border-box;
   text-decoration: none;
@@ -13913,7 +13939,7 @@ nav.navbar .register-btn:active {
 }
 
 /******************************
-*  SETTINGS VIEW
+*  ome VIEW
 ******************************/
 
 .settings-frame {

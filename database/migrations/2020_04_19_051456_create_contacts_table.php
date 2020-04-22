@@ -22,14 +22,7 @@ class CreateContactsTable extends Migration
             $table->string('community_gps')->nullable();
             $table->string('developer_phone')->nullable();
             $table->string('developer_email')->nullable();
-            $table->string('developer_fax')->nullable();
             $table->string('developer_address')->nullable();
-            $table->string('gc_email')->nullable();
-            $table->string('gc_fax')->nullable();
-            $table->string('gc_phone')->nullable();
-            $table->string('gc_address')->nullable();
-            $table->string('ss_phone')->nullable();
-            $table->string('ss_email')->nullable();
             $table->unsignedInteger('acerage')->nullable();
             $table->unsignedInteger('greenspace')->nullable();
             $table->unsignedInteger('residential_units')->nullable();

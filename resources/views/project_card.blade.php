@@ -7,10 +7,10 @@
         </div>
     </div>
     <div class="row">
-        <h3><strong>Kickoff Date:</strong> {{ $project['kickoff'] }}</h3>
+        <h3><strong>Anticipated Start Date:</strong> {{ $project['start'] }}</h3>
     </div>
     <div class="row">
-        <h3><strong>Charrette Date:</strong> {{ $project['charrette'] }}</h3>
+        <h3><strong>Project Meeting Date:</strong> {{ $project['meeting'] }}</h3>
     </div>
     <div class="row">
         <h3 class="site-address"><strong>Site Address:</strong> {!! nl2br(e($project['address'])) !!}</h3>

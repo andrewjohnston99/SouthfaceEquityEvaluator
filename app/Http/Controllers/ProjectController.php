@@ -174,8 +174,8 @@ class ProjectController extends Controller
 
         $metadata = array(
             'address' => isset($request->siteAddress) ? $request->siteAddress : "No Address",
-            'charrette' => isset($request->charretteDate) ? $request->charretteDate : "No Charrette Date",
-            'kickoff' => isset($request->kickoffDate) ? $request->kickoffDate : "No Kickoff Date"
+            'meeting' => isset($request->meetingDate) ? $request->meetingDate : "No Project Meeting Date",
+            'start' => isset($request->startDate) ? $request->startDate : "No Start Date"
         );
         $metadata = json_decode(json_encode($metadata));
         $project->project_metadata = $metadata;
