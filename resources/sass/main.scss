@@ -241,7 +241,7 @@ nav.navbar {
 /******************************
 *  LOGIN
 ******************************/
-.login {
+.login, .reset {
     height: 100%;
     flex-direction: column;
     margin-top: 8%;
@@ -250,7 +250,7 @@ nav.navbar {
         width: 100%;
     }
 
-    .login-header {
+    .login-header, .reset-header {
         font-size: $font-md;
         margin-bottom: 60px;
     }
@@ -277,7 +277,7 @@ nav.navbar {
                 color: $light-grey;
             }
 
-            &#password {
+            &.login-password {
                 margin-bottom: 55px;
             }
         }
@@ -339,6 +339,7 @@ nav.navbar {
         width: 100%;
         color: #000;
         padding: 0 30px;
+        padding-right: 10px;
 
         .row {
             margin: unset;
@@ -360,6 +361,7 @@ nav.navbar {
                 i.material-icons {
                     padding-top: 3px;
                     padding: 30px;
+                    padding-right: 25px;
                     font-size: 28px;
                 }
 
