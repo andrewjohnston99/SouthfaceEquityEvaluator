@@ -12,9 +12,8 @@ Southface Equity Evaluator, Georgia Tech CS Junior Design - Team 9327
 * Users could not delete projects
 * Users could not view a project's total score
 ### Known Problems
-* ~~Some tables do not dynamically update the project score.~~
-* The forgot password and reset password pages use stock templates.
-* The database seeder does not automatically delete items that have been deleted from Prismic.
+* The database seeder does not automatically delete options that have been deleted from Prismic. 
+* There may be some issues with updating options in the database after pulling from Prismic.
 
 ## Installation
 ### Production Introduction
