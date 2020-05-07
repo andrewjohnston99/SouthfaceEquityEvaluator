@@ -96,7 +96,9 @@ class ProjectTableController extends Controller
 
         $tableScore = $this->projectController->getTableScore($projectId, $table);
 
-        return view('tables.table_template')->with('data', ['answers' => $answers, 'optionalQuestions' => $optionalQuestions, 'requiredQuestions' => $requiredQuestions, 'tableInfo' => $tableInfo, 'tables' => $tables, 'title' => $projectInfo['title'], 'tableScore' => $tableScore, 'id' => $projectId]);
+        $tablePoints = $this->getTablePoints($table);
+
+        return view('tables.table_template')->with('data', ['answers' => $answers, 'optionalQuestions' => $optionalQuestions, 'requiredQuestions' => $requiredQuestions, 'tableInfo' => $tableInfo, 'tables' => $tables, 'title' => $projectInfo['title'], 'tableScore' => $tableScore, 'tablePoints' => $tablePoints, 'id' => $projectId]);
     }
 
     /**
@@ -190,5 +192,21 @@ class ProjectTableController extends Controller
         $request->session()->flash('alert-success', 'Changes saved!');
 
         return redirect($url);
+    }
+
+    /**
+     * Get total score for a table.
+     *
+     * @param string $tableAbbrev
+     * @return int
+     */
+    public function getTablePoints($tableAbbrev)
+    {
+        return DB::table('ProjectTables as tb')
+            ->join('Items as itm', 'itm.table_id', '=', 'tb.id')
+            ->join('Questions as qt', 'qt.item_id', '=', 'itm.id')
+            ->join('Options as o', 'o.question_id', '=', 'qt.id')
+            ->where('tb.abbrev', $tableAbbrev)
+            ->sum('o.points');
     }
 }

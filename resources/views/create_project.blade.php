@@ -18,10 +18,10 @@
                     </select>
                     <label for="projectTitle">Project Title</label>
                     <input id="projectTitle" class="form-control" type="text" name="projectTitle" placeholder="Project Title" required />
-                    <label for="charretteDate">Charrette Date</label>
-                    <input id="charretteDate" class="form-control" type="text" name="charretteDate" placeholder="Charrette Date" data-input />
-                    <label for="kickoffDate">Kickoff Date</label>
-                    <input id="kickoffDate" class="form-control" type="text" name="kickoffDate" placeholder="Kickoff Date" data-input />
+                    <label for="meetingDate">Project Team or Community Meeting Date</label>
+                    <input id="meetingDate" class="form-control" type="text" name="meetingDate" placeholder="mm/dd/yyyy" data-input />
+                    <label for="startDate">Anticipated Project Start Date</label>
+                    <input id="startDate" class="form-control" type="text" name="startDate" placeholder="mm/dd/yyyy" data-input />
                     <label for="siteAddress">Site Address</label>
                     <textarea id="siteAddress" class="form-control" name="siteAddress" placeholder="123 ABC Rd&#13;&#10;Atlanta, GA 30332"></textarea>
                     <div class="row">

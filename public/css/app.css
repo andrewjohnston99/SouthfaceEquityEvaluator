@@ -13046,6 +13046,10 @@ nav.navbar .flex-column a.navbar-brand {
   margin-right: 0;
 }
 
+nav.navbar .flex-column a.navbar-brand img.transformation {
+  height: 50px;
+}
+
 nav.navbar .navbar-nav .nav-item:not(:last-child) {
   margin-right: 120px;
 }
@@ -13316,7 +13320,8 @@ nav.navbar .register-btn:active {
 *  LOGIN
 ******************************/
 
-.login {
+.login,
+.reset {
   height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -13324,58 +13329,68 @@ nav.navbar .register-btn:active {
   margin-top: 8%;
 }
 
-.login .row {
+.login .row,
+.reset .row {
   width: 100%;
 }
 
-.login .login-header {
+.login .login-header,
+.login .reset-header,
+.reset .login-header,
+.reset .reset-header {
   font-size: 22px;
   margin-bottom: 60px;
 }
 
-.login form a {
+.login form a,
+.reset form a {
   color: #000;
   text-decoration: underline;
   font-size: 16px;
   font-weight: 500;
 }
 
-.login form a:hover {
+.login form a:hover,
+.reset form a:hover {
   color: #088546;
 }
 
-.login form input.form-control {
+.login form input.form-control,
+.reset form input.form-control {
   background-color: #fff;
   border: 2px solid #9E9E9E;
   font-size: 20px;
   width: 400px;
 }
 
-.login form input.form-control::-webkit-input-placeholder {
+.login form input.form-control::-webkit-input-placeholder, .reset form input.form-control::-webkit-input-placeholder {
   color: #9E9E9E;
 }
 
-.login form input.form-control::-moz-placeholder {
+.login form input.form-control::-moz-placeholder, .reset form input.form-control::-moz-placeholder {
   color: #9E9E9E;
 }
 
-.login form input.form-control:-ms-input-placeholder {
+.login form input.form-control:-ms-input-placeholder, .reset form input.form-control:-ms-input-placeholder {
   color: #9E9E9E;
 }
 
-.login form input.form-control::-ms-input-placeholder {
+.login form input.form-control::-ms-input-placeholder, .reset form input.form-control::-ms-input-placeholder {
   color: #9E9E9E;
 }
 
-.login form input.form-control::placeholder {
+.login form input.form-control::placeholder,
+.reset form input.form-control::placeholder {
   color: #9E9E9E;
 }
 
-.login form input.form-control#password {
+.login form input.form-control.login-password,
+.reset form input.form-control.login-password {
   margin-bottom: 55px;
 }
 
-.login form .submit-btn {
+.login form .submit-btn,
+.reset form .submit-btn {
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
@@ -13395,14 +13410,20 @@ nav.navbar .register-btn:active {
 
 .login form .submit-btn:hover,
 .login form .submit-btn:focus,
-.login form .submit-btn:active {
+.login form .submit-btn:active,
+.reset form .submit-btn:hover,
+.reset form .submit-btn:focus,
+.reset form .submit-btn:active {
   outline: none;
   border: none;
 }
 
 .login form .submit-btn:hover,
 .login form .submit-btn:focus,
-.login form .submit-btn:active {
+.login form .submit-btn:active,
+.reset form .submit-btn:hover,
+.reset form .submit-btn:focus,
+.reset form .submit-btn:active {
   background-color: #0A9D53;
   color: #fff;
   -webkit-transition: all 0.3s ease;
@@ -13410,7 +13431,9 @@ nav.navbar .register-btn:active {
 }
 
 .login form .submit-btn:hover,
-.login form .submit-btn:active {
+.login form .submit-btn:active,
+.reset form .submit-btn:hover,
+.reset form .submit-btn:active {
   background-color: #088546;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
   -webkit-transition: box-shadow 0.2s;
@@ -13493,6 +13516,7 @@ nav.navbar .register-btn:active {
   width: 100%;
   color: #000;
   padding: 0 30px;
+  padding-right: 10px;
 }
 
 .projects .project-card:hover {
@@ -13524,6 +13548,7 @@ nav.navbar .register-btn:active {
 .projects .project-card .row.project-title i.material-icons {
   padding-top: 3px;
   padding: 30px;
+  padding-right: 25px;
   font-size: 28px;
 }
 
@@ -13747,6 +13772,28 @@ nav.navbar .register-btn:active {
   margin-right: 10px;
 }
 
+.project-header .logout {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #e84040;
+}
+
+.project-header .logout:hover,
+.project-header .logout:focus,
+.project-header .logout:active {
+  color: #db1a1a;
+}
+
+.project-header .logout:hover svg,
+.project-header .logout:focus svg,
+.project-header .logout:active svg {
+  fill: #db1a1a;
+}
+
 .project-header .exit {
   box-sizing: border-box;
   text-decoration: none;
@@ -13913,7 +13960,7 @@ nav.navbar .register-btn:active {
 }
 
 /******************************
-*  SETTINGS VIEW
+*  ome VIEW
 ******************************/
 
 .settings-frame {

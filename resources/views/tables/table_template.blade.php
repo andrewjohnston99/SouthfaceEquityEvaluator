@@ -26,7 +26,7 @@
     @if (Request::segment(4) !== 'contact')
         <div class="row info">
             <i class="material-icons align-middle">info</i>
-        <p>Click on any of the items in the sidebar to get more information. Click <a href="{{ Storage::url('Southface Equity Evaluator Instructions.pdf') }}" target="_blank">here</a> to view the complete documentation.</p>
+        <p>Click on any of the items in the sidebar to get more information. Click <a href="{{ Storage::url('Southface Equity Evaluator Instructions.pdf') }}" target="_blank">here</a> to view the complete Equity Evaluator Guidelines.</p>
         </div>
     @endif
 
@@ -41,7 +41,7 @@
             @if (isset($data['tableInfo']))
                 @include('tables.table')
             @else
-                @include('tables.contact')
+                @include('tables.edit_contact')
             @endif
         </div>
     </div>

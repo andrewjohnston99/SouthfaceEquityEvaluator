@@ -9,10 +9,10 @@
 @section('js')
     <script src="{{ URL::asset('js/project.js') }}"></script>
     <script>
-        document.getElementById("charretteDate").flatpickr({
+        document.getElementById("meetingDate").flatpickr({
             dateFormat: "m-d-Y"
         });
-        document.getElementById("kickoffDate").flatpickr({
+        document.getElementById("startDate").flatpickr({
             dateFormat: "m-d-Y"
         });
     </script>

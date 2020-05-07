@@ -82,7 +82,8 @@
                     @endforeach
                 @endisset
                 <tr class="table-secondary text-center">
-                    <td colspan="3">{{ strtoupper($data['tableInfo']->name) }} TOTAL</td>
+                    <td colspan="2">{{ strtoupper($data['tableInfo']->name) }} TOTAL</td>
+                    <td id="tablePoints">{{ $data['tablePoints'] }}</td>
                     <td id="tableScore" data-value="{{ $data['tableScore'] }}">{{ $data['tableScore'] }}</td>
                     <td colspan="2"></td>
                 </tr>

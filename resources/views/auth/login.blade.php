@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                         {{-- <label for="password">Password</label> --}}
-                        <input id="password" class="form-control @error('password') is-invalid @enderror" type="password" name="password" value="{{ old('password') }}" placeholder="Password" required autocomplete="current-password">
+                        <input id="password" class="form-control login-password @error('password') is-invalid @enderror" type="password" name="password" value="{{ old('password') }}" placeholder="Password" required autocomplete="current-password">
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                    <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
+                        <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
                     </div>
                     <button type="submit" class="submit-btn">Login</button>
                 </form>
