@@ -99,14 +99,14 @@ We're going to use git hooks to move your project files after a git push.
 $ cd /var
 $ mkdir repo && cd repo
 $ git clone <your git repository>
-$ cd your_repo/hooks
+$ cd your_repo/.git/hooks
 ```
 Once in the `hooks/` folder, you'll need to create a file called `post-receive`. Add the following lines to that file:
 ```
 #!/bin/sh
 git --work-tree=/var/www/your_project.com --git-dir=/var/repo/your_repo checkout -f
 ```
-After you save `/var/repo/your_repo/hooks/post-receive`, you'll need to give it the correct permissions to copy files to your project directory.
+After you save `/var/repo/your_repo/.git/hooks/post-receive`, you'll need to give it the correct permissions to copy files to your project directory.
 ```
 sudo chmod +x post-receive
 ```
