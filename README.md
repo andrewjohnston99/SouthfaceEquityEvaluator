@@ -15,18 +15,20 @@ Southface Equity Evaluator, Georgia Tech CS Junior Design - Team 9327
 * The database seeder does not automatically delete options that have been deleted from Prismic. 
 * There may be some issues with updating options in the database after pulling from Prismic.
 
-## Installation
-### Production Introduction
-The SouthfaceEquityEvaluator utilized Laravel's [Homestead](https://laravel.com/docs/7.x/homestead) development environment. Homestead includes a LEMP stack with Node, composer, and a host of other great dev software. For detailed instructions on how to get your development environment setup, head over to our [project wiki](https://github.com/andrewjohnston99/SouthfaceEquityEvaluator/wiki). Below you'll find all the steps for getting the project up and running in production!
+## Introduction
+The SouthfaceEquityEvaluator utilized Laravel's [Homestead](https://laravel.com/docs/7.x/homestead) development environment. Homestead includes a LEMP stack with Node, composer, and a host of other great dev software. Below you'll find all the steps for getting the project up and running in production!
 
 ### 1. Prepping your server
 Laravel projects work best on a dedicated server. You'll need to either create or purchase one, along with a domain, in order to deploy the project. One you have your server ready to go, you should install a LEMP or LAMP stack. The choice is completely up to you and there's no right or wrong answer. As mentioned above, we used LEMP since Homestead came prepackaged with it. 
 
 ### 2. Configure your SSH setup
-You'll be using git and Artisan commands to manage and deploy your project. To do this, you'll need to SSH into the machine. This keeps things secure and allows for multiple team members to safely access the project. We won't go into detail about how to set up SSH here, but if you need help Digital Ocean wrote [a great article](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04) on getting everything setup. 
+You'll be using git and Artisan commands to manage and deploy your project. To do this, you'll need to SSH into the machine. This keeps things secure and allows for multiple team members to safely access the project. We won't go into detail about how to set up SSH here, but if you need help Digital Ocean wrote [a great article](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04) on getting everything setup. **Be sure to add your computer's ssh key to the server. Copy and paste your `.ssh/id_rsa.pub` to `.ssh/authorizedkeys` on the server.**
 
-### 3. Configuring Nginx
-You've got everything ready to install the dependencies for your project. Now it's time to get the specific folder for your site setup. Laravel provides this [example configuration](https://laravel.com/docs/7.x/deployment) in their documentation. 
+### 3. Configure PHP
+To make sure that nginx displays your site correctly, you'll need to edit the PHP configuration. In `/etc/php/7.2/fpm/php.ini`, search for `cgi.fix_pathinfo`. It will be commented out and set to a default value of 1. You'll want to uncomment it and change that to 0. Once your change is saved, restart the PHP service for it to take effect `sudo systemctl restart php7.2-fpm`. 
+
+### 4. Configuring Nginx
+You've got everything ready to install the dependencies for your project. Now it's time to get the specific folder for your site setup. Laravel provides this [example configuration](https://laravel.com/docs/7.x/deployment) in their documentation. You can find the config file at `/etc/nginx/sites-available/<your-site>`. 
 ```
 server {
     listen 80;
@@ -51,13 +53,11 @@ server {
     error_page 404 /index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
-        fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-        include fastcgi_params;
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
     }
 
-    location ~ /\.(?!well-known).* {
+    location ~ /\.ht {
         deny all;
     }
 }
@@ -98,23 +98,26 @@ We're going to use git hooks to move your project files after a git push.
 ```
 $ cd /var
 $ mkdir repo && cd repo
-$ git clone <your git repository>
-$ cd your_repo/.git/hooks
+$ mkdir <your-site.git> && cd <your-site.git>
+$ git init --bare
+$ cd your_repo/hooks
 ```
 Once in the `hooks/` folder, you'll need to create a file called `post-receive`. Add the following lines to that file:
 ```
 #!/bin/sh
-git --work-tree=/var/www/your_project.com --git-dir=/var/repo/your_repo checkout -f
+git --work-tree=/var/www/your_project.com --git-dir=/var/repo/your-site.git checkout -f
 ```
-After you save `/var/repo/your_repo/.git/hooks/post-receive`, you'll need to give it the correct permissions to copy files to your project directory.
+After you save `/var/repo/your_repo/hooks/post-receive`, you'll need to give it the correct permissions to copy files to your project directory.
 ```
 sudo chmod +x post-receive
 ```
 You can exit your server now using the command `exit`. Now we can setup your local computer to push to your server just like when you push to github. You're going to set a new remote called `production` that represents your live website. When that's setup you'll be able to push to the server from your local computer by using the command `git push production master`. You'll still be able to push to github using the command `git push origin master`. The idea is that you can continue to develop and utilize github as usual, but when you're ready for changes to go live, you can push to `production`. 
 
+**Note:** In order for the next steps to work, make sure that the user you're using to login to the server owns `/var/www/your_project.com` and  `/var/repo/your-site.git`.
+
 To get this all setup, navigate to your project folder on your local computer. You're going to add a new remote with your project's domain name.
 ```
-$ git remote add production ssh://root@your_project.com/var/repo/your_repo
+$ git remote add production ssh://$USER$@$SERVER_IP_ADDRESS$/var/repo/your_repo
 ```
 Once you have production ready code you can use the command `git push production master` to push it to your server. You can verify that the git hook works by logging back into your server and navigating to `var/www/your_project.com`. You should see the files from your local computer here. 
 
