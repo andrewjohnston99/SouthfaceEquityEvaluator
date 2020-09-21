@@ -1,5 +1,5 @@
 # SouthfaceEquityEvaluator
-Southface Equity Evaluator, Georgia Tech CS Junior Design - Team 9327
+[Southface Equity Evaluator](https://equityevaluator.southface.org/), Georgia Tech CS Junior Design - Team 9327
 
 ## Release Notes - April 20, 2020
 ### New
