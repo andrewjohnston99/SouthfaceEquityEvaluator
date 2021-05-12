@@ -26,7 +26,7 @@
     "dependencies": {
         "acorn": "^7.1.1",
         "babel-loader": "^8.1.0",
-        "chart.js": "^2.9.3",
+        "chart.js": "^2.9.4",
         "flatpickr": "^4.6.3",
         "kind-of": "^6.0.3",
         "material-design-icons": "^3.0.1",
