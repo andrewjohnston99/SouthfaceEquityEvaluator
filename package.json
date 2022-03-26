@@ -30,7 +30,7 @@
         "flatpickr": "^4.6.3",
         "kind-of": "^6.0.3",
         "material-design-icons": "^3.0.1",
-        "minimist": "^1.2.5",
+        "minimist": "^1.2.6",
         "pretty-checkbox": "^3.0.3"
     }
 }
